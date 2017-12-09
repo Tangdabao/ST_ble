@@ -1,0 +1,886 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       29/Nov/2017  10:11:19
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_mft.c
+#    Command line =  
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_mft.c" -D
+#        HS_SPEED_XTAL=HS_SPEED_XTAL_16MHZ -D
+#        LS_SOURCE=LS_SOURCE_EXTERNAL_32KHZ -D SMPS_INDUCTOR=SMPS_INDUCTOR_10uH
+#        --preprocess=cl "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2
+#        DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        -lCN "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        -lb "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        --diag_suppress Pe1665 -o "D:\Program Files
+#        (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\Obj"
+#        --debug --endian=little --cpu=Cortex-M0 --diag_warning Pe1665
+#        --diag_suppress Pe1665 -e --fpu=None --dlib_config
+#        D:\Software\IAR_BlueNRG\arm\INC\c\DLib_Config_Normal.h -I "D:\Program
+#        Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\CMSIS\Include\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\hal\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\Bluetooth_LE\inc\"
+#        -Ohz
+#    Locale       =  Chinese (Simplified)_China.936
+#    List file    =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List\BlueNRG1_mft.lst
+#    Object file  =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_mft.o
+#
+###############################################################################
+
+D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK 2.5.0\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_mft.c
+      1          /**
+      2            ******************************************************************************
+      3            * @file    BlueNRG1_MFT.c
+      4            * @author  VMA Application Team
+      5            * @version V2.0.0
+      6            * @date    21-March-2016
+      7            * @brief   This file provides all the MFT firmware functions.
+      8            ******************************************************************************
+      9            * @attention
+     10            *
+     11            * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     12            * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     13            * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     14            * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     15            * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     16            * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     17            *
+     18            * <h2><center>&copy; COPYRIGHT 2016 STMicroelectronics</center></h2>
+     19            ******************************************************************************
+     20            */
+     21          
+     22          /* Includes ------------------------------------------------------------------*/
+     23          #include "BlueNRG1_mft.h"
+     24          
+     25          
+     26          /** @addtogroup BLUENRG1_Peripheral_Driver BLUENRG1 Peripheral Driver
+     27            * @{
+     28            */
+     29          
+     30          
+     31          /** @defgroup MFT_Peripheral  MFT Peripheral
+     32            * @{
+     33            */
+     34            
+     35          /** @defgroup MFT_Private_TypesDefinitions Private Types Definitions
+     36            * @{
+     37            */
+     38          
+     39          /**
+     40            * @}
+     41            */ 
+     42          
+     43          /** @defgroup MFT_Private_Defines Private Defines
+     44            * @{
+     45            */ 
+     46          
+     47          /**
+     48            * @}
+     49            */ 
+     50          
+     51          /** @defgroup MFT_Private_Macros Private Macros
+     52            * @{
+     53            */
+     54          
+     55          /**
+     56            * @}
+     57            */ 
+     58          
+     59          /** @defgroup MFT_Private_Variables Private Variables
+     60            * @{
+     61            */
+     62          
+     63          /**
+     64            * @}
+     65            */ 
+     66          
+     67          /** @defgroup MFT_Private_FunctionPrototypes Private Function Prototypes
+     68            * @{
+     69            */
+     70            
+     71            /**
+     72            * @}
+     73            */ 
+     74          
+     75          /** @defgroup MFT_Public_Functions Public Functions
+     76            * @{
+     77            */
+     78          
+     79          /**
+     80            *@brief DeInit the MFTx peripheral.
+     81            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+     82            *@retval None
+     83            */
+
+   \                                 In section .text, align 2, keep-with-next
+     84          void MFT_DeInit(MFT_Type* MFTx)
+     85          {
+     86            MFTx->TNPRSC = 0x00000000;
+   \                     MFT_DeInit: (+1)
+   \   00000000   0x2100             MOVS     R1,#+0
+   \   00000002   0x7401             STRB     R1,[R0, #+16]
+     87            MFTx->TNCKC = 0x00000000;
+   \   00000004   0x7501             STRB     R1,[R0, #+20]
+     88            MFTx->TNMCTRL = 0x00000000;
+   \   00000006   0x8301             STRH     R1,[R0, #+24]
+     89            MFTx->TNICLR = 0x0000000F;
+   \   00000008   0x210F             MOVS     R1,#+15
+   \   0000000A   0x2220             MOVS     R2,#+32
+   \   0000000C   0x5481             STRB     R1,[R0, R2]
+     90          
+     91          }
+   \   0000000E   0x4770             BX       LR               ;; return
+     92          
+     93          
+     94          /**
+     95            *@brief Initializes the MFTx peripheral according to the specified
+     96            *       parameters in the MFT_InitStruct.
+     97            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+     98            *@param  MFT_InitStruct: pointer to a @ref MFT_InitType structure that
+     99            *         contains the configuration information for the specified MFT peripheral.
+    100            *@retval None
+    101            */
+
+   \                                 In section .text, align 2, keep-with-next
+    102          void MFT_Init(MFT_Type* MFTx, MFT_InitType* MFT_InitStruct)
+    103          {
+   \                     MFT_Init: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+    104            
+    105            /* Check the parameters */
+    106            assert_param(IS_MFT(MFTx));
+    107            assert_param(IS_MFT_MODE(MFT_InitStruct->MFT_Mode));
+    108            assert_param(IS_MFT_CLOCK_SEL(MFT_InitStruct->MFT_Clock1));
+    109            assert_param(IS_MFT_CLOCK_SEL(MFT_InitStruct->MFT_Clock2));
+    110            
+    111            MFTx->TNMCTRL_b.TNAEN = RESET;
+   \   00000002   0x8B02             LDRH     R2,[R0, #+24]
+   \   00000004   0x....             LDR      R3,??DataTable5  ;; 0xffef
+   \   00000006   0x4013             ANDS     R3,R3,R2
+   \   00000008   0x8303             STRH     R3,[R0, #+24]
+    112            MFTx->TNMCTRL_b.TNBEN = RESET;
+   \   0000000A   0x8B02             LDRH     R2,[R0, #+24]
+   \   0000000C   0x....             LDR      R3,??DataTable5_1  ;; 0xffdf
+   \   0000000E   0x4013             ANDS     R3,R3,R2
+   \   00000010   0x8303             STRH     R3,[R0, #+24]
+    113            
+    114            MFTx->TNCKC_b.TNC1CSEL = MFT_NO_CLK;
+   \   00000012   0x22F8             MOVS     R2,#+248
+   \   00000014   0x7D03             LDRB     R3,[R0, #+20]
+   \   00000016   0x4013             ANDS     R3,R3,R2
+   \   00000018   0x7503             STRB     R3,[R0, #+20]
+    115            MFTx->TNCKC_b.TNC2CSEL = MFT_NO_CLK;
+   \   0000001A   0x23C7             MOVS     R3,#+199
+   \   0000001C   0x7D04             LDRB     R4,[R0, #+20]
+   \   0000001E   0x401C             ANDS     R4,R4,R3
+   \   00000020   0x7504             STRB     R4,[R0, #+20]
+    116            
+    117            if(MFT_InitStruct->MFT_Mode == MFT_MODE_1a) {
+   \   00000022   0x780D             LDRB     R5,[R1, #+0]
+   \   00000024   0x....             LDR      R4,??DataTable5_2  ;; 0xfffc
+   \   00000026   0x2D80             CMP      R5,#+128
+   \   00000028   0xD107             BNE      ??MFT_Init_0
+    118              MFTx->TNMCTRL_b.TNMDSEL = MFT_MODE_1;
+   \   0000002A   0x8B05             LDRH     R5,[R0, #+24]
+   \   0000002C   0x402C             ANDS     R4,R4,R5
+   \   0000002E   0x8304             STRH     R4,[R0, #+24]
+    119              MFTx->TNMCTRL_b.TNPTEN = SET;
+   \   00000030   0x8B04             LDRH     R4,[R0, #+24]
+   \   00000032   0x2580             MOVS     R5,#+128
+   \   00000034   0x006D             LSLS     R5,R5,#+1        ;; #+256
+   \   00000036   0x4325             ORRS     R5,R5,R4
+   \   00000038   0xE008             B        ??MFT_Init_1
+    120            }
+    121            else {
+    122              MFTx->TNMCTRL_b.TNMDSEL = MFT_InitStruct->MFT_Mode;
+   \                     ??MFT_Init_0: (+1)
+   \   0000003A   0x8B06             LDRH     R6,[R0, #+24]
+   \   0000003C   0x4034             ANDS     R4,R4,R6
+   \   0000003E   0x07AD             LSLS     R5,R5,#+30
+   \   00000040   0x0FAD             LSRS     R5,R5,#+30
+   \   00000042   0x4325             ORRS     R5,R5,R4
+   \   00000044   0x8305             STRH     R5,[R0, #+24]
+    123              MFTx->TNMCTRL_b.TNPTEN = RESET;
+   \   00000046   0x8B04             LDRH     R4,[R0, #+24]
+   \   00000048   0x....             LDR      R5,??DataTable5_3  ;; 0xfeff
+   \   0000004A   0x4025             ANDS     R5,R5,R4
+   \                     ??MFT_Init_1: (+1)
+   \   0000004C   0x8305             STRH     R5,[R0, #+24]
+    124            }
+    125            
+    126            MFTx->TNPRSC = MFT_InitStruct->MFT_Prescaler;
+   \   0000004E   0x78CC             LDRB     R4,[R1, #+3]
+   \   00000050   0x7404             STRB     R4,[R0, #+16]
+    127            MFTx->TNMCTRL_b.TNEN = SET;
+   \   00000052   0x8B04             LDRH     R4,[R0, #+24]
+   \   00000054   0x2580             MOVS     R5,#+128
+   \   00000056   0x4325             ORRS     R5,R5,R4
+   \   00000058   0x8305             STRH     R5,[R0, #+24]
+    128            MFTx->TNCRA = MFT_InitStruct->MFT_CRA;
+   \   0000005A   0x888C             LDRH     R4,[R1, #+4]
+   \   0000005C   0x8084             STRH     R4,[R0, #+4]
+    129            MFTx->TNCRB = MFT_InitStruct->MFT_CRB;
+   \   0000005E   0x88CC             LDRH     R4,[R1, #+6]
+   \   00000060   0x8104             STRH     R4,[R0, #+8]
+    130            MFTx->TNMCTRL_b.TNEN = RESET;
+   \   00000062   0x8B04             LDRH     R4,[R0, #+24]
+   \   00000064   0x....             LDR      R5,??DataTable5_4  ;; 0xff7f
+   \   00000066   0x4025             ANDS     R5,R5,R4
+   \   00000068   0x8305             STRH     R5,[R0, #+24]
+    131            
+    132            MFTx->TNCKC_b.TNC1CSEL = MFT_InitStruct->MFT_Clock1;
+   \   0000006A   0x7D04             LDRB     R4,[R0, #+20]
+   \   0000006C   0x4022             ANDS     R2,R2,R4
+   \   0000006E   0x784C             LDRB     R4,[R1, #+1]
+   \   00000070   0x0764             LSLS     R4,R4,#+29
+   \   00000072   0x0F64             LSRS     R4,R4,#+29
+   \   00000074   0x4314             ORRS     R4,R4,R2
+   \   00000076   0x7504             STRB     R4,[R0, #+20]
+    133            MFTx->TNCKC_b.TNC2CSEL = MFT_InitStruct->MFT_Clock2;
+   \   00000078   0x7D02             LDRB     R2,[R0, #+20]
+   \   0000007A   0x4013             ANDS     R3,R3,R2
+   \   0000007C   0x7889             LDRB     R1,[R1, #+2]
+   \   0000007E   0x00C9             LSLS     R1,R1,#+3
+   \   00000080   0x2238             MOVS     R2,#+56
+   \   00000082   0x400A             ANDS     R2,R2,R1
+   \   00000084   0x431A             ORRS     R2,R2,R3
+   \   00000086   0x7502             STRB     R2,[R0, #+20]
+    134          }
+   \   00000088   0xBD70             POP      {R4-R6,PC}       ;; return
+    135          
+    136          /**
+    137            * @brief  Fills each MFT_InitStruct member with its default value.
+    138            * @param  MFT_InitStruct : pointer to a @ref MFT_InitType structure which will
+    139            *         be initialized.
+    140            * @retval None
+    141            */
+
+   \                                 In section .text, align 2, keep-with-next
+    142          void MFT_StructInit(MFT_InitType* MFT_InitStruct)
+    143          {
+    144            /* Reset MFT init structure parameters values */
+    145            MFT_InitStruct->MFT_Clock1 = MFT_NO_CLK;
+   \                     MFT_StructInit: (+1)
+   \   00000000   0x2100             MOVS     R1,#+0
+   \   00000002   0x7041             STRB     R1,[R0, #+1]
+    146            MFT_InitStruct->MFT_Clock2 = MFT_NO_CLK;
+   \   00000004   0x7081             STRB     R1,[R0, #+2]
+    147            MFT_InitStruct->MFT_CRA = 0;
+   \   00000006   0x8081             STRH     R1,[R0, #+4]
+    148            MFT_InitStruct->MFT_CRB = 0;
+   \   00000008   0x80C1             STRH     R1,[R0, #+6]
+    149            MFT_InitStruct->MFT_Mode = MFT_MODE_1;
+   \   0000000A   0x7001             STRB     R1,[R0, #+0]
+    150            MFT_InitStruct->MFT_Prescaler = 0;
+   \   0000000C   0x70C1             STRB     R1,[R0, #+3]
+    151          }
+   \   0000000E   0x4770             BX       LR               ;; return
+    152          
+    153          /**
+    154            *@brief  Enable/Disable the MFT
+    155            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+    156            *@param  NewState: functional state @ref FunctionalState
+    157            *         This parameter can be: ENABLE or DISABLE.
+    158            *@retval None
+    159            */
+
+   \                                 In section .text, align 2, keep-with-next
+    160          void MFT_Cmd(MFT_Type* MFTx, FunctionalState NewState)
+    161          {
+    162            /* Check the parameters */
+    163            assert_param(IS_MFT(MFTx));
+    164            assert_param(IS_FUNCTIONAL_STATE(NewState));
+    165            
+    166            if (NewState == ENABLE) {
+   \                     MFT_Cmd: (+1)
+   \   00000000   0x2901             CMP      R1,#+1
+   \   00000002   0x8B01             LDRH     R1,[R0, #+24]
+   \   00000004   0xD102             BNE      ??MFT_Cmd_0
+    167              MFTx->TNMCTRL_b.TNEN = SET;
+   \   00000006   0x2280             MOVS     R2,#+128
+   \   00000008   0x430A             ORRS     R2,R2,R1
+   \   0000000A   0xE001             B        ??MFT_Cmd_1
+    168            }
+    169            else {
+    170              MFTx->TNMCTRL_b.TNEN = RESET;
+   \                     ??MFT_Cmd_0: (+1)
+   \   0000000C   0x....             LDR      R2,??DataTable5_4  ;; 0xff7f
+   \   0000000E   0x400A             ANDS     R2,R2,R1
+   \                     ??MFT_Cmd_1: (+1)
+   \   00000010   0x8302             STRH     R2,[R0, #+24]
+    171            }
+    172          }
+   \   00000012   0x4770             BX       LR               ;; return
+    173          
+    174          
+    175          /**
+    176            *@brief  Configure edges sensibility of TnA and TnB
+    177            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+    178            *@param  MFT_TnA_edge : falling or rising edge
+    179            *@param  MFT_TnB_edge : falling or rising edge, these values can be
+    180            *         @arg MFT_FALLING on rising edge
+    181            *         @arg MFT_RISING on falling edge
+    182            *@retval None
+    183            */
+
+   \                                 In section .text, align 2, keep-with-next
+    184          void MFT_TnEDGES(MFT_Type* MFTx, uint32_t MFT_TnA_edge, uint32_t MFT_TnB_edge)
+    185          {
+   \                     MFT_TnEDGES: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    186            /* Check the parameters */
+    187            assert_param(IS_MFT(MFTx));
+    188            assert_param(IS_MFT_Tn_EDGE(MFT_TnA_edge));
+    189            assert_param(IS_MFT_Tn_EDGE(MFT_TnB_edge));
+    190            
+    191            MFTx->TNMCTRL_b.TNAEDG = MFT_TnA_edge;
+   \   00000002   0x8B03             LDRH     R3,[R0, #+24]
+   \   00000004   0x....             LDR      R4,??DataTable5_5  ;; 0xfffb
+   \   00000006   0x401C             ANDS     R4,R4,R3
+   \   00000008   0x0089             LSLS     R1,R1,#+2
+   \   0000000A   0x2304             MOVS     R3,#+4
+   \   0000000C   0x4019             ANDS     R1,R1,R3
+   \   0000000E   0x4321             ORRS     R1,R1,R4
+   \   00000010   0x8301             STRH     R1,[R0, #+24]
+    192            MFTx->TNMCTRL_b.TNBEDG = MFT_TnB_edge;
+   \   00000012   0x8B01             LDRH     R1,[R0, #+24]
+   \   00000014   0x....             LDR      R3,??DataTable5_6  ;; 0xfff7
+   \   00000016   0x400B             ANDS     R3,R3,R1
+   \   00000018   0x00D1             LSLS     R1,R2,#+3
+   \   0000001A   0x2208             MOVS     R2,#+8
+   \   0000001C   0x4011             ANDS     R1,R1,R2
+   \   0000001E   0x4319             ORRS     R1,R1,R3
+   \   00000020   0x8301             STRH     R1,[R0, #+24]
+    193          }
+   \   00000022   0xBD10             POP      {R4,PC}          ;; return
+    194          
+    195          /**
+    196            *@brief  Select trigger source for pulse-train generation in Mode 1a
+    197            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+    198            *@param  MFT_Trigger : software or TnB trigger, this value can be
+    199            *         @arg MFT_TnB_TRIGGER trigger on TnB edge
+    200            *         @arg MFT_SOFTWARE_TRIGGER trigger software
+    201            *@retval None
+    202            */
+
+   \                                 In section .text, align 2, keep-with-next
+    203          void MFT_PulseTrainTriggerSelect(MFT_Type* MFTx, uint32_t MFT_Trigger)
+    204          {
+    205            /* Check the parameters */
+    206            assert_param(IS_MFT(MFTx));
+    207            assert_param(IS_MFT_PULSETRAIN_TRIGGER(MFT_Trigger));
+    208            
+    209            MFTx->TNMCTRL_b.TNPTSE = MFT_Trigger;
+   \                     MFT_PulseTrainTriggerSelect: (+1)
+   \   00000000   0x8B02             LDRH     R2,[R0, #+24]
+   \   00000002   0x....             LDR      R3,??DataTable5_7  ;; 0xfdff
+   \   00000004   0x4013             ANDS     R3,R3,R2
+   \   00000006   0x0249             LSLS     R1,R1,#+9
+   \   00000008   0x2280             MOVS     R2,#+128
+   \   0000000A   0x0092             LSLS     R2,R2,#+2        ;; #+512
+   \   0000000C   0x4011             ANDS     R1,R1,R2
+   \   0000000E   0x4319             ORRS     R1,R1,R3
+   \   00000010   0x8301             STRH     R1,[R0, #+24]
+    210          }
+   \   00000012   0x4770             BX       LR               ;; return
+    211          
+    212          /**
+    213            *@brief  Pulse-train trigger generation in Mode 1a
+    214            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+    215            *@retval None
+    216            */
+
+   \                                 In section .text, align 2, keep-with-next
+    217          void MFT_PulseTrainSoftwareTrigger(MFT_Type* MFTx)
+    218          {
+    219            /* Check the parameters */
+    220            assert_param(IS_MFT(MFTx));
+    221            
+    222            MFTx->TNMCTRL_b.TNPTET = SET;
+   \                     MFT_PulseTrainSoftwareTrigger: (+1)
+   \   00000000   0x8B01             LDRH     R1,[R0, #+24]
+   \   00000002   0x2280             MOVS     R2,#+128
+   \   00000004   0x00D2             LSLS     R2,R2,#+3        ;; #+1024
+   \   00000006   0x430A             ORRS     R2,R2,R1
+   \   00000008   0x8302             STRH     R2,[R0, #+24]
+    223          }
+   \   0000000A   0x4770             BX       LR               ;; return
+    224          
+    225          /**
+    226            *@brief  Set or Reset TnAEN bit
+    227            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+    228            *@param  TnX : set or reset, @ref MFT_TnAEN
+    229            *         @arg MFT_TnA select internal pin TnA
+    230            *         @arg MFT_TnB select internal pin TnB
+    231            *@param  NewState: functional state @ref FunctionalState
+    232            *         This parameter can be: ENABLE or DISABLE.
+    233            *@retval None
+    234            */
+
+   \                                 In section .text, align 2, keep-with-next
+    235          void MFT_TnXEN(MFT_Type* MFTx, uint8_t TnX, FunctionalState NewState)
+    236          {
+    237            /* Check the parameters */
+    238            assert_param(IS_MFT(MFTx));
+    239            assert_param(IS_MFT_TnX(TnX));
+    240            assert_param(IS_FUNCTIONAL_STATE(NewState));
+    241            
+    242            if(TnX == MFT_TnA) {
+   \                     MFT_TnXEN: (+1)
+   \   00000000   0x000B             MOVS     R3,R1
+   \   00000002   0xD105             BNE      ??MFT_TnXEN_0
+    243              MFTx->TNMCTRL_b.TNAEN = NewState;
+   \   00000004   0x8B01             LDRH     R1,[R0, #+24]
+   \   00000006   0x....             LDR      R3,??DataTable5  ;; 0xffef
+   \   00000008   0x400B             ANDS     R3,R3,R1
+   \   0000000A   0x0111             LSLS     R1,R2,#+4
+   \   0000000C   0x2210             MOVS     R2,#+16
+   \   0000000E   0xE006             B        ??MFT_TnXEN_1
+    244            }
+    245            else if(TnX == MFT_TnB) {
+   \                     ??MFT_TnXEN_0: (+1)
+   \   00000010   0x2901             CMP      R1,#+1
+   \   00000012   0xD107             BNE      ??MFT_TnXEN_2
+    246              MFTx->TNMCTRL_b.TNBEN = NewState;
+   \   00000014   0x8B01             LDRH     R1,[R0, #+24]
+   \   00000016   0x....             LDR      R3,??DataTable5_1  ;; 0xffdf
+   \   00000018   0x400B             ANDS     R3,R3,R1
+   \   0000001A   0x0151             LSLS     R1,R2,#+5
+   \   0000001C   0x2220             MOVS     R2,#+32
+   \                     ??MFT_TnXEN_1: (+1)
+   \   0000001E   0x4011             ANDS     R1,R1,R2
+   \   00000020   0x4319             ORRS     R1,R1,R3
+   \   00000022   0x8301             STRH     R1,[R0, #+24]
+    247            }
+    248          }
+   \                     ??MFT_TnXEN_2: (+1)
+   \   00000024   0x4770             BX       LR               ;; return
+    249          
+    250          
+    251          /**
+    252            *@brief  Set or Reset TnAEN bit
+    253            *@param  MFT_TimerType : select the timer and the pin, this value can be
+    254            *         @arg MFT1_TIMERA Select Timer MFT1 and input TnA
+    255            *         @arg MFT1_TIMERB Select Timer MFT1 and input TnB
+    256            *         @arg MFT2_TIMERA Select Timer MFT2 and input TnA
+    257            *         @arg MFT2_TIMERB Select Timer MFT2 and input TnB
+    258            *@param  MFT_Pin : the IO number from IO0 to IO14 (0, 1, .. 14)
+    259            *@retval None
+    260            */
+
+   \                                 In section .text, align 2, keep-with-next
+    261          void MFT_SelectCapturePin( uint32_t MFT_TimerType, uint8_t MFT_Pin)
+    262          {
+    263            /* Check the parameters */
+    264            assert_param(IS_MFT_TIMER(MFT_TimerType));
+    265            assert_param(IS_MFT_INPUT_IO(MFT_Pin));
+    266            
+    267            /* set counter */
+    268            if(MFT_TimerType == MFT1_TIMERA) {
+   \                     MFT_SelectCapturePin: (+1)
+   \   00000000   0x....             LDR      R2,??DataTable5_8  ;; 0x40000044
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0xD103             BNE      ??MFT_SelectCapturePin_0
+    269              GPIO->MFTX_b.MFT1_TIMER_A = MFT_Pin;
+   \   00000006   0x6810             LDR      R0,[R2, #+0]
+   \   00000008   0x23FF             MOVS     R3,#+255
+   \   0000000A   0x4398             BICS     R0,R0,R3
+   \   0000000C   0xE015             B        ??MFT_SelectCapturePin_1
+    270            }
+    271            else if(MFT_TimerType == MFT1_TIMERB) {
+   \                     ??MFT_SelectCapturePin_0: (+1)
+   \   0000000E   0x2801             CMP      R0,#+1
+   \   00000010   0xD104             BNE      ??MFT_SelectCapturePin_2
+    272              GPIO->MFTX_b.MFT1_TIMER_B = MFT_Pin;
+   \   00000012   0x6810             LDR      R0,[R2, #+0]
+   \   00000014   0x....             LDR      R3,??DataTable5_9  ;; 0xffff00ff
+   \   00000016   0x4003             ANDS     R3,R3,R0
+   \   00000018   0x0208             LSLS     R0,R1,#+8
+   \   0000001A   0xE005             B.N      ??MFT_SelectCapturePin_3
+    273            }
+    274            else if(MFT_TimerType == MFT2_TIMERA) {
+   \                     ??MFT_SelectCapturePin_2: (+1)
+   \   0000001C   0x2802             CMP      R0,#+2
+   \   0000001E   0xD106             BNE      ??MFT_SelectCapturePin_4
+    275              GPIO->MFTX_b.MFT2_TIMER_A = MFT_Pin;
+   \   00000020   0x6810             LDR      R0,[R2, #+0]
+   \   00000022   0x....             LDR      R3,??DataTable5_10  ;; 0xff00ffff
+   \   00000024   0x4003             ANDS     R3,R3,R0
+   \   00000026   0x0408             LSLS     R0,R1,#+16
+   \                     ??MFT_SelectCapturePin_3: (+1)
+   \   00000028   0x4318             ORRS     R0,R0,R3
+   \   0000002A   0x6010             STR      R0,[R2, #+0]
+   \   0000002C   0x4770             BX       LR
+    276            }
+    277            else if(MFT_TimerType == MFT2_TIMERB) {
+   \                     ??MFT_SelectCapturePin_4: (+1)
+   \   0000002E   0x2803             CMP      R0,#+3
+   \   00000030   0xD105             BNE      ??MFT_SelectCapturePin_5
+    278              GPIO->MFTX_b.MFT2_TIMER_B = MFT_Pin;
+   \   00000032   0x6810             LDR      R0,[R2, #+0]
+   \   00000034   0x0200             LSLS     R0,R0,#+8
+   \   00000036   0x0A00             LSRS     R0,R0,#+8
+   \   00000038   0x0609             LSLS     R1,R1,#+24
+   \                     ??MFT_SelectCapturePin_1: (+1)
+   \   0000003A   0x4301             ORRS     R1,R1,R0
+   \   0000003C   0x6011             STR      R1,[R2, #+0]
+    279            }
+    280            
+    281          }
+   \                     ??MFT_SelectCapturePin_5: (+1)
+   \   0000003E   0x4770             BX       LR               ;; return
+    282          
+    283          
+    284          /**
+    285            *@brief  Set the timer counter.
+    286            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+    287            *@param  MFT_Cnt1 : set the counter value for CNT1
+    288            *@param  MFT_Cnt2 : set the counter value for CNT2
+    289            *@retval None
+    290            */
+
+   \                                 In section .text, align 2, keep-with-next
+    291          void MFT_SetCounter(MFT_Type* MFTx, uint16_t MFT_Cnt1, uint16_t MFT_Cnt2)
+    292          {
+    293            /* Check the parameters */
+    294            assert_param(IS_MFT(MFTx));
+    295            
+    296            /* Set counters */
+    297            MFTx->TNCNT1 = MFT_Cnt1;
+   \                     MFT_SetCounter: (+1)
+   \   00000000   0x8001             STRH     R1,[R0, #+0]
+    298            MFTx->TNCNT2 = MFT_Cnt2;
+   \   00000002   0x8182             STRH     R2,[R0, #+12]
+    299          }
+   \   00000004   0x4770             BX       LR               ;; return
+    300          
+    301          
+    302          /**
+    303            *@brief  Set the timer counter1.
+    304            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+    305            *@param  MFT_Cnt : set the counter value for CNT1
+    306            *@retval None
+    307            */
+
+   \                                 In section .text, align 2, keep-with-next
+    308          void MFT_SetCounter1(MFT_Type* MFTx, uint16_t MFT_Cnt)
+    309          {
+    310            /* Check the parameters */
+    311            assert_param(IS_MFT(MFTx));
+    312            
+    313            /* Set counter */
+    314            MFTx->TNCNT1 = MFT_Cnt;
+   \                     MFT_SetCounter1: (+1)
+   \   00000000   0x8001             STRH     R1,[R0, #+0]
+    315          }
+   \   00000002   0x4770             BX       LR               ;; return
+    316          
+    317          /**
+    318            *@brief  Get the timer counter1.
+    319            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+    320            *@param  None
+    321            *@retval uint16_t the counter 1 value
+    322            */
+
+   \                                 In section .text, align 2, keep-with-next
+    323          uint16_t MFT_GetCounter1(MFT_Type* MFTx)
+    324          {
+    325            /* Check the parameters */
+    326            assert_param(IS_MFT(MFTx));
+    327            
+    328            /* Return counter */
+    329            return MFTx->TNCNT1;
+   \                     MFT_GetCounter1: (+1)
+   \   00000000   0x8800             LDRH     R0,[R0, #+0]
+   \   00000002   0x4770             BX       LR               ;; return
+    330          }
+    331          
+    332          /**
+    333            *@brief  Set the timer counter2.
+    334            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+    335            *@param  MFT_Cnt : set the counter value for CNT2
+    336            *@retval None
+    337            */
+
+   \                                 In section .text, align 2, keep-with-next
+    338          void MFT_SetCounter2(MFT_Type* MFTx, uint16_t MFT_Cnt)
+    339          {
+    340            /* Check the parameters */
+    341            assert_param(IS_MFT(MFTx));
+    342            
+    343            /* set counter */
+    344            MFTx->TNCNT2 = MFT_Cnt;
+   \                     MFT_SetCounter2: (+1)
+   \   00000000   0x8181             STRH     R1,[R0, #+12]
+    345          }
+   \   00000002   0x4770             BX       LR               ;; return
+    346          
+    347          /**
+    348            *@brief  Get the timer counter2.
+    349            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+    350            *@param  None
+    351            *@retval uint16_t the counter 2 value
+    352            */
+
+   \                                 In section .text, align 2, keep-with-next
+    353          uint16_t MFT_GetCounter2(MFT_Type* MFTx)
+    354          {
+    355            /* Check the parameters */
+    356            assert_param(IS_MFT(MFTx));
+    357            
+    358            /* Return counter */
+    359            return MFTx->TNCNT2;
+   \                     MFT_GetCounter2: (+1)
+   \   00000000   0x8980             LDRH     R0,[R0, #+12]
+   \   00000002   0x4770             BX       LR               ;; return
+    360          }
+    361          
+    362          /**
+    363            *@brief  Enable specific MFT interrupt
+    364            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+    365            *@param  MFT_IrqSource: interrupt source to enable, this value can be
+    366            *         @arg MFT_IT_TNA Select the interrupt source A
+    367            *         @arg MFT_IT_TNB Select the interrupt source B
+    368            *         @arg MFT_IT_TNC Select the interrupt source C
+    369            *         @arg MFT_IT_TND Select the interrupt source D
+    370            *@param  NewState: functional state @ref FunctionalState
+    371            *         This parameter can be: ENABLE or DISABLE.
+    372            *@retval None
+    373            */
+
+   \                                 In section .text, align 2, keep-with-next
+    374          void MFT_EnableIT(MFT_Type* MFTx, uint8_t MFT_IrqSource, FunctionalState NewState)
+    375          {
+    376            /* Check the parameters */
+    377            assert_param(IS_MFT(MFTx));
+    378            assert_param(IS_MFT_INTERRUPT(MFT_IrqSource));
+    379            assert_param(IS_FUNCTIONAL_STATE(NewState));
+    380            
+    381            if (NewState == ENABLE) {
+   \                     MFT_EnableIT: (+1)
+   \   00000000   0x0109             LSLS     R1,R1,#+4
+   \   00000002   0x2A01             CMP      R2,#+1
+   \   00000004   0x7F02             LDRB     R2,[R0, #+28]
+   \   00000006   0xD102             BNE      ??MFT_EnableIT_0
+    382              SET_BIT(MFTx->TNICTRL, (MFT_IrqSource << 4));
+   \   00000008   0x4311             ORRS     R1,R1,R2
+   \   0000000A   0x7701             STRB     R1,[R0, #+28]
+   \   0000000C   0x4770             BX       LR
+    383            }
+    384            else {
+    385              CLEAR_BIT(MFTx->TNICTRL, (MFT_IrqSource << 4));
+   \                     ??MFT_EnableIT_0: (+1)
+   \   0000000E   0x438A             BICS     R2,R2,R1
+   \   00000010   0x7702             STRB     R2,[R0, #+28]
+    386            }
+    387          }
+   \   00000012   0x4770             BX       LR               ;; return
+    388          
+    389          /**
+    390            *@brief Clear specific MFT interrupt
+    391            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+    392            *@param  MFT_IrqSource: interrupt source to enable, this value can be
+    393            *         @arg MFT_IT_TNA Select the interrupt source A
+    394            *         @arg MFT_IT_TNB Select the interrupt source B
+    395            *         @arg MFT_IT_TNC Select the interrupt source C
+    396            *         @arg MFT_IT_TND Select the interrupt source D
+    397            *@retval None
+    398            */
+
+   \                                 In section .text, align 2, keep-with-next
+    399          void MFT_ClearIT(MFT_Type* MFTx, uint8_t MFT_IrqSource)
+    400          {
+    401            /* Check the parameters */
+    402            assert_param(IS_MFT(MFTx));
+    403            assert_param(IS_MFT_INTERRUPT(MFT_IrqSource));
+    404            
+    405            SET_BIT(MFTx->TNICLR, MFT_IrqSource);
+   \                     MFT_ClearIT: (+1)
+   \   00000000   0x2220             MOVS     R2,#+32
+   \   00000002   0x5C82             LDRB     R2,[R0, R2]
+   \   00000004   0x4311             ORRS     R1,R1,R2
+   \   00000006   0x2220             MOVS     R2,#+32
+   \   00000008   0x5481             STRB     R1,[R0, R2]
+    406          }
+   \   0000000A   0x4770             BX       LR               ;; return
+    407          
+    408          /**
+    409            *@brief Return interrupt status
+    410            *@param  MFTx: where x can be 1 or 2 to select the MFT peripheral @ref MFT_Type
+    411            *@param  MFT_IrqSource: interrupt source to enable, this value can be
+    412            *         @arg MFT_IT_TNA Select the interrupt source A
+    413            *         @arg MFT_IT_TNB Select the interrupt source B
+    414            *         @arg MFT_IT_TNC Select the interrupt source C
+    415            *         @arg MFT_IT_TND Select the interrupt source D
+    416            *@retval  ITStatus: functional state @ref ITStatus
+    417            *         This parameter can be: SET or RESET.
+    418            */
+
+   \                                 In section .text, align 2, keep-with-next
+    419          ITStatus MFT_StatusIT(MFT_Type* MFTx, uint8_t MFT_IrqSource)
+    420          {
+    421            /* Check the parameters */
+    422            assert_param(IS_MFT(MFTx));
+    423            assert_param(IS_MFT_INTERRUPT(MFT_IrqSource));
+    424            
+    425            if((MFTx->TNICTRL & MFT_IrqSource) != (uint32_t)RESET) {
+   \                     MFT_StatusIT: (+1)
+   \   00000000   0x7F00             LDRB     R0,[R0, #+28]
+   \   00000002   0x4001             ANDS     R1,R1,R0
+   \   00000004   0x0008             MOVS     R0,R1
+   \   00000006   0xD000             BEQ      ??MFT_StatusIT_0
+   \   00000008   0x2001             MOVS     R0,#+1
+    426              return SET;
+    427            }
+    428            else {
+    429              return RESET;
+   \                     ??MFT_StatusIT_0: (+1)
+   \   0000000A   0x4770             BX       LR               ;; return
+    430            }
+    431          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5:
+   \   00000000   0x0000FFEF         DC32     0xffef
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_1:
+   \   00000000   0x0000FFDF         DC32     0xffdf
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_2:
+   \   00000000   0x0000FFFC         DC32     0xfffc
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_3:
+   \   00000000   0x0000FEFF         DC32     0xfeff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_4:
+   \   00000000   0x0000FF7F         DC32     0xff7f
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_5:
+   \   00000000   0x0000FFFB         DC32     0xfffb
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_6:
+   \   00000000   0x0000FFF7         DC32     0xfff7
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_7:
+   \   00000000   0x0000FDFF         DC32     0xfdff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_8:
+   \   00000000   0x40000044         DC32     0x40000044
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_9:
+   \   00000000   0xFFFF00FF         DC32     0xffff00ff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_10:
+   \   00000000   0xFF00FFFF         DC32     0xff00ffff
+    432          
+    433          /**
+    434            * @}
+    435            */
+    436          
+    437          /**
+    438            * @}
+    439            */
+    440          
+    441          /**
+    442            * @}
+    443            */
+    444          
+    445          /******************* (C) COPYRIGHT 2016 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   MFT_ClearIT
+       0   MFT_Cmd
+       0   MFT_DeInit
+       0   MFT_EnableIT
+       0   MFT_GetCounter1
+       0   MFT_GetCounter2
+      16   MFT_Init
+       0   MFT_PulseTrainSoftwareTrigger
+       0   MFT_PulseTrainTriggerSelect
+       0   MFT_SelectCapturePin
+       0   MFT_SetCounter
+       0   MFT_SetCounter1
+       0   MFT_SetCounter2
+       0   MFT_StatusIT
+       0   MFT_StructInit
+       8   MFT_TnEDGES
+       0   MFT_TnXEN
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_10
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+       4  ??DataTable5_4
+       4  ??DataTable5_5
+       4  ??DataTable5_6
+       4  ??DataTable5_7
+       4  ??DataTable5_8
+       4  ??DataTable5_9
+      12  MFT_ClearIT
+      20  MFT_Cmd
+      16  MFT_DeInit
+      20  MFT_EnableIT
+       4  MFT_GetCounter1
+       4  MFT_GetCounter2
+     138  MFT_Init
+      12  MFT_PulseTrainSoftwareTrigger
+      20  MFT_PulseTrainTriggerSelect
+      64  MFT_SelectCapturePin
+       6  MFT_SetCounter
+       4  MFT_SetCounter1
+       4  MFT_SetCounter2
+      12  MFT_StatusIT
+      16  MFT_StructInit
+      36  MFT_TnEDGES
+      38  MFT_TnXEN
+
+ 
+ 470 bytes in section .text
+ 
+ 470 bytes of CODE memory
+
+Errors: none
+Warnings: none

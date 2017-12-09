@@ -1,0 +1,13 @@
+"D:\Software\IAR_BlueNRG\arm\bin\armproc.dll" 
+
+"D:\Software\IAR_BlueNRG\arm\bin\armstlink2.dll" 
+
+"D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK 2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Hello_World\EWARM\BlueNRG-1\Release\Exe\hello_world.out" 
+
+--plugin "D:\Software\IAR_BlueNRG\arm\bin\armbat.dll" 
+
+--flash_loader "D:\Software\IAR_BlueNRG\arm\config\flashloader\ST\BlueNRG-1.board" 
+
+
+
+

@@ -1,0 +1,25 @@
+
+T1F20 000:177 SEGGER J-Link V6.10i Log File (0001ms, 0021ms total)
+T1F20 000:177 DLL Compiled: Oct 25 2016 19:31:51 (0001ms, 0021ms total)
+T1F20 000:177 Logging started @ 2017-08-09 10:45 (0001ms, 0021ms total)
+T1F20 000:178 JLINK_SetWarnOutHandler(...) (0000ms, 0021ms total)
+T1F20 000:178 JLINK_OpenEx(...)
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N: 140708488
+Feature(s): RDI,FlashDL,FlashBP,JFlash,GDBFullWEBSRV Webserver running on local port 19080 (0011ms, 0032ms total)
+T1F20 000:178   returns O.K. (0011ms, 0032ms total)
+T1F20 000:189 JLINK_SetErrorOutHandler(...) (0000ms, 0032ms total)
+T1F20 000:189 JLINK_ExecCommand("ProjectFile = "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK 2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Hello_World\MDK-ARM\BlueNRG-1\JLinkSettings.ini"", ...).   returns 0x00 (0119ms, 0151ms total)
+T1F20 000:309 JLINK_ExecCommand("Device = BlueNRG-1", ...). 
+  ***** Error: Connection to emulator lost! (25525ms, 26870ms total)
+T1F20 027:374   returns 0xFFFFFFFF (0000ms, 1345ms total)
+T1F20 027:374 JLINK_ExecCommand("DisableConnectionTimeout", ...).   returns 0x01 (0000ms, 1345ms total)
+T1F20 027:374 JLINK_GetHardwareVersion()  returns 0x00 (0000ms, 1345ms total)
+T1F20 027:374 JLINK_GetDLLVersion()  returns 61009 (0000ms, 1345ms total)
+T1F20 027:374 JLINK_GetCompileDateTime() (0000ms, 1345ms total)
+T1F20 027:374 JLINK_GetFirmwareString(...) (0000ms, 1345ms total)
+T1F20 027:374 JLINK_TIF_Select(JLINKARM_TIF_JTAG)  returns 0x00 (0000ms, 1345ms total)
+T1F20 027:384 JLINK_Close() (0011ms, 1356ms total)
+T1F20 027:384  (0011ms, 1356ms total)
+T1F20 027:384 Closed (0011ms, 1356ms total)

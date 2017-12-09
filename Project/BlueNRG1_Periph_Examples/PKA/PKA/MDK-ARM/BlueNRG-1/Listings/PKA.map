@@ -1,0 +1,1745 @@
+Component: ARM Compiler 5.06 update 4 (build 422) Tool: armlink [4d35d2]
+
+==============================================================================
+
+Section Cross References
+
+    bluenrg1_adc.o(i.ADC_ConvertBatterySensor) refers to bluenrg1_adc.o(i.ADC_ConvertSingleEndedVoltage) for ADC_ConvertSingleEndedVoltage
+    bluenrg1_adc.o(i.ADC_ConvertBatterySensor) refers to fmul.o(x$fpl$fmul) for __aeabi_fmul
+    bluenrg1_adc.o(i.ADC_ConvertDifferentialVoltage) refers to fflti.o(.text) for __aeabi_ui2f
+    bluenrg1_adc.o(i.ADC_ConvertDifferentialVoltage) refers to fdiv.o(.text) for __aeabi_fdiv
+    bluenrg1_adc.o(i.ADC_ConvertDifferentialVoltage) refers to faddsub.o(x$fpl$fadd) for __aeabi_fadd
+    bluenrg1_adc.o(i.ADC_ConvertDifferentialVoltage) refers to fmul.o(x$fpl$fmul) for __aeabi_fmul
+    bluenrg1_adc.o(i.ADC_ConvertSingleEndedVoltage) refers to fflti.o(.text) for __aeabi_i2f
+    bluenrg1_adc.o(i.ADC_ConvertSingleEndedVoltage) refers to faddsub.o(x$fpl$fadd) for __aeabi_fadd
+    bluenrg1_adc.o(i.ADC_ConvertSingleEndedVoltage) refers to fdiv.o(.text) for __aeabi_fdiv
+    bluenrg1_adc.o(i.ADC_ConvertSingleEndedVoltage) refers to fmul.o(x$fpl$fmul) for __aeabi_fmul
+    bluenrg1_adc.o(i.ADC_ConvertSingleEndedVoltage) refers to faddsub.o(x$fpl$frsb) for __aeabi_frsub
+    bluenrg1_adc.o(i.ADC_ConvertTemperatureSensor) refers to bluenrg1_adc.o(i.ADC_ConvertSingleEndedVoltage) for ADC_ConvertSingleEndedVoltage
+    bluenrg1_adc.o(i.ADC_ConvertTemperatureSensor) refers to fmul.o(x$fpl$fmul) for __aeabi_fmul
+    bluenrg1_adc.o(i.ADC_ConvertTemperatureSensor) refers to faddsub.o(x$fpl$fsub) for __aeabi_fsub
+    bluenrg1_adc.o(i.ADC_ConvertTemperatureSensorFarenait) refers to bluenrg1_adc.o(i.ADC_ConvertSingleEndedVoltage) for ADC_ConvertSingleEndedVoltage
+    bluenrg1_adc.o(i.ADC_ConvertTemperatureSensorFarenait) refers to f2d.o(.text) for __aeabi_f2d
+    bluenrg1_adc.o(i.ADC_ConvertTemperatureSensorFarenait) refers to dmul.o(.text) for __aeabi_dmul
+    bluenrg1_adc.o(i.ADC_ConvertTemperatureSensorFarenait) refers to daddsub.o(.text) for __aeabi_dsub
+    bluenrg1_adc.o(i.ADC_ConvertTemperatureSensorFarenait) refers to d2f.o(.text) for __aeabi_d2f
+    bluenrg1_adc.o(i.ADC_GetConvertedData) refers to fflti.o(.text) for __aeabi_i2f
+    bluenrg1_adc.o(i.ADC_GetConvertedData) refers to bluenrg1_adc.o(i.ADC_ConvertSingleEndedVoltage) for ADC_ConvertSingleEndedVoltage
+    bluenrg1_adc.o(i.ADC_GetConvertedData) refers to bluenrg1_adc.o(i.ADC_ConvertDifferentialVoltage) for ADC_ConvertDifferentialVoltage
+    bluenrg1_adc.o(i.ADC_GetConvertedData) refers to bluenrg1_adc.o(i.ADC_ConvertBatterySensor) for ADC_ConvertBatterySensor
+    bluenrg1_adc.o(i.ADC_GetConvertedData) refers to bluenrg1_adc.o(i.ADC_ConvertTemperatureSensor) for ADC_ConvertTemperatureSensor
+    bluenrg1_flash.o(i.FLASH_EraseAllFlash) refers to bluenrg1_flash.o(i.FLASH_WaitCmdDone) for FLASH_WaitCmdDone
+    bluenrg1_flash.o(i.FLASH_ErasePage) refers to bluenrg1_flash.o(i.FLASH_WaitCmdDone) for FLASH_WaitCmdDone
+    bluenrg1_flash.o(i.FLASH_ProgramWord) refers to bluenrg1_flash.o(i.FLASH_WaitCmdDone) for FLASH_WaitCmdDone
+    bluenrg1_flash.o(i.FLASH_ProgramWordBurst) refers to bluenrg1_flash.o(i.FLASH_WaitCmdDone) for FLASH_WaitCmdDone
+    bluenrg1_i2c.o(i.I2C_Init) refers to aeabi_sdiv.o(.text) for __aeabi_uidivmod
+    bluenrg1_i2c.o(i.I2C_Init) refers to bluenrg1_i2c.o(.data) for .data
+    bluenrg1_spi.o(i.SPI_ClearRXFIFO) refers to bluenrg1_spi.o(i.SPI_GetFlagStatus) for SPI_GetFlagStatus
+    bluenrg1_spi.o(i.SPI_Init) refers to bluenrg1_spi.o(i.SPI_SetBaudrate) for SPI_SetBaudrate
+    bluenrg1_spi.o(i.SPI_SetBaudrate) refers to aeabi_sdiv.o(.text) for __aeabi_uidivmod
+    bluenrg1_uart.o(i.UART_Init) refers to aeabi_sdiv.o(.text) for __aeabi_uidivmod
+    lps25hb.o(i.LPS25HB_GetPressure) refers to sdk_eval_i2c.o(i.SdkEvalI2CRead) for SdkEvalI2CRead
+    lps25hb.o(i.LPS25HB_GetPressure) refers to fflti.o(.text) for __aeabi_i2f
+    lps25hb.o(i.LPS25HB_GetPressure) refers to fscalbn.o(.text) for __ARM_scalbnf
+    lps25hb.o(i.LPS25HB_GetPressure) refers to lps25hb.o(.data) for .data
+    lps25hb.o(i.LPS25HB_GetTemperature) refers to sdk_eval_i2c.o(i.SdkEvalI2CRead) for SdkEvalI2CRead
+    lps25hb.o(i.LPS25HB_GetTemperature) refers to fflti.o(.text) for __aeabi_i2f
+    lps25hb.o(i.LPS25HB_GetTemperature) refers to fdiv.o(.text) for __aeabi_fdiv
+    lps25hb.o(i.LPS25HB_GetTemperature) refers to faddsub.o(x$fpl$fadd) for __aeabi_fadd
+    lps25hb.o(i.LPS25HB_GetTemperature) refers to lps25hb.o(.data) for .data
+    lps25hb.o(i.LPS25HB_Init) refers to sdk_eval_i2c.o(i.SdkEvalI2CInit) for SdkEvalI2CInit
+    lps25hb.o(i.LPS25HB_Init) refers to sdk_eval_i2c.o(i.SdkEvalI2CRead) for SdkEvalI2CRead
+    lps25hb.o(i.LPS25HB_Init) refers to sdk_eval_i2c.o(i.SdkEvalI2CWrite) for SdkEvalI2CWrite
+    lps25hb.o(i.LPS25HB_Init) refers to lps25hb.o(.data) for .data
+    lps25hb.o(i.LPS25HB_PowerOff) refers to sdk_eval_i2c.o(i.SdkEvalI2CRead) for SdkEvalI2CRead
+    lps25hb.o(i.LPS25HB_PowerOff) refers to sdk_eval_i2c.o(i.SdkEvalI2CWrite) for SdkEvalI2CWrite
+    lps25hb.o(i.LPS25HB_PowerOff) refers to lps25hb.o(.data) for .data
+    lps25hb.o(i.LPS25HB_ReadID) refers to sdk_eval_i2c.o(i.SdkEvalI2CRead) for SdkEvalI2CRead
+    lps25hb.o(i.LPS25HB_ReadID) refers to lps25hb.o(.data) for .data
+    lps25hb.o(i.LPS25HB_RebootCmd) refers to sdk_eval_i2c.o(i.SdkEvalI2CRead) for SdkEvalI2CRead
+    lps25hb.o(i.LPS25HB_RebootCmd) refers to sdk_eval_i2c.o(i.SdkEvalI2CWrite) for SdkEvalI2CWrite
+    lps25hb.o(i.LPS25HB_RebootCmd) refers to lps25hb.o(.data) for .data
+    lps25hb.o(i.LPS25HB_SlaveAddrRemap) refers to lps25hb.o(.data) for .data
+    lps25hb.o(.data) refers to lps25hb.o(i.LPS25HB_Init) for LPS25HB_Init
+    lps25hb.o(.data) refers to lps25hb.o(i.LPS25HB_PowerOff) for LPS25HB_PowerOff
+    lps25hb.o(.data) refers to lps25hb.o(i.LPS25HB_ReadID) for LPS25HB_ReadID
+    lps25hb.o(.data) refers to lps25hb.o(i.LPS25HB_RebootCmd) for LPS25HB_RebootCmd
+    lps25hb.o(.data) refers to lps25hb.o(i.LPS25HB_GetPressure) for LPS25HB_GetPressure
+    lps25hb.o(.data) refers to lps25hb.o(i.LPS25HB_GetTemperature) for LPS25HB_GetTemperature
+    lps25hb.o(.data) refers to lps25hb.o(i.LPS25HB_SlaveAddrRemap) for LPS25HB_SlaveAddrRemap
+    lsm6ds3.o(i.LSM6DS3_Common_Sensor_Enable) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_Common_Sensor_Enable) refers to sdk_eval_spi.o(i.SdkEvalSpiWrite) for SdkEvalSpiWrite
+    lsm6ds3.o(i.LSM6DS3_Disable_Free_Fall_Detection) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_Disable_Free_Fall_Detection) refers to sdk_eval_spi.o(i.SdkEvalSpiWrite) for SdkEvalSpiWrite
+    lsm6ds3.o(i.LSM6DS3_Enable_Free_Fall_Detection) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_Enable_Free_Fall_Detection) refers to sdk_eval_spi.o(i.SdkEvalSpiWrite) for SdkEvalSpiWrite
+    lsm6ds3.o(i.LSM6DS3_G_GetAxes) refers to lsm6ds3.o(i.LSM6DS3_G_GetAxesRaw) for LSM6DS3_G_GetAxesRaw
+    lsm6ds3.o(i.LSM6DS3_G_GetAxes) refers to lsm6ds3.o(i.LSM6DS3_G_GetSensitivity) for LSM6DS3_G_GetSensitivity
+    lsm6ds3.o(i.LSM6DS3_G_GetAxes) refers to fflti.o(.text) for __aeabi_i2f
+    lsm6ds3.o(i.LSM6DS3_G_GetAxes) refers to fmul.o(x$fpl$fmul) for __aeabi_fmul
+    lsm6ds3.o(i.LSM6DS3_G_GetAxes) refers to ffixi.o(.text) for __aeabi_f2iz
+    lsm6ds3.o(i.LSM6DS3_G_GetAxesRaw) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_G_GetSensitivity) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_G_Get_FS) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_G_Get_ODR) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_G_Get_ODR) refers to lsm6ds3.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    lsm6ds3.o(i.LSM6DS3_G_Set_Axes_Status) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_G_Set_Axes_Status) refers to sdk_eval_spi.o(i.SdkEvalSpiWrite) for SdkEvalSpiWrite
+    lsm6ds3.o(i.LSM6DS3_G_Set_FS) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_G_Set_FS) refers to sdk_eval_spi.o(i.SdkEvalSpiWrite) for SdkEvalSpiWrite
+    lsm6ds3.o(i.LSM6DS3_G_Set_ODR) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_G_Set_ODR) refers to sdk_eval_spi.o(i.SdkEvalSpiWrite) for SdkEvalSpiWrite
+    lsm6ds3.o(i.LSM6DS3_Get_Status_Free_Fall_Detection) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_Init) refers to sdk_eval_spi.o(i.SdkEvalSpiInit) for SdkEvalSpiInit
+    lsm6ds3.o(i.LSM6DS3_Init) refers to lsm6ds3.o(i.LSM6DS3_Read_XG_ID) for LSM6DS3_Read_XG_ID
+    lsm6ds3.o(i.LSM6DS3_Init) refers to sdk_eval_spi.o(i.SdkEvalSpiWrite) for SdkEvalSpiWrite
+    lsm6ds3.o(i.LSM6DS3_Init) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_Init) refers to lsm6ds3.o(i.LSM6DS3_Common_Sensor_Enable) for LSM6DS3_Common_Sensor_Enable
+    lsm6ds3.o(i.LSM6DS3_Init) refers to fflti.o(.text) for __aeabi_ui2f
+    lsm6ds3.o(i.LSM6DS3_Init) refers to lsm6ds3.o(i.LSM6DS3_G_Set_ODR) for LSM6DS3_G_Set_ODR
+    lsm6ds3.o(i.LSM6DS3_Init) refers to lsm6ds3.o(i.LSM6DS3_G_Set_FS) for LSM6DS3_G_Set_FS
+    lsm6ds3.o(i.LSM6DS3_Init) refers to lsm6ds3.o(i.LSM6DS3_G_Set_Axes_Status) for LSM6DS3_G_Set_Axes_Status
+    lsm6ds3.o(i.LSM6DS3_Init) refers to lsm6ds3.o(i.LSM6DS3_X_Set_ODR) for LSM6DS3_X_Set_ODR
+    lsm6ds3.o(i.LSM6DS3_Init) refers to lsm6ds3.o(i.LSM6DS3_X_Set_FS) for LSM6DS3_X_Set_FS
+    lsm6ds3.o(i.LSM6DS3_Init) refers to lsm6ds3.o(i.LSM6DS3_X_Set_Axes_Status) for LSM6DS3_X_Set_Axes_Status
+    lsm6ds3.o(i.LSM6DS3_Init) refers to bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd) for SysCtrl_PeripheralClockCmd
+    lsm6ds3.o(i.LSM6DS3_Init) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    lsm6ds3.o(i.LSM6DS3_Init) refers to bluenrg1_gpio.o(i.GPIO_Init) for GPIO_Init
+    lsm6ds3.o(i.LSM6DS3_Init) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    lsm6ds3.o(i.LSM6DS3_Init) refers to bluenrg1_gpio.o(i.GPIO_EXTIConfig) for GPIO_EXTIConfig
+    lsm6ds3.o(i.LSM6DS3_Init) refers to bluenrg1_gpio.o(i.GPIO_ClearITPendingBit) for GPIO_ClearITPendingBit
+    lsm6ds3.o(i.LSM6DS3_Init) refers to bluenrg1_gpio.o(i.GPIO_EXTICmd) for GPIO_EXTICmd
+    lsm6ds3.o(i.LSM6DS3_Init) refers to sdk_eval_config.o(.constdata) for s_SpiIrqSensorPinVersion
+    lsm6ds3.o(i.LSM6DS3_Init) refers to lsm6ds3.o(.constdata) for .constdata
+    lsm6ds3.o(i.LSM6DS3_Read_XG_ID) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_X_GetAxes) refers to lsm6ds3.o(i.LSM6DS3_X_GetAxesRaw) for LSM6DS3_X_GetAxesRaw
+    lsm6ds3.o(i.LSM6DS3_X_GetAxes) refers to lsm6ds3.o(i.LSM6DS3_X_GetSensitivity) for LSM6DS3_X_GetSensitivity
+    lsm6ds3.o(i.LSM6DS3_X_GetAxes) refers to fflti.o(.text) for __aeabi_i2f
+    lsm6ds3.o(i.LSM6DS3_X_GetAxes) refers to fmul.o(x$fpl$fmul) for __aeabi_fmul
+    lsm6ds3.o(i.LSM6DS3_X_GetAxes) refers to ffixi.o(.text) for __aeabi_f2iz
+    lsm6ds3.o(i.LSM6DS3_X_GetAxesRaw) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_X_GetSensitivity) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_X_Get_FS) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_X_Get_ODR) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_X_Get_ODR) refers to lsm6ds3.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    lsm6ds3.o(i.LSM6DS3_X_Set_Axes_Status) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_X_Set_Axes_Status) refers to sdk_eval_spi.o(i.SdkEvalSpiWrite) for SdkEvalSpiWrite
+    lsm6ds3.o(i.LSM6DS3_X_Set_FS) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_X_Set_FS) refers to sdk_eval_spi.o(i.SdkEvalSpiWrite) for SdkEvalSpiWrite
+    lsm6ds3.o(i.LSM6DS3_X_Set_ODR) refers to sdk_eval_spi.o(i.SdkEvalSpiRead) for SdkEvalSpiRead
+    lsm6ds3.o(i.LSM6DS3_X_Set_ODR) refers to sdk_eval_spi.o(i.SdkEvalSpiWrite) for SdkEvalSpiWrite
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_Init) for LSM6DS3_Init
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_Read_XG_ID) for LSM6DS3_Read_XG_ID
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_X_GetAxes) for LSM6DS3_X_GetAxes
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_X_GetAxesRaw) for LSM6DS3_X_GetAxesRaw
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_G_GetAxes) for LSM6DS3_G_GetAxes
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_G_GetAxesRaw) for LSM6DS3_G_GetAxesRaw
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_X_Get_ODR) for LSM6DS3_X_Get_ODR
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_X_Set_ODR) for LSM6DS3_X_Set_ODR
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_X_GetSensitivity) for LSM6DS3_X_GetSensitivity
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_X_Get_FS) for LSM6DS3_X_Get_FS
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_X_Set_FS) for LSM6DS3_X_Set_FS
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_G_Get_ODR) for LSM6DS3_G_Get_ODR
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_G_Set_ODR) for LSM6DS3_G_Set_ODR
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_G_GetSensitivity) for LSM6DS3_G_GetSensitivity
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_G_Get_FS) for LSM6DS3_G_Get_FS
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_G_Set_FS) for LSM6DS3_G_Set_FS
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_Enable_Free_Fall_Detection) for LSM6DS3_Enable_Free_Fall_Detection
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_Disable_Free_Fall_Detection) for LSM6DS3_Disable_Free_Fall_Detection
+    lsm6ds3.o(.data) refers to lsm6ds3.o(i.LSM6DS3_Get_Status_Free_Fall_Detection) for LSM6DS3_Get_Status_Free_Fall_Detection
+    sdk_eval_button.o(i.Get_ButtonGpioPin) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_button.o(i.Get_ButtonGpioPin) refers to sdk_eval_config.o(.constdata) for s_vectnButtonPinVersion
+    sdk_eval_button.o(i.SdkEvalPushButtonClearITPendingBit) refers to sdk_eval_button.o(i.Get_ButtonGpioPin) for Get_ButtonGpioPin
+    sdk_eval_button.o(i.SdkEvalPushButtonClearITPendingBit) refers to bluenrg1_gpio.o(i.GPIO_ClearITPendingBit) for GPIO_ClearITPendingBit
+    sdk_eval_button.o(i.SdkEvalPushButtonGetITPendingBit) refers to sdk_eval_button.o(i.Get_ButtonGpioPin) for Get_ButtonGpioPin
+    sdk_eval_button.o(i.SdkEvalPushButtonGetITPendingBit) refers to bluenrg1_gpio.o(i.GPIO_GetITPendingBit) for GPIO_GetITPendingBit
+    sdk_eval_button.o(i.SdkEvalPushButtonGetState) refers to sdk_eval_button.o(i.Get_ButtonGpioPin) for Get_ButtonGpioPin
+    sdk_eval_button.o(i.SdkEvalPushButtonGetState) refers to bluenrg1_gpio.o(i.GPIO_ReadBit) for GPIO_ReadBit
+    sdk_eval_button.o(i.SdkEvalPushButtonInit) refers to bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd) for SysCtrl_PeripheralClockCmd
+    sdk_eval_button.o(i.SdkEvalPushButtonInit) refers to sdk_eval_button.o(i.Get_ButtonGpioPin) for Get_ButtonGpioPin
+    sdk_eval_button.o(i.SdkEvalPushButtonInit) refers to bluenrg1_gpio.o(i.GPIO_Init) for GPIO_Init
+    sdk_eval_button.o(i.SdkEvalPushButtonIrq) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    sdk_eval_button.o(i.SdkEvalPushButtonIrq) refers to sdk_eval_button.o(i.Get_ButtonGpioPin) for Get_ButtonGpioPin
+    sdk_eval_button.o(i.SdkEvalPushButtonIrq) refers to bluenrg1_gpio.o(i.GPIO_EXTIConfig) for GPIO_EXTIConfig
+    sdk_eval_button.o(i.SdkEvalPushButtonIrq) refers to bluenrg1_gpio.o(i.GPIO_ClearITPendingBit) for GPIO_ClearITPendingBit
+    sdk_eval_button.o(i.SdkEvalPushButtonIrq) refers to bluenrg1_gpio.o(i.GPIO_EXTICmd) for GPIO_EXTICmd
+    sdk_eval_com.o(i.Read_Buffer_Pop) refers to sdk_eval_com.o(.data) for .data
+    sdk_eval_com.o(i.Read_Buffer_Pop) refers to sdk_eval_com.o(.bss) for .bss
+    sdk_eval_com.o(i.Read_Buffer_Push) refers to sdk_eval_com.o(.bss) for .bss
+    sdk_eval_com.o(i.Read_Buffer_Push) refers to sdk_eval_com.o(.data) for .data
+    sdk_eval_com.o(i.SdkEvalComIOConfig) refers to sdk_eval_com.o(i.SdkEvalComUartInit) for SdkEvalComUartInit
+    sdk_eval_com.o(i.SdkEvalComIOConfig) refers to sdk_eval_com.o(i.SdkEvalComUartIrqConfig) for SdkEvalComUartIrqConfig
+    sdk_eval_com.o(i.SdkEvalComIOConfig) refers to sdk_eval_com.o(.data) for .data
+    sdk_eval_com.o(i.SdkEvalComIOProcessInputData) refers to sdk_eval_com.o(i.Read_Buffer_Push) for Read_Buffer_Push
+    sdk_eval_com.o(i.SdkEvalComIOReceiveData) refers to sdk_eval_com.o(.data) for .data
+    sdk_eval_com.o(i.SdkEvalComIOSendData) refers to bluenrg1_uart.o(i.UART_GetFlagStatus) for UART_GetFlagStatus
+    sdk_eval_com.o(i.SdkEvalComIOSendData) refers to bluenrg1_uart.o(i.UART_SendData) for UART_SendData
+    sdk_eval_com.o(i.SdkEvalComIOTxFifoNotEmpty) refers to bluenrg1_uart.o(i.UART_GetFlagStatus) for UART_GetFlagStatus
+    sdk_eval_com.o(i.SdkEvalComIOUartIrqHandler) refers to bluenrg1_uart.o(i.UART_GetITStatus) for UART_GetITStatus
+    sdk_eval_com.o(i.SdkEvalComIOUartIrqHandler) refers to bluenrg1_uart.o(i.UART_ReceiveData) for UART_ReceiveData
+    sdk_eval_com.o(i.SdkEvalComIOUartIrqHandler) refers to sdk_eval_com.o(i.SdkEvalComIOReceiveData) for SdkEvalComIOReceiveData
+    sdk_eval_com.o(i.SdkEvalComIOUartIrqHandler) refers to bluenrg1_uart.o(i.UART_GetFlagStatus) for UART_GetFlagStatus
+    sdk_eval_com.o(i.SdkEvalComUartInit) refers to bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd) for SysCtrl_PeripheralClockCmd
+    sdk_eval_com.o(i.SdkEvalComUartInit) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_com.o(i.SdkEvalComUartInit) refers to bluenrg1_gpio.o(i.GPIO_Init) for GPIO_Init
+    sdk_eval_com.o(i.SdkEvalComUartInit) refers to bluenrg1_uart.o(i.UART_Init) for UART_Init
+    sdk_eval_com.o(i.SdkEvalComUartInit) refers to bluenrg1_uart.o(i.UART_RxFifoIrqLevelConfig) for UART_RxFifoIrqLevelConfig
+    sdk_eval_com.o(i.SdkEvalComUartInit) refers to bluenrg1_uart.o(i.UART_Cmd) for UART_Cmd
+    sdk_eval_com.o(i.SdkEvalComUartInit) refers to sdk_eval_config.o(.constdata) for s_UartTxPinVersion
+    sdk_eval_com.o(i.SdkEvalComUartInit) refers to sdk_eval_config.o(.constdata) for s_UartTxModeVersion
+    sdk_eval_com.o(i.SdkEvalComUartInit) refers to sdk_eval_config.o(.constdata) for s_UartRxPinVersion
+    sdk_eval_com.o(i.SdkEvalComUartInit) refers to sdk_eval_config.o(.constdata) for s_UartRxModeVersion
+    sdk_eval_com.o(i.SdkEvalComUartIrqConfig) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    sdk_eval_com.o(i.SdkEvalComUartIrqConfig) refers to bluenrg1_uart.o(i.UART_ITConfig) for UART_ITConfig
+    sdk_eval_com.o(i.__io_getcharNonBlocking) refers to sdk_eval_com.o(i.fgetc) for fgetc
+    sdk_eval_com.o(i.__io_getcharNonBlocking) refers to sdk_eval_com.o(.data) for .data
+    sdk_eval_com.o(i.fgetc) refers to sdk_eval_com.o(i.Read_Buffer_Pop) for Read_Buffer_Pop
+    sdk_eval_com.o(i.fputc) refers to sdk_eval_com.o(i.SdkEvalComIOSendData) for SdkEvalComIOSendData
+    sdk_eval_config.o(i.SdkEvalGetVersion) refers to sdk_eval_config.o(.data) for .data
+    sdk_eval_config.o(i.SdkEvalIdentification) refers to sdk_eval_config.o(.data) for .data
+    sdk_eval_i2c.o(i.DmaI2CHandlerCallback) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_i2c.o(i.DmaI2CHandlerCallback) refers to bluenrg1_dma.o(i.DMA_GetFlagStatus) for DMA_GetFlagStatus
+    sdk_eval_i2c.o(i.DmaI2CHandlerCallback) refers to bluenrg1_dma.o(i.DMA_ClearFlag) for DMA_ClearFlag
+    sdk_eval_i2c.o(i.DmaI2CHandlerCallback) refers to sdk_eval_config.o(.constdata) for s_I2cDataDmaRxTcVersion
+    sdk_eval_i2c.o(i.DmaI2CHandlerCallback) refers to sdk_eval_i2c.o(.data) for .data
+    sdk_eval_i2c.o(i.DmaI2CHandlerCallback) refers to sdk_eval_config.o(.data) for s_I2cDataDmaRxVersion
+    sdk_eval_i2c.o(i.DmaI2CHandlerCallback) refers to sdk_eval_config.o(.constdata) for s_I2cDataDmaTxTcVersion
+    sdk_eval_i2c.o(i.DmaI2CHandlerCallback) refers to sdk_eval_config.o(.data) for s_I2cDataDmaTxVersion
+    sdk_eval_i2c.o(i.IrqI2CHandlerCallback) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_i2c.o(i.IrqI2CHandlerCallback) refers to bluenrg1_i2c.o(i.I2C_GetITStatus) for I2C_GetITStatus
+    sdk_eval_i2c.o(i.IrqI2CHandlerCallback) refers to bluenrg1_i2c.o(i.I2C_ClearITPendingBit) for I2C_ClearITPendingBit
+    sdk_eval_i2c.o(i.IrqI2CHandlerCallback) refers to sdk_eval_config.o(.data) for s_I2cPeripheralVersion
+    sdk_eval_i2c.o(i.IrqI2CHandlerCallback) refers to sdk_eval_i2c.o(.data) for .data
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd) for SysCtrl_PeripheralClockCmd
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to bluenrg1_gpio.o(i.GPIO_Init) for GPIO_Init
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to bluenrg1_i2c.o(i.I2C_StructInit) for I2C_StructInit
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to bluenrg1_i2c.o(i.I2C_Init) for I2C_Init
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to bluenrg1_i2c.o(i.I2C_ClearITPendingBit) for I2C_ClearITPendingBit
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to bluenrg1_dma.o(i.DMA_Init) for DMA_Init
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to bluenrg1_dma.o(i.DMA_FlagConfig) for DMA_FlagConfig
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to sdk_eval_config.o(.data) for s_I2cPeripheralVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to sdk_eval_config.o(.constdata) for s_I2cClkPinVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to sdk_eval_config.o(.constdata) for s_I2cClkPinModeVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to sdk_eval_config.o(.constdata) for s_I2cDataPinVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to sdk_eval_config.o(.constdata) for s_I2cDataModeVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to sdk_eval_config.o(.constdata) for s_I2CBaseVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to sdk_eval_i2c.o(.bss) for .bss
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to sdk_eval_config.o(.data) for s_I2cDataDmaTxVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaInit) refers to sdk_eval_config.o(.data) for s_I2cDataDmaRxVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaRead) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaRead) refers to bluenrg1_i2c.o(i.I2C_ClearITPendingBit) for I2C_ClearITPendingBit
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaRead) refers to bluenrg1_i2c.o(i.I2C_DMACmd) for I2C_DMACmd
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaRead) refers to bluenrg1_i2c.o(i.I2C_FlushTx) for I2C_FlushTx
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaRead) refers to bluenrg1_i2c.o(i.I2C_WaitFlushTx) for I2C_WaitFlushTx
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaRead) refers to bluenrg1_i2c.o(i.I2C_BeginTransaction) for I2C_BeginTransaction
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaRead) refers to bluenrg1_i2c.o(i.I2C_GetITStatus) for I2C_GetITStatus
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaRead) refers to sdk_eval_i2c.o(.bss) for .bss
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaRead) refers to sdk_eval_i2c.o(.data) for .data
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaRead) refers to sdk_eval_config.o(.data) for s_I2cPeripheralVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaRead) refers to sdk_eval_config.o(.data) for s_I2cDataDmaTxVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaRead) refers to sdk_eval_config.o(.data) for s_I2cDataDmaRxVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaWrite) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaWrite) refers to bluenrg1_i2c.o(i.I2C_ClearITPendingBit) for I2C_ClearITPendingBit
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaWrite) refers to bluenrg1_i2c.o(i.I2C_FlushTx) for I2C_FlushTx
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaWrite) refers to bluenrg1_i2c.o(i.I2C_WaitFlushTx) for I2C_WaitFlushTx
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaWrite) refers to bluenrg1_i2c.o(i.I2C_DMACmd) for I2C_DMACmd
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaWrite) refers to bluenrg1_i2c.o(i.I2C_BeginTransaction) for I2C_BeginTransaction
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaWrite) refers to bluenrg1_i2c.o(i.I2C_GetITStatus) for I2C_GetITStatus
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaWrite) refers to sdk_eval_i2c.o(.bss) for .bss
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaWrite) refers to sdk_eval_i2c.o(.data) for .data
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaWrite) refers to sdk_eval_config.o(.data) for s_I2cPeripheralVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CDmaWrite) refers to sdk_eval_config.o(.data) for s_I2cDataDmaTxVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CInit) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CInit) refers to bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd) for SysCtrl_PeripheralClockCmd
+    sdk_eval_i2c.o(i.SdkEvalI2CInit) refers to bluenrg1_gpio.o(i.GPIO_Init) for GPIO_Init
+    sdk_eval_i2c.o(i.SdkEvalI2CInit) refers to bluenrg1_i2c.o(i.I2C_StructInit) for I2C_StructInit
+    sdk_eval_i2c.o(i.SdkEvalI2CInit) refers to bluenrg1_i2c.o(i.I2C_Init) for I2C_Init
+    sdk_eval_i2c.o(i.SdkEvalI2CInit) refers to bluenrg1_i2c.o(i.I2C_ClearITPendingBit) for I2C_ClearITPendingBit
+    sdk_eval_i2c.o(i.SdkEvalI2CInit) refers to sdk_eval_config.o(.data) for s_I2cPeripheralVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CInit) refers to sdk_eval_config.o(.constdata) for s_I2cClkPinVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CInit) refers to sdk_eval_config.o(.constdata) for s_I2cClkPinModeVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CInit) refers to sdk_eval_config.o(.constdata) for s_I2cDataPinVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CInit) refers to sdk_eval_config.o(.constdata) for s_I2cDataModeVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqInit) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqInit) refers to bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd) for SysCtrl_PeripheralClockCmd
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqInit) refers to bluenrg1_gpio.o(i.GPIO_Init) for GPIO_Init
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqInit) refers to bluenrg1_i2c.o(i.I2C_StructInit) for I2C_StructInit
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqInit) refers to bluenrg1_i2c.o(i.I2C_Init) for I2C_Init
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqInit) refers to bluenrg1_i2c.o(i.I2C_ITConfig) for I2C_ITConfig
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqInit) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqInit) refers to bluenrg1_i2c.o(i.I2C_ClearITPendingBit) for I2C_ClearITPendingBit
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqInit) refers to sdk_eval_config.o(.data) for s_I2cPeripheralVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqInit) refers to sdk_eval_config.o(.constdata) for s_I2cClkPinVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqInit) refers to sdk_eval_config.o(.constdata) for s_I2cClkPinModeVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqInit) refers to sdk_eval_config.o(.constdata) for s_I2cDataPinVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqInit) refers to sdk_eval_config.o(.constdata) for s_I2cDataModeVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqRead) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqRead) refers to bluenrg1_i2c.o(i.I2C_FlushTx) for I2C_FlushTx
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqRead) refers to bluenrg1_i2c.o(i.I2C_WaitFlushTx) for I2C_WaitFlushTx
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqRead) refers to bluenrg1_i2c.o(i.I2C_BeginTransaction) for I2C_BeginTransaction
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqRead) refers to bluenrg1_i2c.o(i.I2C_FillTxFIFO) for I2C_FillTxFIFO
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqRead) refers to bluenrg1_i2c.o(i.I2C_ReceiveData) for I2C_ReceiveData
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqRead) refers to sdk_eval_config.o(.data) for s_I2cPeripheralVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqRead) refers to sdk_eval_i2c.o(.data) for .data
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqWrite) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqWrite) refers to bluenrg1_i2c.o(i.I2C_FlushTx) for I2C_FlushTx
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqWrite) refers to bluenrg1_i2c.o(i.I2C_WaitFlushTx) for I2C_WaitFlushTx
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqWrite) refers to bluenrg1_i2c.o(i.I2C_BeginTransaction) for I2C_BeginTransaction
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqWrite) refers to bluenrg1_i2c.o(i.I2C_FillTxFIFO) for I2C_FillTxFIFO
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqWrite) refers to sdk_eval_config.o(.data) for s_I2cPeripheralVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CIrqWrite) refers to sdk_eval_i2c.o(.data) for .data
+    sdk_eval_i2c.o(i.SdkEvalI2CRead) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CRead) refers to bluenrg1_i2c.o(i.I2C_FlushTx) for I2C_FlushTx
+    sdk_eval_i2c.o(i.SdkEvalI2CRead) refers to bluenrg1_i2c.o(i.I2C_WaitFlushTx) for I2C_WaitFlushTx
+    sdk_eval_i2c.o(i.SdkEvalI2CRead) refers to bluenrg1_i2c.o(i.I2C_BeginTransaction) for I2C_BeginTransaction
+    sdk_eval_i2c.o(i.SdkEvalI2CRead) refers to bluenrg1_i2c.o(i.I2C_FillTxFIFO) for I2C_FillTxFIFO
+    sdk_eval_i2c.o(i.SdkEvalI2CRead) refers to bluenrg1_i2c.o(i.I2C_GetStatus) for I2C_GetStatus
+    sdk_eval_i2c.o(i.SdkEvalI2CRead) refers to bluenrg1_i2c.o(i.I2C_GetITStatus) for I2C_GetITStatus
+    sdk_eval_i2c.o(i.SdkEvalI2CRead) refers to bluenrg1_i2c.o(i.I2C_ClearITPendingBit) for I2C_ClearITPendingBit
+    sdk_eval_i2c.o(i.SdkEvalI2CRead) refers to bluenrg1_i2c.o(i.I2C_ReceiveData) for I2C_ReceiveData
+    sdk_eval_i2c.o(i.SdkEvalI2CRead) refers to sdk_eval_config.o(.data) for s_I2cPeripheralVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CWrite) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_i2c.o(i.SdkEvalI2CWrite) refers to bluenrg1_i2c.o(i.I2C_FlushTx) for I2C_FlushTx
+    sdk_eval_i2c.o(i.SdkEvalI2CWrite) refers to bluenrg1_i2c.o(i.I2C_WaitFlushTx) for I2C_WaitFlushTx
+    sdk_eval_i2c.o(i.SdkEvalI2CWrite) refers to bluenrg1_i2c.o(i.I2C_BeginTransaction) for I2C_BeginTransaction
+    sdk_eval_i2c.o(i.SdkEvalI2CWrite) refers to bluenrg1_i2c.o(i.I2C_FillTxFIFO) for I2C_FillTxFIFO
+    sdk_eval_i2c.o(i.SdkEvalI2CWrite) refers to bluenrg1_i2c.o(i.I2C_GetStatus) for I2C_GetStatus
+    sdk_eval_i2c.o(i.SdkEvalI2CWrite) refers to bluenrg1_i2c.o(i.I2C_GetITStatus) for I2C_GetITStatus
+    sdk_eval_i2c.o(i.SdkEvalI2CWrite) refers to bluenrg1_i2c.o(i.I2C_ClearITPendingBit) for I2C_ClearITPendingBit
+    sdk_eval_i2c.o(i.SdkEvalI2CWrite) refers to sdk_eval_config.o(.data) for s_I2cPeripheralVersion
+    sdk_eval_led.o(i.Get_LedGpioPin) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_led.o(i.Get_LedGpioPin) refers to sdk_eval_config.o(.constdata) for s_vectnGpioPinVersion
+    sdk_eval_led.o(i.SdkEvalLedGetState) refers to sdk_eval_led.o(i.Get_LedGpioPin) for Get_LedGpioPin
+    sdk_eval_led.o(i.SdkEvalLedGetState) refers to bluenrg1_gpio.o(i.GPIO_ReadBit) for GPIO_ReadBit
+    sdk_eval_led.o(i.SdkEvalLedInit) refers to bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd) for SysCtrl_PeripheralClockCmd
+    sdk_eval_led.o(i.SdkEvalLedInit) refers to sdk_eval_led.o(i.Get_LedGpioPin) for Get_LedGpioPin
+    sdk_eval_led.o(i.SdkEvalLedInit) refers to bluenrg1_gpio.o(i.GPIO_Init) for GPIO_Init
+    sdk_eval_led.o(i.SdkEvalLedInit) refers to sdk_eval_led.o(i.SdkEvalLedOff) for SdkEvalLedOff
+    sdk_eval_led.o(i.SdkEvalLedOff) refers to sdk_eval_led.o(i.Get_LedGpioPin) for Get_LedGpioPin
+    sdk_eval_led.o(i.SdkEvalLedOff) refers to bluenrg1_gpio.o(i.GPIO_WriteBit) for GPIO_WriteBit
+    sdk_eval_led.o(i.SdkEvalLedOn) refers to sdk_eval_led.o(i.Get_LedGpioPin) for Get_LedGpioPin
+    sdk_eval_led.o(i.SdkEvalLedOn) refers to bluenrg1_gpio.o(i.GPIO_WriteBit) for GPIO_WriteBit
+    sdk_eval_led.o(i.SdkEvalLedToggle) refers to sdk_eval_led.o(i.Get_LedGpioPin) for Get_LedGpioPin
+    sdk_eval_led.o(i.SdkEvalLedToggle) refers to bluenrg1_gpio.o(i.GPIO_ToggleBits) for GPIO_ToggleBits
+    sdk_eval_spi.o(i.DmaSpiHandlerCallback) refers to bluenrg1_dma.o(i.DMA_GetFlagStatus) for DMA_GetFlagStatus
+    sdk_eval_spi.o(i.DmaSpiHandlerCallback) refers to bluenrg1_dma.o(i.DMA_ClearFlag) for DMA_ClearFlag
+    sdk_eval_spi.o(i.DmaSpiHandlerCallback) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_spi.o(i.DmaSpiHandlerCallback) refers to bluenrg1_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    sdk_eval_spi.o(i.DmaSpiHandlerCallback) refers to sdk_eval_config.o(.constdata) for s_SpiCs1PinVersion
+    sdk_eval_spi.o(i.DmaSpiHandlerCallback) refers to sdk_eval_spi.o(.data) for .data
+    sdk_eval_spi.o(i.IrqSpiHandlerCallback) refers to bluenrg1_spi.o(i.SPI_GetITStatus) for SPI_GetITStatus
+    sdk_eval_spi.o(i.IrqSpiHandlerCallback) refers to bluenrg1_spi.o(i.SPI_ReceiveData) for SPI_ReceiveData
+    sdk_eval_spi.o(i.IrqSpiHandlerCallback) refers to bluenrg1_spi.o(i.SPI_SendData) for SPI_SendData
+    sdk_eval_spi.o(i.IrqSpiHandlerCallback) refers to bluenrg1_spi.o(i.SPI_ITConfig) for SPI_ITConfig
+    sdk_eval_spi.o(i.IrqSpiHandlerCallback) refers to sdk_eval_spi.o(.data) for .data
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd) for SysCtrl_PeripheralClockCmd
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to bluenrg1_gpio.o(i.GPIO_StructInit) for GPIO_StructInit
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to bluenrg1_gpio.o(i.GPIO_Init) for GPIO_Init
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to bluenrg1_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to bluenrg1_spi.o(i.SPI_StructInit) for SPI_StructInit
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to bluenrg1_spi.o(i.SPI_Init) for SPI_Init
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to bluenrg1_spi.o(i.SPI_SetMasterCommunicationMode) for SPI_SetMasterCommunicationMode
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to bluenrg1_spi.o(i.SPI_ClearTXFIFO) for SPI_ClearTXFIFO
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to bluenrg1_spi.o(i.SPI_ClearRXFIFO) for SPI_ClearRXFIFO
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to bluenrg1_dma.o(i.DMA_Init) for DMA_Init
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to bluenrg1_dma.o(i.DMA_FlagConfig) for DMA_FlagConfig
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to bluenrg1_spi.o(i.SPI_DMACmd) for SPI_DMACmd
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to bluenrg1_spi.o(i.SPI_Cmd) for SPI_Cmd
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to sdk_eval_config.o(.constdata) for s_SpiOutPinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to sdk_eval_config.o(.constdata) for s_SpiSclkPinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to sdk_eval_config.o(.constdata) for s_SpiInPinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to sdk_eval_config.o(.constdata) for s_SpiCs1PinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiDmaInit) refers to sdk_eval_spi.o(.bss) for .bss
+    sdk_eval_spi.o(i.SdkEvalSpiDmaRead) refers to bluenrg1_spi.o(i.SPI_SetMasterCommunicationMode) for SPI_SetMasterCommunicationMode
+    sdk_eval_spi.o(i.SdkEvalSpiDmaRead) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_spi.o(i.SdkEvalSpiDmaRead) refers to bluenrg1_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
+    sdk_eval_spi.o(i.SdkEvalSpiDmaRead) refers to sdk_eval_spi.o(.bss) for .bss
+    sdk_eval_spi.o(i.SdkEvalSpiDmaRead) refers to sdk_eval_spi.o(.data) for .data
+    sdk_eval_spi.o(i.SdkEvalSpiDmaRead) refers to sdk_eval_config.o(.constdata) for s_SpiCs1PinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiDmaWrite) refers to bluenrg1_spi.o(i.SPI_SetMasterCommunicationMode) for SPI_SetMasterCommunicationMode
+    sdk_eval_spi.o(i.SdkEvalSpiDmaWrite) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_spi.o(i.SdkEvalSpiDmaWrite) refers to bluenrg1_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
+    sdk_eval_spi.o(i.SdkEvalSpiDmaWrite) refers to sdk_eval_spi.o(.bss) for .bss
+    sdk_eval_spi.o(i.SdkEvalSpiDmaWrite) refers to sdk_eval_spi.o(.data) for .data
+    sdk_eval_spi.o(i.SdkEvalSpiDmaWrite) refers to sdk_eval_config.o(.constdata) for s_SpiCs1PinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd) for SysCtrl_PeripheralClockCmd
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to bluenrg1_gpio.o(i.GPIO_StructInit) for GPIO_StructInit
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to bluenrg1_gpio.o(i.GPIO_Init) for GPIO_Init
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to bluenrg1_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to bluenrg1_spi.o(i.SPI_StructInit) for SPI_StructInit
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to bluenrg1_spi.o(i.SPI_Init) for SPI_Init
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to bluenrg1_spi.o(i.SPI_SetDummyCharacter) for SPI_SetDummyCharacter
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to bluenrg1_spi.o(i.SPI_ClearTXFIFO) for SPI_ClearTXFIFO
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to bluenrg1_spi.o(i.SPI_ClearRXFIFO) for SPI_ClearRXFIFO
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to bluenrg1_spi.o(i.SPI_Cmd) for SPI_Cmd
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to sdk_eval_config.o(.constdata) for s_SpiOutPinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to sdk_eval_config.o(.constdata) for s_SpiOutModeVersion
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to sdk_eval_config.o(.constdata) for s_SpiInPinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to sdk_eval_config.o(.constdata) for s_SpiInModeVersion
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to sdk_eval_config.o(.constdata) for s_SpiSclkPinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to sdk_eval_config.o(.constdata) for s_SpiSclkModeVersion
+    sdk_eval_spi.o(i.SdkEvalSpiInit) refers to sdk_eval_config.o(.constdata) for s_SpiCs1PinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd) for SysCtrl_PeripheralClockCmd
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to bluenrg1_gpio.o(i.GPIO_StructInit) for GPIO_StructInit
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to bluenrg1_gpio.o(i.GPIO_Init) for GPIO_Init
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to bluenrg1_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to bluenrg1_spi.o(i.SPI_StructInit) for SPI_StructInit
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to bluenrg1_spi.o(i.SPI_Init) for SPI_Init
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to bluenrg1_spi.o(i.SPI_SetMasterCommunicationMode) for SPI_SetMasterCommunicationMode
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to bluenrg1_spi.o(i.SPI_ClearTXFIFO) for SPI_ClearTXFIFO
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to bluenrg1_spi.o(i.SPI_ClearRXFIFO) for SPI_ClearRXFIFO
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to bluenrg1_spi.o(i.SPI_TxFifoInterruptLevelConfig) for SPI_TxFifoInterruptLevelConfig
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to bluenrg1_spi.o(i.SPI_RxFifoInterruptLevelConfig) for SPI_RxFifoInterruptLevelConfig
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to bluenrg1_spi.o(i.SPI_Cmd) for SPI_Cmd
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to sdk_eval_config.o(.constdata) for s_SpiOutPinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to sdk_eval_config.o(.constdata) for s_SpiSclkPinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to sdk_eval_config.o(.constdata) for s_SpiInPinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiIrqInit) refers to sdk_eval_config.o(.constdata) for s_SpiCs1PinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiIrqRead) refers to bluenrg1_spi.o(i.SPI_SetMasterCommunicationMode) for SPI_SetMasterCommunicationMode
+    sdk_eval_spi.o(i.SdkEvalSpiIrqRead) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_spi.o(i.SdkEvalSpiIrqRead) refers to bluenrg1_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
+    sdk_eval_spi.o(i.SdkEvalSpiIrqRead) refers to bluenrg1_spi.o(i.SPI_ITConfig) for SPI_ITConfig
+    sdk_eval_spi.o(i.SdkEvalSpiIrqRead) refers to bluenrg1_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    sdk_eval_spi.o(i.SdkEvalSpiIrqRead) refers to sdk_eval_spi.o(.data) for .data
+    sdk_eval_spi.o(i.SdkEvalSpiIrqRead) refers to sdk_eval_config.o(.constdata) for s_SpiCs1PinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiIrqWrite) refers to bluenrg1_spi.o(i.SPI_SetMasterCommunicationMode) for SPI_SetMasterCommunicationMode
+    sdk_eval_spi.o(i.SdkEvalSpiIrqWrite) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_spi.o(i.SdkEvalSpiIrqWrite) refers to bluenrg1_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
+    sdk_eval_spi.o(i.SdkEvalSpiIrqWrite) refers to bluenrg1_spi.o(i.SPI_ITConfig) for SPI_ITConfig
+    sdk_eval_spi.o(i.SdkEvalSpiIrqWrite) refers to bluenrg1_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    sdk_eval_spi.o(i.SdkEvalSpiIrqWrite) refers to sdk_eval_spi.o(.data) for .data
+    sdk_eval_spi.o(i.SdkEvalSpiIrqWrite) refers to sdk_eval_config.o(.constdata) for s_SpiCs1PinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiRead) refers to bluenrg1_spi.o(i.SPI_SetMasterCommunicationMode) for SPI_SetMasterCommunicationMode
+    sdk_eval_spi.o(i.SdkEvalSpiRead) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_spi.o(i.SdkEvalSpiRead) refers to bluenrg1_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
+    sdk_eval_spi.o(i.SdkEvalSpiRead) refers to bluenrg1_spi.o(i.SPI_GetFlagStatus) for SPI_GetFlagStatus
+    sdk_eval_spi.o(i.SdkEvalSpiRead) refers to bluenrg1_spi.o(i.SPI_SendData) for SPI_SendData
+    sdk_eval_spi.o(i.SdkEvalSpiRead) refers to bluenrg1_spi.o(i.SPI_ReceiveData) for SPI_ReceiveData
+    sdk_eval_spi.o(i.SdkEvalSpiRead) refers to bluenrg1_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    sdk_eval_spi.o(i.SdkEvalSpiRead) refers to sdk_eval_config.o(.constdata) for s_SpiCs1PinVersion
+    sdk_eval_spi.o(i.SdkEvalSpiWrite) refers to bluenrg1_spi.o(i.SPI_SetMasterCommunicationMode) for SPI_SetMasterCommunicationMode
+    sdk_eval_spi.o(i.SdkEvalSpiWrite) refers to sdk_eval_config.o(i.SdkEvalGetVersion) for SdkEvalGetVersion
+    sdk_eval_spi.o(i.SdkEvalSpiWrite) refers to bluenrg1_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
+    sdk_eval_spi.o(i.SdkEvalSpiWrite) refers to bluenrg1_spi.o(i.SPI_SendData) for SPI_SendData
+    sdk_eval_spi.o(i.SdkEvalSpiWrite) refers to bluenrg1_spi.o(i.SPI_GetFlagStatus) for SPI_GetFlagStatus
+    sdk_eval_spi.o(i.SdkEvalSpiWrite) refers to bluenrg1_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    sdk_eval_spi.o(i.SdkEvalSpiWrite) refers to sdk_eval_config.o(.constdata) for s_SpiCs1PinVersion
+    system_bluenrg1.o(i.DeviceConfiguration) refers to rt_memcpy.o(.emb_text) for __aeabi_memcpy4
+    system_bluenrg1.o(i.RESET_HANDLER) refers to system_bluenrg1.o(i.__low_level_init) for __low_level_init
+    system_bluenrg1.o(i.RESET_HANDLER) refers to pka_main.o(i.main) for main
+    system_bluenrg1.o(i.RESET_HANDLER) refers to __main.o(!!!main) for __main
+    system_bluenrg1.o(i.SystemInit) refers to system_bluenrg1.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    system_bluenrg1.o(i.SystemInit) refers to system_bluenrg1.o(i.DeviceConfiguration) for DeviceConfiguration
+    system_bluenrg1.o(i.__low_level_init) refers to context_switch.o(. text) for CS_contextRestore
+    system_bluenrg1.o(i.__low_level_init) refers to system_bluenrg1.o(.wakeupFromSleepFlag) for .wakeupFromSleepFlag
+    system_bluenrg1.o(.app_base) refers to system_bluenrg1.o(.intvec) for __vector_table
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.RESET_HANDLER) for RESET_HANDLER
+    system_bluenrg1.o(.intvec) refers to bluenrg1_it.o(i.NMI_Handler) for NMI_Handler
+    system_bluenrg1.o(.intvec) refers to bluenrg1_it.o(i.HardFault_Handler) for HardFault_Handler
+    system_bluenrg1.o(.intvec) refers to bluenrg1_it.o(i.SVC_Handler) for SVC_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.PendSV_Handler) for PendSV_Handler
+    system_bluenrg1.o(.intvec) refers to bluenrg1_it.o(i.SysTick_Handler) for SysTick_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.GPIO_Handler) for GPIO_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.NVM_Handler) for NVM_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.UART_Handler) for UART_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.SPI_Handler) for SPI_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.Blue_Handler) for Blue_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.WDG_Handler) for WDG_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.ADC_Handler) for ADC_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.I2C2_Handler) for I2C2_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.I2C1_Handler) for I2C1_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.MFT1A_Handler) for MFT1A_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.MFT1B_Handler) for MFT1B_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.MFT2A_Handler) for MFT2A_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.MFT2B_Handler) for MFT2B_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.RTC_Handler) for RTC_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.PKA_Handler) for PKA_Handler
+    system_bluenrg1.o(.intvec) refers to system_bluenrg1.o(i.DMA_Handler) for DMA_Handler
+    context_switch.o(. text) refers to system_bluenrg1.o(.savedMSP) for savedMSP
+    context_switch.o(. text) refers to system_bluenrg1.o(.data) for savedICSR
+    context_switch.o(. text) refers to system_bluenrg1.o(.data) for savedSHCSR
+    context_switch.o(. text) refers to system_bluenrg1.o(.data) for savedNVIC_ISPR
+    pka_main.o(i.GenerateRandomK16Word) refers to bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd) for SysCtrl_PeripheralClockCmd
+    pka_main.o(i.GenerateRandomK16Word) refers to bluenrg1_rng.o(i.RNG_GetFlagStatus) for RNG_GetFlagStatus
+    pka_main.o(i.PkaFailure) refers to noretval__2printf.o(.text) for __2printf
+    pka_main.o(i.main) refers to rt_memcpy.o(.emb_text) for __aeabi_memcpy4
+    pka_main.o(i.main) refers to system_bluenrg1.o(i.SystemInit) for SystemInit
+    pka_main.o(i.main) refers to sdk_eval_config.o(i.SdkEvalIdentification) for SdkEvalIdentification
+    pka_main.o(i.main) refers to sdk_eval_com.o(i.SdkEvalComUartInit) for SdkEvalComUartInit
+    pka_main.o(i.main) refers to bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd) for SysCtrl_PeripheralClockCmd
+    pka_main.o(i.main) refers to pka_main.o(i.GenerateRandomK16Word) for GenerateRandomK16Word
+    pka_main.o(i.main) refers to bluenrg1_pka.o(i.PKA_SetData) for PKA_SetData
+    pka_main.o(i.main) refers to bluenrg1_pka.o(i.PKA_StartProcessing) for PKA_StartProcessing
+    pka_main.o(i.main) refers to bluenrg1_pka.o(i.PKA_WaitProcess) for PKA_WaitProcess
+    pka_main.o(i.main) refers to bluenrg1_pka.o(i.PKA_VerifyProcess) for PKA_VerifyProcess
+    pka_main.o(i.main) refers to bluenrg1_pka.o(i.PKA_GetData) for PKA_GetData
+    pka_main.o(i.main) refers to pka_main.o(i.PkaFailure) for PkaFailure
+    pka_main.o(i.main) refers to noretval__2printf.o(.text) for __2printf
+    pka_main.o(i.main) refers to pka_main.o(.constdata) for .constdata
+    pka_main.o(i.main) refers to pka_main.o(.bss) for .bss
+    __2printf.o(.text) refers to _printf_char_file.o(.text) for _printf_char_file
+    __2printf.o(.text) refers to sdk_eval_com.o(.data) for __stdout
+    noretval__2printf.o(.text) refers to _printf_char_file.o(.text) for _printf_char_file
+    noretval__2printf.o(.text) refers to sdk_eval_com.o(.data) for __stdout
+    rt_memcpy.o(.text) refers to rt_memcpy.o(.emb_text) for __aeabi_memcpy4
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    d2f.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    daddsub.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    dmul.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    f2d.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    faddsub.o(x$fpl$fadd) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    faddsub.o(x$fpl$fadd) refers to faddsub.o(x$fpl$fsub) for _fsub1
+    faddsub.o(x$fpl$frsb) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    faddsub.o(x$fpl$frsb) refers to faddsub.o(x$fpl$fsub) for _fsub1
+    faddsub.o(x$fpl$frsb) refers to faddsub.o(x$fpl$fadd) for _fadd1
+    faddsub.o(x$fpl$fsub) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    faddsub.o(x$fpl$fsub) refers to faddsub.o(x$fpl$fadd) for _fadd1
+    fdiv.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    fdiv.o(.text) refers to fdiv.o(.constdata) for .constdata
+    fdiv.o(.constdata) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    ffixi.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    fflti.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    fmul.o(x$fpl$fmul) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    fscalbn.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry6.o(.ARM.Collect$$rtentry$$00000006) for __rt_entry_sh
+    aeabi_idiv0_sigfpe.o(.text) refers to rt_div0.o(.text) for __rt_div0
+    _printf_char_file.o(.text) refers to _printf_char_common.o(.text) for _printf_char_common
+    _printf_char_file.o(.text) refers to ferror.o(.text) for ferror
+    _printf_char_file.o(.text) refers to sdk_eval_com.o(i.fputc) for fputc
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to pka_main.o(i.main) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    __rtentry6.o(.ARM.Collect$$rtentry$$00000006) refers to __rtentry6.o(.ARM.Collect$$rtentry$$00002717) for __lit__00000000
+    __rtentry6.o(__vectab_stack_and_reset_1_area) refers to __main.o(!!!main) for __main
+    __rtentry6.o(.ARM.exidx) refers to __rtentry6.o(.ARM.Collect$$rtentry$$00000006) for .ARM.Collect$$rtentry$$00000006
+    __rtentry6.o(.ARM.exidx) refers to __rtentry6.o(.ARM.Collect$$rtentry$$00002717) for .ARM.Collect$$rtentry$$00002717
+    rt_div0.o(.text) refers to defsig_fpe_outer.o(.text) for __rt_SIGFPE
+    _printf_char_common.o(.text) refers to __printf_nopercent.o(.text) for __printf
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to sys_stackheap.o(.text) for __user_initial_stackheap
+    sys_stackheap_outer.o(__vectab_stack_and_reset_area) refers to tempstk.o(.text) for __temporary_stack_top
+    sys_stackheap_outer.o(__vectab_stack_and_reset_area) refers to __main.o(!!!main) for __main
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    defsig_fpe_outer.o(.text) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig_fpe_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_fpe_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000002) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000033) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_user_alloc_1
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    sys_stackheap.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    sys_stackheap.o(.text) refers to use_no_semi.o(.text) for __I$use$semihosting
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers to argv_veneer.o(.text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000027) refers to argv_veneer.o(.text) for __ARM_argv_veneer
+    libinit4.o(.ARM.Collect$$libinit$$00000007) refers to libinit4.o(.ARM.Collect$$libinit$$00002718) for __lit__00000000
+    libinit4.o(.ARM.Collect$$libinit$$00000029) refers to libinit4.o(.ARM.Collect$$libinit$$0000273A) for __lit__00000002
+    libinit4.o(.ARM.Collect$$libinit$$00000029) refers to argv_veneer.o(.text) for __ARM_argv_veneer
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000007) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000010) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing bluenrg1_adc.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_adc.o(.revsh_text), (4 bytes).
+    Removing bluenrg1_adc.o(i.ADC_AutoOffsetUpdate), (22 bytes).
+    Removing bluenrg1_adc.o(i.ADC_Calibration), (30 bytes).
+    Removing bluenrg1_adc.o(i.ADC_Cmd), (56 bytes).
+    Removing bluenrg1_adc.o(i.ADC_ConversionMode), (24 bytes).
+    Removing bluenrg1_adc.o(i.ADC_ConvertBatterySensor), (24 bytes).
+    Removing bluenrg1_adc.o(i.ADC_ConvertDifferentialVoltage), (88 bytes).
+    Removing bluenrg1_adc.o(i.ADC_ConvertSingleEndedVoltage), (144 bytes).
+    Removing bluenrg1_adc.o(i.ADC_ConvertTemperatureSensor), (36 bytes).
+    Removing bluenrg1_adc.o(i.ADC_ConvertTemperatureSensorFarenait), (48 bytes).
+    Removing bluenrg1_adc.o(i.ADC_DeInit), (14 bytes).
+    Removing bluenrg1_adc.o(i.ADC_DmaCmd), (24 bytes).
+    Removing bluenrg1_adc.o(i.ADC_GetConvertedData), (106 bytes).
+    Removing bluenrg1_adc.o(i.ADC_GetFlagStatus), (20 bytes).
+    Removing bluenrg1_adc.o(i.ADC_GetITStatus), (18 bytes).
+    Removing bluenrg1_adc.o(i.ADC_ITConfig), (20 bytes).
+    Removing bluenrg1_adc.o(i.ADC_Init), (114 bytes).
+    Removing bluenrg1_adc.o(i.ADC_SelectFrequencyMic), (30 bytes).
+    Removing bluenrg1_adc.o(i.ADC_StructInit), (16 bytes).
+    Removing bluenrg1_adc.o(i.ADC_ThresholdCheck), (22 bytes).
+    Removing bluenrg1_adc.o(i.ADC_ThresholdConfig), (10 bytes).
+    Removing bluenrg1_dma.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_dma.o(.revsh_text), (4 bytes).
+    Removing bluenrg1_dma.o(i.DMA_ClearFlag), (8 bytes).
+    Removing bluenrg1_dma.o(i.DMA_Cmd), (20 bytes).
+    Removing bluenrg1_dma.o(i.DMA_DeInit), (140 bytes).
+    Removing bluenrg1_dma.o(i.DMA_FlagConfig), (16 bytes).
+    Removing bluenrg1_dma.o(i.DMA_GetCurrDataCounter), (6 bytes).
+    Removing bluenrg1_dma.o(i.DMA_GetFlagStatus), (18 bytes).
+    Removing bluenrg1_dma.o(i.DMA_Init), (60 bytes).
+    Removing bluenrg1_dma.o(i.DMA_SelectAdcChannel), (24 bytes).
+    Removing bluenrg1_dma.o(i.DMA_SetCurrDataCounter), (4 bytes).
+    Removing bluenrg1_dma.o(i.DMA_StructInit), (26 bytes).
+    Removing bluenrg1_flash.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_flash.o(.revsh_text), (4 bytes).
+    Removing bluenrg1_flash.o(i.FLASH_ClearCmdDone), (16 bytes).
+    Removing bluenrg1_flash.o(i.FLASH_ClearFlag), (12 bytes).
+    Removing bluenrg1_flash.o(i.FLASH_ClearITPendingBit), (12 bytes).
+    Removing bluenrg1_flash.o(i.FLASH_EraseAllFlash), (24 bytes).
+    Removing bluenrg1_flash.o(i.FLASH_ErasePage), (28 bytes).
+    Removing bluenrg1_flash.o(i.FLASH_GetFlagStatus), (20 bytes).
+    Removing bluenrg1_flash.o(i.FLASH_ITConfig), (28 bytes).
+    Removing bluenrg1_flash.o(i.FLASH_NextFreeFlashAddress), (12 bytes).
+    Removing bluenrg1_flash.o(i.FLASH_ProgramWord), (32 bytes).
+    Removing bluenrg1_flash.o(i.FLASH_ProgramWordBurst), (48 bytes).
+    Removing bluenrg1_flash.o(i.FLASH_ReadByte), (4 bytes).
+    Removing bluenrg1_flash.o(i.FLASH_ReadWord), (4 bytes).
+    Removing bluenrg1_flash.o(i.FLASH_WaitCmdDone), (16 bytes).
+    Removing bluenrg1_gpio.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_gpio.o(.revsh_text), (4 bytes).
+    Removing bluenrg1_gpio.o(i.GPIO_ClearITPendingBit), (12 bytes).
+    Removing bluenrg1_gpio.o(i.GPIO_DeInit), (48 bytes).
+    Removing bluenrg1_gpio.o(i.GPIO_EXTICmd), (20 bytes).
+    Removing bluenrg1_gpio.o(i.GPIO_EXTIConfig), (66 bytes).
+    Removing bluenrg1_gpio.o(i.GPIO_EXTIStructInit), (10 bytes).
+    Removing bluenrg1_gpio.o(i.GPIO_GetITPendingBit), (18 bytes).
+    Removing bluenrg1_gpio.o(i.GPIO_ReadBit), (18 bytes).
+    Removing bluenrg1_gpio.o(i.GPIO_ResetBits), (12 bytes).
+    Removing bluenrg1_gpio.o(i.GPIO_SetBits), (8 bytes).
+    Removing bluenrg1_gpio.o(i.GPIO_SetRetentionState), (2 bytes).
+    Removing bluenrg1_gpio.o(i.GPIO_StructInit), (12 bytes).
+    Removing bluenrg1_gpio.o(i.GPIO_ToggleBits), (12 bytes).
+    Removing bluenrg1_gpio.o(i.GPIO_WriteBit), (24 bytes).
+    Removing bluenrg1_i2c.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_i2c.o(.revsh_text), (4 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_BeginTransaction), (32 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_ClearITPendingBit), (4 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_Cmd), (20 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_DMACmd), (16 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_DMATxBurstMode), (20 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_DMATxBurstSize), (18 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_DeInit), (20 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_FillTxFIFO), (4 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_FlushRx), (12 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_FlushTx), (10 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_GeneralCallCmd), (18 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_GenerateStopCondition), (12 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_GetITPendingBit), (10 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_GetITStatus), (10 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_GetStatus), (8 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_ITConfig), (16 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_Init), (188 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_ReceiveData), (4 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_SetHoldTime), (6 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_SetHoldTimeStartCondition), (52 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_SetRxThreshold), (16 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_SetTxThreshold), (16 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_StructInit), (20 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_WaitFlushRx), (14 bytes).
+    Removing bluenrg1_i2c.o(i.I2C_WaitFlushTx), (14 bytes).
+    Removing bluenrg1_i2c.o(.data), (8 bytes).
+    Removing bluenrg1_mft.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_mft.o(.revsh_text), (4 bytes).
+    Removing bluenrg1_mft.o(i.MFT_ClearIT), (10 bytes).
+    Removing bluenrg1_mft.o(i.MFT_Cmd), (18 bytes).
+    Removing bluenrg1_mft.o(i.MFT_DeInit), (16 bytes).
+    Removing bluenrg1_mft.o(i.MFT_EnableIT), (18 bytes).
+    Removing bluenrg1_mft.o(i.MFT_GetCounter1), (4 bytes).
+    Removing bluenrg1_mft.o(i.MFT_GetCounter2), (4 bytes).
+    Removing bluenrg1_mft.o(i.MFT_Init), (136 bytes).
+    Removing bluenrg1_mft.o(i.MFT_PulseTrainSoftwareTrigger), (12 bytes).
+    Removing bluenrg1_mft.o(i.MFT_PulseTrainTriggerSelect), (18 bytes).
+    Removing bluenrg1_mft.o(i.MFT_SelectCapturePin), (68 bytes).
+    Removing bluenrg1_mft.o(i.MFT_SetCounter), (6 bytes).
+    Removing bluenrg1_mft.o(i.MFT_SetCounter1), (4 bytes).
+    Removing bluenrg1_mft.o(i.MFT_SetCounter2), (4 bytes).
+    Removing bluenrg1_mft.o(i.MFT_StatusIT), (10 bytes).
+    Removing bluenrg1_mft.o(i.MFT_StructInit), (16 bytes).
+    Removing bluenrg1_mft.o(i.MFT_TnEDGES), (32 bytes).
+    Removing bluenrg1_mft.o(i.MFT_TnXEN), (36 bytes).
+    Removing bluenrg1_rng.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_rng.o(.revsh_text), (4 bytes).
+    Removing bluenrg1_rng.o(i.RNG_Cmd), (22 bytes).
+    Removing bluenrg1_rtc.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_rtc.o(.revsh_text), (4 bytes).
+    Removing bluenrg1_rtc.o(i.RTC_AutoStart), (24 bytes).
+    Removing bluenrg1_rtc.o(i.RTC_ClockwatchCmd), (28 bytes).
+    Removing bluenrg1_rtc.o(i.RTC_Cmd), (24 bytes).
+    Removing bluenrg1_rtc.o(i.RTC_GetNumberIrqGenerated), (12 bytes).
+    Removing bluenrg1_rtc.o(i.RTC_GetTimeDate), (64 bytes).
+    Removing bluenrg1_rtc.o(i.RTC_GetTimerValue), (12 bytes).
+    Removing bluenrg1_rtc.o(i.RTC_IT_Clear), (12 bytes).
+    Removing bluenrg1_rtc.o(i.RTC_IT_Config), (36 bytes).
+    Removing bluenrg1_rtc.o(i.RTC_IT_Status), (20 bytes).
+    Removing bluenrg1_rtc.o(i.RTC_Init), (76 bytes).
+    Removing bluenrg1_rtc.o(i.RTC_SelectTrimmedClock), (28 bytes).
+    Removing bluenrg1_rtc.o(i.RTC_SetMatchTimeDate), (128 bytes).
+    Removing bluenrg1_rtc.o(i.RTC_SetTimeDate), (128 bytes).
+    Removing bluenrg1_spi.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_spi.o(.revsh_text), (4 bytes).
+    Removing bluenrg1_spi.o(i.SPI_ClearITPendingBit), (16 bytes).
+    Removing bluenrg1_spi.o(i.SPI_ClearRXFIFO), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_ClearTXFIFO), (40 bytes).
+    Removing bluenrg1_spi.o(i.SPI_Cmd), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_CommandSizeConfig), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_DMACmd), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_DataSizeConfig), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_DeInit), (36 bytes).
+    Removing bluenrg1_spi.o(i.SPI_DelayBetweenFrames), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_DelayDataInput), (28 bytes).
+    Removing bluenrg1_spi.o(i.SPI_EnableWaitState), (32 bytes).
+    Removing bluenrg1_spi.o(i.SPI_EndianFormatReception), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_EndianFormatTransmission), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_FrameFormatConfig), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_GetFlagStatus), (20 bytes).
+    Removing bluenrg1_spi.o(i.SPI_GetITStatus), (20 bytes).
+    Removing bluenrg1_spi.o(i.SPI_ITConfig), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_Init), (84 bytes).
+    Removing bluenrg1_spi.o(i.SPI_ReceiveData), (12 bytes).
+    Removing bluenrg1_spi.o(i.SPI_RxFifoInterruptLevelConfig), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_SendData), (12 bytes).
+    Removing bluenrg1_spi.o(i.SPI_SetBaudrate), (72 bytes).
+    Removing bluenrg1_spi.o(i.SPI_SetDummyCharacter), (12 bytes).
+    Removing bluenrg1_spi.o(i.SPI_SetMasterCommunicationMode), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_SetNumFramesToReceive), (12 bytes).
+    Removing bluenrg1_spi.o(i.SPI_SetNumFramesToTransmit), (12 bytes).
+    Removing bluenrg1_spi.o(i.SPI_SlaveModeOutputCmd), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_SlaveSwSelection), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_StructInit), (24 bytes).
+    Removing bluenrg1_spi.o(i.SPI_TxFifoInterruptLevelConfig), (24 bytes).
+    Removing bluenrg1_sysctrl.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_sysctrl.o(.revsh_text), (4 bytes).
+    Removing bluenrg1_sysctrl.o(i.SysCtrl_DeInit), (52 bytes).
+    Removing bluenrg1_sysctrl.o(i.SysCtrl_GetWakeupResetReason), (156 bytes).
+    Removing bluenrg1_sysctrl.o(i.SysCtrl_SelectXO), (32 bytes).
+    Removing bluenrg1_sysctrl.o(i.SysCtrl_WakeupFromIo), (36 bytes).
+    Removing bluenrg1_uart.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_uart.o(.revsh_text), (4 bytes).
+    Removing bluenrg1_uart.o(i.UART_BreakCmd), (24 bytes).
+    Removing bluenrg1_uart.o(i.UART_ClearFlag), (12 bytes).
+    Removing bluenrg1_uart.o(i.UART_ClearITPendingBit), (12 bytes).
+    Removing bluenrg1_uart.o(i.UART_DMACmd), (24 bytes).
+    Removing bluenrg1_uart.o(i.UART_DeInit), (64 bytes).
+    Removing bluenrg1_uart.o(i.UART_GetITStatus), (20 bytes).
+    Removing bluenrg1_uart.o(i.UART_ITConfig), (24 bytes).
+    Removing bluenrg1_uart.o(i.UART_ReceiveData), (12 bytes).
+    Removing bluenrg1_uart.o(i.UART_RequestToSendCmd), (24 bytes).
+    Removing bluenrg1_uart.o(i.UART_RxSwFlowControlMode), (24 bytes).
+    Removing bluenrg1_uart.o(i.UART_SpecialCharDetect), (28 bytes).
+    Removing bluenrg1_uart.o(i.UART_StructInit), (26 bytes).
+    Removing bluenrg1_uart.o(i.UART_SwFlowControl), (28 bytes).
+    Removing bluenrg1_uart.o(i.UART_TimeoutConfig), (12 bytes).
+    Removing bluenrg1_uart.o(i.UART_TxFifoIrqLevelConfig), (24 bytes).
+    Removing bluenrg1_uart.o(i.UART_TxSwFlowControlMode), (24 bytes).
+    Removing bluenrg1_uart.o(i.UART_Xoff1Char), (12 bytes).
+    Removing bluenrg1_uart.o(i.UART_Xoff2Char), (12 bytes).
+    Removing bluenrg1_uart.o(i.UART_Xon1Char), (12 bytes).
+    Removing bluenrg1_uart.o(i.UART_Xon2Char), (12 bytes).
+    Removing bluenrg1_uart.o(i.UART_XonAnyBit), (28 bytes).
+    Removing bluenrg1_wdg.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_wdg.o(.revsh_text), (4 bytes).
+    Removing bluenrg1_wdg.o(i.WDG_ClearITPendingBit), (16 bytes).
+    Removing bluenrg1_wdg.o(i.WDG_Enable), (24 bytes).
+    Removing bluenrg1_wdg.o(i.WDG_GetCounter), (12 bytes).
+    Removing bluenrg1_wdg.o(i.WDG_GetITStatus), (20 bytes).
+    Removing bluenrg1_wdg.o(i.WDG_GetWriteAccess), (20 bytes).
+    Removing bluenrg1_wdg.o(i.WDG_ITConfig), (28 bytes).
+    Removing bluenrg1_wdg.o(i.WDG_SetReload), (12 bytes).
+    Removing bluenrg1_wdg.o(i.WDG_SetWriteAccess), (20 bytes).
+    Removing misc.o(.rev16_text), (4 bytes).
+    Removing misc.o(.revsh_text), (4 bytes).
+    Removing misc.o(i.NVIC_Init), (136 bytes).
+    Removing misc.o(i.SysTick_State), (28 bytes).
+    Removing misc.o(i.SystemSleepCmd), (24 bytes).
+    Removing bluenrg1_pka.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_pka.o(.revsh_text), (4 bytes).
+    Removing bluenrg1_pka.o(i.PKA_ClearITPendingBit), (8 bytes).
+    Removing bluenrg1_pka.o(i.PKA_GetFlagStatus), (18 bytes).
+    Removing bluenrg1_pka.o(i.PKA_GetProcessStatus), (12 bytes).
+    Removing bluenrg1_pka.o(i.PKA_ITConfig), (26 bytes).
+    Removing bluenrg1_pka.o(i.PKA_Reset), (20 bytes).
+    Removing lps25hb.o(.rev16_text), (4 bytes).
+    Removing lps25hb.o(.revsh_text), (4 bytes).
+    Removing lps25hb.o(i.LPS25HB_GetPressure), (84 bytes).
+    Removing lps25hb.o(i.LPS25HB_GetTemperature), (76 bytes).
+    Removing lps25hb.o(i.LPS25HB_Init), (204 bytes).
+    Removing lps25hb.o(i.LPS25HB_PowerOff), (56 bytes).
+    Removing lps25hb.o(i.LPS25HB_ReadID), (28 bytes).
+    Removing lps25hb.o(i.LPS25HB_RebootCmd), (56 bytes).
+    Removing lps25hb.o(i.LPS25HB_SlaveAddrRemap), (20 bytes).
+    Removing lps25hb.o(.data), (52 bytes).
+    Removing lps25hb.o(.data), (1 bytes).
+    Removing lsm6ds3.o(.rev16_text), (4 bytes).
+    Removing lsm6ds3.o(.revsh_text), (4 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_Common_Sensor_Enable), (100 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_Disable_Free_Fall_Detection), (84 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_Enable_Free_Fall_Detection), (188 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_G_GetAxes), (104 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_G_GetAxesRaw), (94 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_G_GetSensitivity), (132 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_G_Get_FS), (132 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_G_Get_ODR), (136 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_G_Set_Axes_Status), (98 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_G_Set_FS), (176 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_G_Set_ODR), (164 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_Get_Status_Free_Fall_Detection), (54 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_Init), (384 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_Read_XG_ID), (20 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_X_GetAxes), (104 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_X_GetAxesRaw), (94 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_X_GetSensitivity), (92 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_X_Get_FS), (84 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_X_Get_ODR), (152 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_X_Set_Axes_Status), (98 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_X_Set_FS), (92 bytes).
+    Removing lsm6ds3.o(i.LSM6DS3_X_Set_ODR), (192 bytes).
+    Removing lsm6ds3.o(.constdata), (3 bytes).
+    Removing lsm6ds3.o(.data), (64 bytes).
+    Removing lsm6ds3.o(.data), (12 bytes).
+    Removing sdk_eval_button.o(.rev16_text), (4 bytes).
+    Removing sdk_eval_button.o(.revsh_text), (4 bytes).
+    Removing sdk_eval_button.o(i.Get_ButtonGpioPin), (44 bytes).
+    Removing sdk_eval_button.o(i.SdkEvalPushButtonClearITPendingBit), (12 bytes).
+    Removing sdk_eval_button.o(i.SdkEvalPushButtonGetITPendingBit), (12 bytes).
+    Removing sdk_eval_button.o(i.SdkEvalPushButtonGetState), (18 bytes).
+    Removing sdk_eval_button.o(i.SdkEvalPushButtonInit), (38 bytes).
+    Removing sdk_eval_button.o(i.SdkEvalPushButtonIrq), (66 bytes).
+    Removing sdk_eval_com.o(.rev16_text), (4 bytes).
+    Removing sdk_eval_com.o(.revsh_text), (4 bytes).
+    Removing sdk_eval_com.o(i.Read_Buffer_Pop), (48 bytes).
+    Removing sdk_eval_com.o(i.Read_Buffer_Push), (36 bytes).
+    Removing sdk_eval_com.o(i.SdkEvalComIOConfig), (28 bytes).
+    Removing sdk_eval_com.o(i.SdkEvalComIOProcessInputData), (26 bytes).
+    Removing sdk_eval_com.o(i.SdkEvalComIOReceiveData), (16 bytes).
+    Removing sdk_eval_com.o(i.SdkEvalComIOTxFifoNotEmpty), (20 bytes).
+    Removing sdk_eval_com.o(i.SdkEvalComIOUartIrqHandler), (42 bytes).
+    Removing sdk_eval_com.o(i.SdkEvalComUartIrqConfig), (32 bytes).
+    Removing sdk_eval_com.o(i.__io_getcharNonBlocking), (28 bytes).
+    Removing sdk_eval_com.o(i.fgetc), (18 bytes).
+    Removing sdk_eval_com.o(.bss), (1024 bytes).
+    Removing sdk_eval_com.o(.data), (16 bytes).
+    Removing sdk_eval_config.o(.rev16_text), (4 bytes).
+    Removing sdk_eval_config.o(.revsh_text), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (8 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (12 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.constdata), (4 bytes).
+    Removing sdk_eval_config.o(.data), (4 bytes).
+    Removing sdk_eval_config.o(.data), (4 bytes).
+    Removing sdk_eval_config.o(.data), (4 bytes).
+    Removing sdk_eval_i2c.o(.rev16_text), (4 bytes).
+    Removing sdk_eval_i2c.o(.revsh_text), (4 bytes).
+    Removing sdk_eval_i2c.o(i.DmaI2CHandlerCallback), (152 bytes).
+    Removing sdk_eval_i2c.o(i.IrqI2CHandlerCallback), (68 bytes).
+    Removing sdk_eval_i2c.o(i.SdkEvalI2CDmaInit), (404 bytes).
+    Removing sdk_eval_i2c.o(i.SdkEvalI2CDmaRead), (392 bytes).
+    Removing sdk_eval_i2c.o(i.SdkEvalI2CDmaWrite), (236 bytes).
+    Removing sdk_eval_i2c.o(i.SdkEvalI2CInit), (220 bytes).
+    Removing sdk_eval_i2c.o(i.SdkEvalI2CIrqInit), (252 bytes).
+    Removing sdk_eval_i2c.o(i.SdkEvalI2CIrqRead), (216 bytes).
+    Removing sdk_eval_i2c.o(i.SdkEvalI2CIrqWrite), (164 bytes).
+    Removing sdk_eval_i2c.o(i.SdkEvalI2CRead), (324 bytes).
+    Removing sdk_eval_i2c.o(i.SdkEvalI2CWrite), (216 bytes).
+    Removing sdk_eval_i2c.o(.bss), (20 bytes).
+    Removing sdk_eval_i2c.o(.data), (1 bytes).
+    Removing sdk_eval_led.o(.rev16_text), (4 bytes).
+    Removing sdk_eval_led.o(.revsh_text), (4 bytes).
+    Removing sdk_eval_led.o(i.Get_LedGpioPin), (68 bytes).
+    Removing sdk_eval_led.o(i.SdkEvalLedGetState), (22 bytes).
+    Removing sdk_eval_led.o(i.SdkEvalLedInit), (46 bytes).
+    Removing sdk_eval_led.o(i.SdkEvalLedOff), (14 bytes).
+    Removing sdk_eval_led.o(i.SdkEvalLedOn), (14 bytes).
+    Removing sdk_eval_led.o(i.SdkEvalLedToggle), (12 bytes).
+    Removing sdk_eval_spi.o(.rev16_text), (4 bytes).
+    Removing sdk_eval_spi.o(.revsh_text), (4 bytes).
+    Removing sdk_eval_spi.o(i.DmaSpiHandlerCallback), (80 bytes).
+    Removing sdk_eval_spi.o(i.IrqSpiHandlerCallback), (164 bytes).
+    Removing sdk_eval_spi.o(i.SdkEvalSpiDmaInit), (312 bytes).
+    Removing sdk_eval_spi.o(i.SdkEvalSpiDmaRead), (140 bytes).
+    Removing sdk_eval_spi.o(i.SdkEvalSpiDmaWrite), (108 bytes).
+    Removing sdk_eval_spi.o(i.SdkEvalSpiInit), (272 bytes).
+    Removing sdk_eval_spi.o(i.SdkEvalSpiIrqInit), (228 bytes).
+    Removing sdk_eval_spi.o(i.SdkEvalSpiIrqRead), (104 bytes).
+    Removing sdk_eval_spi.o(i.SdkEvalSpiIrqWrite), (104 bytes).
+    Removing sdk_eval_spi.o(i.SdkEvalSpiRead), (144 bytes).
+    Removing sdk_eval_spi.o(i.SdkEvalSpiWrite), (92 bytes).
+    Removing sdk_eval_spi.o(.bss), (20 bytes).
+    Removing sdk_eval_spi.o(.data), (12 bytes).
+    Removing system_bluenrg1.o(.rev16_text), (4 bytes).
+    Removing system_bluenrg1.o(.revsh_text), (4 bytes).
+    Removing system_bluenrg1.o(i.ADV_Handler), (2 bytes).
+    Removing system_bluenrg1.o(i.BATTERY_LOW_Handler), (2 bytes).
+    Removing system_bluenrg1.o(i.HardFault_Handler), (2 bytes).
+    Removing system_bluenrg1.o(i.NMI_Handler), (2 bytes).
+    Removing system_bluenrg1.o(i.SVC_Handler), (2 bytes).
+    Removing system_bluenrg1.o(i.SysTick_Handler), (2 bytes).
+    Removing system_bluenrg1.o(.ota_sw_activation), (4 bytes).
+    Removing bluenrg1_it.o(.rev16_text), (4 bytes).
+    Removing bluenrg1_it.o(.revsh_text), (4 bytes).
+    Removing pka_main.o(.rev16_text), (4 bytes).
+    Removing pka_main.o(.revsh_text), (4 bytes).
+    Removing lsm6ds3.o(i.__ARM_common_switch8), (26 bytes).
+
+349 unused section(s) (total 15171 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/../cmprslib/zerorunl.c           0x00000000   Number         0  __dczerorl.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry6.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0_sigfpe.o ABSOLUTE
+    ../clib/angel/scatterp.s                 0x00000000   Number         0  __scatter.o ABSOLUTE
+    ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  tempstk.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdiv_div0.o ABSOLUTE
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdiv.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit4.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/memcpset.c                       0x00000000   Number         0  rt_memcpy.o ABSOLUTE
+    ../clib/memcpset.c                       0x00000000   Number         0  rt_memcpy.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __2printf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  noretval__2printf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char_file.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  ferror.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  ferror_locked.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
+    ../fplib/cfplib/d2f.c                    0x00000000   Number         0  d2f.o ABSOLUTE
+    ../fplib/cfplib/daddsub.c                0x00000000   Number         0  daddsub.o ABSOLUTE
+    ../fplib/cfplib/dmul.c                   0x00000000   Number         0  dmul.o ABSOLUTE
+    ../fplib/cfplib/f2d.c                    0x00000000   Number         0  f2d.o ABSOLUTE
+    ../fplib/cfplib/fdiv.c                   0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/cfplib/ffix.c                   0x00000000   Number         0  ffixi.o ABSOLUTE
+    ../fplib/cfplib/fflt.c                   0x00000000   Number         0  fflti.o ABSOLUTE
+    ../fplib/cfplib/fpinit.c                 0x00000000   Number         0  fpinit.o ABSOLUTE
+    ../fplib/cfplib/scalbn.c                 0x00000000   Number         0  fscalbn.o ABSOLUTE
+    ../fplib/faddsub6m.s                     0x00000000   Number         0  faddsub.o ABSOLUTE
+    ../fplib/fmul6m.s                        0x00000000   Number         0  fmul.o ABSOLUTE
+    ../fplib/usenofp.s                       0x00000000   Number         0  usenofp.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_adc.c 0x00000000   Number         0  bluenrg1_adc.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_dma.c 0x00000000   Number         0  bluenrg1_dma.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_flash.c 0x00000000   Number         0  bluenrg1_flash.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_gpio.c 0x00000000   Number         0  bluenrg1_gpio.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_i2c.c 0x00000000   Number         0  bluenrg1_i2c.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_mft.c 0x00000000   Number         0  bluenrg1_mft.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_pka.c 0x00000000   Number         0  bluenrg1_pka.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_rng.c 0x00000000   Number         0  bluenrg1_rng.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_rtc.c 0x00000000   Number         0  bluenrg1_rtc.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_spi.c 0x00000000   Number         0  bluenrg1_spi.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_sysCtrl.c 0x00000000   Number         0  bluenrg1_sysctrl.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_uart.c 0x00000000   Number         0  bluenrg1_uart.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_wdg.c 0x00000000   Number         0  bluenrg1_wdg.o ABSOLUTE
+    ..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\misc.c 0x00000000   Number         0  misc.o ABSOLUTE
+    ..\..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Source\system_bluenrg1.c 0x00000000   Number         0  system_bluenrg1.o ABSOLUTE
+    ..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\src\LPS25HB.c 0x00000000   Number         0  lps25hb.o ABSOLUTE
+    ..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\src\LSM6DS3.c 0x00000000   Number         0  lsm6ds3.o ABSOLUTE
+    ..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\src\SDK_EVAL_Button.c 0x00000000   Number         0  sdk_eval_button.o ABSOLUTE
+    ..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\src\SDK_EVAL_Com.c 0x00000000   Number         0  sdk_eval_com.o ABSOLUTE
+    ..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\src\SDK_EVAL_Config.c 0x00000000   Number         0  sdk_eval_config.o ABSOLUTE
+    ..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\src\SDK_EVAL_I2C.c 0x00000000   Number         0  sdk_eval_i2c.o ABSOLUTE
+    ..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\src\SDK_EVAL_Led.c 0x00000000   Number         0  sdk_eval_led.o ABSOLUTE
+    ..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\src\SDK_EVAL_SPI.c 0x00000000   Number         0  sdk_eval_spi.o ABSOLUTE
+    ..\..\BlueNRG1_it.c                      0x00000000   Number         0  bluenrg1_it.o ABSOLUTE
+    ..\..\PKA_main.c                         0x00000000   Number         0  pka_main.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\BlueNRG1_adc.c 0x00000000   Number         0  bluenrg1_adc.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\BlueNRG1_dma.c 0x00000000   Number         0  bluenrg1_dma.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\BlueNRG1_flash.c 0x00000000   Number         0  bluenrg1_flash.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\BlueNRG1_gpio.c 0x00000000   Number         0  bluenrg1_gpio.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\BlueNRG1_i2c.c 0x00000000   Number         0  bluenrg1_i2c.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\BlueNRG1_mft.c 0x00000000   Number         0  bluenrg1_mft.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\BlueNRG1_pka.c 0x00000000   Number         0  bluenrg1_pka.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\BlueNRG1_rng.c 0x00000000   Number         0  bluenrg1_rng.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\BlueNRG1_rtc.c 0x00000000   Number         0  bluenrg1_rtc.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\BlueNRG1_spi.c 0x00000000   Number         0  bluenrg1_spi.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\BlueNRG1_sysCtrl.c 0x00000000   Number         0  bluenrg1_sysctrl.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\BlueNRG1_uart.c 0x00000000   Number         0  bluenrg1_uart.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\BlueNRG1_wdg.c 0x00000000   Number         0  bluenrg1_wdg.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\BlueNRG1_Periph_Driver\\src\\misc.c 0x00000000   Number         0  misc.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\CMSIS\\Device\\ST\\BlueNRG1\\Source\\system_bluenrg1.c 0x00000000   Number         0  system_bluenrg1.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\SDK_Eval_BlueNRG1\\src\\LPS25HB.c 0x00000000   Number         0  lps25hb.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\SDK_Eval_BlueNRG1\\src\\LSM6DS3.c 0x00000000   Number         0  lsm6ds3.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\SDK_Eval_BlueNRG1\\src\\SDK_EVAL_Button.c 0x00000000   Number         0  sdk_eval_button.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\SDK_Eval_BlueNRG1\\src\\SDK_EVAL_Com.c 0x00000000   Number         0  sdk_eval_com.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\SDK_Eval_BlueNRG1\\src\\SDK_EVAL_Config.c 0x00000000   Number         0  sdk_eval_config.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\SDK_Eval_BlueNRG1\\src\\SDK_EVAL_I2C.c 0x00000000   Number         0  sdk_eval_i2c.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\SDK_Eval_BlueNRG1\\src\\SDK_EVAL_Led.c 0x00000000   Number         0  sdk_eval_led.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\SDK_Eval_BlueNRG1\\src\\SDK_EVAL_SPI.c 0x00000000   Number         0  sdk_eval_spi.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\Library\\hal\\src\\context_switch.s 0x00000000   Number         0  context_switch.o ABSOLUTE
+    ..\\..\\BlueNRG1_it.c                    0x00000000   Number         0  bluenrg1_it.o ABSOLUTE
+    ..\\..\\PKA_main.c                       0x00000000   Number         0  pka_main.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    .intvec                                  0x10040000   Section      192  system_bluenrg1.o(.intvec)
+    __tagsym$$used                           0x10040000   Number         0  system_bluenrg1.o(.intvec)
+    !!!main                                  0x100400c0   Section        8  __main.o(!!!main)
+    !!!scatter                               0x100400c8   Section       60  __scatter.o(!!!scatter)
+    !!handler_copy                           0x10040104   Section       26  __scatter_copy.o(!!handler_copy)
+    !!handler_zi                             0x10040120   Section       28  __scatter_zi.o(!!handler_zi)
+    . text                                   0x1004013c   Section      108  context_switch.o(. text)
+    .ARM.Collect$$libinit$$00000000          0x100401a8   Section        2  libinit.o(.ARM.Collect$$libinit$$00000000)
+    .ARM.Collect$$libinit$$00000002          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    .ARM.Collect$$libinit$$00000004          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    .ARM.Collect$$libinit$$0000000A          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    .ARM.Collect$$libinit$$0000000C          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    .ARM.Collect$$libinit$$0000000E          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    .ARM.Collect$$libinit$$00000011          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    .ARM.Collect$$libinit$$00000013          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    .ARM.Collect$$libinit$$00000015          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    .ARM.Collect$$libinit$$00000017          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    .ARM.Collect$$libinit$$00000019          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    .ARM.Collect$$libinit$$0000001B          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    .ARM.Collect$$libinit$$0000001D          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    .ARM.Collect$$libinit$$0000001F          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    .ARM.Collect$$libinit$$00000021          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    .ARM.Collect$$libinit$$00000023          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    .ARM.Collect$$libinit$$00000025          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    .ARM.Collect$$libinit$$0000002C          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    .ARM.Collect$$libinit$$0000002E          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    .ARM.Collect$$libinit$$00000030          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    .ARM.Collect$$libinit$$00000032          0x100401aa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    .ARM.Collect$$libinit$$00000033          0x100401aa   Section        2  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    .ARM.Collect$$libshutdown$$00000000      0x100401ac   Section        2  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    .ARM.Collect$$libshutdown$$00000002      0x100401ae   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    .ARM.Collect$$libshutdown$$00000004      0x100401ae   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    .ARM.Collect$$libshutdown$$00000007      0x100401ae   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
+    .ARM.Collect$$libshutdown$$0000000A      0x100401ae   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
+    .ARM.Collect$$libshutdown$$0000000C      0x100401ae   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    .ARM.Collect$$libshutdown$$0000000F      0x100401ae   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    .ARM.Collect$$libshutdown$$00000010      0x100401ae   Section        2  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
+    .ARM.Collect$$rtentry$$00000000          0x100401b0   Section        0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    .ARM.Collect$$rtentry$$00000002          0x100401b0   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    .ARM.Collect$$rtentry$$00000006          0x100401b0   Section        4  __rtentry6.o(.ARM.Collect$$rtentry$$00000006)
+    .ARM.Collect$$rtentry$$00000009          0x100401b4   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    .ARM.Collect$$rtentry$$0000000A          0x100401b4   Section        4  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    .ARM.Collect$$rtentry$$0000000C          0x100401b8   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    .ARM.Collect$$rtentry$$0000000D          0x100401b8   Section        8  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    .ARM.Collect$$rtentry$$00002717          0x100401c0   Section        4  __rtentry6.o(.ARM.Collect$$rtentry$$00002717)
+    __lit__00000000                          0x100401c0   Data           4  __rtentry6.o(.ARM.Collect$$rtentry$$00002717)
+    .ARM.Collect$$rtexit$$00000000           0x100401c4   Section        2  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    .ARM.Collect$$rtexit$$00000002           0x100401c6   Section        0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    .ARM.Collect$$rtexit$$00000003           0x100401c6   Section        4  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    .ARM.Collect$$rtexit$$00000004           0x100401ca   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    .emb_text                                0x100401d0   Section       56  rt_memcpy.o(.emb_text)
+    .text                                    0x10040208   Section        0  noretval__2printf.o(.text)
+    .text                                    0x10040224   Section      346  aeabi_sdiv.o(.text)
+    .text                                    0x10040380   Section        0  _printf_char_file.o(.text)
+    .text                                    0x100403a8   Section        0  _printf_char_common.o(.text)
+    _printf_input_char                       0x100403a9   Thumb Code    10  _printf_char_common.o(.text)
+    .text                                    0x100403d8   Section        0  ferror.o(.text)
+    .text                                    0x100403e0   Section        0  __printf_nopercent.o(.text)
+    .text                                    0x10040404   Section        0  exit.o(.text)
+    .text                                    0x10040414   Section        0  sys_exit.o(.text)
+    .text                                    0x10040420   Section        2  use_no_semi.o(.text)
+    .text                                    0x10040422   Section        0  indicate_semi.o(.text)
+    .text                                    0x10040422   Section        0  __dczerorl.o(.text)
+    i.ADC_Handler                            0x1004045c   Section        0  system_bluenrg1.o(i.ADC_Handler)
+    i.Blue_Handler                           0x1004045e   Section        0  system_bluenrg1.o(i.Blue_Handler)
+    i.DMA_Handler                            0x10040460   Section        0  system_bluenrg1.o(i.DMA_Handler)
+    i.DeviceConfiguration                    0x10040464   Section        0  system_bluenrg1.o(i.DeviceConfiguration)
+    i.GPIO_Handler                           0x10040548   Section        0  system_bluenrg1.o(i.GPIO_Handler)
+    i.GPIO_Init                              0x1004054a   Section        0  bluenrg1_gpio.o(i.GPIO_Init)
+    i.GenerateRandomK16Word                  0x100405de   Section        0  pka_main.o(i.GenerateRandomK16Word)
+    i.HardFault_Handler                      0x10040624   Section        0  bluenrg1_it.o(i.HardFault_Handler)
+    i.I2C1_Handler                           0x10040626   Section        0  system_bluenrg1.o(i.I2C1_Handler)
+    i.I2C2_Handler                           0x10040628   Section        0  system_bluenrg1.o(i.I2C2_Handler)
+    i.MFT1A_Handler                          0x1004062a   Section        0  system_bluenrg1.o(i.MFT1A_Handler)
+    i.MFT1B_Handler                          0x1004062c   Section        0  system_bluenrg1.o(i.MFT1B_Handler)
+    i.MFT2A_Handler                          0x1004062e   Section        0  system_bluenrg1.o(i.MFT2A_Handler)
+    i.MFT2B_Handler                          0x10040630   Section        0  system_bluenrg1.o(i.MFT2B_Handler)
+    i.NMI_Handler                            0x10040632   Section        0  bluenrg1_it.o(i.NMI_Handler)
+    i.NVIC_SetPriority                       0x10040634   Section        0  system_bluenrg1.o(i.NVIC_SetPriority)
+    NVIC_SetPriority                         0x10040635   Thumb Code    60  system_bluenrg1.o(i.NVIC_SetPriority)
+    i.NVM_Handler                            0x10040678   Section        0  system_bluenrg1.o(i.NVM_Handler)
+    i.PKA_GetData                            0x1004067c   Section        0  bluenrg1_pka.o(i.PKA_GetData)
+    i.PKA_Handler                            0x100406b0   Section        0  system_bluenrg1.o(i.PKA_Handler)
+    i.PKA_SetData                            0x100406b4   Section        0  bluenrg1_pka.o(i.PKA_SetData)
+    i.PKA_StartProcessing                    0x100406f0   Section        0  bluenrg1_pka.o(i.PKA_StartProcessing)
+    i.PKA_VerifyProcess                      0x10040704   Section        0  bluenrg1_pka.o(i.PKA_VerifyProcess)
+    i.PKA_WaitProcess                        0x10040714   Section        0  bluenrg1_pka.o(i.PKA_WaitProcess)
+    i.PendSV_Handler                         0x10040720   Section        0  system_bluenrg1.o(i.PendSV_Handler)
+    i.PkaFailure                             0x10040724   Section        0  pka_main.o(i.PkaFailure)
+    i.RESET_HANDLER                          0x1004073c   Section        0  system_bluenrg1.o(i.RESET_HANDLER)
+    i.RNG_GetFlagStatus                      0x1004075c   Section        0  bluenrg1_rng.o(i.RNG_GetFlagStatus)
+    i.RTC_Handler                            0x1004076a   Section        0  system_bluenrg1.o(i.RTC_Handler)
+    i.SPI_Handler                            0x1004076c   Section        0  system_bluenrg1.o(i.SPI_Handler)
+    i.SVC_Handler                            0x1004076e   Section        0  bluenrg1_it.o(i.SVC_Handler)
+    i.SdkEvalComIOSendData                   0x10040770   Section        0  sdk_eval_com.o(i.SdkEvalComIOSendData)
+    i.SdkEvalComUartInit                     0x10040788   Section        0  sdk_eval_com.o(i.SdkEvalComUartInit)
+    i.SdkEvalGetVersion                      0x10040828   Section        0  sdk_eval_config.o(i.SdkEvalGetVersion)
+    i.SdkEvalIdentification                  0x10040834   Section        0  sdk_eval_config.o(i.SdkEvalIdentification)
+    i.SysCtrl_PeripheralClockCmd             0x10040840   Section        0  bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd)
+    i.SysTick_Handler                        0x10040858   Section        0  bluenrg1_it.o(i.SysTick_Handler)
+    i.SystemInit                             0x1004085c   Section        0  system_bluenrg1.o(i.SystemInit)
+    i.UART_Cmd                               0x10040914   Section        0  bluenrg1_uart.o(i.UART_Cmd)
+    i.UART_GetFlagStatus                     0x10040930   Section        0  bluenrg1_uart.o(i.UART_GetFlagStatus)
+    i.UART_Handler                           0x1004094c   Section        0  system_bluenrg1.o(i.UART_Handler)
+    i.UART_Init                              0x10040950   Section        0  bluenrg1_uart.o(i.UART_Init)
+    i.UART_RxFifoIrqLevelConfig              0x10040a78   Section        0  bluenrg1_uart.o(i.UART_RxFifoIrqLevelConfig)
+    i.UART_SendData                          0x10040a90   Section        0  bluenrg1_uart.o(i.UART_SendData)
+    i.WDG_Handler                            0x10040aa0   Section        0  system_bluenrg1.o(i.WDG_Handler)
+    i.__low_level_init                       0x10040aa4   Section        0  system_bluenrg1.o(i.__low_level_init)
+    i.fputc                                  0x10040ad4   Section        0  sdk_eval_com.o(i.fputc)
+    i.main                                   0x10040ae0   Section        0  pka_main.o(i.main)
+    .constdata                               0x10040be0   Section        4  sdk_eval_config.o(.constdata)
+    .constdata                               0x10040be4   Section        4  sdk_eval_config.o(.constdata)
+    .constdata                               0x10040be8   Section        4  sdk_eval_config.o(.constdata)
+    .constdata                               0x10040bec   Section        4  sdk_eval_config.o(.constdata)
+    .constdata                               0x10040bf0   Section       64  pka_main.o(.constdata)
+    .savedMSP                                0x20000008   Section        4  system_bluenrg1.o(.savedMSP)
+    __tagsym$$used                           0x20000008   Number         0  system_bluenrg1.o(.savedMSP)
+    .wakeupFromSleepFlag                     0x2000000c   Section        1  system_bluenrg1.o(.wakeupFromSleepFlag)
+    __tagsym$$used                           0x2000000c   Number         0  system_bluenrg1.o(.wakeupFromSleepFlag)
+    .app_base                                0x20000010   Section        4  system_bluenrg1.o(.app_base)
+    __tagsym$$used                           0x20000010   Number         0  system_bluenrg1.o(.app_base)
+    .__blueflag_RAM                          0x20000030   Section        4  system_bluenrg1.o(.__blueflag_RAM)
+    __tagsym$$used                           0x20000030   Number         0  system_bluenrg1.o(.__blueflag_RAM)
+    .bss.__blue_RAM                          0x200000c0   Section      524  system_bluenrg1.o(.bss.__blue_RAM)
+    __blue_RAM                               0x200000c0   Data         524  system_bluenrg1.o(.bss.__blue_RAM)
+    __tagsym$$used                           0x200000c0   Number         0  system_bluenrg1.o(.bss.__blue_RAM)
+    .data                                    0x200002cc   Section        4  sdk_eval_com.o(.data)
+    .data                                    0x200002d0   Section        1  sdk_eval_config.o(.data)
+    s_SdkEvalVersion                         0x200002d0   Data           1  sdk_eval_config.o(.data)
+    .data                                    0x200002d4   Section        4  system_bluenrg1.o(.data)
+    .data                                    0x200002d8   Section        4  system_bluenrg1.o(.data)
+    .data                                    0x200002dc   Section        4  system_bluenrg1.o(.data)
+    .bss                                     0x200002e0   Section      256  pka_main.o(.bss)
+    Public_Key_Out_A                         0x200002e0   Data          64  pka_main.o(.bss)
+    Public_Key_Out_B                         0x20000320   Data          64  pka_main.o(.bss)
+    RandomKA                                 0x20000360   Data          64  pka_main.o(.bss)
+    RandomKB                                 0x200003a0   Data          64  pka_main.o(.bss)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$UX$STANDARDLIB$REQ8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  pka_main.o ABSOLUTE
+    Image$$ZI$$Limit                          - Undefined Weak Reference
+    __ARM_exceptions_init                     - Undefined Weak Reference
+    __alloca_initialize                       - Undefined Weak Reference
+    __arm_preinit_                            - Undefined Weak Reference
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __rt_locale                               - Undefined Weak Reference
+    __sigvec_lookup                           - Undefined Weak Reference
+    _atexit_init                              - Undefined Weak Reference
+    _call_atexit_fns                          - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _fp_trap_init                             - Undefined Weak Reference
+    _fp_trap_shutdown                         - Undefined Weak Reference
+    _get_lc_collate                           - Undefined Weak Reference
+    _get_lc_ctype                             - Undefined Weak Reference
+    _get_lc_monetary                          - Undefined Weak Reference
+    _get_lc_numeric                           - Undefined Weak Reference
+    _get_lc_time                              - Undefined Weak Reference
+    _getenv_init                              - Undefined Weak Reference
+    _handle_redirection                       - Undefined Weak Reference
+    _init_alloc                               - Undefined Weak Reference
+    _init_user_alloc                          - Undefined Weak Reference
+    _initio                                   - Undefined Weak Reference
+    _mutex_acquire                            - Undefined Weak Reference
+    _mutex_release                            - Undefined Weak Reference
+    _rand_init                                - Undefined Weak Reference
+    _signal_finish                            - Undefined Weak Reference
+    _signal_init                              - Undefined Weak Reference
+    _terminate_alloc                          - Undefined Weak Reference
+    _terminate_user_alloc                     - Undefined Weak Reference
+    _terminateio                              - Undefined Weak Reference
+    __vector_table                           0x10040000   Data         192  system_bluenrg1.o(.intvec)
+    __main                                   0x100400c1   Thumb Code     8  __main.o(!!!main)
+    __scatterload                            0x100400c9   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_rt2                        0x100400c9   Thumb Code    52  __scatter.o(!!!scatter)
+    __scatterload_rt2_thumb_only             0x100400c9   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_null                       0x100400d9   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_copy                       0x10040105   Thumb Code    26  __scatter_copy.o(!!handler_copy)
+    __scatterload_zeroinit                   0x10040121   Thumb Code    28  __scatter_zi.o(!!handler_zi)
+    CS_contextSave                           0x1004013d   Thumb Code    50  context_switch.o(. text)
+    CS_contextRestore                        0x1004016f   Thumb Code    20  context_switch.o(. text)
+    BlueNRG_IdleSleep                        0x10040183   Thumb Code     8  context_switch.o(. text)
+    __rt_lib_init                            0x100401a9   Thumb Code     0  libinit.o(.ARM.Collect$$libinit$$00000000)
+    __rt_lib_init_alloca_1                   0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    __rt_lib_init_argv_1                     0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    __rt_lib_init_atexit_1                   0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    __rt_lib_init_clock_1                    0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    __rt_lib_init_cpp_1                      0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    __rt_lib_init_exceptions_1               0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    __rt_lib_init_fp_1                       0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    __rt_lib_init_fp_trap_1                  0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    __rt_lib_init_getenv_1                   0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    __rt_lib_init_heap_1                     0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    __rt_lib_init_lc_collate_1               0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    __rt_lib_init_lc_ctype_1                 0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    __rt_lib_init_lc_monetary_1              0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    __rt_lib_init_lc_numeric_1               0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    __rt_lib_init_lc_time_1                  0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    __rt_lib_init_preinit_1                  0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    __rt_lib_init_rand_1                     0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    __rt_lib_init_return                     0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    __rt_lib_init_signal_1                   0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    __rt_lib_init_stdio_1                    0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    __rt_lib_init_user_alloc_1               0x100401ab   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    __rt_lib_shutdown                        0x100401ad   Thumb Code     0  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    __rt_lib_shutdown_cpp_1                  0x100401af   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    __rt_lib_shutdown_fp_trap_1              0x100401af   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
+    __rt_lib_shutdown_heap_1                 0x100401af   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    __rt_lib_shutdown_return                 0x100401af   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
+    __rt_lib_shutdown_signal_1               0x100401af   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
+    __rt_lib_shutdown_stdio_1                0x100401af   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    __rt_lib_shutdown_user_alloc_1           0x100401af   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    __rt_entry                               0x100401b1   Thumb Code     0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    __rt_entry_presh_1                       0x100401b1   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    __rt_entry_sh                            0x100401b1   Thumb Code     0  __rtentry6.o(.ARM.Collect$$rtentry$$00000006)
+    __rt_entry_li                            0x100401b5   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    __rt_entry_postsh_1                      0x100401b5   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    __rt_entry_main                          0x100401b9   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    __rt_entry_postli_1                      0x100401b9   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    __rt_exit                                0x100401c5   Thumb Code     0  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    __rt_exit_ls                             0x100401c7   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    __rt_exit_prels_1                        0x100401c7   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    __rt_exit_exit                           0x100401cb   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    __aeabi_memcpy4                          0x100401d1   Thumb Code    56  rt_memcpy.o(.emb_text)
+    __aeabi_memcpy8                          0x100401d1   Thumb Code     0  rt_memcpy.o(.emb_text)
+    __2printf                                0x10040209   Thumb Code    22  noretval__2printf.o(.text)
+    __aeabi_uidiv                            0x10040225   Thumb Code     0  aeabi_sdiv.o(.text)
+    __aeabi_uidivmod                         0x10040225   Thumb Code    20  aeabi_sdiv.o(.text)
+    __aeabi_idiv                             0x10040239   Thumb Code     0  aeabi_sdiv.o(.text)
+    __aeabi_idivmod                          0x10040239   Thumb Code   326  aeabi_sdiv.o(.text)
+    _printf_char_file                        0x10040381   Thumb Code    34  _printf_char_file.o(.text)
+    _printf_char_common                      0x100403b3   Thumb Code    32  _printf_char_common.o(.text)
+    ferror                                   0x100403d9   Thumb Code     8  ferror.o(.text)
+    __printf                                 0x100403e1   Thumb Code    36  __printf_nopercent.o(.text)
+    exit                                     0x10040405   Thumb Code    16  exit.o(.text)
+    _sys_exit                                0x10040415   Thumb Code     8  sys_exit.o(.text)
+    __I$use$semihosting                      0x10040421   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x10040421   Thumb Code     2  use_no_semi.o(.text)
+    __decompress                             0x10040423   Thumb Code     0  __dczerorl.o(.text)
+    __decompress0                            0x10040423   Thumb Code    58  __dczerorl.o(.text)
+    __semihosting_library_function           0x10040423   Thumb Code     0  indicate_semi.o(.text)
+    ADC_Handler                              0x1004045d   Thumb Code     2  system_bluenrg1.o(i.ADC_Handler)
+    Blue_Handler                             0x1004045f   Thumb Code     2  system_bluenrg1.o(i.Blue_Handler)
+    DMA_Handler                              0x10040461   Thumb Code     2  system_bluenrg1.o(i.DMA_Handler)
+    DeviceConfiguration                      0x10040465   Thumb Code   180  system_bluenrg1.o(i.DeviceConfiguration)
+    GPIO_Handler                             0x10040549   Thumb Code     2  system_bluenrg1.o(i.GPIO_Handler)
+    GPIO_Init                                0x1004054b   Thumb Code   148  bluenrg1_gpio.o(i.GPIO_Init)
+    GenerateRandomK16Word                    0x100405df   Thumb Code    70  pka_main.o(i.GenerateRandomK16Word)
+    HardFault_Handler                        0x10040625   Thumb Code     2  bluenrg1_it.o(i.HardFault_Handler)
+    I2C1_Handler                             0x10040627   Thumb Code     2  system_bluenrg1.o(i.I2C1_Handler)
+    I2C2_Handler                             0x10040629   Thumb Code     2  system_bluenrg1.o(i.I2C2_Handler)
+    MFT1A_Handler                            0x1004062b   Thumb Code     2  system_bluenrg1.o(i.MFT1A_Handler)
+    MFT1B_Handler                            0x1004062d   Thumb Code     2  system_bluenrg1.o(i.MFT1B_Handler)
+    MFT2A_Handler                            0x1004062f   Thumb Code     2  system_bluenrg1.o(i.MFT2A_Handler)
+    MFT2B_Handler                            0x10040631   Thumb Code     2  system_bluenrg1.o(i.MFT2B_Handler)
+    NMI_Handler                              0x10040633   Thumb Code     2  bluenrg1_it.o(i.NMI_Handler)
+    NVM_Handler                              0x10040679   Thumb Code     2  system_bluenrg1.o(i.NVM_Handler)
+    PKA_GetData                              0x1004067d   Thumb Code    48  bluenrg1_pka.o(i.PKA_GetData)
+    PKA_Handler                              0x100406b1   Thumb Code     2  system_bluenrg1.o(i.PKA_Handler)
+    PKA_SetData                              0x100406b5   Thumb Code    54  bluenrg1_pka.o(i.PKA_SetData)
+    PKA_StartProcessing                      0x100406f1   Thumb Code    20  bluenrg1_pka.o(i.PKA_StartProcessing)
+    PKA_VerifyProcess                        0x10040705   Thumb Code    12  bluenrg1_pka.o(i.PKA_VerifyProcess)
+    PKA_WaitProcess                          0x10040715   Thumb Code    12  bluenrg1_pka.o(i.PKA_WaitProcess)
+    PendSV_Handler                           0x10040721   Thumb Code     2  system_bluenrg1.o(i.PendSV_Handler)
+    PkaFailure                               0x10040725   Thumb Code     8  pka_main.o(i.PkaFailure)
+    RESET_HANDLER                            0x1004073d   Thumb Code    28  system_bluenrg1.o(i.RESET_HANDLER)
+    RNG_GetFlagStatus                        0x1004075d   Thumb Code    14  bluenrg1_rng.o(i.RNG_GetFlagStatus)
+    RTC_Handler                              0x1004076b   Thumb Code     2  system_bluenrg1.o(i.RTC_Handler)
+    SPI_Handler                              0x1004076d   Thumb Code     2  system_bluenrg1.o(i.SPI_Handler)
+    SVC_Handler                              0x1004076f   Thumb Code     2  bluenrg1_it.o(i.SVC_Handler)
+    SdkEvalComIOSendData                     0x10040771   Thumb Code    22  sdk_eval_com.o(i.SdkEvalComIOSendData)
+    SdkEvalComUartInit                       0x10040789   Thumb Code   144  sdk_eval_com.o(i.SdkEvalComUartInit)
+    SdkEvalGetVersion                        0x10040829   Thumb Code     6  sdk_eval_config.o(i.SdkEvalGetVersion)
+    SdkEvalIdentification                    0x10040835   Thumb Code     8  sdk_eval_config.o(i.SdkEvalIdentification)
+    SysCtrl_PeripheralClockCmd               0x10040841   Thumb Code    18  bluenrg1_sysctrl.o(i.SysCtrl_PeripheralClockCmd)
+    SysTick_Handler                          0x10040859   Thumb Code     2  bluenrg1_it.o(i.SysTick_Handler)
+    SystemInit                               0x1004085d   Thumb Code   170  system_bluenrg1.o(i.SystemInit)
+    UART_Cmd                                 0x10040915   Thumb Code    22  bluenrg1_uart.o(i.UART_Cmd)
+    UART_GetFlagStatus                       0x10040931   Thumb Code    24  bluenrg1_uart.o(i.UART_GetFlagStatus)
+    UART_Handler                             0x1004094d   Thumb Code     2  system_bluenrg1.o(i.UART_Handler)
+    UART_Init                                0x10040951   Thumb Code   288  bluenrg1_uart.o(i.UART_Init)
+    UART_RxFifoIrqLevelConfig                0x10040a79   Thumb Code    18  bluenrg1_uart.o(i.UART_RxFifoIrqLevelConfig)
+    UART_SendData                            0x10040a91   Thumb Code    10  bluenrg1_uart.o(i.UART_SendData)
+    WDG_Handler                              0x10040aa1   Thumb Code     2  system_bluenrg1.o(i.WDG_Handler)
+    __low_level_init                         0x10040aa5   Thumb Code    34  system_bluenrg1.o(i.__low_level_init)
+    fputc                                    0x10040ad5   Thumb Code    12  sdk_eval_com.o(i.fputc)
+    main                                     0x10040ae1   Thumb Code   232  pka_main.o(i.main)
+    s_UartTxPinVersion                       0x10040be0   Data           4  sdk_eval_config.o(.constdata)
+    s_UartTxModeVersion                      0x10040be4   Data           4  sdk_eval_config.o(.constdata)
+    s_UartRxPinVersion                       0x10040be8   Data           4  sdk_eval_config.o(.constdata)
+    s_UartRxModeVersion                      0x10040bec   Data           4  sdk_eval_config.o(.constdata)
+    Region$$Table$$Base                      0x10040c30   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x10040ca0   Number         0  anon$$obj.o(Region$$Table)
+    savedMSP                                 0x20000008   Data           4  system_bluenrg1.o(.savedMSP)
+    wakeupFromSleepFlag                      0x2000000c   Data           1  system_bluenrg1.o(.wakeupFromSleepFlag)
+    app_base                                 0x20000010   Data           4  system_bluenrg1.o(.app_base)
+    __blueflag_RAM                           0x20000030   Data           4  system_bluenrg1.o(.__blueflag_RAM)
+    __stdout                                 0x200002cc   Data           4  sdk_eval_com.o(.data)
+    savedICSR                                0x200002d4   Data           4  system_bluenrg1.o(.data)
+    savedSHCSR                               0x200002d8   Data           4  system_bluenrg1.o(.data)
+    savedNVIC_ISPR                           0x200002dc   Data           4  system_bluenrg1.o(.data)
+    Image$$ARM_LIB_STACKHEAP$$ZI$$Base       0x20005400   Number         0  anon$$obj.o ABSOLUTE
+    Image$$ARM_LIB_STACKHEAP$$ZI$$Limit      0x20006000   Number         0  anon$$obj.o ABSOLUTE
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x100400c1
+
+  Load Region LR_IROM2 (Base: 0x10040000, Size: 0x00000000, Max: 0x00000000, ABSOLUTE)
+
+    Execution Region REGION_FLASH_BOOTLOADER (Base: 0x10040000, Size: 0x00000000, Max: 0x00000000, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+
+  Load Region LR_IROM1 (Base: 0x10040000, Size: 0x00000ed0, Max: 0x00028000, ABSOLUTE, COMPRESSED[0x00000ccc])
+
+    Execution Region REGION_ROM (Base: 0x10000000, Size: 0x00000800, Max: 0x00000800, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10000000   0x00000800   Zero   RW            1    REGION_ROM.bss      anon$$obj.o
+
+
+    Execution Region REGION_FLASH (Base: 0x10040000, Size: 0x00000ca0, Max: 0x00026fff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10040000   0x000000c0   Data   RO         2138    .intvec             system_bluenrg1.o
+    0x100400c0   0x00000008   Code   RO         2435  * !!!main             c_p.l(__main.o)
+    0x100400c8   0x0000003c   Code   RO         2653    !!!scatter          c_p.l(__scatter.o)
+    0x10040104   0x0000001a   Code   RO         2655    !!handler_copy      c_p.l(__scatter_copy.o)
+    0x1004011e   0x00000002   PAD
+    0x10040120   0x0000001c   Code   RO         2657    !!handler_zi        c_p.l(__scatter_zi.o)
+    0x1004013c   0x0000006c   Code   RO         2304    . text              context_switch.o
+    0x100401a8   0x00000002   Code   RO         2514    .ARM.Collect$$libinit$$00000000  c_p.l(libinit.o)
+    0x100401aa   0x00000000   Code   RO         2530    .ARM.Collect$$libinit$$00000002  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2532    .ARM.Collect$$libinit$$00000004  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2535    .ARM.Collect$$libinit$$0000000A  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2537    .ARM.Collect$$libinit$$0000000C  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2539    .ARM.Collect$$libinit$$0000000E  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2542    .ARM.Collect$$libinit$$00000011  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2544    .ARM.Collect$$libinit$$00000013  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2546    .ARM.Collect$$libinit$$00000015  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2548    .ARM.Collect$$libinit$$00000017  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2550    .ARM.Collect$$libinit$$00000019  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2552    .ARM.Collect$$libinit$$0000001B  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2554    .ARM.Collect$$libinit$$0000001D  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2556    .ARM.Collect$$libinit$$0000001F  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2558    .ARM.Collect$$libinit$$00000021  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2560    .ARM.Collect$$libinit$$00000023  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2562    .ARM.Collect$$libinit$$00000025  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2566    .ARM.Collect$$libinit$$0000002C  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2568    .ARM.Collect$$libinit$$0000002E  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2570    .ARM.Collect$$libinit$$00000030  c_p.l(libinit2.o)
+    0x100401aa   0x00000000   Code   RO         2572    .ARM.Collect$$libinit$$00000032  c_p.l(libinit2.o)
+    0x100401aa   0x00000002   Code   RO         2573    .ARM.Collect$$libinit$$00000033  c_p.l(libinit2.o)
+    0x100401ac   0x00000002   Code   RO         2608    .ARM.Collect$$libshutdown$$00000000  c_p.l(libshutdown.o)
+    0x100401ae   0x00000000   Code   RO         2634    .ARM.Collect$$libshutdown$$00000002  c_p.l(libshutdown2.o)
+    0x100401ae   0x00000000   Code   RO         2636    .ARM.Collect$$libshutdown$$00000004  c_p.l(libshutdown2.o)
+    0x100401ae   0x00000000   Code   RO         2639    .ARM.Collect$$libshutdown$$00000007  c_p.l(libshutdown2.o)
+    0x100401ae   0x00000000   Code   RO         2642    .ARM.Collect$$libshutdown$$0000000A  c_p.l(libshutdown2.o)
+    0x100401ae   0x00000000   Code   RO         2644    .ARM.Collect$$libshutdown$$0000000C  c_p.l(libshutdown2.o)
+    0x100401ae   0x00000000   Code   RO         2647    .ARM.Collect$$libshutdown$$0000000F  c_p.l(libshutdown2.o)
+    0x100401ae   0x00000002   Code   RO         2648    .ARM.Collect$$libshutdown$$00000010  c_p.l(libshutdown2.o)
+    0x100401b0   0x00000000   Code   RO         2462    .ARM.Collect$$rtentry$$00000000  c_p.l(__rtentry.o)
+    0x100401b0   0x00000000   Code   RO         2471    .ARM.Collect$$rtentry$$00000002  c_p.l(__rtentry2.o)
+    0x100401b0   0x00000004   Code   RO         2485    .ARM.Collect$$rtentry$$00000006  c_p.l(__rtentry6.o)
+    0x100401b4   0x00000000   Code   RO         2473    .ARM.Collect$$rtentry$$00000009  c_p.l(__rtentry2.o)
+    0x100401b4   0x00000004   Code   RO         2474    .ARM.Collect$$rtentry$$0000000A  c_p.l(__rtentry2.o)
+    0x100401b8   0x00000000   Code   RO         2476    .ARM.Collect$$rtentry$$0000000C  c_p.l(__rtentry2.o)
+    0x100401b8   0x00000008   Code   RO         2477    .ARM.Collect$$rtentry$$0000000D  c_p.l(__rtentry2.o)
+    0x100401c0   0x00000004   Code   RO         2486    .ARM.Collect$$rtentry$$00002717  c_p.l(__rtentry6.o)
+    0x100401c4   0x00000002   Code   RO         2521    .ARM.Collect$$rtexit$$00000000  c_p.l(rtexit.o)
+    0x100401c6   0x00000000   Code   RO         2584    .ARM.Collect$$rtexit$$00000002  c_p.l(rtexit2.o)
+    0x100401c6   0x00000004   Code   RO         2585    .ARM.Collect$$rtexit$$00000003  c_p.l(rtexit2.o)
+    0x100401ca   0x00000006   Code   RO         2586    .ARM.Collect$$rtexit$$00000004  c_p.l(rtexit2.o)
+    0x100401d0   0x00000038   Code   RO         2427    .emb_text           c_p.l(rt_memcpy.o)
+    0x10040208   0x0000001c   Code   RO         2425    .text               c_p.l(noretval__2printf.o)
+    0x10040224   0x0000015a   Code   RO         2431    .text               c_p.l(aeabi_sdiv.o)
+    0x1004037e   0x00000002   PAD
+    0x10040380   0x00000028   Code   RO         2467    .text               c_p.l(_printf_char_file.o)
+    0x100403a8   0x00000030   Code   RO         2492    .text               c_p.l(_printf_char_common.o)
+    0x100403d8   0x00000008   Code   RO         2494    .text               c_p.l(ferror.o)
+    0x100403e0   0x00000024   Code   RO         2501    .text               c_p.l(__printf_nopercent.o)
+    0x10040404   0x00000010   Code   RO         2503    .text               c_p.l(exit.o)
+    0x10040414   0x0000000c   Code   RO         2578    .text               c_p.l(sys_exit.o)
+    0x10040420   0x00000002   Code   RO         2580    .text               c_p.l(use_no_semi.o)
+    0x10040422   0x00000000   Code   RO         2582    .text               c_p.l(indicate_semi.o)
+    0x10040422   0x0000003a   Code   RO         2651    .text               c_p.l(__dczerorl.o)
+    0x1004045c   0x00000002   Code   RO         2104    i.ADC_Handler       system_bluenrg1.o
+    0x1004045e   0x00000002   Code   RO         2107    i.Blue_Handler      system_bluenrg1.o
+    0x10040460   0x00000002   Code   RO         2108    i.DMA_Handler       system_bluenrg1.o
+    0x10040462   0x00000002   PAD
+    0x10040464   0x000000e4   Code   RO         2109    i.DeviceConfiguration  system_bluenrg1.o
+    0x10040548   0x00000002   Code   RO         2110    i.GPIO_Handler      system_bluenrg1.o
+    0x1004054a   0x00000094   Code   RO          350    i.GPIO_Init         bluenrg1_gpio.o
+    0x100405de   0x00000046   Code   RO         2354    i.GenerateRandomK16Word  pka_main.o
+    0x10040624   0x00000002   Code   RO         2310    i.HardFault_Handler  bluenrg1_it.o
+    0x10040626   0x00000002   Code   RO         2112    i.I2C1_Handler      system_bluenrg1.o
+    0x10040628   0x00000002   Code   RO         2113    i.I2C2_Handler      system_bluenrg1.o
+    0x1004062a   0x00000002   Code   RO         2114    i.MFT1A_Handler     system_bluenrg1.o
+    0x1004062c   0x00000002   Code   RO         2115    i.MFT1B_Handler     system_bluenrg1.o
+    0x1004062e   0x00000002   Code   RO         2116    i.MFT2A_Handler     system_bluenrg1.o
+    0x10040630   0x00000002   Code   RO         2117    i.MFT2B_Handler     system_bluenrg1.o
+    0x10040632   0x00000002   Code   RO         2311    i.NMI_Handler       bluenrg1_it.o
+    0x10040634   0x00000044   Code   RO         2119    i.NVIC_SetPriority  system_bluenrg1.o
+    0x10040678   0x00000002   Code   RO         2120    i.NVM_Handler       system_bluenrg1.o
+    0x1004067a   0x00000002   PAD
+    0x1004067c   0x00000034   Code   RO         1377    i.PKA_GetData       bluenrg1_pka.o
+    0x100406b0   0x00000002   Code   RO         2121    i.PKA_Handler       system_bluenrg1.o
+    0x100406b2   0x00000002   PAD
+    0x100406b4   0x0000003c   Code   RO         1382    i.PKA_SetData       bluenrg1_pka.o
+    0x100406f0   0x00000014   Code   RO         1383    i.PKA_StartProcessing  bluenrg1_pka.o
+    0x10040704   0x00000010   Code   RO         1384    i.PKA_VerifyProcess  bluenrg1_pka.o
+    0x10040714   0x0000000c   Code   RO         1385    i.PKA_WaitProcess   bluenrg1_pka.o
+    0x10040720   0x00000002   Code   RO         2122    i.PendSV_Handler    system_bluenrg1.o
+    0x10040722   0x00000002   PAD
+    0x10040724   0x00000018   Code   RO         2355    i.PkaFailure        pka_main.o
+    0x1004073c   0x00000020   Code   RO         2123    i.RESET_HANDLER     system_bluenrg1.o
+    0x1004075c   0x0000000e   Code   RO          734    i.RNG_GetFlagStatus  bluenrg1_rng.o
+    0x1004076a   0x00000002   Code   RO         2124    i.RTC_Handler       system_bluenrg1.o
+    0x1004076c   0x00000002   Code   RO         2125    i.SPI_Handler       system_bluenrg1.o
+    0x1004076e   0x00000002   Code   RO         2312    i.SVC_Handler       bluenrg1_it.o
+    0x10040770   0x00000016   Code   RO         1735    i.SdkEvalComIOSendData  sdk_eval_com.o
+    0x10040786   0x00000002   PAD
+    0x10040788   0x000000a0   Code   RO         1738    i.SdkEvalComUartInit  sdk_eval_com.o
+    0x10040828   0x0000000c   Code   RO         1828    i.SdkEvalGetVersion  sdk_eval_config.o
+    0x10040834   0x0000000c   Code   RO         1829    i.SdkEvalIdentification  sdk_eval_config.o
+    0x10040840   0x00000018   Code   RO         1055    i.SysCtrl_PeripheralClockCmd  bluenrg1_sysctrl.o
+    0x10040858   0x00000002   Code   RO         2313    i.SysTick_Handler   bluenrg1_it.o
+    0x1004085a   0x00000002   PAD
+    0x1004085c   0x000000b8   Code   RO         2128    i.SystemInit        system_bluenrg1.o
+    0x10040914   0x0000001c   Code   RO         1103    i.UART_Cmd          bluenrg1_uart.o
+    0x10040930   0x0000001c   Code   RO         1106    i.UART_GetFlagStatus  bluenrg1_uart.o
+    0x1004094c   0x00000002   Code   RO         2129    i.UART_Handler      system_bluenrg1.o
+    0x1004094e   0x00000002   PAD
+    0x10040950   0x00000128   Code   RO         1109    i.UART_Init         bluenrg1_uart.o
+    0x10040a78   0x00000018   Code   RO         1112    i.UART_RxFifoIrqLevelConfig  bluenrg1_uart.o
+    0x10040a90   0x00000010   Code   RO         1114    i.UART_SendData     bluenrg1_uart.o
+    0x10040aa0   0x00000002   Code   RO         2130    i.WDG_Handler       system_bluenrg1.o
+    0x10040aa2   0x00000002   PAD
+    0x10040aa4   0x00000030   Code   RO         2131    i.__low_level_init  system_bluenrg1.o
+    0x10040ad4   0x0000000c   Code   RO         1742    i.fputc             sdk_eval_com.o
+    0x10040ae0   0x00000100   Code   RO         2356    i.main              pka_main.o
+    0x10040be0   0x00000004   Data   RO         1831    .constdata          sdk_eval_config.o
+    0x10040be4   0x00000004   Data   RO         1832    .constdata          sdk_eval_config.o
+    0x10040be8   0x00000004   Data   RO         1833    .constdata          sdk_eval_config.o
+    0x10040bec   0x00000004   Data   RO         1834    .constdata          sdk_eval_config.o
+    0x10040bf0   0x00000040   Data   RO         2358    .constdata          pka_main.o
+    0x10040c30   0x00000070   Data   RO         2649    Region$$Table       anon$$obj.o
+
+
+    Execution Region BLOCK_STACKLIB_FLASH_DATA (Base: 0x10067000, Size: 0x00000000, Max: 0x00001000, ABSOLUTE, UNINIT)
+
+    **** No section assigned to this execution region ****
+
+
+    Execution Region ota_sw_activation_block (Base: 0x20000004, Size: 0x00000000, Max: 0x00000004, ABSOLUTE, UNINIT)
+
+    **** No section assigned to this execution region ****
+
+
+    Execution Region savedMSP_block (Base: 0x20000008, Size: 0x00000004, Max: 0x00000004, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000008   0x00000004   Data   RW         2140    .savedMSP           system_bluenrg1.o
+
+
+    Execution Region wakeupFromSleepFlag_block (Base: 0x2000000c, Size: 0x00000004, Max: 0x00000004, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x2000000c   0x00000001   Data   RW         2141    .wakeupFromSleepFlag  system_bluenrg1.o
+
+
+    Execution Region app_base_block (Base: 0x20000010, Size: 0x00000004, Max: 0x00000004, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000010   0x00000004   Data   RW         2133    .app_base           system_bluenrg1.o
+
+
+    Execution Region Blue_Flag_Ram_block (Base: 0x20000030, Size: 0x00000004, Max: 0x00000004, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000030   0x00000004   Data   RW         2132    .__blueflag_RAM     system_bluenrg1.o
+
+
+    Execution Region Crash_Info_block (Base: 0x20000034, Size: 0x00000000, Max: 0x00000028, ABSOLUTE, UNINIT)
+
+    **** No section assigned to this execution region ****
+
+
+    Execution Region BLUE (Base: 0x200000c0, Size: 0x0000020c, Max: 0x0000020c, ABSOLUTE, COMPRESSED[0x00000008])
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x200000c0   0x0000020c   Data   RW         2134    .bss.__blue_RAM     system_bluenrg1.o
+
+
+    Execution Region REGION_RAM2 (Base: 0x200002cc, Size: 0x00000114, Max: 0x00005d34, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x200002cc   0x00000004   Data   RW         1745    .data               sdk_eval_com.o
+    0x200002d0   0x00000001   Data   RW         1854    .data               sdk_eval_config.o
+    0x200002d1   0x00000003   PAD
+    0x200002d4   0x00000004   Data   RW         2135    .data               system_bluenrg1.o
+    0x200002d8   0x00000004   Data   RW         2136    .data               system_bluenrg1.o
+    0x200002dc   0x00000004   Data   RW         2137    .data               system_bluenrg1.o
+    0x200002e0   0x00000100   Zero   RW         2357    .bss                pka_main.o
+
+
+    Execution Region ARM_LIB_STACKHEAP (Base: 0x20005400, Size: 0x00000c00, Max: 0x00000c00, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20005400   0x00000c00   Zero   RW            2    ARM_LIB_STACKHEAP.bss  anon$$obj.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+         0          0          0          0          0      26688   bluenrg1_adc.o
+       148          0          0          0          0       8340   bluenrg1_gpio.o
+         8          0          0          0          0       1866   bluenrg1_it.o
+       160         14          0          0          0       3984   bluenrg1_pka.o
+        14          0          0          0          0        608   bluenrg1_rng.o
+        24          6          0          0          0        709   bluenrg1_sysctrl.o
+       392         30          0          0          0       8160   bluenrg1_uart.o
+       108         30          0          0          0        612   context_switch.o
+         0          0          0          0          0        648   lps25hb.o
+         0          0          0          0          0        720   misc.o
+       350         40         64          0        256       3932   pka_main.o
+       194         16          0          4          0       5076   sdk_eval_com.o
+        24         10         16          1          0       3965   sdk_eval_config.o
+       594         88        192        549          0      17484   system_bluenrg1.o
+
+    ----------------------------------------------------------------------
+      2032        234        384        560       5376      82792   Object Totals
+         0          0        112          0       5120          0   (incl. Generated)
+        16          0          0          6          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+        58          0          0          0          0          0   __dczerorl.o
+         8          0          0          0          0         68   __main.o
+        36          0          0          0          0         76   __printf_nopercent.o
+         0          0          0          0          0          0   __rtentry.o
+        12          0          0          0          0          0   __rtentry2.o
+         8          4          0          0          0          0   __rtentry6.o
+        60          8          0          0          0          0   __scatter.o
+        26          0          0          0          0          0   __scatter_copy.o
+        28          0          0          0          0          0   __scatter_zi.o
+        48          6          0          0          0         88   _printf_char_common.o
+        40          6          0          0          0         72   _printf_char_file.o
+       346          0          0          0          0         92   aeabi_sdiv.o
+        16          0          0          0          0         68   exit.o
+         8          0          0          0          0         60   ferror.o
+         0          0          0          0          0          0   indicate_semi.o
+         2          0          0          0          0          0   libinit.o
+         2          0          0          0          0          0   libinit2.o
+         2          0          0          0          0          0   libshutdown.o
+         2          0          0          0          0          0   libshutdown2.o
+        28          6          0          0          0         84   noretval__2printf.o
+        56          0          0          0          0         68   rt_memcpy.o
+         2          0          0          0          0          0   rtexit.o
+        10          0          0          0          0          0   rtexit2.o
+        12          4          0          0          0         60   sys_exit.o
+         2          0          0          0          0         68   use_no_semi.o
+
+    ----------------------------------------------------------------------
+       816         34          0          0          0        804   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       812         34          0          0          0        804   c_p.l
+
+    ----------------------------------------------------------------------
+       816         34          0          0          0        804   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      2848        268        384        560       5376      81552   Grand Totals
+      2848        268        384         44       5376      81552   ELF Image Totals (compressed)
+      2848        268        384         44          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 3232 (   3.16kB)
+    Total RW  Size (RW Data + ZI Data)              5936 (   5.80kB)
+    Total ROM Size (Code + RO Data + RW Data)       3276 (   3.20kB)
+
+==============================================================================
+

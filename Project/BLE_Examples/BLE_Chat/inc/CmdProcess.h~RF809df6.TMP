@@ -1,0 +1,12 @@
+#ifndef _CMDPROCESS_H_
+#define _CMDPROCESS_H_
+
+#include <stdint.h>
+
+#define ACK  0x79
+#define NACK 0x00
+
+int CmdLineProcess(void);
+void SendAck(uint8_t ack);
+
+#endif

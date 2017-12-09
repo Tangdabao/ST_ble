@@ -1,0 +1,160 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       29/Nov/2017  10:11:20
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Library\hal\src\osal.c
+#    Command line =  
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Library\hal\src\osal.c" -D HS_SPEED_XTAL=HS_SPEED_XTAL_16MHZ -D
+#        LS_SOURCE=LS_SOURCE_EXTERNAL_32KHZ -D SMPS_INDUCTOR=SMPS_INDUCTOR_10uH
+#        --preprocess=cl "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2
+#        DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        -lCN "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        -lb "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        --diag_suppress Pe1665 -o "D:\Program Files
+#        (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\Obj"
+#        --debug --endian=little --cpu=Cortex-M0 --diag_warning Pe1665
+#        --diag_suppress Pe1665 -e --fpu=None --dlib_config
+#        D:\Software\IAR_BlueNRG\arm\INC\c\DLib_Config_Normal.h -I "D:\Program
+#        Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\CMSIS\Include\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\hal\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\Bluetooth_LE\inc\"
+#        -Ohz
+#    Locale       =  Chinese (Simplified)_China.936
+#    List file    =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List\osal.lst
+#    Object file  =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\Obj\osal.o
+#
+###############################################################################
+
+D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK 2.5.0\Library\hal\src\osal.c
+      1          /**
+      2          ******************************************************************************
+      3          * @file    osal.c 
+      4          * @author  AMS - VMA RF Application Team
+      5          * @version V1.0.0
+      6          * @date    21-January-2016
+      7          * @brief   osal APIs
+      8          ******************************************************************************
+      9          * @attention
+     10          *
+     11          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     12          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     13          * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     14          * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     15          * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     16          * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     17          *
+     18          * <h2><center>&copy; COPYRIGHT 2015 STMicroelectronics</center></h2>
+     19          ******************************************************************************
+     20          */ 
+     21          /* Includes ------------------------------------------------------------------*/
+     22          #include <string.h>
+     23          #include <osal.h>
+     24           
+     25          /**
+     26           * Osal_MemCpy
+     27           * 
+     28           */
+     29           
+
+   \                                 In section .text, align 2, keep-with-next
+     30          void* Osal_MemCpy(void *dest,const void *src,unsigned int size)
+     31          {
+   \                     Osal_MemCpy: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     32              return(memcpy(dest,src,size)); 
+   \   00000004   0x.... 0x....      BL       __aeabi_memcpy
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xBD10             POP      {R4,PC}          ;; return
+     33          }
+     34          
+     35          /**
+     36           * Osal_MemSet
+     37           * 
+     38           */
+     39           
+
+   \                                 In section .text, align 2, keep-with-next
+     40          void* Osal_MemSet(void *ptr, int value,unsigned int size)
+     41          {
+   \                     Osal_MemSet: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x0010             MOVS     R0,R2
+     42              return(memset(ptr,value,size));
+   \   00000006   0x000A             MOVS     R2,R1
+   \   00000008   0x0001             MOVS     R1,R0
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0x.... 0x....      BL       __aeabi_memset
+   \   00000010   0x0020             MOVS     R0,R4
+   \   00000012   0xBD10             POP      {R4,PC}          ;; return
+     43          }
+     44          
+     45          /**
+     46           * Osal_MemCmp
+     47           * 
+     48           */
+
+   \                                 In section .text, align 2, keep-with-next
+     49          int Osal_MemCmp(void *s1,void *s2,unsigned int size)
+     50          {
+   \                     Osal_MemCmp: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     51              return(memcmp(s1,s2,size));
+   \   00000002   0x.... 0x....      BL       memcmp
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+     52          }
+     53          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   Osal_MemCmp
+         8   -> memcmp
+       8   Osal_MemCpy
+         8   -> __aeabi_memcpy
+       8   Osal_MemSet
+         8   -> __aeabi_memset
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       8  Osal_MemCmp
+      12  Osal_MemCpy
+      20  Osal_MemSet
+
+ 
+ 40 bytes in section .text
+ 
+ 40 bytes of CODE memory
+
+Errors: none
+Warnings: none

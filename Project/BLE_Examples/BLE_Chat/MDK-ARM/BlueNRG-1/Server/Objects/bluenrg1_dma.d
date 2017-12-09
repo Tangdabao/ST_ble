@@ -1,0 +1,12 @@
+.\server\objects\bluenrg1_dma.o: ..\..\..\..\..\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_dma.c
+.\server\objects\bluenrg1_dma.o: ..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc\BlueNRG1_dma.h
+.\server\objects\bluenrg1_dma.o: ..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include\BlueNRG_x_device.h
+.\server\objects\bluenrg1_dma.o: ..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include\BlueNRG1.h
+.\server\objects\bluenrg1_dma.o: ..\..\..\..\..\Library\CMSIS\Include\core_cm0.h
+.\server\objects\bluenrg1_dma.o: D:\Software\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\server\objects\bluenrg1_dma.o: ..\..\..\..\..\Library\CMSIS\Include\core_cmInstr.h
+.\server\objects\bluenrg1_dma.o: ..\..\..\..\..\Library\CMSIS\Include\core_cmFunc.h
+.\server\objects\bluenrg1_dma.o: ..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include\system_BlueNRG1.h
+.\server\objects\bluenrg1_dma.o: ..\..\..\..\..\Library\hal\inc\compiler.h
+.\server\objects\bluenrg1_dma.o: ..\..\..\..\..\Library\hal\inc\hal_types.h
+.\server\objects\bluenrg1_dma.o: ..\..\..\..\..\Library\CMSIS\Include\core_cm0.h

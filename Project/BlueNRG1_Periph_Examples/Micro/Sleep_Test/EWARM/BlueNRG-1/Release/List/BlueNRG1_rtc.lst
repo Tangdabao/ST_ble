@@ -1,0 +1,867 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       29/Nov/2017  10:11:19
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_rtc.c
+#    Command line =  
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_rtc.c" -D
+#        HS_SPEED_XTAL=HS_SPEED_XTAL_16MHZ -D
+#        LS_SOURCE=LS_SOURCE_EXTERNAL_32KHZ -D SMPS_INDUCTOR=SMPS_INDUCTOR_10uH
+#        --preprocess=cl "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2
+#        DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        -lCN "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        -lb "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        --diag_suppress Pe1665 -o "D:\Program Files
+#        (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\Obj"
+#        --debug --endian=little --cpu=Cortex-M0 --diag_warning Pe1665
+#        --diag_suppress Pe1665 -e --fpu=None --dlib_config
+#        D:\Software\IAR_BlueNRG\arm\INC\c\DLib_Config_Normal.h -I "D:\Program
+#        Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\CMSIS\Include\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\hal\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\Bluetooth_LE\inc\"
+#        -Ohz
+#    Locale       =  Chinese (Simplified)_China.936
+#    List file    =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List\BlueNRG1_rtc.lst
+#    Object file  =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_rtc.o
+#
+###############################################################################
+
+D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK 2.5.0\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_rtc.c
+      1          /**
+      2            ******************************************************************************
+      3            * @file    BlueNRG1_rtc.c
+      4            * @author  VMA Application Team
+      5            * @version V2.0.0
+      6            * @date    21-March-2016
+      7            * @brief   This file provides all the RTC firmware functions.
+      8            ******************************************************************************
+      9            * @attention
+     10            *
+     11            * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     12            * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     13            * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     14            * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     15            * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     16            * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     17            *
+     18            * <h2><center>&copy; COPYRIGHT 2016 STMicroelectronics</center></h2>
+     19            ******************************************************************************
+     20            */
+     21          
+     22          /* Includes ------------------------------------------------------------------*/
+     23          #include "BlueNRG1_rtc.h"
+     24          
+     25          
+     26          /** @addtogroup BLUENRG1_Peripheral_Driver BLUENRG1 Peripheral Driver
+     27            * @{
+     28            */
+     29          
+     30          /** @defgroup RTC_Peripheral  RTC Peripheral
+     31            * @{
+     32            */ 
+     33          
+     34          /** @defgroup RTC_Private_TypesDefinitions Private Types Definitions
+     35            * @{
+     36            */
+     37          
+     38          /**
+     39            * @}
+     40            */ 
+     41          
+     42          /** @defgroup RTC_Private_Defines Private Defines
+     43            * @{
+     44            */ 
+     45          
+     46          /**
+     47            * @}
+     48            */ 
+     49          
+     50          /** @defgroup RTC_Private_Macros Private Macros
+     51            * @{
+     52            */
+     53          
+     54          /**
+     55            * @}
+     56            */ 
+     57          
+     58          /** @defgroup RTC_Private_Variables Private Variables
+     59            * @{
+     60            */
+     61          
+     62          /**
+     63            * @}
+     64            */ 
+     65          
+     66          /** @defgroup RTC_Private_FunctionPrototypes Private Function Prototypes
+     67            * @{
+     68            */
+     69            
+     70          /**
+     71            * @}
+     72            */
+     73            
+     74          /** @defgroup RTC_Public_Functions Public Functions
+     75          * @{
+     76          */
+     77          
+     78          /**
+     79            * @brief  Initializes the RTC peripheral according to the specified
+     80            *         parameters in the RTC_InitStruct.
+     81            * @param  RTC_InitStruct: pointer to a @ref RTC_InitType structure that
+     82            *         contains the configuration information for the specified RTC peripheral.
+     83            * @retval None
+     84            */
+
+   \                                 In section .text, align 2, keep-with-next
+     85          void RTC_Init(RTC_InitType* RTC_InitStruct)
+     86          {  
+   \                     RTC_Init: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+     87            /* Check the parameters */
+     88            assert_param(IS_RTC_TIMER_MODE(RTC_InitStruct->RTC_operatingMode));
+     89            assert_param(IS_PATTERN(RTC_InitStruct->RTC_PATTERN_SIZE));
+     90          
+     91            RTC->TCR_b.OS = RTC_InitStruct->RTC_operatingMode;
+   \   00000002   0x7802             LDRB     R2,[R0, #+0]
+   \   00000004   0x....             LDR      R1,??DataTable12  ;; 0x40f00030
+   \   00000006   0x880B             LDRH     R3,[R1, #+0]
+   \   00000008   0x....             LDR      R4,??DataTable12_1  ;; 0xfffe
+   \   0000000A   0x401C             ANDS     R4,R4,R3
+   \   0000000C   0x07D3             LSLS     R3,R2,#+31
+   \   0000000E   0x0FDB             LSRS     R3,R3,#+31
+   \   00000010   0x4323             ORRS     R3,R3,R4
+   \   00000012   0x800B             STRH     R3,[R1, #+0]
+     92            RTC->TCR_b.SP = RTC_InitStruct->RTC_PATTERN_SIZE;
+   \   00000014   0x68C2             LDR      R2,[R0, #+12]
+   \   00000016   0x880B             LDRH     R3,[R1, #+0]
+   \   00000018   0x....             LDR      R4,??DataTable12_2  ;; 0xf80f
+   \   0000001A   0x401C             ANDS     R4,R4,R3
+   \   0000001C   0x0112             LSLS     R2,R2,#+4
+   \   0000001E   0x23FE             MOVS     R3,#+254
+   \   00000020   0x00DB             LSLS     R3,R3,#+3        ;; #+2032
+   \   00000022   0x4013             ANDS     R3,R3,R2
+   \   00000024   0x4323             ORRS     R3,R3,R4
+   \   00000026   0x800B             STRH     R3,[R1, #+0]
+     93          
+     94            RTC->TLR1 = RTC_InitStruct->RTC_TLR1;
+   \   00000028   0x6842             LDR      R2,[R0, #+4]
+   \   0000002A   0x604A             STR      R2,[R1, #+4]
+     95            RTC->TLR2 = RTC_InitStruct->RTC_TLR2;
+   \   0000002C   0x6882             LDR      R2,[R0, #+8]
+   \   0000002E   0x608A             STR      R2,[R1, #+8]
+     96            RTC->TPR1 = RTC_InitStruct->RTC_PATTERN1;
+   \   00000030   0x6902             LDR      R2,[R0, #+16]
+   \   00000032   0x60CA             STR      R2,[R1, #+12]
+     97            RTC->TPR2 = RTC_InitStruct->RTC_PATTERN2;
+   \   00000034   0x6942             LDR      R2,[R0, #+20]
+   \   00000036   0x610A             STR      R2,[R1, #+16]
+     98            RTC->TPR3 = RTC_InitStruct->RTC_PATTERN3;
+   \   00000038   0x6982             LDR      R2,[R0, #+24]
+   \   0000003A   0x614A             STR      R2,[R1, #+20]
+     99            RTC->TPR4 = RTC_InitStruct->RTC_PATTERN4;
+   \   0000003C   0x69C0             LDR      R0,[R0, #+28]
+   \   0000003E   0x6188             STR      R0,[R1, #+24]
+    100          
+    101          }
+   \   00000040   0xBD10             POP      {R4,PC}          ;; return
+    102          
+    103          /**
+    104            * @brief  Enables or disables selected RTC peripheral.
+    105            * @param  NewState: functional state @ref FunctionalState
+    106            *         This parameter can be: ENABLE or DISABLE.
+    107            * @retval None
+    108            */
+
+   \                                 In section .text, align 2, keep-with-next
+    109          void RTC_Cmd(FunctionalState NewState)
+    110          {
+    111            /* Check the parameters */
+    112            assert_param(IS_FUNCTIONAL_STATE(NewState));
+    113            
+    114            if (NewState != DISABLE) {
+   \                     RTC_Cmd: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable12  ;; 0x40f00030
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0x8808             LDRH     R0,[R1, #+0]
+   \   00000006   0xD002             BEQ      ??RTC_Cmd_0
+    115              RTC->TCR_b.EN = SET;
+   \   00000008   0x2202             MOVS     R2,#+2
+   \   0000000A   0x4302             ORRS     R2,R2,R0
+   \   0000000C   0xE001             B        ??RTC_Cmd_1
+    116            }
+    117            else {
+    118              RTC->TCR_b.EN = RESET;
+   \                     ??RTC_Cmd_0: (+1)
+   \   0000000E   0x....             LDR      R2,??DataTable12_3  ;; 0xfffd
+   \   00000010   0x4002             ANDS     R2,R2,R0
+   \                     ??RTC_Cmd_1: (+1)
+   \   00000012   0x800A             STRH     R2,[R1, #+0]
+    119              
+    120            }
+    121          }
+   \   00000014   0x4770             BX       LR               ;; return
+    122          
+    123          /**
+    124            * @brief  Enables or disables selected RTC interrupt.
+    125            * @param  RTC_IT: specifies the RTC interrupts sources, the value can be
+    126            *         @arg RTC_IT_CLOCKWATCH RTC clock watch interrupt flag
+    127            *         @arg RTC_IT_TIMER RTC timer interrupt flag
+    128            * @param  NewState: functional state @ref FunctionalState
+    129            *         This parameter can be: ENABLE or DISABLE.
+    130            * @retval None
+    131            */
+
+   \                                 In section .text, align 2, keep-with-next
+    132          void RTC_IT_Config(uint8_t RTC_IT, FunctionalState NewState)
+    133          {
+    134            /* Check the parameters */
+    135            assert_param(IS_FUNCTIONAL_STATE(NewState));
+    136            assert_param(IS_RTC_IT(RTC_IT));
+    137            
+    138            if (RTC_IT == RTC_IT_CLOCKWATCH) {
+   \                     RTC_IT_Config: (+1)
+   \   00000000   0x....             LDR      R2,??DataTable12_4  ;; 0x40f0001c
+   \   00000002   0x2801             CMP      R0,#+1
+   \   00000004   0x7810             LDRB     R0,[R2, #+0]
+   \   00000006   0xD104             BNE      ??RTC_IT_Config_0
+    139              /* Enable the selected RTC interrupts */
+    140              RTC->IMSC_b.WIMSC = NewState;
+   \   00000008   0x23FE             MOVS     R3,#+254
+   \   0000000A   0x4003             ANDS     R3,R3,R0
+   \   0000000C   0x07C8             LSLS     R0,R1,#+31
+   \   0000000E   0x0FC0             LSRS     R0,R0,#+31
+   \   00000010   0xE004             B        ??RTC_IT_Config_1
+    141            }
+    142            else {
+    143              /* Disable the selected RTC interrupts */
+    144              RTC->IMSC_b.TIMSC = NewState;
+   \                     ??RTC_IT_Config_0: (+1)
+   \   00000012   0x23FD             MOVS     R3,#+253
+   \   00000014   0x4003             ANDS     R3,R3,R0
+   \   00000016   0x0048             LSLS     R0,R1,#+1
+   \   00000018   0x2102             MOVS     R1,#+2
+   \   0000001A   0x4008             ANDS     R0,R0,R1
+   \                     ??RTC_IT_Config_1: (+1)
+   \   0000001C   0x4318             ORRS     R0,R0,R3
+   \   0000001E   0x7010             STRB     R0,[R2, #+0]
+    145            }
+    146          }
+   \   00000020   0x4770             BX       LR               ;; return
+    147          
+    148          /**
+    149            * @brief  Return the RTC interrupt status for the specified IT.
+    150            * @param  RTC_IT: specifies the RTC interrupts sources, the value can be
+    151            *         @arg RTC_IT_CLOCKWATCH RTC clock watch interrupt flag
+    152            *         @arg RTC_IT_TIMER RTC timer interrupt flag
+    153            * @retval  ITStatus: functional state @ref ITStatus
+    154            *         This parameter can be: SET or RESET.
+    155            */
+
+   \                                 In section .text, align 2, keep-with-next
+    156          ITStatus RTC_IT_Status(uint8_t RTC_IT)
+    157          {
+   \                     RTC_IT_Status: (+1)
+   \   00000000   0x0001             MOVS     R1,R0
+    158            /* Check the parameters */
+    159            assert_param(IS_RTC_IT(RTC_IT));
+    160          
+    161            /* Check the status of the specified RTC flag */
+    162            if ((RTC->RIS & RTC_IT) != RESET) {
+   \   00000002   0x....             LDR      R0,??DataTable12_5  ;; 0x40f00020
+   \   00000004   0x7800             LDRB     R0,[R0, #+0]
+   \   00000006   0x4001             ANDS     R1,R1,R0
+   \   00000008   0x0008             MOVS     R0,R1
+   \   0000000A   0xD000             BEQ      ??RTC_IT_Status_0
+   \   0000000C   0x2001             MOVS     R0,#+1
+    163              /* RTC_IT is set */
+    164              return SET;
+    165            }
+    166            else {
+    167              /* RTC_IT is reset */
+    168              return RESET;
+   \                     ??RTC_IT_Status_0: (+1)
+   \   0000000E   0x4770             BX       LR               ;; return
+    169            }
+    170          }
+    171          
+    172          /**
+    173            * @brief  Clear selected RTC interrupt.
+    174            * @param  RTC_IT: specifies the RTC interrupts sources, the value can be
+    175            *         @arg RTC_IT_CLOCKWATCH RTC clock watch interrupt flag
+    176            *         @arg RTC_IT_TIMER RTC timer interrupt flag
+    177            * @retval None
+    178            */
+
+   \                                 In section .text, align 2, keep-with-next
+    179          void RTC_IT_Clear(uint8_t RTC_IT)
+    180          {
+    181            /* Check the parameters */
+    182            assert_param(IS_RTC_IT(RTC_IT));
+    183            
+    184            RTC->ICR = RTC_IT;
+   \                     RTC_IT_Clear: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable12_6  ;; 0x40f00028
+   \   00000002   0x7008             STRB     R0,[R1, #+0]
+    185          }
+   \   00000004   0x4770             BX       LR               ;; return
+    186          
+    187          
+    188          /**
+    189            * @brief  Enables or disables selected RTC clockwatch.
+    190            * @param  NewState: functional state @ref FunctionalState
+    191            *         This parameter can be: ENABLE or DISABLE.
+    192            * @retval None
+    193            */
+
+   \                                 In section .text, align 2, keep-with-next
+    194          void RTC_ClockwatchCmd(FunctionalState NewState)
+    195          {
+    196            /* Check the parameters */
+    197            assert_param(IS_FUNCTIONAL_STATE(NewState));
+    198            
+    199            if (NewState != DISABLE) {
+   \                     RTC_ClockwatchCmd: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable12_7  ;; 0x40f00018
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0x6808             LDR      R0,[R1, #+0]
+   \   00000006   0xD003             BEQ      ??RTC_ClockwatchCmd_0
+    200              RTC->CTCR_b.CWEN = SET;
+   \   00000008   0x2280             MOVS     R2,#+128
+   \   0000000A   0x04D2             LSLS     R2,R2,#+19       ;; #+67108864
+   \   0000000C   0x4302             ORRS     R2,R2,R0
+   \   0000000E   0xE001             B        ??RTC_ClockwatchCmd_1
+    201            }
+    202            else {
+    203              RTC->CTCR_b.CWEN = RESET;
+   \                     ??RTC_ClockwatchCmd_0: (+1)
+   \   00000010   0x....             LDR      R2,??DataTable12_8  ;; 0xfbffffff
+   \   00000012   0x4002             ANDS     R2,R2,R0
+   \                     ??RTC_ClockwatchCmd_1: (+1)
+   \   00000014   0x600A             STR      R2,[R1, #+0]
+    204            }
+    205          }
+   \   00000016   0x4770             BX       LR               ;; return
+    206          
+    207          /**
+    208            * @brief  Initialize the RTC clockwatch with present time and date.
+    209            * @param  RTC_DateTime: pointer to a @ref RTC_DateTimeType structure that
+    210            *         contains the specified time and date setting.
+    211            * @retval None
+    212            */
+
+   \                                 In section .text, align 2, keep-with-next
+    213          void RTC_SetTimeDate(RTC_DateTimeType* RTC_DateTime)
+    214          {
+   \                     RTC_SetTimeDate: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    215            /* Check the parameters */
+    216            assert_param(IS_SECOND(RTC_DateTime->Second));
+    217            assert_param(IS_MINUTE(RTC_DateTime->Minute));
+    218            assert_param(IS_HOUR(RTC_DateTime->Hour));
+    219            assert_param(IS_WEEKDAY(RTC_DateTime->WeekDay));
+    220            assert_param(IS_MONTHDAY(RTC_DateTime->MonthDay));
+    221            assert_param(IS_MONTH(RTC_DateTime->Month));
+    222            assert_param(IS_YEAR(RTC_DateTime->Year));
+    223            
+    224            /** Select seconds from the data structure */
+    225            RTC->CWDLR_b.CWSECL = RTC_DateTime->Second;
+   \   00000002   0x7802             LDRB     R2,[R0, #+0]
+   \   00000004   0x....             LDR      R1,??DataTable12_9  ;; 0x40f00008
+   \   00000006   0x....             B.N      ?Subroutine0
+    226            
+    227            /** Select minutes from the data structure */
+    228            RTC->CWDLR_b.CWMINL = RTC_DateTime->Minute;
+    229            
+    230            /** Select hours from the data structure */
+    231            RTC->CWDLR_b.CWHOURL = RTC_DateTime->Hour;
+    232            
+    233            /** Select week day from the data structure */
+    234            RTC->CWDLR_b.CWDAYWL = RTC_DateTime->WeekDay;
+    235            
+    236            /** Select month day from the data structure */
+    237            RTC->CWDLR_b.CWDAYML = RTC_DateTime->MonthDay;
+    238            
+    239            /** Select month from the data structure */
+    240            RTC->CWDLR_b.CWMONTHL = RTC_DateTime->Month;
+    241            
+    242            /* Store data to load register */
+    243            RTC->CWYLR_b.CWYEARL = RTC_DateTime->Year;
+    244          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x680B             LDR      R3,[R1, #+0]
+   \   00000002   0x243F             MOVS     R4,#+63
+   \   00000004   0x43A3             BICS     R3,R3,R4
+   \   00000006   0x0692             LSLS     R2,R2,#+26
+   \   00000008   0x0E92             LSRS     R2,R2,#+26
+   \   0000000A   0x431A             ORRS     R2,R2,R3
+   \   0000000C   0x600A             STR      R2,[R1, #+0]
+   \   0000000E   0x7842             LDRB     R2,[R0, #+1]
+   \   00000010   0x680B             LDR      R3,[R1, #+0]
+   \   00000012   0x....             LDR      R4,??DataTable12_11  ;; 0xfffff03f
+   \   00000014   0x401C             ANDS     R4,R4,R3
+   \   00000016   0x0192             LSLS     R2,R2,#+6
+   \   00000018   0x23FC             MOVS     R3,#+252
+   \   0000001A   0x011B             LSLS     R3,R3,#+4        ;; #+4032
+   \   0000001C   0x4013             ANDS     R3,R3,R2
+   \   0000001E   0x4323             ORRS     R3,R3,R4
+   \   00000020   0x600B             STR      R3,[R1, #+0]
+   \   00000022   0x7882             LDRB     R2,[R0, #+2]
+   \   00000024   0x680B             LDR      R3,[R1, #+0]
+   \   00000026   0x....             LDR      R4,??DataTable12_12  ;; 0xfffe0fff
+   \   00000028   0x401C             ANDS     R4,R4,R3
+   \   0000002A   0x0312             LSLS     R2,R2,#+12
+   \   0000002C   0x23F8             MOVS     R3,#+248
+   \   0000002E   0x025B             LSLS     R3,R3,#+9        ;; #+126976
+   \   00000030   0x4013             ANDS     R3,R3,R2
+   \   00000032   0x4323             ORRS     R3,R3,R4
+   \   00000034   0x600B             STR      R3,[R1, #+0]
+   \   00000036   0x78C2             LDRB     R2,[R0, #+3]
+   \   00000038   0x680B             LDR      R3,[R1, #+0]
+   \   0000003A   0x....             LDR      R4,??DataTable12_13  ;; 0xfff1ffff
+   \   0000003C   0x401C             ANDS     R4,R4,R3
+   \   0000003E   0x0452             LSLS     R2,R2,#+17
+   \   00000040   0x23E0             MOVS     R3,#+224
+   \   00000042   0x031B             LSLS     R3,R3,#+12       ;; #+917504
+   \   00000044   0x4013             ANDS     R3,R3,R2
+   \   00000046   0x4323             ORRS     R3,R3,R4
+   \   00000048   0x600B             STR      R3,[R1, #+0]
+   \   0000004A   0x7902             LDRB     R2,[R0, #+4]
+   \   0000004C   0x680B             LDR      R3,[R1, #+0]
+   \   0000004E   0x....             LDR      R4,??DataTable12_14  ;; 0xfe0fffff
+   \   00000050   0x401C             ANDS     R4,R4,R3
+   \   00000052   0x0512             LSLS     R2,R2,#+20
+   \   00000054   0x23F8             MOVS     R3,#+248
+   \   00000056   0x045B             LSLS     R3,R3,#+17       ;; #+32505856
+   \   00000058   0x4013             ANDS     R3,R3,R2
+   \   0000005A   0x4323             ORRS     R3,R3,R4
+   \   0000005C   0x600B             STR      R3,[R1, #+0]
+   \   0000005E   0x7942             LDRB     R2,[R0, #+5]
+   \   00000060   0x680B             LDR      R3,[R1, #+0]
+   \   00000062   0x....             LDR      R4,??DataTable12_15  ;; 0xe1ffffff
+   \   00000064   0x401C             ANDS     R4,R4,R3
+   \   00000066   0x0652             LSLS     R2,R2,#+25
+   \   00000068   0x23F0             MOVS     R3,#+240
+   \   0000006A   0x055B             LSLS     R3,R3,#+21       ;; #+503316480
+   \   0000006C   0x4013             ANDS     R3,R3,R2
+   \   0000006E   0x4323             ORRS     R3,R3,R4
+   \   00000070   0x600B             STR      R3,[R1, #+0]
+   \   00000072   0x88C0             LDRH     R0,[R0, #+6]
+   \   00000074   0x898A             LDRH     R2,[R1, #+12]
+   \   00000076   0x23C0             MOVS     R3,#+192
+   \   00000078   0x021B             LSLS     R3,R3,#+8        ;; #+49152
+   \   0000007A   0x4013             ANDS     R3,R3,R2
+   \   0000007C   0x0480             LSLS     R0,R0,#+18
+   \   0000007E   0x0C80             LSRS     R0,R0,#+18
+   \   00000080   0x4318             ORRS     R0,R0,R3
+   \   00000082   0x8188             STRH     R0,[R1, #+12]
+   \   00000084   0xBD10             POP      {R4,PC}          ;; return
+    245          
+    246          /**
+    247            * @brief  Set the RTC clockwatch match date and time registers.
+    248            * @param  RTC_MatchDataTime: pointer to a @ref RTC_DateTimeType structure that
+    249            *         contains the matching time and date setting.
+    250            * @retval None
+    251            */
+
+   \                                 In section .text, align 2, keep-with-next
+    252          void RTC_SetMatchTimeDate(RTC_DateTimeType* RTC_MatchDataTime)
+    253          {
+   \                     RTC_SetMatchTimeDate: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    254            /* Check the parameters */
+    255            assert_param(IS_SECOND(RTC_MatchDataTime->Second));
+    256            assert_param(IS_MINUTE(RTC_MatchDataTime->Minute));
+    257            assert_param(IS_HOUR(RTC_MatchDataTime->Hour));
+    258            assert_param(IS_MATCH_WEEKDAY(RTC_MatchDataTime->WeekDay));
+    259            assert_param(IS_MATCH_MONTHDAY(RTC_MatchDataTime->MonthDay));
+    260            assert_param(IS_MATCH_MONTH(RTC_MatchDataTime->Month));
+    261            assert_param(IS_MATCH_YEAR(RTC_MatchDataTime->Year));
+    262            
+    263            /* Select seconds from the data structure */
+    264            RTC->CWDMR_b.CWSECM = RTC_MatchDataTime->Second;
+   \   00000002   0x7802             LDRB     R2,[R0, #+0]
+   \   00000004   0x....             LDR      R1,??DataTable12_10  ;; 0x40f00004
+   \   00000006                      REQUIRE ?Subroutine0
+   \   00000006                      ;; // Fall through to label ?Subroutine0
+    265            
+    266            /* Select minutes from the data structure */
+    267            RTC->CWDMR_b.CWMINM = RTC_MatchDataTime->Minute;
+    268            
+    269            /* Select hours from the data structure */
+    270            RTC->CWDMR_b.CWHOURM = RTC_MatchDataTime->Hour;
+    271            
+    272            /* Select week day from the data structure */
+    273            RTC->CWDMR_b.CWDAYWM = RTC_MatchDataTime->WeekDay;
+    274            
+    275            /* Select month day from the data structure */
+    276            RTC->CWDMR_b.CWDAYMM = RTC_MatchDataTime->MonthDay;
+    277            
+    278            /* Select month from the data structure */
+    279            RTC->CWDMR_b.CWMONTHM = RTC_MatchDataTime->Month;
+    280            
+    281          /* Select year from the data structure */
+    282            RTC->CWYMR_b.CWYEARM = RTC_MatchDataTime->Year;
+    283          }
+    284          
+    285          /**
+    286            * @brief  Set the RTC clockwatch match date and time registers.
+    287            * @param  RTC_DataTime: pointer to a @ref RTC_DateTimeType structure that
+    288            *         is filled with the configured values of time and date.
+    289            * @retval None
+    290            */
+
+   \                                 In section .text, align 2, keep-with-next
+    291          void RTC_GetTimeDate(RTC_DateTimeType* RTC_DataTime)
+    292          {
+    293            /* Select seconds from the RTC register */
+    294            RTC_DataTime->Second = RTC->CWDR_b.CWSEC;
+   \                     RTC_GetTimeDate: (+1)
+   \   00000000   0x223F             MOVS     R2,#+63
+   \   00000002   0x....             LDR      R1,??DataTable12_16  ;; 0x40f00000
+   \   00000004   0x680B             LDR      R3,[R1, #+0]
+   \   00000006   0x4013             ANDS     R3,R3,R2
+   \   00000008   0x7003             STRB     R3,[R0, #+0]
+    295            
+    296            /* Select minutes from the RTC register */
+    297            RTC_DataTime->Minute= RTC->CWDR_b.CWMIN;
+   \   0000000A   0x680B             LDR      R3,[R1, #+0]
+   \   0000000C   0x099B             LSRS     R3,R3,#+6
+   \   0000000E   0x401A             ANDS     R2,R2,R3
+   \   00000010   0x7042             STRB     R2,[R0, #+1]
+    298            
+    299            /* Select hours from the RTC register */
+    300            RTC_DataTime->Hour= RTC->CWDR_b.CWHOUR;
+   \   00000012   0x221F             MOVS     R2,#+31
+   \   00000014   0x680B             LDR      R3,[R1, #+0]
+   \   00000016   0x0B1B             LSRS     R3,R3,#+12
+   \   00000018   0x4013             ANDS     R3,R3,R2
+   \   0000001A   0x7083             STRB     R3,[R0, #+2]
+    301            
+    302            /* Select week day from the RTC register */
+    303            RTC_DataTime->WeekDay = RTC->CWDR_b.CWDAYW;
+   \   0000001C   0x680B             LDR      R3,[R1, #+0]
+   \   0000001E   0x031B             LSLS     R3,R3,#+12
+   \   00000020   0x0F5B             LSRS     R3,R3,#+29
+   \   00000022   0x70C3             STRB     R3,[R0, #+3]
+    304            
+    305            /* Select month day from the RTC register */
+    306            RTC_DataTime->MonthDay = RTC->CWDR_b.CWDAYM;
+   \   00000024   0x680B             LDR      R3,[R1, #+0]
+   \   00000026   0x0D1B             LSRS     R3,R3,#+20
+   \   00000028   0x401A             ANDS     R2,R2,R3
+   \   0000002A   0x7102             STRB     R2,[R0, #+4]
+    307            
+    308            /* Select month from the RTC register */
+    309            RTC_DataTime->Month = RTC->CWDR_b.CWMONTH;
+   \   0000002C   0x680A             LDR      R2,[R1, #+0]
+   \   0000002E   0x00D2             LSLS     R2,R2,#+3
+   \   00000030   0x0F12             LSRS     R2,R2,#+28
+   \   00000032   0x7142             STRB     R2,[R0, #+5]
+    310            
+    311            /* Select year from the RTC register */
+    312            RTC_DataTime->Year = RTC->CWYR_b.CWYEAR;
+   \   00000034   0x8989             LDRH     R1,[R1, #+12]
+   \   00000036   0x0489             LSLS     R1,R1,#+18
+   \   00000038   0x0C89             LSRS     R1,R1,#+18
+   \   0000003A   0x80C1             STRH     R1,[R0, #+6]
+    313          }
+   \   0000003C   0x4770             BX       LR               ;; return
+    314          
+    315          /**
+    316            * @brief  Return the actual timer counter.
+    317            * @param  None
+    318            * @retval uint32_t the current counter value.
+    319            */
+
+   \                                 In section .text, align 2, keep-with-next
+    320          uint32_t RTC_GetTimerValue(void)
+    321          {
+    322            /* Return the current Time Data Register */
+    323            return RTC->TDR;
+   \                     RTC_GetTimerValue: (+1)
+   \   00000000   0x....             LDR      R0,??DataTable12_17  ;; 0x40f0002c
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x4770             BX       LR               ;; return
+    324          }
+    325          
+    326          /**
+    327            * @brief  Return the actual number of interrupt generated by RTC.
+    328            * @param  None
+    329            * @retval uint32_t the actual number of interrupt generated by RTC.
+    330            */
+
+   \                                 In section .text, align 2, keep-with-next
+    331          uint32_t RTC_GetNumberIrqGenerated(void)
+    332          {
+    333            /* Return the current Time Data Register */
+    334            return RTC->TIN;
+   \                     RTC_GetNumberIrqGenerated: (+1)
+   \   00000000   0x....             LDR      R0,??DataTable12_18  ;; 0x40f0004c
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x4770             BX       LR               ;; return
+    335          }
+    336          
+    337          
+    338          /**
+    339            * @brief  Enables or disables the auto start on load register or pattern register write operation.
+    340            * @param  NewState: functional state @ref FunctionalState
+    341            *         This parameter can be: ENABLE or DISABLE.
+    342            * @retval None
+    343            */
+
+   \                                 In section .text, align 2, keep-with-next
+    344          void RTC_AutoStart(FunctionalState NewState)
+    345          {
+    346            /* Check the parameters */
+    347            assert_param(IS_FUNCTIONAL_STATE(NewState));
+    348            
+    349            if (NewState != DISABLE) {
+   \                     RTC_AutoStart: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable12  ;; 0x40f00030
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0x8808             LDRH     R0,[R1, #+0]
+   \   00000006   0xD002             BEQ      ??RTC_AutoStart_0
+    350              RTC->TCR_b.S = SET;
+   \   00000008   0x2204             MOVS     R2,#+4
+   \   0000000A   0x4302             ORRS     R2,R2,R0
+   \   0000000C   0xE001             B        ??RTC_AutoStart_1
+    351            }
+    352            else {
+    353              RTC->TCR_b.S = RESET;
+   \                     ??RTC_AutoStart_0: (+1)
+   \   0000000E   0x....             LDR      R2,??DataTable12_19  ;; 0xfffb
+   \   00000010   0x4002             ANDS     R2,R2,R0
+   \                     ??RTC_AutoStart_1: (+1)
+   \   00000012   0x800A             STRH     R2,[R1, #+0]
+    354            }
+    355          }
+   \   00000014   0x4770             BX       LR               ;; return
+    356          
+    357          
+    358          /**
+    359            * @brief  Enables or disables the use of the trimmed 32 kHz clock.
+    360            * @param  NewState: functional state @ref FunctionalState
+    361            *         This parameter can be: ENABLE or DISABLE.
+    362            * @retval None
+    363            */
+
+   \                                 In section .text, align 2, keep-with-next
+    364          void RTC_SelectTrimmedClock(FunctionalState NewState)
+    365          {
+    366            /* Check the parameters */
+    367            assert_param(IS_FUNCTIONAL_STATE(NewState));
+    368            
+    369            if (NewState != DISABLE) {
+   \                     RTC_SelectTrimmedClock: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable12  ;; 0x40f00030
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0x8808             LDRH     R0,[R1, #+0]
+   \   00000006   0xD003             BEQ      ??RTC_SelectTrimmedClock_0
+    370              RTC->TCR_b.CLK = SET;
+   \   00000008   0x2280             MOVS     R2,#+128
+   \   0000000A   0x0112             LSLS     R2,R2,#+4        ;; #+2048
+   \   0000000C   0x4302             ORRS     R2,R2,R0
+   \   0000000E   0xE001             B        ??RTC_SelectTrimmedClock_1
+    371            }
+    372            else {
+    373              RTC->TCR_b.CLK = RESET;
+   \                     ??RTC_SelectTrimmedClock_0: (+1)
+   \   00000010   0x....             LDR      R2,??DataTable12_20  ;; 0xf7ff
+   \   00000012   0x4002             ANDS     R2,R2,R0
+   \                     ??RTC_SelectTrimmedClock_1: (+1)
+   \   00000014   0x800A             STRH     R2,[R1, #+0]
+    374            }
+    375          }
+   \   00000016   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12:
+   \   00000000   0x40F00030         DC32     0x40f00030
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_1:
+   \   00000000   0x0000FFFE         DC32     0xfffe
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_2:
+   \   00000000   0x0000F80F         DC32     0xf80f
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_3:
+   \   00000000   0x0000FFFD         DC32     0xfffd
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_4:
+   \   00000000   0x40F0001C         DC32     0x40f0001c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_5:
+   \   00000000   0x40F00020         DC32     0x40f00020
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_6:
+   \   00000000   0x40F00028         DC32     0x40f00028
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_7:
+   \   00000000   0x40F00018         DC32     0x40f00018
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_8:
+   \   00000000   0xFBFFFFFF         DC32     0xfbffffff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_9:
+   \   00000000   0x40F00008         DC32     0x40f00008
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_10:
+   \   00000000   0x40F00004         DC32     0x40f00004
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_11:
+   \   00000000   0xFFFFF03F         DC32     0xfffff03f
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_12:
+   \   00000000   0xFFFE0FFF         DC32     0xfffe0fff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_13:
+   \   00000000   0xFFF1FFFF         DC32     0xfff1ffff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_14:
+   \   00000000   0xFE0FFFFF         DC32     0xfe0fffff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_15:
+   \   00000000   0xE1FFFFFF         DC32     0xe1ffffff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_16:
+   \   00000000   0x40F00000         DC32     0x40f00000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_17:
+   \   00000000   0x40F0002C         DC32     0x40f0002c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_18:
+   \   00000000   0x40F0004C         DC32     0x40f0004c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_19:
+   \   00000000   0x0000FFFB         DC32     0xfffb
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_20:
+   \   00000000   0x0000F7FF         DC32     0xf7ff
+    376          
+    377          /**
+    378            * @}
+    379            */
+    380          
+    381          /**
+    382            * @}
+    383            */
+    384          
+    385          /**
+    386            * @}
+    387            */
+    388          
+    389          /******************* (C) COPYRIGHT 2016 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   RTC_AutoStart
+       0   RTC_ClockwatchCmd
+       0   RTC_Cmd
+       0   RTC_GetNumberIrqGenerated
+       0   RTC_GetTimeDate
+       0   RTC_GetTimerValue
+       0   RTC_IT_Clear
+       0   RTC_IT_Config
+       0   RTC_IT_Status
+       8   RTC_Init
+       0   RTC_SelectTrimmedClock
+       8   RTC_SetMatchTimeDate
+       8   RTC_SetTimeDate
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable12
+       4  ??DataTable12_1
+       4  ??DataTable12_10
+       4  ??DataTable12_11
+       4  ??DataTable12_12
+       4  ??DataTable12_13
+       4  ??DataTable12_14
+       4  ??DataTable12_15
+       4  ??DataTable12_16
+       4  ??DataTable12_17
+       4  ??DataTable12_18
+       4  ??DataTable12_19
+       4  ??DataTable12_2
+       4  ??DataTable12_20
+       4  ??DataTable12_3
+       4  ??DataTable12_4
+       4  ??DataTable12_5
+       4  ??DataTable12_6
+       4  ??DataTable12_7
+       4  ??DataTable12_8
+       4  ??DataTable12_9
+     134  ?Subroutine0
+      22  RTC_AutoStart
+      24  RTC_ClockwatchCmd
+      22  RTC_Cmd
+       6  RTC_GetNumberIrqGenerated
+      62  RTC_GetTimeDate
+       6  RTC_GetTimerValue
+       6  RTC_IT_Clear
+      34  RTC_IT_Config
+      16  RTC_IT_Status
+      66  RTC_Init
+      24  RTC_SelectTrimmedClock
+       6  RTC_SetMatchTimeDate
+       8  RTC_SetTimeDate
+
+ 
+ 520 bytes in section .text
+ 
+ 520 bytes of CODE memory
+
+Errors: none
+Warnings: none

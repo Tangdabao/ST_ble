@@ -1,0 +1,1299 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       29/Nov/2017  10:11:18
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_adc.c
+#    Command line =  
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_adc.c" -D
+#        HS_SPEED_XTAL=HS_SPEED_XTAL_16MHZ -D
+#        LS_SOURCE=LS_SOURCE_EXTERNAL_32KHZ -D SMPS_INDUCTOR=SMPS_INDUCTOR_10uH
+#        --preprocess=cl "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2
+#        DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        -lCN "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        -lb "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        --diag_suppress Pe1665 -o "D:\Program Files
+#        (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\Obj"
+#        --debug --endian=little --cpu=Cortex-M0 --diag_warning Pe1665
+#        --diag_suppress Pe1665 -e --fpu=None --dlib_config
+#        D:\Software\IAR_BlueNRG\arm\INC\c\DLib_Config_Normal.h -I "D:\Program
+#        Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\CMSIS\Include\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\hal\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\Bluetooth_LE\inc\"
+#        -Ohz
+#    Locale       =  Chinese (Simplified)_China.936
+#    List file    =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List\BlueNRG1_adc.lst
+#    Object file  =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_adc.o
+#
+###############################################################################
+
+D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK 2.5.0\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_adc.c
+      1          /**
+      2          ******************************************************************************
+      3          * @file    BlueNRG1_adc.c
+      4          * @author  VMA Application Team
+      5          * @version V2.2.0
+      6          * @date    21-March-2016
+      7          * @brief   This file provides all the ADC firmware functions.
+      8          ******************************************************************************
+      9          * @attention
+     10          *
+     11          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     12          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     13          * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     14          * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     15          * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     16          * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     17          *
+     18          * <h2><center>&copy; COPYRIGHT 2016 STMicroelectronics</center></h2>
+     19          ******************************************************************************
+     20          */
+     21          
+     22          /* Includes ------------------------------------------------------------------*/
+     23          #include "BlueNRG1_adc.h"
+     24          
+     25          
+     26          /** @addtogroup BLUENRG1_Peripheral_Driver BLUENRG1 Peripheral Driver
+     27            * @{
+     28            */
+     29          
+     30          /** @addtogroup ADC_Peripheral  ADC Peripheral
+     31            * @{
+     32            */
+     33          
+     34          
+     35          /** @defgroup ADC_Private_Types Private Types
+     36          * @{
+     37          */
+     38          
+     39          /**
+     40          * @}
+     41          */
+     42          
+     43          
+     44          /** @defgroup ADC_Private_Constants Private Constants
+     45          * @{
+     46          */
+     47          #define ADC_VREF                  ((float)(2.4))
+     48          #ifdef BLUENRG2_DEVICE
+     49          #define ADC_FS_OSR_32_64          ((float)(35442.0))
+     50          #define ADC_FS_OSR_100_200        ((float)(41260.0))
+     51          #else
+     52          #define ADC_FS_OSR_32_64          ((float)(16708.0))
+     53          #define ADC_FS_OSR_100_200        ((float)(19450.0))
+     54          #endif
+     55          #define ADC_KBATT                 ((float)(4.36))
+     56          #define ADC_KTEMP                 ((float)(401.0))
+     57          #define ADC_CTEMP                 ((float)(267.0))
+     58          
+     59          /**
+     60          * @}
+     61          */
+     62          
+     63          
+     64          /** @defgroup ADC_Private_Macros Private Macros
+     65          * @{
+     66          */
+     67          
+     68          /**
+     69          * @}
+     70          */
+     71          
+     72          /** @defgroup ADC_Private_Variables Private Variables
+     73          * @{
+     74          */
+     75          
+     76          /**
+     77          * @}
+     78          */
+     79          
+     80          /** @defgroup ADC_Private_Function Private Functions
+     81          * @{
+     82          */
+     83          
+     84          
+     85          /**
+     86          * @brief  Convert raw ADC value in converted differential voltage value.
+     87          * @param  raw_value: ADC raw value
+     88          * @retval float: converted differential voltage value
+     89          */
+
+   \                                 In section .text, align 2, keep-with-next
+     90          float ADC_ConvertDifferentialVoltage(int16_t raw_value, uint8_t attenuation)
+     91          {
+   \                     ADC_ConvertDifferentialVoltage: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x0008             MOVS     R0,R1
+     92            float pga, divider = ADC_FS_OSR_32_64;
+   \   00000006   0x....             LDR      R6,??DataTable14  ;; 0x46828800
+     93            
+     94            pga = (float)attenuation;
+   \   00000008   0x.... 0x....      BL       __aeabi_ui2f
+     95            
+     96            if(ADC->CONF_b.OSR == ADC_OSR_100 || ADC->CONF_b.OSR == ADC_OSR_200) {
+   \   0000000C   0x2103             MOVS     R1,#+3
+   \   0000000E   0x....             LDR      R2,??DataTable14_1  ;; 0x40800004
+   \   00000010   0x6813             LDR      R3,[R2, #+0]
+   \   00000012   0x099B             LSRS     R3,R3,#+6
+   \   00000014   0x400B             ANDS     R3,R3,R1
+   \   00000016   0x2B01             CMP      R3,#+1
+   \   00000018   0xD003             BEQ      ??ADC_ConvertDifferentialVoltage_0
+   \   0000001A   0x6812             LDR      R2,[R2, #+0]
+   \   0000001C   0x0992             LSRS     R2,R2,#+6
+   \   0000001E   0x4011             ANDS     R1,R1,R2
+   \   00000020   0xD100             BNE      ??ADC_ConvertDifferentialVoltage_1
+     97              divider = ADC_FS_OSR_100_200;
+   \                     ??ADC_ConvertDifferentialVoltage_0: (+1)
+   \   00000022   0x....             LDR      R6,??DataTable14_2  ;; 0x4697f400
+     98            }
+     99          
+    100            return ((1 + pga) * (raw_value / divider) * ADC_VREF);
+   \                     ??ADC_ConvertDifferentialVoltage_1: (+1)
+   \   00000024   0x21FE             MOVS     R1,#+254
+   \   00000026   0x0589             LSLS     R1,R1,#+22       ;; #+1065353216
+   \   00000028   0x.... 0x....      BL       __aeabi_fadd
+   \   0000002C   0x0004             MOVS     R4,R0
+   \   0000002E   0x0028             MOVS     R0,R5
+   \   00000030   0x.... 0x....      BL       __aeabi_i2f
+   \   00000034   0x0031             MOVS     R1,R6
+   \   00000036   0x.... 0x....      BL       __aeabi_fdiv
+   \   0000003A   0x0021             MOVS     R1,R4
+   \   0000003C   0x.... 0x....      BL       __aeabi_fmul
+   \   00000040   0x....             LDR      R1,??DataTable15  ;; 0x4019999a
+   \   00000042   0x.... 0x....      BL       __aeabi_fmul
+   \   00000046   0xBD70             POP      {R4-R6,PC}       ;; return
+    101          }
+    102          
+    103          /**
+    104          * @brief  Convert raw ADC value in converted single ended voltage value.
+    105          * @param  raw_value ADC raw value
+    106          * @param  channel: the selected single channel type
+    107          * @param  vRef: the configured reference voltage
+    108          * @retval float: converted single ended voltage value
+    109          */
+
+   \                                 In section .text, align 2, keep-with-next
+    110          float ADC_ConvertSingleEndedVoltage(int16_t raw_value, uint8_t channel, uint8_t vRef, uint8_t attenuation)
+    111          {
+   \                     ADC_ConvertSingleEndedVoltage: (+1)
+   \   00000000   0xB5F5             PUSH     {R0,R2,R4-R7,LR}
+   \   00000002   0xB081             SUB      SP,SP,#+4
+   \   00000004   0x000C             MOVS     R4,R1
+   \   00000006   0x0018             MOVS     R0,R3
+    112            float pga, vref = 0.0;
+   \   00000008   0x2600             MOVS     R6,#+0
+    113            float divider;
+    114            
+    115            pga = (float)attenuation;
+   \   0000000A   0x.... 0x....      BL       __aeabi_ui2f
+   \   0000000E   0x0005             MOVS     R5,R0
+    116            
+    117            switch(vRef) {
+   \   00000010   0x4668             MOV      R0,SP
+   \   00000012   0x7A00             LDRB     R0,[R0, #+8]
+   \   00000014   0x2802             CMP      R0,#+2
+   \   00000016   0xD002             BEQ      ??ADC_ConvertSingleEndedVoltage_0
+   \   00000018   0x2803             CMP      R0,#+3
+   \   0000001A   0xD002             BEQ      ??ADC_ConvertSingleEndedVoltage_1
+   \   0000001C   0xE002             B        ??ADC_ConvertSingleEndedVoltage_2
+    118            case ADC_ReferenceVoltage_0V6:
+    119              vref = 0.6;
+   \                     ??ADC_ConvertSingleEndedVoltage_0: (+1)
+   \   0000001E   0x....             LDR      R6,??DataTable15_1  ;; 0x3f19999a
+    120              break;
+   \   00000020   0xE000             B        ??ADC_ConvertSingleEndedVoltage_2
+    121            case ADC_ReferenceVoltage_1V2:
+    122              vref = 1.2;
+   \                     ??ADC_ConvertSingleEndedVoltage_1: (+1)
+   \   00000022   0x....             LDR      R6,??DataTable15_2  ;; 0x3f99999a
+    123              break;
+    124            }
+    125            
+    126            if(ADC->CONF_b.OSR == ADC_OSR_100 || ADC->CONF_b.OSR == ADC_OSR_200) {
+   \                     ??ADC_ConvertSingleEndedVoltage_2: (+1)
+   \   00000024   0x2003             MOVS     R0,#+3
+   \   00000026   0x....             LDR      R1,??DataTable14_1  ;; 0x40800004
+   \   00000028   0x680A             LDR      R2,[R1, #+0]
+   \   0000002A   0x0992             LSRS     R2,R2,#+6
+   \   0000002C   0x4002             ANDS     R2,R2,R0
+   \   0000002E   0x2A01             CMP      R2,#+1
+   \   00000030   0xD003             BEQ      ??ADC_ConvertSingleEndedVoltage_3
+   \   00000032   0x6809             LDR      R1,[R1, #+0]
+   \   00000034   0x0989             LSRS     R1,R1,#+6
+   \   00000036   0x4008             ANDS     R0,R0,R1
+   \   00000038   0xD100             BNE      ??ADC_ConvertSingleEndedVoltage_4
+    127              divider = ADC_FS_OSR_100_200;
+   \                     ??ADC_ConvertSingleEndedVoltage_3: (+1)
+   \   0000003A   0x....             LDR      R7,??DataTable14_2  ;; 0x4697f400
+    128            }
+    129            
+    130            if(channel == ADC_Input_AdcPin1) 
+   \                     ??ADC_ConvertSingleEndedVoltage_4: (+1)
+   \   0000003C   0x9801             LDR      R0,[SP, #+4]
+   \   0000003E   0xB200             SXTH     R0,R0
+   \   00000040   0x.... 0x....      BL       __aeabi_i2f
+   \   00000044   0x0039             MOVS     R1,R7
+   \   00000046   0x.... 0x....      BL       __aeabi_fdiv
+   \   0000004A   0x....             LDR      R1,??DataTable15  ;; 0x4019999a
+   \   0000004C   0x.... 0x....      BL       __aeabi_fmul
+   \   00000050   0x0007             MOVS     R7,R0
+   \   00000052   0x20FE             MOVS     R0,#+254
+   \   00000054   0x0580             LSLS     R0,R0,#+22       ;; #+1065353216
+   \   00000056   0x0029             MOVS     R1,R5
+   \   00000058   0x.... 0x....      BL       __aeabi_fadd
+   \   0000005C   0x0005             MOVS     R5,R0
+   \   0000005E   0x2C02             CMP      R4,#+2
+   \   00000060   0xD104             BNE      ??ADC_ConvertSingleEndedVoltage_5
+    131              return  ((1 + pga) * (vref + ((raw_value/divider) * ADC_VREF)));
+   \   00000062   0x0038             MOVS     R0,R7
+   \   00000064   0x0031             MOVS     R1,R6
+   \   00000066   0x.... 0x....      BL       __aeabi_fadd
+   \   0000006A   0xE003             B        ??ADC_ConvertSingleEndedVoltage_6
+    132            else
+    133              return  ((1 + pga) * (vref - ((raw_value/divider) * ADC_VREF)));
+   \                     ??ADC_ConvertSingleEndedVoltage_5: (+1)
+   \   0000006C   0x0030             MOVS     R0,R6
+   \   0000006E   0x0039             MOVS     R1,R7
+   \   00000070   0x.... 0x....      BL       __aeabi_fsub
+   \                     ??ADC_ConvertSingleEndedVoltage_6: (+1)
+   \   00000074   0x0029             MOVS     R1,R5
+   \   00000076   0x.... 0x....      BL       __aeabi_fmul
+   \   0000007A   0xBDFE             POP      {R1-R7,PC}       ;; return
+    134          }
+    135          
+    136          
+    137          /**
+    138          * @brief  Convert raw ADC value in battery level.
+    139          * @param  raw_value ADC raw value
+    140          * @param  vRef: the configured reference voltage
+    141          * @retval float: converted battery level
+    142          */
+
+   \                                 In section .text, align 2, keep-with-next
+    143          float ADC_ConvertBatterySensor(int16_t raw_value, uint8_t vRef) /* testare al variare di vref */
+    144          {
+   \                     ADC_ConvertBatterySensor: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    145            return (ADC_KBATT * (ADC_ConvertSingleEndedVoltage(raw_value, ADC_Input_AdcPin2, ADC_ReferenceVoltage_0V6, ADC_Attenuation_0dB)));
+   \   00000002   0x2300             MOVS     R3,#+0
+   \   00000004   0x2202             MOVS     R2,#+2
+   \   00000006   0x2101             MOVS     R1,#+1
+   \   00000008   0x.... 0x....      BL       ADC_ConvertSingleEndedVoltage
+   \   0000000C   0x....             LDR      R1,??DataTable16  ;; 0x408b851f
+   \   0000000E   0x.... 0x....      BL       __aeabi_fmul
+   \   00000012   0xBD02             POP      {R1,PC}          ;; return
+    146          }
+    147          
+    148          /**
+    149          * @brief  Convert raw ADC value in temperature level in Celsius degrees.
+    150          * @param  raw_value ADC raw value
+    151          * @param  vRef: the configured reference voltage
+    152          * @retval float: converted temperature level in Celsius degrees
+    153          */
+
+   \                                 In section .text, align 2, keep-with-next
+    154          float ADC_ConvertTemperatureSensor(int16_t raw_value, uint8_t vRef, uint8_t attenuation)
+    155          {
+   \                     ADC_ConvertTemperatureSensor: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    156            return  ((ADC_KTEMP * (ADC_ConvertSingleEndedVoltage(raw_value, ADC_Input_AdcPin2, ADC_ReferenceVoltage_0V6, ADC_Attenuation_0dB))) - ADC_CTEMP);
+   \   00000002   0x2300             MOVS     R3,#+0
+   \   00000004   0x2202             MOVS     R2,#+2
+   \   00000006   0x2101             MOVS     R1,#+1
+   \   00000008   0x.... 0x....      BL       ADC_ConvertSingleEndedVoltage
+   \   0000000C   0x....             LDR      R1,??DataTable16_1  ;; 0x43c88000
+   \   0000000E   0x.... 0x....      BL       __aeabi_fmul
+   \   00000012   0x....             LDR      R1,??DataTable16_2  ;; 0xc3858000
+   \   00000014   0x.... 0x....      BL       __aeabi_fadd
+   \   00000018   0xBD02             POP      {R1,PC}          ;; return
+    157          }
+
+   \                                 In section .text, align 2, keep-with-next
+    158          float ADC_ConvertTemperatureSensorFarenait(int16_t raw_value, uint8_t vRef, uint8_t attenuation)
+    159          {
+   \                     ADC_ConvertTemperatureSensorFarenait: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    160            return  ((722.0 * (ADC_ConvertSingleEndedVoltage(raw_value, ADC_Input_AdcPin2, ADC_ReferenceVoltage_0V6, ADC_Attenuation_0dB))) - 499.0);
+   \   00000002   0x2300             MOVS     R3,#+0
+   \   00000004   0x2202             MOVS     R2,#+2
+   \   00000006   0x2101             MOVS     R1,#+1
+   \   00000008   0x.... 0x....      BL       ADC_ConvertSingleEndedVoltage
+   \   0000000C   0x.... 0x....      BL       __aeabi_f2d
+   \   00000010   0x2200             MOVS     R2,#+0
+   \   00000012   0x....             LDR      R3,??DataTable16_3  ;; 0x40869000
+   \   00000014   0x.... 0x....      BL       __aeabi_dmul
+   \   00000018   0x2200             MOVS     R2,#+0
+   \   0000001A   0x....             LDR      R3,??DataTable16_4  ;; 0xc07f3000
+   \   0000001C   0x.... 0x....      BL       __aeabi_dadd
+   \   00000020   0x.... 0x....      BL       __aeabi_d2f
+   \   00000024   0xBD02             POP      {R1,PC}          ;; return
+    161          }
+    162          
+    163          /**
+    164          * @}
+    165          */
+    166          
+    167          
+    168          /** @defgroup ADC_Public_Functions Public Functions
+    169          * @{
+    170          */
+    171          
+    172          /**
+    173          * @brief  Deinitializes ADC peripheral registers to their default reset values.
+    174          * @param  None
+    175          * @retval None
+    176          */
+
+   \                                 In section .text, align 2, keep-with-next
+    177          void ADC_DeInit(void)
+    178          {
+    179            /* Enable ADC reset state */
+    180            ADC->CTRL_b.RESET = SET;
+   \                     ADC_DeInit: (+1)
+   \   00000000   0x2081             MOVS     R0,#+129
+   \   00000002   0x05C0             LSLS     R0,R0,#+23       ;; #+1082130432
+   \   00000004   0x8801             LDRH     R1,[R0, #+0]
+   \   00000006   0x2208             MOVS     R2,#+8
+   \   00000008   0x430A             ORRS     R2,R2,R1
+   \   0000000A   0x8002             STRH     R2,[R0, #+0]
+    181          }
+   \   0000000C   0x4770             BX       LR               ;; return
+    182          
+    183          
+    184          /**
+    185            * @brief  Fills the ADC_InitStruct with default values.
+    186            * @param  ADC_InitStruct: pointer to an @ref ADC_InitType structure which will be initialized.
+    187            * @retval None
+    188            */
+
+   \                                 In section .text, align 2, keep-with-next
+    189          void ADC_StructInit(ADC_InitType* ADC_InitStruct)
+    190          {
+    191            /* Set the decimation rate */
+    192            ADC_InitStruct->ADC_OSR = ADC_OSR_200;
+   \                     ADC_StructInit: (+1)
+   \   00000000   0x2100             MOVS     R1,#+0
+   \   00000002   0x7001             STRB     R1,[R0, #+0]
+    193          
+    194            /* Select the input source */
+    195            ADC_InitStruct->ADC_Input = ADC_Input_None;
+   \   00000004   0x7041             STRB     R1,[R0, #+1]
+    196          
+    197            /* Set the reference voltage */
+    198            ADC_InitStruct->ADC_ReferenceVoltage = ADC_ReferenceVoltage_0V6;
+   \   00000006   0x2202             MOVS     R2,#+2
+   \   00000008   0x7102             STRB     R2,[R0, #+4]
+    199          
+    200            /* Set the conversion mode */
+    201            ADC_InitStruct->ADC_ConversionMode = ADC_ConversionMode_Single;
+   \   0000000A   0x7081             STRB     R1,[R0, #+2]
+    202          
+    203            /* Set the attenuation */
+    204            ADC_InitStruct->ADC_Attenuation = ADC_Attenuation_0dB;
+   \   0000000C   0x70C1             STRB     R1,[R0, #+3]
+    205          }
+   \   0000000E   0x4770             BX       LR               ;; return
+    206          
+    207          
+    208          /**
+    209          * @brief  Initializes the ADC peripheral according to the specified parameters
+    210          *         in the ADC_InitStruct.
+    211          * @param  ADC_InitStruct: pointer to an @ref ADC_InitType structure that contains 
+    212          *         the configuration information for the ADC peripheral.
+    213          * @retval None
+    214          */
+
+   \                                 In section .text, align 2, keep-with-next
+    215          void ADC_Init(ADC_InitType* ADC_InitStruct)               
+    216          {
+   \                     ADC_Init: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    217            /* Check the parameters */
+    218            assert_param(IS_ADC_OSR(ADC_InitStruct->ADC_OSR)); 
+    219            assert_param(IS_ADC_INPUT(ADC_InitStruct->ADC_Input));
+    220            assert_param(IS_ADC_CONVERSIONMODE(ADC_InitStruct->ADC_ConversionMode)); 
+    221            assert_param(IS_ADC_ATTENUATION(ADC_InitStruct->ADC_Attenuation));    
+    222            assert_param(IS_ADC_REFERENCEVOLTAGE(ADC_InitStruct->ADC_ReferenceVoltage)); 
+    223          
+    224            /* Set the decimation rate */
+    225            ADC->CONF_b.OSR = ADC_InitStruct->ADC_OSR;
+   \   00000002   0x....             LDR      R1,??DataTable14_1  ;; 0x40800004
+   \   00000004   0x680A             LDR      R2,[R1, #+0]
+   \   00000006   0x23C0             MOVS     R3,#+192
+   \   00000008   0x439A             BICS     R2,R2,R3
+   \   0000000A   0x7803             LDRB     R3,[R0, #+0]
+   \   0000000C   0x019B             LSLS     R3,R3,#+6
+   \   0000000E   0x24C0             MOVS     R4,#+192
+   \   00000010   0x401C             ANDS     R4,R4,R3
+   \   00000012   0x4314             ORRS     R4,R4,R2
+   \   00000014   0x600C             STR      R4,[R1, #+0]
+    226            
+    227            /* Select the input source */
+    228            if(ADC_InitStruct->ADC_Input == ADC_Input_Microphone) {
+   \   00000016   0x7842             LDRB     R2,[R0, #+1]
+   \   00000018   0x2A0F             CMP      R2,#+15
+   \   0000001A   0x680A             LDR      R2,[R1, #+0]
+   \   0000001C   0xD104             BNE      ??ADC_Init_0
+    229              ADC->CONF_b.MIC_SEL = SET;
+   \   0000001E   0x2380             MOVS     R3,#+128
+   \   00000020   0x03DB             LSLS     R3,R3,#+15       ;; #+4194304
+   \   00000022   0x4313             ORRS     R3,R3,R2
+   \   00000024   0x600B             STR      R3,[R1, #+0]
+   \   00000026   0xE00B             B        ??ADC_Init_1
+    230            }
+    231            else {
+    232              ADC->CONF_b.MIC_SEL = RESET;      
+   \                     ??ADC_Init_0: (+1)
+   \   00000028   0x....             LDR      R3,??DataTable16_5  ;; 0xffbfffff
+   \   0000002A   0x4013             ANDS     R3,R3,R2
+   \   0000002C   0x600B             STR      R3,[R1, #+0]
+    233              ADC->CONF_b.CHSEL = ADC_InitStruct->ADC_Input;
+   \   0000002E   0x680A             LDR      R2,[R1, #+0]
+   \   00000030   0x230E             MOVS     R3,#+14
+   \   00000032   0x439A             BICS     R2,R2,R3
+   \   00000034   0x7843             LDRB     R3,[R0, #+1]
+   \   00000036   0x005B             LSLS     R3,R3,#+1
+   \   00000038   0x240E             MOVS     R4,#+14
+   \   0000003A   0x401C             ANDS     R4,R4,R3
+   \   0000003C   0x4314             ORRS     R4,R4,R2
+   \   0000003E   0x600C             STR      R4,[R1, #+0]
+    234            }
+    235            
+    236            /* Set the reference voltage */
+    237            ADC->CONF_b.REFSEL = ADC_InitStruct->ADC_ReferenceVoltage;
+   \                     ??ADC_Init_1: (+1)
+   \   00000040   0x680A             LDR      R2,[R1, #+0]
+   \   00000042   0x2330             MOVS     R3,#+48
+   \   00000044   0x439A             BICS     R2,R2,R3
+   \   00000046   0x7903             LDRB     R3,[R0, #+4]
+   \   00000048   0x011B             LSLS     R3,R3,#+4
+   \   0000004A   0x2430             MOVS     R4,#+48
+   \   0000004C   0x401C             ANDS     R4,R4,R3
+   \   0000004E   0x4314             ORRS     R4,R4,R2
+   \   00000050   0x600C             STR      R4,[R1, #+0]
+    238            
+    239            /* Set the conversion mode */
+    240            if(ADC_InitStruct->ADC_ConversionMode == ADC_ConversionMode_Continuous) {
+   \   00000052   0x7882             LDRB     R2,[R0, #+2]
+   \   00000054   0x2A08             CMP      R2,#+8
+   \   00000056   0x680A             LDR      R2,[R1, #+0]
+   \   00000058   0xD103             BNE      ??ADC_Init_2
+    241              ADC->CONF_b.CONT = SET;
+   \   0000005A   0x2380             MOVS     R3,#+128
+   \   0000005C   0x011B             LSLS     R3,R3,#+4        ;; #+2048
+   \   0000005E   0x4313             ORRS     R3,R3,R2
+   \   00000060   0xE001             B        ??ADC_Init_3
+    242            }
+    243            else {
+    244              ADC->CONF_b.CONT = RESET;
+   \                     ??ADC_Init_2: (+1)
+   \   00000062   0x....             LDR      R3,??DataTable16_6  ;; 0xfffff7ff
+   \   00000064   0x4013             ANDS     R3,R3,R2
+   \                     ??ADC_Init_3: (+1)
+   \   00000066   0x600B             STR      R3,[R1, #+0]
+    245            }
+    246            
+    247            /* Set the attenuation */
+    248            ADC->CONF_b.PGASEL = ADC_InitStruct->ADC_Attenuation;
+   \   00000068   0x680A             LDR      R2,[R1, #+0]
+   \   0000006A   0x....             LDR      R3,??DataTable16_7  ;; 0xfffffcff
+   \   0000006C   0x4013             ANDS     R3,R3,R2
+   \   0000006E   0x78C0             LDRB     R0,[R0, #+3]
+   \   00000070   0x0200             LSLS     R0,R0,#+8
+   \   00000072   0x22C0             MOVS     R2,#+192
+   \   00000074   0x0092             LSLS     R2,R2,#+2        ;; #+768
+   \   00000076   0x4002             ANDS     R2,R2,R0
+   \   00000078   0x431A             ORRS     R2,R2,R3
+   \   0000007A   0x600A             STR      R2,[R1, #+0]
+    249          
+    250          }
+   \   0000007C   0xBD10             POP      {R4,PC}          ;; return
+    251          
+    252          
+    253          /**
+    254          * @brief  Enable disable the ADC conversion.
+    255          * @param  NewState: functional state @ref FunctionalState
+    256          *         This parameter can be: ENABLE or DISABLE.
+    257          * @retval None
+    258          */
+
+   \                                 In section .text, align 2, keep-with-next
+    259          void ADC_Cmd(FunctionalState NewState)
+    260          {
+    261            /* Check the parameters */
+    262            assert_param(IS_FUNCTIONAL_STATE(NewState)); 
+    263            
+    264            if(NewState==ENABLE) {
+   \                     ADC_Cmd: (+1)
+   \   00000000   0x2181             MOVS     R1,#+129
+   \   00000002   0x05C9             LSLS     R1,R1,#+23       ;; #+1082130432
+   \   00000004   0x2801             CMP      R0,#+1
+   \   00000006   0xD110             BNE      ??ADC_Cmd_0
+    265              if(ADC->CONF_b.MIC_SEL) {
+   \   00000008   0x684A             LDR      R2,[R1, #+4]
+   \   0000000A   0x0D92             LSRS     R2,R2,#+22
+   \   0000000C   0x4002             ANDS     R2,R2,R0
+   \   0000000E   0xD004             BEQ      ??ADC_Cmd_1
+    266                ADC->CTRL_b.MIC_ON = SET;
+   \   00000010   0x880A             LDRH     R2,[R1, #+0]
+   \   00000012   0x2380             MOVS     R3,#+128
+   \   00000014   0x005B             LSLS     R3,R3,#+1        ;; #+256
+   \   00000016   0x4313             ORRS     R3,R3,R2
+   \   00000018   0x800B             STRH     R3,[R1, #+0]
+    267              }
+    268              ADC->CTRL_b.SWSTART = SET;
+   \                     ??ADC_Cmd_1: (+1)
+   \   0000001A   0x880A             LDRH     R2,[R1, #+0]
+   \   0000001C   0x2304             MOVS     R3,#+4
+   \   0000001E   0x4313             ORRS     R3,R3,R2
+   \   00000020   0x800B             STRH     R3,[R1, #+0]
+    269              ADC->CTRL_b.ON = SET;
+   \   00000022   0x880A             LDRH     R2,[R1, #+0]
+   \   00000024   0x4310             ORRS     R0,R0,R2
+   \   00000026   0x8008             STRH     R0,[R1, #+0]
+   \   00000028   0x4770             BX       LR
+    270            }
+    271            else {
+    272              ADC->CTRL_b.ON = RESET;
+   \                     ??ADC_Cmd_0: (+1)
+   \   0000002A   0x8808             LDRH     R0,[R1, #+0]
+   \   0000002C   0x....             LDR      R2,??DataTable16_8  ;; 0xfffe
+   \   0000002E   0x4002             ANDS     R2,R2,R0
+   \   00000030   0x800A             STRH     R2,[R1, #+0]
+    273              ADC->CTRL_b.STOP = SET;
+   \   00000032   0x8808             LDRH     R0,[R1, #+0]
+   \   00000034   0x2210             MOVS     R2,#+16
+   \   00000036   0x4302             ORRS     R2,R2,R0
+   \   00000038   0x800A             STRH     R2,[R1, #+0]
+    274            }
+    275          }
+   \   0000003A   0x4770             BX       LR               ;; return
+    276          
+    277          
+    278          /**
+    279          * @brief  Enable disable the ADC DMA feature.
+    280          * @param  NewState: functional state @ref FunctionalState
+    281          *         This parameter can be: ENABLE or DISABLE.
+    282          * @retval None
+    283          */
+
+   \                                 In section .text, align 2, keep-with-next
+    284          void ADC_DmaCmd(FunctionalState NewState)
+    285          {
+    286            /* Check the parameters */
+    287            assert_param(IS_FUNCTIONAL_STATE(NewState)); 
+    288            
+    289            if(NewState==ENABLE) {
+   \                     ADC_DmaCmd: (+1)
+   \   00000000   0x2181             MOVS     R1,#+129
+   \   00000002   0x05C9             LSLS     R1,R1,#+23       ;; #+1082130432
+   \   00000004   0x2801             CMP      R0,#+1
+   \   00000006   0x8808             LDRH     R0,[R1, #+0]
+   \   00000008   0xD103             BNE      ??ADC_DmaCmd_0
+    290              ADC->CTRL_b.DMA_EN = SET;
+   \   0000000A   0x2280             MOVS     R2,#+128
+   \   0000000C   0x0092             LSLS     R2,R2,#+2        ;; #+512
+   \   0000000E   0x4302             ORRS     R2,R2,R0
+   \   00000010   0xE001             B        ??ADC_DmaCmd_1
+    291            }
+    292            else {
+    293              ADC->CTRL_b.DMA_EN = RESET;
+   \                     ??ADC_DmaCmd_0: (+1)
+   \   00000012   0x....             LDR      R2,??DataTable16_9  ;; 0xfdff
+   \   00000014   0x4002             ANDS     R2,R2,R0
+   \                     ??ADC_DmaCmd_1: (+1)
+   \   00000016   0x800A             STRH     R2,[R1, #+0]
+    294            }
+    295          }
+   \   00000018   0x4770             BX       LR               ;; return
+    296          
+    297          
+    298          
+    299          /**
+    300          * @brief  Enable disable the ADC calibration procedure.
+    301          * @param  NewState: functional state @ref FunctionalState
+    302          *         This parameter can be: ENABLE or DISABLE.
+    303          * @retval None
+    304          */
+
+   \                                 In section .text, align 2, keep-with-next
+    305          void ADC_Calibration(FunctionalState NewState)
+    306          {
+    307            /* Check the parameters */
+    308            assert_param(IS_FUNCTIONAL_STATE(NewState)); 
+    309            
+    310            if(NewState==ENABLE) {
+   \                     ADC_Calibration: (+1)
+   \   00000000   0x2181             MOVS     R1,#+129
+   \   00000002   0x05C9             LSLS     R1,R1,#+23       ;; #+1082130432
+   \   00000004   0x2801             CMP      R0,#+1
+   \   00000006   0x8808             LDRH     R0,[R1, #+0]
+   \   00000008   0xD102             BNE      ??ADC_Calibration_0
+    311              ADC->CTRL_b.CALEN = SET;
+   \   0000000A   0x2202             MOVS     R2,#+2
+   \   0000000C   0x4302             ORRS     R2,R2,R0
+   \   0000000E   0xE005             B        ??ADC_Calibration_1
+    312            }
+    313            else {
+    314              ADC->CTRL_b.RSTCALEN = SET;
+   \                     ??ADC_Calibration_0: (+1)
+   \   00000010   0x2240             MOVS     R2,#+64
+   \   00000012   0x4302             ORRS     R2,R2,R0
+   \   00000014   0x800A             STRH     R2,[R1, #+0]
+    315              ADC->CTRL_b.CALEN = RESET;
+   \   00000016   0x8808             LDRH     R0,[R1, #+0]
+   \   00000018   0x....             LDR      R2,??DataTable16_10  ;; 0xfffd
+   \   0000001A   0x4002             ANDS     R2,R2,R0
+   \                     ??ADC_Calibration_1: (+1)
+   \   0000001C   0x800A             STRH     R2,[R1, #+0]
+    316            }
+    317          }
+   \   0000001E   0x4770             BX       LR               ;; return
+    318          
+    319          
+    320          /**
+    321          * @brief  Enable disable the ADC automatic update of the offset.
+    322          * @param  NewState: functional state @ref FunctionalState
+    323          *         This parameter can be: ENABLE or DISABLE.
+    324          * @retval None
+    325          */
+
+   \                                 In section .text, align 2, keep-with-next
+    326          void ADC_AutoOffsetUpdate(FunctionalState NewState)
+    327          {
+    328            /* Check the parameters */
+    329            assert_param(IS_FUNCTIONAL_STATE(NewState)); 
+    330            
+    331            if(NewState==ENABLE) {
+   \                     ADC_AutoOffsetUpdate: (+1)
+   \   00000000   0x2181             MOVS     R1,#+129
+   \   00000002   0x05C9             LSLS     R1,R1,#+23       ;; #+1082130432
+   \   00000004   0x2801             CMP      R0,#+1
+   \   00000006   0x8808             LDRH     R0,[R1, #+0]
+   \   00000008   0xD102             BNE      ??ADC_AutoOffsetUpdate_0
+    332              ADC->CTRL_b.AUTO_OFFSET = SET;
+   \   0000000A   0x2280             MOVS     R2,#+128
+   \   0000000C   0x4302             ORRS     R2,R2,R0
+   \   0000000E   0xE001             B        ??ADC_AutoOffsetUpdate_1
+    333            }
+    334            else {
+    335              ADC->CTRL_b.AUTO_OFFSET = RESET;
+   \                     ??ADC_AutoOffsetUpdate_0: (+1)
+   \   00000010   0x....             LDR      R2,??DataTable16_11  ;; 0xff7f
+   \   00000012   0x4002             ANDS     R2,R2,R0
+   \                     ??ADC_AutoOffsetUpdate_1: (+1)
+   \   00000014   0x800A             STRH     R2,[R1, #+0]
+    336            }
+    337          }
+   \   00000016   0x4770             BX       LR               ;; return
+    338          
+    339          
+    340          /**
+    341          * @brief  Enable disable the ADC threshold check.
+    342          * @param  NewState: functional state @ref FunctionalState
+    343          *         This parameter can be: ENABLE or DISABLE.
+    344          * @retval None
+    345          */
+
+   \                                 In section .text, align 2, keep-with-next
+    346          void ADC_ThresholdCheck(FunctionalState NewState)
+    347          {
+    348            /* Check the parameters */
+    349            assert_param(IS_FUNCTIONAL_STATE(NewState)); 
+    350            
+    351            if(NewState==ENABLE) {
+   \                     ADC_ThresholdCheck: (+1)
+   \   00000000   0x2181             MOVS     R1,#+129
+   \   00000002   0x05C9             LSLS     R1,R1,#+23       ;; #+1082130432
+   \   00000004   0x2801             CMP      R0,#+1
+   \   00000006   0x8808             LDRH     R0,[R1, #+0]
+   \   00000008   0xD102             BNE      ??ADC_ThresholdCheck_0
+    352              ADC->CTRL_b.ENAB_COMP = SET;
+   \   0000000A   0x2220             MOVS     R2,#+32
+   \   0000000C   0x4302             ORRS     R2,R2,R0
+   \   0000000E   0xE001             B        ??ADC_ThresholdCheck_1
+    353            }
+    354            else {
+    355              ADC->CTRL_b.ENAB_COMP = RESET;
+   \                     ??ADC_ThresholdCheck_0: (+1)
+   \   00000010   0x....             LDR      R2,??DataTable16_12  ;; 0xffdf
+   \   00000012   0x4002             ANDS     R2,R2,R0
+   \                     ??ADC_ThresholdCheck_1: (+1)
+   \   00000014   0x800A             STRH     R2,[R1, #+0]
+    356            }
+    357          }
+   \   00000016   0x4770             BX       LR               ;; return
+    358          
+    359          
+    360          /**
+    361          * @brief  Configure the ADC threshold.
+    362          * @param  ThresholdLow: ADC threshold low value.
+    363          *         ThresholdHigh: ADC threshold high value.
+    364          * @retval None
+    365          */
+
+   \                                 In section .text, align 2, keep-with-next
+    366          void ADC_ThresholdConfig(uint16_t ThresholdLow, uint16_t ThresholdHigh)
+    367          {
+    368            
+    369              ADC->THRESHOLD_HI = ThresholdHigh;
+   \                     ADC_ThresholdConfig: (+1)
+   \   00000000   0x....             LDR      R2,??DataTable16_13  ;; 0x40800024
+   \   00000002   0x6011             STR      R1,[R2, #+0]
+    370              ADC->THRESHOLD_LO = ThresholdLow;
+   \   00000004   0x6050             STR      R0,[R2, #+4]
+    371          }
+   \   00000006   0x4770             BX       LR               ;; return
+    372          
+    373          
+    374          /**
+    375          * @brief  Configure the ADC conversion mode.
+    376          * @param  cConvertionMode: the value can be
+    377          *         @arg ADC_ConversionMode_Single single shot ADC conversion
+    378          *         @arg ADC_ConversionMode_Continuous continuous ADC conversion
+    379          * @retval None
+    380          */
+
+   \                                 In section .text, align 2, keep-with-next
+    381          void ADC_ConversionMode(uint8_t ConvertionMode)
+    382          {
+    383            /* Check the parameters */
+    384            assert_param(IS_ADC_CONVERSIONMODE(ConvertionMode));
+    385            
+    386            if(ConvertionMode==ADC_ConversionMode_Continuous) {
+   \                     ADC_ConversionMode: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable14_1  ;; 0x40800004
+   \   00000002   0x2808             CMP      R0,#+8
+   \   00000004   0x6808             LDR      R0,[R1, #+0]
+   \   00000006   0xD103             BNE      ??ADC_ConversionMode_0
+    387              ADC->CONF_b.CONT = SET;
+   \   00000008   0x2280             MOVS     R2,#+128
+   \   0000000A   0x0112             LSLS     R2,R2,#+4        ;; #+2048
+   \   0000000C   0x4302             ORRS     R2,R2,R0
+   \   0000000E   0xE001             B        ??ADC_ConversionMode_1
+    388            }
+    389            else {
+    390              ADC->CONF_b.CONT = RESET;
+   \                     ??ADC_ConversionMode_0: (+1)
+   \   00000010   0x....             LDR      R2,??DataTable16_6  ;; 0xfffff7ff
+   \   00000012   0x4002             ANDS     R2,R2,R0
+   \                     ??ADC_ConversionMode_1: (+1)
+   \   00000014   0x600A             STR      R2,[R1, #+0]
+    391            }
+    392          }
+   \   00000016   0x4770             BX       LR               ;; return
+    393          
+    394          /**
+    395          * @brief  Select the frequency of the clock signal for an external MEMS microphone (through IO0)
+    396          * @param  Frequency: the value can be 
+    397          *         @arg ADC_MIC_800KH Enable the 800 kHz through IO0 for external MEMS microphone
+    398          *         @arg ADC_MIC_1600KH Enable the 1.6 MHz through IO0 for external MEMS microphone
+    399          * @retval None
+    400          */
+
+   \                                 In section .text, align 2, keep-with-next
+    401          void ADC_SelectFrequencyMic(uint8_t Frequency)
+    402          {
+    403            /* Check the parameters */
+    404            assert_param(IS_ADC_MIC_FREQ_SEL(Frequency));
+    405            
+    406            /* Check the value of Frequency */
+    407            if(Frequency == ADC_MIC_800KHZ) {
+   \                     ADC_SelectFrequencyMic: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable14_1  ;; 0x40800004
+   \   00000002   0x0002             MOVS     R2,R0
+   \   00000004   0xD103             BNE      ??ADC_SelectFrequencyMic_0
+    408              ADC->CONF_b.DIG_FILT_CLK = RESET;
+   \   00000006   0x6808             LDR      R0,[R1, #+0]
+   \   00000008   0x....             LDR      R2,??DataTable16_14  ;; 0xffefffff
+   \   0000000A   0x4002             ANDS     R2,R2,R0
+   \   0000000C   0xE005             B        ??ADC_SelectFrequencyMic_1
+    409            }
+    410            else if(Frequency == ADC_MIC_1600KHZ) {
+   \                     ??ADC_SelectFrequencyMic_0: (+1)
+   \   0000000E   0x2801             CMP      R0,#+1
+   \   00000010   0xD104             BNE      ??ADC_SelectFrequencyMic_2
+    411              ADC->CONF_b.DIG_FILT_CLK = SET;
+   \   00000012   0x6808             LDR      R0,[R1, #+0]
+   \   00000014   0x2280             MOVS     R2,#+128
+   \   00000016   0x0352             LSLS     R2,R2,#+13       ;; #+1048576
+   \   00000018   0x4302             ORRS     R2,R2,R0
+   \                     ??ADC_SelectFrequencyMic_1: (+1)
+   \   0000001A   0x600A             STR      R2,[R1, #+0]
+    412            }
+    413          
+    414          }
+   \                     ??ADC_SelectFrequencyMic_2: (+1)
+   \   0000001C   0x4770             BX       LR               ;; return
+    415          
+    416          
+    417          /**
+    418          * @brief  Get the status flag of ADC.
+    419          * @param  ADC_Flag: the value can be
+    420          *         @arg ADC_FLAG_CAL ADC End of Calibration flag
+    421          *         @arg ADC_FLAG_BUSY ADC busy flag
+    422          *         @arg ADC_FLAG_EOC ADC End of Conversion flag
+    423          *         @arg ADC_FLAG_WDG ADC ADV value within set threshold 
+    424          * @retval FlagStatus: functional state @ref FlagStatus
+    425          *         This parameter can be: SET or RESET.
+    426          */
+
+   \                                 In section .text, align 2, keep-with-next
+    427          FlagStatus ADC_GetFlagStatus(uint8_t ADC_Flag)
+    428          {
+   \                     ADC_GetFlagStatus: (+1)
+   \   00000000   0x0001             MOVS     R1,R0
+    429            /* Check the parameters */
+    430            assert_param(IS_ADC_GET_FLAG(ADC_Flag));
+    431            
+    432            /* Check the status of the specified SPI flag */
+    433            if (READ_BIT(ADC->SR_REG, ADC_Flag) != (uint16_t)RESET) {
+   \   00000002   0x....             LDR      R0,??DataTable16_15  ;; 0x40800020
+   \   00000004   0x....             B.N      ?Subroutine0
+    434              /* SPI_FLAG is set */
+    435              return SET;
+    436            }
+    437            else {
+    438              /* SPI_FLAG is reset */
+    439              return RESET;
+    440            }
+    441            
+    442          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x7800             LDRB     R0,[R0, #+0]
+   \   00000002   0x4001             ANDS     R1,R1,R0
+   \   00000004   0x0008             MOVS     R0,R1
+   \   00000006   0xD000             BEQ      ??Subroutine0_0
+   \   00000008   0x2001             MOVS     R0,#+1
+   \                     ??Subroutine0_0: (+1)
+   \   0000000A   0x4770             BX       LR               ;; return
+    443          
+    444          /**
+    445          * @brief  Get the status of the masked IT flag.
+    446          *         The read operation will clear the flags.
+    447          * @param  ADC_Flag: the value can be 
+    448          *         @arg ADC_FLAG_CAL ADC End of Calibration flag
+    449          *         @arg ADC_FLAG_BUSY ADC busy flag
+    450          *         @arg ADC_FLAG_EOC ADC End of Conversion flag
+    451          *         @arg ADC_FLAG_WDG ADC ADV value within set threshold 
+    452          * @retval  ITStatus: functional state @ref ITStatus
+    453          *         This parameter can be: SET or RESET.
+    454          */
+
+   \                                 In section .text, align 2, keep-with-next
+    455          ITStatus ADC_GetITStatus(uint8_t ADC_Flag)
+    456          {
+   \                     ADC_GetITStatus: (+1)
+   \   00000000   0x0001             MOVS     R1,R0
+    457            /* Check the parameters */
+    458            assert_param(IS_ADC_GET_FLAG(ADC_Flag));
+    459            
+    460            /* Check the status of the specified SPI interrupt */
+    461            if (READ_BIT(ADC->IRQSTAT, ADC_Flag) != (uint16_t)RESET) {
+   \   00000002   0x....             LDR      R0,??DataTable16_16  ;; 0x40800008
+   \   00000004                      REQUIRE ?Subroutine0
+   \   00000004                      ;; // Fall through to label ?Subroutine0
+    462              /* ADC_Flag is set */
+    463              return SET;
+    464            }
+    465            else {
+    466              /* SPI_IT is reset */
+    467              return RESET;
+    468            }
+    469            
+    470          }
+    471          
+    472          
+    473          
+    474          /**
+    475          * @brief  Enable disable the ADC IT flag.
+    476          * @param  ADC_Flag: the value can be 
+    477          *         @arg ADC_FLAG_CAL ADC End of Calibration flag
+    478          *         @arg ADC_FLAG_BUSY ADC busy flag
+    479          *         @arg ADC_FLAG_EOC ADC End of Conversion flag
+    480          *         @arg ADC_FLAG_WDG ADC ADV value within set threshold 
+    481          * @param  NewState: functional state @ref FunctionalState
+    482          *         This parameter can be: ENABLE or DISABLE.
+    483          * @retval None
+    484          */
+
+   \                                 In section .text, align 2, keep-with-next
+    485          void ADC_ITConfig(uint8_t ADC_Flag, FunctionalState NewState)
+    486          {
+    487            /* Check the parameters */
+    488            assert_param(IS_FUNCTIONAL_STATE(NewState));
+    489            assert_param(IS_ADC_GET_FLAG(ADC_Flag));
+    490            
+    491            if (NewState != DISABLE) {
+   \                     ADC_ITConfig: (+1)
+   \   00000000   0x....             LDR      R2,??DataTable16_17  ;; 0x4080000c
+   \   00000002   0x2900             CMP      R1,#+0
+   \   00000004   0x7811             LDRB     R1,[R2, #+0]
+   \   00000006   0xD002             BEQ      ??ADC_ITConfig_0
+    492              /* Enable the selected SPI interrupts */
+    493              CLEAR_BIT(ADC->IRQMASK, ADC_Flag);
+   \   00000008   0x4381             BICS     R1,R1,R0
+   \   0000000A   0x7011             STRB     R1,[R2, #+0]
+   \   0000000C   0x4770             BX       LR
+    494            }
+    495            else {
+    496              /* Disable the selected SPI interrupts */
+    497              SET_BIT(ADC->IRQMASK, ADC_Flag);
+   \                     ??ADC_ITConfig_0: (+1)
+   \   0000000E   0x4308             ORRS     R0,R0,R1
+   \   00000010   0x7010             STRB     R0,[R2, #+0]
+    498            }
+    499          }
+   \   00000012   0x4770             BX       LR               ;; return
+    500          
+    501          /**
+    502          * @brief  Get the ADC converted value in Volt.
+    503          * @param  dataType: the selected channel, this value can be
+    504          *         @arg ADC_Input_AdcPin1 data from ADC pin1
+    505          *         @arg ADC_Input_AdcPin2 data from ADC pin2
+    506          *         @arg ADC_Input_AdcPin12 data from ADC pin12
+    507          *         @arg ADC_Input_Internal0V60V6 data from internal 0.6V
+    508          *         @arg ADC_Input_Internal1V20V0 data from internal 1.2V
+    509          *         @arg ADC_Input_BattSensor data from battery sensor
+    510          *         @arg ADC_Input_TempSensor data from temperature sensor
+    511          * @param  vRef: voltage reference configured, the value can be
+    512          *         @arg ADC_ReferenceVoltage_0V6 Vref is 0.6 V
+    513          *         @arg ADC_ReferenceVoltage_1V2 Vref is 1.2 V
+    514          * @retval Converted ADC value in Volt
+    515          */
+
+   \                                 In section .text, align 2, keep-with-next
+    516          float ADC_GetConvertedData(uint8_t DataType, uint8_t Vref)
+    517          {
+   \                     ADC_GetConvertedData: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x0002             MOVS     R2,R0
+    518            int16_t raw_value;
+    519            uint8_t pga_reg;
+    520            
+    521            /* Check the parameters */
+    522            assert_param(IS_ADC_INPUT(DataType));
+    523            assert_param(IS_ADC_REFERENCEVOLTAGE(Vref)); 
+    524          
+    525            raw_value = (int16_t)ADC_GetRawData();
+   \   00000004   0x....             LDR      R3,??DataTable16_18  ;; 0x40800004
+   \   00000006   0x8A58             LDRH     R0,[R3, #+18]
+    526            pga_reg = ADC->CONF_b.PGASEL;
+   \   00000008   0x681B             LDR      R3,[R3, #+0]
+   \   0000000A   0x059B             LSLS     R3,R3,#+22
+   \   0000000C   0x0F9B             LSRS     R3,R3,#+30
+    527            
+    528            if(DataType==ADC_Input_AdcPin1) {
+   \   0000000E   0x2A02             CMP      R2,#+2
+   \   00000010   0xD102             BNE      ??ADC_GetConvertedData_0
+    529              return ADC_ConvertSingleEndedVoltage(raw_value, (uint8_t)ADC_Input_AdcPin1, Vref, pga_reg);
+   \   00000012   0x000A             MOVS     R2,R1
+   \   00000014   0x2102             MOVS     R1,#+2
+   \   00000016   0xE003             B.N      ??ADC_GetConvertedData_1
+    530            }
+    531            else if(DataType==ADC_Input_AdcPin2) {
+   \                     ??ADC_GetConvertedData_0: (+1)
+   \   00000018   0x2A01             CMP      R2,#+1
+   \   0000001A   0xD105             BNE      ??ADC_GetConvertedData_2
+    532              return ADC_ConvertSingleEndedVoltage(raw_value, (uint8_t)ADC_Input_AdcPin2, Vref, pga_reg);
+   \   0000001C   0x000A             MOVS     R2,R1
+   \   0000001E   0x2101             MOVS     R1,#+1
+   \                     ??ADC_GetConvertedData_1: (+1)
+   \   00000020   0xB200             SXTH     R0,R0
+   \   00000022   0x.... 0x....      BL       ADC_ConvertSingleEndedVoltage
+   \   00000026   0xBD02             POP      {R1,PC}
+    533            }
+    534            else if(DataType==ADC_Input_AdcPin12 || DataType==ADC_Input_Internal0V60V6 || DataType==ADC_Input_Internal1V20V0) {
+   \                     ??ADC_GetConvertedData_2: (+1)
+   \   00000028   0x2A03             CMP      R2,#+3
+   \   0000002A   0xD003             BEQ      ??ADC_GetConvertedData_3
+   \   0000002C   0x2A06             CMP      R2,#+6
+   \   0000002E   0xD001             BEQ      ??ADC_GetConvertedData_3
+   \   00000030   0x2A07             CMP      R2,#+7
+   \   00000032   0xD104             BNE      ??ADC_GetConvertedData_4
+    535              return ADC_ConvertDifferentialVoltage(raw_value, pga_reg);
+   \                     ??ADC_GetConvertedData_3: (+1)
+   \   00000034   0x0019             MOVS     R1,R3
+   \   00000036   0xB200             SXTH     R0,R0
+   \   00000038   0x.... 0x....      BL       ADC_ConvertDifferentialVoltage
+   \   0000003C   0xBD02             POP      {R1,PC}
+    536            }
+    537            else if(DataType==ADC_Input_BattSensor) {
+   \                     ??ADC_GetConvertedData_4: (+1)
+   \   0000003E   0x2A05             CMP      R2,#+5
+   \   00000040   0xD103             BNE      ??ADC_GetConvertedData_5
+    538              return ADC_ConvertBatterySensor(raw_value, Vref);
+   \   00000042   0xB200             SXTH     R0,R0
+   \   00000044   0x.... 0x....      BL       ADC_ConvertBatterySensor
+   \   00000048   0xBD02             POP      {R1,PC}
+    539            }
+    540            else if(DataType==ADC_Input_TempSensor) {
+   \                     ??ADC_GetConvertedData_5: (+1)
+   \   0000004A   0x2A04             CMP      R2,#+4
+   \   0000004C   0xD104             BNE      ??ADC_GetConvertedData_6
+    541              return ADC_ConvertTemperatureSensor(raw_value, Vref, pga_reg);
+   \   0000004E   0x001A             MOVS     R2,R3
+   \   00000050   0xB200             SXTH     R0,R0
+   \   00000052   0x.... 0x....      BL       ADC_ConvertTemperatureSensor
+   \   00000056   0xBD02             POP      {R1,PC}
+    542            }
+    543            return raw_value;
+   \                     ??ADC_GetConvertedData_6: (+1)
+   \   00000058   0xB200             SXTH     R0,R0
+   \   0000005A   0x.... 0x....      BL       __aeabi_i2f
+   \   0000005E   0xBD02             POP      {R1,PC}          ;; return
+    544          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable14:
+   \   00000000   0x46828800         DC32     0x46828800
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable14_1:
+   \   00000000   0x40800004         DC32     0x40800004
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable14_2:
+   \   00000000   0x4697F400         DC32     0x4697f400
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable15:
+   \   00000000   0x4019999A         DC32     0x4019999a
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable15_1:
+   \   00000000   0x3F19999A         DC32     0x3f19999a
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable15_2:
+   \   00000000   0x3F99999A         DC32     0x3f99999a
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16:
+   \   00000000   0x408B851F         DC32     0x408b851f
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_1:
+   \   00000000   0x43C88000         DC32     0x43c88000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_2:
+   \   00000000   0xC3858000         DC32     0xc3858000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_3:
+   \   00000000   0x40869000         DC32     0x40869000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_4:
+   \   00000000   0xC07F3000         DC32     0xc07f3000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_5:
+   \   00000000   0xFFBFFFFF         DC32     0xffbfffff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_6:
+   \   00000000   0xFFFFF7FF         DC32     0xfffff7ff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_7:
+   \   00000000   0xFFFFFCFF         DC32     0xfffffcff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_8:
+   \   00000000   0x0000FFFE         DC32     0xfffe
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_9:
+   \   00000000   0x0000FDFF         DC32     0xfdff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_10:
+   \   00000000   0x0000FFFD         DC32     0xfffd
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_11:
+   \   00000000   0x0000FF7F         DC32     0xff7f
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_12:
+   \   00000000   0x0000FFDF         DC32     0xffdf
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_13:
+   \   00000000   0x40800024         DC32     0x40800024
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_14:
+   \   00000000   0xFFEFFFFF         DC32     0xffefffff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_15:
+   \   00000000   0x40800020         DC32     0x40800020
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_16:
+   \   00000000   0x40800008         DC32     0x40800008
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_17:
+   \   00000000   0x4080000C         DC32     0x4080000c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_18:
+   \   00000000   0x40800004         DC32     0x40800004
+    545          
+    546          
+    547          
+    548          /**
+    549          * @}
+    550          */ 
+    551          
+    552          /**
+    553          * @}
+    554          */ 
+    555          
+    556          /**
+    557          * @}
+    558          */ 
+    559          
+    560          /******************* (C) COPYRIGHT 2016 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   ADC_AutoOffsetUpdate
+       0   ADC_Calibration
+       0   ADC_Cmd
+       0   ADC_ConversionMode
+       8   ADC_ConvertBatterySensor
+         8   -> ADC_ConvertSingleEndedVoltage
+         8   -> __aeabi_fmul
+      16   ADC_ConvertDifferentialVoltage
+        16   -> __aeabi_fadd
+        16   -> __aeabi_fdiv
+        16   -> __aeabi_fmul
+        16   -> __aeabi_i2f
+        16   -> __aeabi_ui2f
+      32   ADC_ConvertSingleEndedVoltage
+        32   -> __aeabi_fadd
+        32   -> __aeabi_fdiv
+        32   -> __aeabi_fmul
+        32   -> __aeabi_fsub
+        32   -> __aeabi_i2f
+        32   -> __aeabi_ui2f
+       8   ADC_ConvertTemperatureSensor
+         8   -> ADC_ConvertSingleEndedVoltage
+         8   -> __aeabi_fadd
+         8   -> __aeabi_fmul
+       8   ADC_ConvertTemperatureSensorFarenait
+         8   -> ADC_ConvertSingleEndedVoltage
+         8   -> __aeabi_d2f
+         8   -> __aeabi_dadd
+         8   -> __aeabi_dmul
+         8   -> __aeabi_f2d
+       0   ADC_DeInit
+       0   ADC_DmaCmd
+       8   ADC_GetConvertedData
+         8   -> ADC_ConvertBatterySensor
+         8   -> ADC_ConvertDifferentialVoltage
+         8   -> ADC_ConvertSingleEndedVoltage
+         8   -> ADC_ConvertTemperatureSensor
+         8   -> __aeabi_i2f
+       0   ADC_GetFlagStatus
+       0   ADC_GetITStatus
+       0   ADC_ITConfig
+       8   ADC_Init
+       0   ADC_SelectFrequencyMic
+       0   ADC_StructInit
+       0   ADC_ThresholdCheck
+       0   ADC_ThresholdConfig
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable14
+       4  ??DataTable14_1
+       4  ??DataTable14_2
+       4  ??DataTable15
+       4  ??DataTable15_1
+       4  ??DataTable15_2
+       4  ??DataTable16
+       4  ??DataTable16_1
+       4  ??DataTable16_10
+       4  ??DataTable16_11
+       4  ??DataTable16_12
+       4  ??DataTable16_13
+       4  ??DataTable16_14
+       4  ??DataTable16_15
+       4  ??DataTable16_16
+       4  ??DataTable16_17
+       4  ??DataTable16_18
+       4  ??DataTable16_2
+       4  ??DataTable16_3
+       4  ??DataTable16_4
+       4  ??DataTable16_5
+       4  ??DataTable16_6
+       4  ??DataTable16_7
+       4  ??DataTable16_8
+       4  ??DataTable16_9
+      12  ?Subroutine0
+      24  ADC_AutoOffsetUpdate
+      32  ADC_Calibration
+      60  ADC_Cmd
+      24  ADC_ConversionMode
+      20  ADC_ConvertBatterySensor
+      72  ADC_ConvertDifferentialVoltage
+     124  ADC_ConvertSingleEndedVoltage
+      26  ADC_ConvertTemperatureSensor
+      38  ADC_ConvertTemperatureSensorFarenait
+      14  ADC_DeInit
+      26  ADC_DmaCmd
+      96  ADC_GetConvertedData
+       6  ADC_GetFlagStatus
+       4  ADC_GetITStatus
+      20  ADC_ITConfig
+     126  ADC_Init
+      30  ADC_SelectFrequencyMic
+      16  ADC_StructInit
+      24  ADC_ThresholdCheck
+       8  ADC_ThresholdConfig
+
+ 
+ 902 bytes in section .text
+ 
+ 902 bytes of CODE memory
+
+Errors: none
+Warnings: none

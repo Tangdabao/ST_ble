@@ -1,0 +1,619 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       29/Nov/2017  10:11:18
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_flash.c
+#    Command line =  
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_flash.c" -D
+#        HS_SPEED_XTAL=HS_SPEED_XTAL_16MHZ -D
+#        LS_SOURCE=LS_SOURCE_EXTERNAL_32KHZ -D SMPS_INDUCTOR=SMPS_INDUCTOR_10uH
+#        --preprocess=cl "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2
+#        DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        -lCN "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        -lb "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        --diag_suppress Pe1665 -o "D:\Program Files
+#        (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\Obj"
+#        --debug --endian=little --cpu=Cortex-M0 --diag_warning Pe1665
+#        --diag_suppress Pe1665 -e --fpu=None --dlib_config
+#        D:\Software\IAR_BlueNRG\arm\INC\c\DLib_Config_Normal.h -I "D:\Program
+#        Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\CMSIS\Include\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\hal\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\Bluetooth_LE\inc\"
+#        -Ohz
+#    Locale       =  Chinese (Simplified)_China.936
+#    List file    =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List\BlueNRG1_flash.lst
+#    Object file  =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_flash.o
+#
+###############################################################################
+
+D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK 2.5.0\Library\BlueNRG1_Periph_Driver\src\BlueNRG1_flash.c
+      1          /**
+      2          ******************************************************************************
+      3          * @file    BlueNRG1_flash.c
+      4          * @author  VMA Application Team
+      5          * @version V2.0.0
+      6          * @date    21-March-2016
+      7          * @brief   This file provides all the FLASH firmware functions.
+      8          ******************************************************************************
+      9          * @attention
+     10          *
+     11          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     12          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     13          * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     14          * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     15          * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     16          * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     17          *
+     18          * <h2><center>&copy; COPYRIGHT 2016 STMicroelectronics</center></h2>
+     19          ******************************************************************************
+     20          */
+     21          
+     22          /* Includes ------------------------------------------------------------------*/
+     23          #include "BlueNRG1_flash.h"
+     24          
+     25          /** @addtogroup BLUENRG1_Peripheral_Driver BLUENRG1 Peripheral Driver
+     26          * @{
+     27          */
+     28          
+     29          /** @defgroup FLASH_Peripheral  FLASH Peripheral
+     30          * @{
+     31          */ 
+     32          
+     33          /** @defgroup FLASH_Private_TypesDefinitions Private Types Definitions
+     34          * @{
+     35          */
+     36          
+     37          /**
+     38          * @}
+     39          */ 
+     40          
+     41          /** @defgroup FLASH_Private_Defines Private Defines
+     42          * @{
+     43          */ 
+     44          
+     45          /**
+     46          * @}
+     47          */ 
+     48          
+     49          /** @defgroup FLASH_Private_Macros Private Macros
+     50          * @{
+     51          */
+     52          
+     53          
+     54          /**
+     55          * @}
+     56          */ 
+     57          
+     58          /** @defgroup FLASH_Private_Variables Private Variables
+     59          * @{
+     60          */
+     61          
+     62          /**
+     63          * @}
+     64          */ 
+     65          
+     66          /** @defgroup FLASH_Private_Functions Private Functions 
+     67          * @{
+     68          */
+     69          
+     70          /**
+     71          * @}
+     72          */
+     73          
+     74          /** @defgroup FLASH_Public_Functions Public Functions
+     75          * @{
+     76          */
+     77          
+     78          
+     79          
+     80          /**
+     81          * @brief  Erases a specified flash page.
+     82          * @param  PageNumber: the page number.
+     83          * @retval None
+     84          */
+
+   \                                 In section .text, align 2, keep-with-next
+     85          void FLASH_ErasePage(uint16_t PageNumber)
+     86          {
+     87            uint16_t pageAddress;
+     88            
+     89            assert_param(IS_PAGE_NUMBER(PageNumber));
+     90            
+     91            pageAddress = (PageNumber * N_BYTES_PAGE)>>2;
+     92            
+     93            /* Clear IRQ */
+     94            FLASH->IRQSTAT = 0x3F;
+   \                     FLASH_ErasePage: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable9  ;; 0x40100000
+   \   00000002   0x223F             MOVS     R2,#+63
+   \   00000004   0x810A             STRH     R2,[R1, #+8]
+     95            
+     96            /* Write the page address */
+     97            FLASH->ADDRESS = pageAddress;
+   \   00000006   0x0640             LSLS     R0,R0,#+25
+   \   00000008   0x0C00             LSRS     R0,R0,#+16
+   \   0000000A   0x6188             STR      R0,[R1, #+24]
+     98            
+     99            /* Write the ERASE command */
+    100            FLASH->COMMAND = FLASH_ERASE;
+   \   0000000C   0x2011             MOVS     R0,#+17
+   \   0000000E   0x8008             STRH     R0,[R1, #+0]
+    101            
+    102            FLASH_WaitCmdDone();
+   \                     ??FLASH_ErasePage_0: (+1)
+   \   00000010   0x8A08             LDRH     R0,[R1, #+16]
+   \   00000012   0x07C0             LSLS     R0,R0,#+31
+   \   00000014   0xD5FC             BPL      ??FLASH_ErasePage_0
+    103            
+    104            /* Verify */
+    105            // return;
+    106          }
+   \   00000016   0x4770             BX       LR               ;; return
+    107          
+    108          /**
+    109          * @brief  Erases all main Flash.
+    110          * @param  None
+    111          * @retval None
+    112          */
+
+   \                                 In section .text, align 2, keep-with-next
+    113          void FLASH_EraseAllFlash(void)
+    114          {
+    115            /* Clear IRQ */
+    116            FLASH->IRQSTAT = 0x3F;
+   \                     FLASH_EraseAllFlash: (+1)
+   \   00000000   0x....             LDR      R0,??DataTable9  ;; 0x40100000
+   \   00000002   0x213F             MOVS     R1,#+63
+   \   00000004   0x8101             STRH     R1,[R0, #+8]
+    117            
+    118            /* Write the MASSERASE command */
+    119            FLASH->COMMAND = FLASH_MASSERASE;
+   \   00000006   0x2122             MOVS     R1,#+34
+   \   00000008   0x8001             STRH     R1,[R0, #+0]
+    120            
+    121            FLASH_WaitCmdDone();
+   \                     ??FLASH_EraseAllFlash_0: (+1)
+   \   0000000A   0x8A01             LDRH     R1,[R0, #+16]
+   \   0000000C   0x07C9             LSLS     R1,R1,#+31
+   \   0000000E   0xD5FC             BPL      ??FLASH_EraseAllFlash_0
+    122            
+    123          }
+   \   00000010   0x4770             BX       LR               ;; return
+    124          
+    125          /**
+    126          * @brief  Flash read 32 bits.
+    127          * @param  Address: address to read.
+    128                    Address must be word aligned.
+    129          * @retval Data read
+    130          */
+
+   \                                 In section .text, align 2, keep-with-next
+    131          uint32_t FLASH_ReadWord(uint32_t Address)
+    132          {
+    133            assert_param(IS_FLASH_ADDRESS(Address));
+    134          	
+    135            return (*((volatile uint32_t*)(Address)));
+   \                     FLASH_ReadWord: (+1)
+   \   00000000   0x6800             LDR      R0,[R0, #+0]
+   \   00000002   0x4770             BX       LR               ;; return
+    136          }
+    137          
+    138          /**
+    139          * @brief  Flash read 8 bits.
+    140          * @param  Address: address to write.
+    141          * @retval Data read
+    142          */
+
+   \                                 In section .text, align 2, keep-with-next
+    143          uint8_t FLASH_ReadByte(uint32_t Address)
+    144          {
+    145            assert_param(IS_FLASH_ADDRESS(Address));
+    146          	
+    147            return (*((volatile uint8_t*)(Address)));
+   \                     FLASH_ReadByte: (+1)
+   \   00000000   0x7800             LDRB     R0,[R0, #+0]
+   \   00000002   0x4770             BX       LR               ;; return
+    148          }
+    149          
+    150          /**
+    151          * @brief  Flash write 32 bits.
+    152          * @param  Address: address to write
+    153          * @param  Data: word to write
+    154          * @retval None
+    155          */
+
+   \                                 In section .text, align 2, keep-with-next
+    156          void FLASH_ProgramWord(uint32_t Address, uint32_t Data)
+    157          {
+    158            assert_param(IS_FLASH_ADDRESS(Address));
+    159            
+    160            /* Clear IRQ */
+    161            FLASH->IRQSTAT = 0x3F;
+   \                     FLASH_ProgramWord: (+1)
+   \   00000000   0x....             LDR      R2,??DataTable9  ;; 0x40100000
+   \   00000002   0x233F             MOVS     R3,#+63
+   \   00000004   0x8113             STRH     R3,[R2, #+8]
+    162            
+    163            /* Write the page address */
+    164            FLASH->ADDRESS = Address>>2;
+   \   00000006   0x0880             LSRS     R0,R0,#+2
+   \   00000008   0x6190             STR      R0,[R2, #+24]
+    165            
+    166            /* Write the data to program */
+    167            FLASH->DATA0 = Data;
+   \   0000000A   0x6411             STR      R1,[R2, #+64]
+    168            
+    169            /* Write the WRITE command */
+    170            FLASH->COMMAND = FLASH_WRITE;
+   \   0000000C   0x2033             MOVS     R0,#+51
+   \   0000000E   0x....             B.N      ?Subroutine0
+    171            
+    172            FLASH_WaitCmdDone();
+    173            
+    174            /* Verify */  
+    175            // return ;
+    176          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x8010             STRH     R0,[R2, #+0]
+   \                     ??Subroutine0_0: (+1)
+   \   00000002   0x8A10             LDRH     R0,[R2, #+16]
+   \   00000004   0x07C0             LSLS     R0,R0,#+31
+   \   00000006   0xD5FC             BPL      ??Subroutine0_0
+   \   00000008   0x4770             BX       LR               ;; return
+    177          
+    178          /**
+    179          * @brief  Flash write 32 bits.
+    180          * @param  WordNumber: word number
+    181          * @param  PageNumber: page number <= 2048
+    182          * @param	Data: word to write <= 512
+    183          * @retval None
+    184          */
+
+   \                                 In section .text, align 2, keep-with-next
+    185          void FLASH_ProgramWordBurst(uint32_t Address, uint32_t* Data)
+    186          {
+    187            assert_param(IS_FLASH_ADDRESS(Address));
+    188            
+    189            /* Clear IRQ */
+    190            FLASH->IRQSTAT = 0x3F;
+   \                     FLASH_ProgramWordBurst: (+1)
+   \   00000000   0x....             LDR      R2,??DataTable9  ;; 0x40100000
+   \   00000002   0x233F             MOVS     R3,#+63
+   \   00000004   0x8113             STRH     R3,[R2, #+8]
+    191            
+    192            /* Write the page address */
+    193            FLASH->ADDRESS = Address>>2;
+   \   00000006   0x0880             LSRS     R0,R0,#+2
+   \   00000008   0x6190             STR      R0,[R2, #+24]
+    194            
+    195            /* Write the data to program */
+    196            FLASH->DATA0 = Data[0];
+   \   0000000A   0x6808             LDR      R0,[R1, #+0]
+   \   0000000C   0x6410             STR      R0,[R2, #+64]
+    197            FLASH->DATA1 = Data[1];
+   \   0000000E   0x6848             LDR      R0,[R1, #+4]
+   \   00000010   0x6450             STR      R0,[R2, #+68]
+    198            FLASH->DATA2 = Data[2];
+   \   00000012   0x6888             LDR      R0,[R1, #+8]
+   \   00000014   0x6490             STR      R0,[R2, #+72]
+    199            FLASH->DATA3 = Data[3];
+   \   00000016   0x68C8             LDR      R0,[R1, #+12]
+   \   00000018   0x64D0             STR      R0,[R2, #+76]
+    200            
+    201            /* Write the BURSTWRITE command */
+    202            FLASH->COMMAND = FLASH_BURSTWRITE;
+   \   0000001A   0x20CC             MOVS     R0,#+204
+   \   0000001C                      REQUIRE ?Subroutine0
+   \   0000001C                      ;; // Fall through to label ?Subroutine0
+    203            
+    204            FLASH_WaitCmdDone();
+    205            
+    206            /* Verify */  
+    207            // return ;
+    208          }
+    209          
+    210          
+    211          /**
+    212          * @brief  Wait loop for CMDDONE status
+    213          * @param  None
+    214          * @retval None
+    215          */
+
+   \                                 In section .text, align 2, keep-with-next
+    216          void FLASH_WaitCmdDone(void)
+    217          {
+    218            /* Waits for Command Done */
+    219            while(FLASH->IRQRAW_b.CMDDONE != SET);
+   \                     FLASH_WaitCmdDone: (+1)
+   \                     ??FLASH_WaitCmdDone_0: (+1)
+   \   00000000   0x....             LDR      R0,??DataTable9_1  ;; 0x40100010
+   \   00000002   0x8800             LDRH     R0,[R0, #+0]
+   \   00000004   0x07C0             LSLS     R0,R0,#+31
+   \   00000006   0xD5FB             BPL      ??FLASH_WaitCmdDone_0
+    220          }
+   \   00000008   0x4770             BX       LR               ;; return
+    221          
+    222          
+    223          /**
+    224          * @brief  Clear CMDDONE flag
+    225          * @param  None
+    226          * @retval None
+    227          */
+
+   \                                 In section .text, align 2, keep-with-next
+    228          void FLASH_ClearCmdDone(void)
+    229          {
+    230            /* Clear the CMDDONE flag */
+    231            SET_BIT(FLASH->IRQSTAT, Flash_CMDDONE);
+   \                     FLASH_ClearCmdDone: (+1)
+   \   00000000   0x....             LDR      R0,??DataTable9_2  ;; 0x40100008
+   \   00000002   0x8801             LDRH     R1,[R0, #+0]
+   \   00000004   0x2201             MOVS     R2,#+1
+   \   00000006   0x430A             ORRS     R2,R2,R1
+   \   00000008   0x8002             STRH     R2,[R0, #+0]
+    232          }
+   \   0000000A   0x4770             BX       LR               ;; return
+    233          
+    234          
+    235          /**
+    236          * @brief  Wait loop for CMDDONE status
+    237          * @param  None
+    238          * @retval uint32_t Next usable address of flash
+    239          */
+
+   \                                 In section .text, align 2, keep-with-next
+    240          uint16_t FLASH_NextFreeFlashAddress(void)
+    241          {
+    242            return FLASH->SIZE;
+   \                     FLASH_NextFreeFlashAddress: (+1)
+   \   00000000   0x....             LDR      R0,??DataTable9_3  ;; 0x40100014
+   \   00000002   0x8800             LDRH     R0,[R0, #+0]
+   \   00000004   0x4770             BX       LR               ;; return
+    243          }
+    244          
+    245          
+    246          /**
+    247          * @brief  Enables or disables the specified flash interrupts.
+    248          * @param  FlashFlag: the value can be 
+    249          *         @arg Flash_CMDDONE Flash command done
+    250          *         @arg Flash_CMDSTART Flash command start
+    251          *         @arg Flash_CMDERR Flash command error
+    252          *         @arg Flash_ILLCMD Flash illegal command written
+    253          *         @arg Flash_READOK Flash mass read was OK  
+    254          *         @arg Flash_FLNREADY Flash not ready (sleep)
+    255          * @param  NewState: functional state @ref FunctionalState
+    256          *   This parameter can be: ENABLE or DISABLE.
+    257          * @retval None 
+    258          */
+
+   \                                 In section .text, align 2, keep-with-next
+    259          void FLASH_ITConfig(uint8_t FlashFlag, FunctionalState NewState)
+    260          {
+    261            /* Check the parameters */
+    262            assert_param(IS_FLASH_FLAG(FlashFlag)); 
+    263            assert_param(IS_FUNCTIONAL_STATE(NewState));
+    264            
+    265            if (NewState == ENABLE) {
+   \                     FLASH_ITConfig: (+1)
+   \   00000000   0x....             LDR      R2,??DataTable9_4  ;; 0x4010000c
+   \   00000002   0x2901             CMP      R1,#+1
+   \   00000004   0xD103             BNE      ??FLASH_ITConfig_0
+    266              SET_BIT(FLASH->IRQMASK, FlashFlag);
+   \   00000006   0x8811             LDRH     R1,[R2, #+0]
+   \   00000008   0x4308             ORRS     R0,R0,R1
+   \   0000000A   0x8010             STRH     R0,[R2, #+0]
+   \   0000000C   0x4770             BX       LR
+    267            }
+    268            else if (NewState == DISABLE) {
+   \                     ??FLASH_ITConfig_0: (+1)
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD102             BNE      ??FLASH_ITConfig_1
+    269              CLEAR_BIT(FLASH->IRQMASK, FlashFlag);
+   \   00000012   0x8811             LDRH     R1,[R2, #+0]
+   \   00000014   0x4381             BICS     R1,R1,R0
+   \   00000016   0x8011             STRH     R1,[R2, #+0]
+    270            }
+    271          }
+   \                     ??FLASH_ITConfig_1: (+1)
+   \   00000018   0x4770             BX       LR               ;; return
+    272          
+    273          
+    274          /**
+    275          * @brief  Clears the specific flash pending IT bit.
+    276          * @param  FlashFlag: the FLASH flag to clear, this can be
+    277          *         @arg Flash_CMDDONE Flash command done
+    278          *         @arg Flash_CMDSTART Flash command start
+    279          *         @arg Flash_CMDERR Flash command error
+    280          *         @arg Flash_ILLCMD Flash illegal command written
+    281          *         @arg Flash_READOK Flash mass read was OK  
+    282          *         @arg Flash_FLNREADY Flash not ready (sleep)
+    283          * @retval None
+    284          */
+
+   \                                 In section .text, align 2, keep-with-next
+    285          void FLASH_ClearITPendingBit(uint8_t FlashFlag)
+    286          {
+    287            assert_param(IS_FLASH_FLAG(FlashFlag)) ;
+    288            
+    289            /* Clear the flags */
+    290            FLASH->IRQSTAT = FlashFlag;
+   \                     FLASH_ClearITPendingBit: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable9_2  ;; 0x40100008
+   \   00000002   0x8008             STRH     R0,[R1, #+0]
+    291          }
+   \   00000004   0x4770             BX       LR               ;; return
+    292          
+    293          
+    294          /**
+    295          * @brief  Checks whether the specified FLASH raw flag is set or not.
+    296          * @param  FlashFlag: the FLASH flag to check, this can be
+    297          *         @arg Flash_CMDDONE Flash command done
+    298          *         @arg Flash_CMDSTART Flash command start
+    299          *         @arg Flash_CMDERR Flash command error
+    300          *         @arg Flash_ILLCMD Flash illegal command written
+    301          *         @arg Flash_READOK Flash mass read was OK  
+    302          *         @arg Flash_FLNREADY Flash not ready (sleep)
+    303          * @retval FlagStatus: functional state @ref FlagStatus
+    304          *         This parameter can be: SET or RESET.
+    305          */
+
+   \                                 In section .text, align 2, keep-with-next
+    306          FlagStatus FLASH_GetFlagStatus(uint8_t FlashFlag)
+    307          {
+   \                     FLASH_GetFlagStatus: (+1)
+   \   00000000   0x0001             MOVS     R1,R0
+    308            /* Check the parameters */
+    309            assert_param(IS_FLASH_FLAG(FlashFlag));
+    310            
+    311            if((FLASH->IRQRAW & FlashFlag) != (uint16_t)RESET) {
+   \   00000002   0x....             LDR      R0,??DataTable9_1  ;; 0x40100010
+   \   00000004   0x8800             LDRH     R0,[R0, #+0]
+   \   00000006   0x4001             ANDS     R1,R1,R0
+   \   00000008   0x0008             MOVS     R0,R1
+   \   0000000A   0xD000             BEQ      ??FLASH_GetFlagStatus_0
+   \   0000000C   0x2001             MOVS     R0,#+1
+    312              return SET;
+    313            }
+    314            else {
+    315              return RESET;
+   \                     ??FLASH_GetFlagStatus_0: (+1)
+   \   0000000E   0x4770             BX       LR               ;; return
+    316            }
+    317          }
+    318          
+    319          /**
+    320          * @brief  Clears the specific flash pending flags.
+    321          * @param  FlashFlag: the FLASH flag to clear, this can be
+    322          *         @arg Flash_CMDDONE Flash command done
+    323          *         @arg Flash_CMDSTART Flash command start
+    324          *         @arg Flash_CMDERR Flash command error
+    325          *         @arg Flash_ILLCMD Flash illegal command written
+    326          *         @arg Flash_READOK Flash mass read was OK  
+    327          *         @arg Flash_FLNREADY Flash not ready (sleep)
+    328          * @retval None
+    329          */
+
+   \                                 In section .text, align 2, keep-with-next
+    330          void FLASH_ClearFlag(uint8_t FlashFlag)
+    331          {
+    332            assert_param(IS_FLASH_FLAG(FlashFlag)) ;
+    333            
+    334            /* Clear the flags */
+    335            FLASH->IRQSTAT = FlashFlag;
+   \                     FLASH_ClearFlag: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable9_2  ;; 0x40100008
+   \   00000002   0x8008             STRH     R0,[R1, #+0]
+    336          }
+   \   00000004   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable9:
+   \   00000000   0x40100000         DC32     0x40100000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable9_1:
+   \   00000000   0x40100010         DC32     0x40100010
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable9_2:
+   \   00000000   0x40100008         DC32     0x40100008
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable9_3:
+   \   00000000   0x40100014         DC32     0x40100014
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable9_4:
+   \   00000000   0x4010000C         DC32     0x4010000c
+    337          
+    338          /**
+    339          * @}
+    340          */
+    341          
+    342          /**
+    343          * @}
+    344          */
+    345          
+    346          /**
+    347          * @}
+    348          */
+    349          
+    350          /******************* (C) COPYRIGHT 2016 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   FLASH_ClearCmdDone
+       0   FLASH_ClearFlag
+       0   FLASH_ClearITPendingBit
+       0   FLASH_EraseAllFlash
+       0   FLASH_ErasePage
+       0   FLASH_GetFlagStatus
+       0   FLASH_ITConfig
+       0   FLASH_NextFreeFlashAddress
+       0   FLASH_ProgramWord
+       0   FLASH_ProgramWordBurst
+       0   FLASH_ReadByte
+       0   FLASH_ReadWord
+       0   FLASH_WaitCmdDone
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable9
+       4  ??DataTable9_1
+       4  ??DataTable9_2
+       4  ??DataTable9_3
+       4  ??DataTable9_4
+      10  ?Subroutine0
+      12  FLASH_ClearCmdDone
+       6  FLASH_ClearFlag
+       6  FLASH_ClearITPendingBit
+      18  FLASH_EraseAllFlash
+      24  FLASH_ErasePage
+      16  FLASH_GetFlagStatus
+      26  FLASH_ITConfig
+       6  FLASH_NextFreeFlashAddress
+      16  FLASH_ProgramWord
+      28  FLASH_ProgramWordBurst
+       4  FLASH_ReadByte
+       4  FLASH_ReadWord
+      10  FLASH_WaitCmdDone
+
+ 
+ 206 bytes in section .text
+ 
+ 206 bytes of CODE memory
+
+Errors: none
+Warnings: none

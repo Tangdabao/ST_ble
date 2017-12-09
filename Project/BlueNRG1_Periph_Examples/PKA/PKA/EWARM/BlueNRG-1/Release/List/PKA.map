@@ -1,0 +1,492 @@
+###############################################################################
+#
+# IAR ELF Linker V7.70.1.11437/W32 for ARM                25/Aug/2017  09:42:39
+# Copyright 2007-2016 IAR Systems AB.
+#
+#    Output file  =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Exe\PKA.out
+#    Map file     =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\List\PKA.map
+#    Command line =  
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_adc.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_dma.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_flash.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_gpio.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_i2c.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_it.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_mft.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_pka.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_rng.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_rtc.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_spi.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_sysCtrl.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_uart.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\BlueNRG1_wdg.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\context_switch.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\misc.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\PKA_main.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\SDK_EVAL_Button.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\SDK_EVAL_Com.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\SDK_EVAL_Config.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\SDK_EVAL_I2C.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\SDK_EVAL_Led.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\SDK_EVAL_SPI.o"
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj\system_bluenrg1.o"
+#        --redirect _Printf=_PrintfLargeNoMb --redirect _Scanf=_ScanfSmallNoMb
+#        -o "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Exe\PKA.out"
+#        --map "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\List\PKA.map"
+#        --config "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\BlueNRG1.icf"
+#        --semihosting --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x200000c0 { block BLUE };
+"A3":  place at start of [0x10040000-0x10066fff] { ro section .intvec };
+"A4":  place at 0x20000004 { block ota_sw_activation_block };
+"A5":  place at 0x20000008 { block savedMSP_block };
+"A6":  place at 0x2000000c { block wakeupFromSleepFlag_block };
+"A7":  place at 0x20000010 { block app_base_block };
+"A8":  place at 0x20000030 { block Blue_Flag_Ram_block };
+"P2":  place in [from 0x10040000 to 0x10066fff] { ro };
+"P3":  place in [from 0x20000000 to 0x20005fff] { rw };
+"A10": place at end of [0x20000000-0x20005fff] { block CSTACK };
+initialize by copy { rw };
+ { section .bss.__blue_RAM };
+ { section .intvec };
+ { section .ota_sw_activation };
+ { section .savedMSP };
+ { section .wakeupFromSleepFlag };
+ { section .app_base };
+ { section .__blueflag_RAM };
+
+  Section                 Kind        Address    Size  Object
+  -------                 ----        -------    ----  ------
+"A3":                                            0xc0
+  .intvec                 const    0x10040000    0xc0  system_bluenrg1.o [1]
+                                 - 0x100400c0    0xc0
+
+"P2":                                          0x243f
+  .text                   ro code  0x100400c0   0xcf2  xprintflarge_nomb.o [3]
+  .text                   ro code  0x10040db2    0x14  strchr.o [5]
+  .text                   ro code  0x10040dc6    0x10  strlen.o [5]
+  .text                   ro code  0x10040dd6    0x18  memchr.o [5]
+  .text                   ro code  0x10040dee    0x6a  I64DivMod.o [5]
+  .text                   ro code  0x10040e58    0x5c  ABImemcpy.o [5]
+  .text                   ro code  0x10040eb4    0xe0  I32DivModFast.o [5]
+  .text                   ro code  0x10040f94    0x32  DblCmpLe.o [4]
+  .text                   ro code  0x10040fc6   0x184  DblMul.o [4]
+  .text                   ro code  0x1004114a    0xc2  DblDiv.o [4]
+  .text                   ro code  0x1004120c    0x2e  DblToI32.o [4]
+  .text                   ro code  0x1004123a     0xa  BlueNRG1_it.o [1]
+  .text                   ro code  0x10041244    0x20  I32ToDbl.o [4]
+  .text                   ro code  0x10041264   0x1a8  DblAddSub.o [4]
+  .text                   ro code  0x1004140c    0x20  div.o [3]
+  .text                   ro code  0x1004142c     0x2  I64DivZer.o [5]
+  .text                   ro code  0x1004142e     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x10041430     0x2  IntDivZer.o [5]
+  .text                   ro code  0x10041432     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x10041434   0x3ec  BlueNRG1_uart.o [1]
+  .text                   ro code  0x10041820   0x190  PKA_main.o [1]
+  .text                   ro code  0x100419b0    0x54  BlueNRG1_sysCtrl.o [1]
+  .text                   ro code  0x10041a04    0x18  BlueNRG1_rng.o [1]
+  .text                   ro code  0x10041a1c    0x24  printf.o [3]
+  .text                   ro code  0x10041a40   0x290  system_bluenrg1.o [1]
+  .text                   ro code  0x10041cd0    0x14  SDK_EVAL_Config.o [1]
+  .text                   ro code  0x10041ce4   0x104  SDK_EVAL_Com.o [1]
+  .text                   ro code  0x10041de8   0x138  BlueNRG1_pka.o [1]
+  .text                   ro code  0x10041f20    0x6c  context_switch.o [1]
+  .text                   ro code  0x10041f8c   0x184  BlueNRG1_gpio.o [1]
+  .rodata                 const    0x10042110    0x78  BlueNRG1_sysCtrl.o [1]
+  .rodata                 const    0x10042188    0x74  BlueNRG1_gpio.o [1]
+  .rodata                 const    0x100421fc    0x74  BlueNRG1_pka.o [1]
+  .rodata                 const    0x10042270    0x74  BlueNRG1_uart.o [1]
+  .rodata                 const    0x100422e4    0x40  PKA_main.o [1]
+  .text                   ro code  0x10042324    0x3c  zero_init3.o [5]
+  .text                   ro code  0x10042360    0x3c  packbits_init_single.o [5]
+  .text                   ro code  0x1004239c    0x28  data_init.o [5]
+  .iar.init_table         const    0x100423c4    0x48  - Linker created -
+  .rodata                 const    0x1004240c    0x1c  system_bluenrg1.o [1]
+  .text                   ro code  0x10042428    0x1a  cmain.o [5]
+  .text                   ro code  0x10042442     0x8  exit.o [3]
+  .text                   ro code  0x1004244a     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x1004244c     0xa  cexit.o [5]
+  .text                   ro code  0x10042456     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x10042458    0x14  exit.o [6]
+  .text                   ro code  0x1004246c    0x16  xprout.o [3]
+  .text                   ro code  0x10042482     0x2  system_bluenrg1.o [1]
+  .rodata                 const    0x10042484    0x10  PKA_main.o [1]
+  .rodata                 const    0x10042494    0x10  PKA_main.o [1]
+  .rodata                 const    0x100424a4    0x10  PKA_main.o [1]
+  .text                   ro code  0x100424b4     0xc  cstartup_M.o [5]
+  .rodata                 const    0x100424c0     0x8  xprintflarge_nomb.o [3]
+  .rodata                 const    0x100424c8     0x4  SDK_EVAL_Config.o [1]
+  .rodata                 const    0x100424cc     0x4  SDK_EVAL_Config.o [1]
+  .rodata                 const    0x100424d0     0x4  SDK_EVAL_Config.o [1]
+  .rodata                 const    0x100424d4     0x4  SDK_EVAL_Config.o [1]
+  .text                   ro code  0x100424d8     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x100424da     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x100424dc     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x100424de     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x100424e0     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x100424e2     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x100424e4     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x100424e6     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x100424e8     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x100424ea     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x100424ec     0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x100424ee     0x2  system_bluenrg1.o [1]
+  .rodata                 const    0x100424f0     0x0  zero_init3.o [5]
+  .rodata                 const    0x100424f0     0x0  packbits_init_single.o [5]
+  Initializer bytes       const    0x100424f0     0xa  <for BLUE-1>
+  Initializer bytes       const    0x100424fa     0x5  <for app_base_block-1>
+                                 - 0x100424ff  0x243f
+
+"A4":                                             0x4
+  ota_sw_activation_block
+                                   0x20000004     0x4  <Block>
+    .ota_sw_activation    uninit   0x20000004     0x4  system_bluenrg1.o [1]
+                                 - 0x20000008     0x4
+
+"A5":                                             0x4
+  savedMSP_block                   0x20000008     0x4  <Block>
+    .savedMSP             zero     0x20000008     0x4  system_bluenrg1.o [1]
+                                 - 0x2000000c     0x4
+
+"A6":                                             0x4
+  wakeupFromSleepFlag_block
+                                   0x2000000c     0x4  <Block>
+    .wakeupFromSleepFlag  zero     0x2000000c     0x1  system_bluenrg1.o [1]
+                                 - 0x20000010     0x4
+
+"A7":                                             0x4
+  app_base_block                   0x20000010     0x4  <Block>
+    app_base_block-1               0x20000010     0x4  <Init block>
+      .app_base           inited   0x20000010     0x4  system_bluenrg1.o [1]
+                                 - 0x20000014     0x4
+
+"A8":                                             0x4
+  Blue_Flag_Ram_block              0x20000030     0x4  <Block>
+    .__blueflag_RAM       zero     0x20000030     0x4  system_bluenrg1.o [1]
+                                 - 0x20000034     0x4
+
+"A1":                                           0x20c
+  BLUE                             0x200000c0   0x20c  <Block>
+    BLUE-1                         0x200000c0   0x20c  <Init block>
+      .bss.__blue_RAM     inited   0x200000c0   0x20c  system_bluenrg1.o [1]
+                                 - 0x200002cc   0x20c
+
+"P3":                                           0x110
+  .bss                    zero     0x200002cc    0x40  PKA_main.o [1]
+  .bss                    zero     0x2000030c    0x40  PKA_main.o [1]
+  .bss                    zero     0x2000034c    0x40  PKA_main.o [1]
+  .bss                    zero     0x2000038c    0x40  PKA_main.o [1]
+  .bss                    zero     0x200003cc     0x4  system_bluenrg1.o [1]
+  .bss                    zero     0x200003d0     0x4  system_bluenrg1.o [1]
+  .bss                    zero     0x200003d4     0x4  system_bluenrg1.o [1]
+  .bss                    zero     0x200003d8     0x1  SDK_EVAL_Config.o [1]
+                                 - 0x200003d9   0x10d
+
+"A10":                                          0xc00
+  CSTACK                           0x20005400   0xc00  <Block>
+    CSTACK                uninit   0x20005400   0xc00  <Block tail>
+                                 - 0x20006000   0xc00
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    4 destination ranges, total size 0x116:
+          0x20000008    0x4
+          0x2000000c    0x1
+          0x20000030    0x4
+          0x200002cc  0x10d
+
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0xa (1% of destination):
+          0x100424f0    0xa
+    1 destination range, total size 0x20c:
+          0x200000c0  0x20c
+
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x5 (125% of destination):
+          0x100424fa    0x5
+    1 destination range, total size 0x4:
+          0x20000010    0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK 2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj: [1]
+    BlueNRG1_gpio.o             388      116
+    BlueNRG1_it.o                10
+    BlueNRG1_pka.o              312      116
+    BlueNRG1_rng.o               24
+    BlueNRG1_sysCtrl.o           84      120
+    BlueNRG1_uart.o           1 004      116
+    PKA_main.o                  400      112      256
+    SDK_EVAL_Com.o              260
+    SDK_EVAL_Config.o            20       16        1
+    context_switch.o            108
+    system_bluenrg1.o           690      235      553
+    -------------------------------------------------
+    Total:                    3 300      831      810
+
+command line: [2]
+    -------------------------------------------------
+    Total:
+
+dl6M_tln.a: [3]
+    div.o                        32
+    exit.o                        8
+    printf.o                     36
+    xprintflarge_nomb.o       3 314        8
+    xprout.o                     22
+    -------------------------------------------------
+    Total:                    3 412        8
+
+m6M_tl.a: [4]
+    DblAddSub.o                 424
+    DblCmpLe.o                   50
+    DblDiv.o                    194
+    DblMul.o                    388
+    DblToI32.o                   46
+    I32ToDbl.o                   32
+    -------------------------------------------------
+    Total:                    1 134
+
+rt6M_tl.a: [5]
+    ABImemcpy.o                  92
+    I32DivModFast.o             224
+    I64DivMod.o                 106
+    I64DivZer.o                   2
+    IntDivZer.o                   2
+    cexit.o                      10
+    cmain.o                      26
+    cstartup_M.o                 12
+    data_init.o                  40
+    memchr.o                     24
+    packbits_init_single.o       60
+    strchr.o                     20
+    strlen.o                     16
+    zero_init3.o                 60
+    -------------------------------------------------
+    Total:                      694
+
+shb_l.a: [6]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Linker created                        72    3 072
+-----------------------------------------------------
+    Grand Total:              8 560      911    3 882
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x100423c4          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x1004240c          --   Gb  - Linker created -
+?main                   0x10042429         Code  Gb  cmain.o [5]
+ADC_Handler             0x100424e7    0x2  Code  Wk  system_bluenrg1.o [1]
+BLUE$$Base              0x200000c0          --   Gb  - Linker created -
+BLUE$$Limit             0x200002cc          --   Gb  - Linker created -
+BlueNRG_IdleSleep       0x10041f67         Code  Gb  context_switch.o [1]
+Blue_Flag_Ram_block$$Base
+                        0x20000030          --   Gb  - Linker created -
+Blue_Flag_Ram_block$$Limit
+                        0x20000034          --   Gb  - Linker created -
+Blue_Handler            0x100424d9    0x2  Code  Wk  system_bluenrg1.o [1]
+CSTACK$$Base            0x20005400          --   Gb  - Linker created -
+CSTACK$$Limit           0x20006000          --   Gb  - Linker created -
+CS_contextRestore       0x10041f53         Code  Gb  context_switch.o [1]
+CS_contextSave          0x10041f21         Code  Gb  context_switch.o [1]
+DMA_Handler             0x100424ed    0x2  Code  Wk  system_bluenrg1.o [1]
+DeviceConfiguration     0x10041aeb   0xea  Code  Gb  system_bluenrg1.o [1]
+GPIO_Handler            0x10041433    0x2  Code  Wk  system_bluenrg1.o [1]
+GPIO_Init               0x10041f8d  0x16a  Code  Gb  BlueNRG1_gpio.o [1]
+GenerateRandomK16Word   0x10041821   0x5a  Code  Gb  PKA_main.o [1]
+HardFault_Handler       0x1004123d    0x4  Code  Gb  BlueNRG1_it.o [1]
+I2C1_Handler            0x100424eb    0x2  Code  Wk  system_bluenrg1.o [1]
+I2C2_Handler            0x100424e9    0x2  Code  Wk  system_bluenrg1.o [1]
+LoadInt                 0x1004066b   0x68  Code  Lc  xprintflarge_nomb.o [3]
+MFT1A_Handler           0x100424db    0x2  Code  Wk  system_bluenrg1.o [1]
+MFT1B_Handler           0x100424dd    0x2  Code  Wk  system_bluenrg1.o [1]
+MFT2A_Handler           0x100424df    0x2  Code  Wk  system_bluenrg1.o [1]
+MFT2B_Handler           0x100424e1    0x2  Code  Wk  system_bluenrg1.o [1]
+NMI_Handler             0x1004123b    0x2  Code  Gb  BlueNRG1_it.o [1]
+NVIC_SetPriority        0x10041a41   0x84  Code  Lc  system_bluenrg1.o [1]
+NVM_Handler             0x1004244b    0x2  Code  Wk  system_bluenrg1.o [1]
+PKA_GetData             0x10041ea7   0x62  Code  Gb  BlueNRG1_pka.o [1]
+PKA_Handler             0x100424ef    0x2  Code  Wk  system_bluenrg1.o [1]
+PKA_SetData             0x10041e33   0x74  Code  Gb  BlueNRG1_pka.o [1]
+PKA_StartProcessing     0x10041de9   0x22  Code  Gb  BlueNRG1_pka.o [1]
+PKA_VerifyProcess       0x10041e1f   0x14  Code  Gb  BlueNRG1_pka.o [1]
+PKA_WaitProcess         0x10041e0b   0x14  Code  Gb  BlueNRG1_pka.o [1]
+PendSV_Handler          0x1004142f    0x2  Code  Wk  system_bluenrg1.o [1]
+PkaFailure              0x1004187b    0xa  Code  Gb  PKA_main.o [1]
+RNG_GetFlagStatus       0x10041a05   0x12  Code  Gb  BlueNRG1_rng.o [1]
+RTC_Handler             0x100424e3    0x2  Code  Wk  system_bluenrg1.o [1]
+Region$$Table$$Base     0x100423c4          --   Gb  - Linker created -
+Region$$Table$$Limit    0x1004240c          --   Gb  - Linker created -
+SPI_Handler             0x10042483    0x2  Code  Wk  system_bluenrg1.o [1]
+SVC_Handler             0x10041241    0x2  Code  Gb  BlueNRG1_it.o [1]
+SdkEvalComIOSendData    0x10041dbb    0xe  Code  Gb  SDK_EVAL_Com.o [1]
+SdkEvalComUartInit      0x10041cff   0xbc  Code  Gb  SDK_EVAL_Com.o [1]
+SdkEvalGetVersion       0x10041cd9    0x6  Code  Gb  SDK_EVAL_Config.o [1]
+SdkEvalIdentification   0x10041cd1    0x8  Code  Gb  SDK_EVAL_Config.o [1]
+SdkEvalUart_Send_Data   0x10041ce5   0x1a  Code  Lc  SDK_EVAL_Com.o [1]
+SysCtrl_PeripheralClockCmd
+                        0x100419b1   0x48  Code  Gb  BlueNRG1_sysCtrl.o [1]
+SysTick_Handler         0x10041243    0x2  Code  Gb  BlueNRG1_it.o [1]
+SystemInit              0x10041bd5   0xae  Code  Gb  system_bluenrg1.o [1]
+UART_Cmd                0x10041435   0x3a  Code  Gb  BlueNRG1_uart.o [1]
+UART_GetFlagStatus      0x1004172d   0x66  Code  Gb  BlueNRG1_uart.o [1]
+UART_Handler            0x10042457    0x2  Code  Wk  system_bluenrg1.o [1]
+UART_Init               0x10041479  0x278  Code  Gb  BlueNRG1_uart.o [1]
+UART_RxFifoIrqLevelConfig
+                        0x100417ad   0x4e  Code  Gb  BlueNRG1_uart.o [1]
+UART_SendData           0x100416f9   0x22  Code  Gb  BlueNRG1_uart.o [1]
+WDG_Handler             0x100424e5    0x2  Code  Wk  system_bluenrg1.o [1]
+_GenldLargeNoMb         0x10040ae5  0x29a  Code  Lc  xprintflarge_nomb.o [3]
+_LdtobLargeNoMb         0x100407fd  0x2b0  Code  Lc  xprintflarge_nomb.o [3]
+_LitobLargeNoMb         0x100406d3  0x12a  Code  Lc  xprintflarge_nomb.o [3]
+_PrintfLargeNoMb        0x100400c1  0x5aa  Code  Gb  xprintflarge_nomb.o [3]
+_Prout                  0x1004246d   0x16  Code  Gb  xprout.o [3]
+_PutcharsLargeNoMb      0x10040d7f   0x30  Code  Lc  xprintflarge_nomb.o [3]
+__aeabi_cdcmple         0x10040f95         Code  Gb  DblCmpLe.o [4]
+__aeabi_d2uiz           0x1004120d         Code  Gb  DblToI32.o [4]
+__aeabi_ddiv            0x1004114b         Code  Gb  DblDiv.o [4]
+__aeabi_dmul            0x10040fc7         Code  Gb  DblMul.o [4]
+__aeabi_dsub            0x1004131f         Code  Gb  DblAddSub.o [4]
+__aeabi_idiv            0x10040ee1         Code  Gb  I32DivModFast.o [5]
+__aeabi_idiv0           0x10041431         Code  Gb  IntDivZer.o [5]
+__aeabi_idivmod         0x10040ee1         Code  Gb  I32DivModFast.o [5]
+__aeabi_ldiv0           0x1004142d         Code  Gb  I64DivZer.o [5]
+__aeabi_memcpy          0x10040e59         Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy4         0x10040e81         Code  Wk  ABImemcpy.o [5]
+__aeabi_ui2d            0x10041245         Code  Gb  I32ToDbl.o [4]
+__aeabi_uidiv           0x10040ee7         Code  Gb  I32DivModFast.o [5]
+__aeabi_uidivmod        0x10040ee7         Code  Gb  I32DivModFast.o [5]
+__aeabi_uldivmod        0x10040def         Code  Gb  I64DivMod.o [5]
+__blue_RAM              0x200000c0  0x20c  Data  Lc  system_bluenrg1.o [1]
+__blueflag_RAM          0x20000030    0x4  Data  Gb  system_bluenrg1.o [1]
+__cmain                 0x10042429         Code  Gb  cmain.o [5]
+__exit                  0x10042459   0x14  Code  Gb  exit.o [6]
+__iar_Memchr            0x10040dd7   0x18  Code  Gb  memchr.o [5]
+__iar_Strchr            0x10040db3   0x14  Code  Gb  strchr.o [5]
+__iar_d2uiz             0x10041211         Code  Gb  DblToI32.o [4]
+__iar_data_init3        0x1004239d   0x28  Code  Gb  data_init.o [5]
+__iar_packbits_init_single3
+                        0x10042361   0x3c  Code  Gb  packbits_init_single.o [5]
+__iar_program_start     0x100424b5         Code  Gb  cstartup_M.o [5]
+__iar_ui2d              0x10041249         Code  Gb  I32ToDbl.o [4]
+__iar_zero_init3        0x10042325   0x3c  Code  Gb  zero_init3.o [5]
+__low_level_init        0x10041ac5   0x26  Code  Gb  system_bluenrg1.o [1]
+__vector_table          0x10040000   0xc0  Data  Gb  system_bluenrg1.o [1]
+_call_main              0x10042435         Code  Gb  cmain.o [5]
+_exit                   0x1004244d         Code  Gb  cexit.o [5]
+_main                   0x1004243f         Code  Gb  cmain.o [5]
+app_base                0x20000010    0x4  Data  Gb  system_bluenrg1.o [1]
+app_base_block$$Base    0x20000010          --   Gb  - Linker created -
+app_base_block$$Limit   0x20000014          --   Gb  - Linker created -
+assert_failed           0x100419ad    0x4  Code  Gb  PKA_main.o [1]
+div                     0x1004140d   0x20  Code  Gb  div.o [3]
+exit                    0x10042443    0x8  Code  Gb  exit.o [3]
+main                    0x10041885   0xfc  Code  Gb  PKA_main.o [1]
+main::Public_Key_Out_A  0x200002cc   0x40  Data  Lc  PKA_main.o [1]
+main::Public_Key_Out_B  0x2000030c   0x40  Data  Lc  PKA_main.o [1]
+main::RandomKA          0x2000034c   0x40  Data  Lc  PKA_main.o [1]
+main::RandomKB          0x2000038c   0x40  Data  Lc  PKA_main.o [1]
+ota_sw_activation       0x20000004    0x4  Data  Gb  system_bluenrg1.o [1]
+ota_sw_activation_block$$Base
+                        0x20000004          --   Gb  - Linker created -
+ota_sw_activation_block$$Limit
+                        0x20000008          --   Gb  - Linker created -
+printf                  0x10041a1d   0x24  Code  Gb  printf.o [3]
+putchar                 0x10041dd9   0x10  Code  Gb  SDK_EVAL_Com.o [1]
+s_SdkEvalVersion        0x200003d8    0x1  Data  Lc  SDK_EVAL_Config.o [1]
+s_UartRxModeVersion     0x100424d4    0x4  Data  Gb  SDK_EVAL_Config.o [1]
+s_UartRxPinVersion      0x100424d0    0x4  Data  Gb  SDK_EVAL_Config.o [1]
+s_UartTxModeVersion     0x100424cc    0x4  Data  Gb  SDK_EVAL_Config.o [1]
+s_UartTxPinVersion      0x100424c8    0x4  Data  Gb  SDK_EVAL_Config.o [1]
+savedICSR               0x200003cc    0x4  Data  Gb  system_bluenrg1.o [1]
+savedMSP                0x20000008    0x4  Data  Gb  system_bluenrg1.o [1]
+savedMSP_block$$Base    0x20000008          --   Gb  - Linker created -
+savedMSP_block$$Limit   0x2000000c          --   Gb  - Linker created -
+savedNVIC_ISPR          0x200003d4    0x4  Data  Gb  system_bluenrg1.o [1]
+savedSHCSR              0x200003d0    0x4  Data  Gb  system_bluenrg1.o [1]
+strlen                  0x10040dc7   0x10  Code  Gb  strlen.o [5]
+wakeupFromSleepFlag     0x2000000c    0x1  Data  Gb  system_bluenrg1.o [1]
+wakeupFromSleepFlag_block$$Base
+                        0x2000000c          --   Gb  - Linker created -
+wakeupFromSleepFlag_block$$Limit
+                        0x20000010          --   Gb  - Linker created -
+
+
+[1] = D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK 2.5.0\Project\BlueNRG1_Periph_Examples\PKA\PKA\EWARM\BlueNRG-1\Release\Obj
+[2] = command line
+[3] = dl6M_tln.a
+[4] = m6M_tl.a
+[5] = rt6M_tl.a
+[6] = shb_l.a
+
+  8 560 bytes of readonly  code memory
+    911 bytes of readonly  data memory
+  3 882 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

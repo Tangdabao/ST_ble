@@ -1,0 +1,352 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       29/Nov/2017  10:11:20
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Library\BlueNRG1_Periph_Driver\src\misc.c
+#    Command line =  
+#        "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Library\BlueNRG1_Periph_Driver\src\misc.c" -D
+#        HS_SPEED_XTAL=HS_SPEED_XTAL_16MHZ -D
+#        LS_SOURCE=LS_SOURCE_EXTERNAL_32KHZ -D SMPS_INDUCTOR=SMPS_INDUCTOR_10uH
+#        --preprocess=cl "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2
+#        DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        -lCN "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        -lb "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List"
+#        --diag_suppress Pe1665 -o "D:\Program Files
+#        (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\Obj"
+#        --debug --endian=little --cpu=Cortex-M0 --diag_warning Pe1665
+#        --diag_suppress Pe1665 -e --fpu=None --dlib_config
+#        D:\Software\IAR_BlueNRG\arm\INC\c\DLib_Config_Normal.h -I "D:\Program
+#        Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\CMSIS\Include\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\hal\inc\"
+#        -I "D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\..\..\..\..\..\..\Library\Bluetooth_LE\inc\"
+#        -Ohz
+#    Locale       =  Chinese (Simplified)_China.936
+#    List file    =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\List\misc.lst
+#    Object file  =  
+#        D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK
+#        2.5.0\Project\BlueNRG1_Periph_Examples\Micro\Sleep_Test\EWARM\BlueNRG-1\Release\Obj\misc.o
+#
+###############################################################################
+
+D:\Program Files (x86)\STMicroelectronics\BlueNRG-1_2 DK 2.5.0\Library\BlueNRG1_Periph_Driver\src\misc.c
+      1          /**
+      2            ******************************************************************************
+      3            * @file    misc.c
+      4            * @author  VMA Application Team
+      5            * @version V2.0.0
+      6            * @date    21-March-2016
+      7            * @brief   This file provides all the miscellaneous firmware functions (add-on
+      8            *          to CMSIS functions).
+      9            ******************************************************************************
+     10            * @attention
+     11            *
+     12            * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     13            * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     14            * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     15            * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     16            * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     17            * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     18            *
+     19            * <h2><center>&copy; COPYRIGHT 2016 STMicroelectronics</center></h2>
+     20            ******************************************************************************
+     21            */
+     22          
+     23          /* Includes ------------------------------------------------------------------*/
+     24          #include "misc.h"
+     25          
+     26          /** @addtogroup BLUENRG1_Peripheral_Driver BLUENRG1 Peripheral Driver
+     27            * @{
+     28            */
+     29          
+     30          /** @addtogroup MISC_Peripheral  MISC Peripheral
+     31            * @{
+     32            */
+     33          
+     34          /** @defgroup MISC_Private_TypesDefinitions Private Types Definitions
+     35            * @{
+     36            */
+     37          
+     38          /**
+     39            * @}
+     40            */ 
+     41          
+     42          /** @defgroup MISC_Private_Defines Provate Defines
+     43            * @{
+     44            */
+     45          
+     46          #define AIRCR_VECTKEY_MASK    ((uint32_t)0x05FA0000)
+     47          
+     48          /**
+     49            * @}
+     50            */
+     51          
+     52          /** @defgroup MISC_Private_Macros Private Macros
+     53            * @{
+     54            */
+     55          
+     56          /**
+     57            * @}
+     58            */
+     59          
+     60          /** @defgroup MISC_Private_Variables Private Variables
+     61            * @{
+     62            */
+     63          
+     64          /**
+     65            * @}
+     66            */
+     67          
+     68          /** @defgroup MISC_Private_FunctionPrototypes Private Function Prototypes
+     69            * @{
+     70            */
+     71          
+     72          /**
+     73            * @}
+     74            */
+     75          
+     76          /** @defgroup MISC_Public_Functions Public Function
+     77            * @{
+     78            */
+     79          
+     80          /**
+     81            * @brief  Initializes the NVIC peripheral according to the specified
+     82            *         parameters in the NVIC_InitStruct.
+     83            * @param  NVIC_InitStruct: pointer to a @ref NVIC_InitTypeDef structure that contains
+     84            *         the configuration information for the specified NVIC peripheral.
+     85            * @retval None
+     86            */
+
+   \                                 In section .text, align 2, keep-with-next
+     87          void NVIC_Init(NVIC_InitType* NVIC_InitStruct)
+     88          { 
+   \                     NVIC_Init: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+     89            /* Check the parameters */
+     90            assert_param(IS_FUNCTIONAL_STATE(NVIC_InitStruct->NVIC_IRQChannelCmd));
+     91            assert_param(IS_NVIC_PREEMPTION_PRIORITY(NVIC_InitStruct->NVIC_IRQChannelPreemptionPriority));
+     92              
+     93            if (NVIC_InitStruct->NVIC_IRQChannelCmd != DISABLE)
+   \   00000002   0x7801             LDRB     R1,[R0, #+0]
+   \   00000004   0x231F             MOVS     R3,#+31
+   \   00000006   0x2401             MOVS     R4,#+1
+   \   00000008   0x7882             LDRB     R2,[R0, #+2]
+   \   0000000A   0x2A00             CMP      R2,#+0
+   \   0000000C   0xD021             BEQ      ??NVIC_Init_0
+     94            {
+     95              /* Compute the Corresponding IRQ Priority --------------------------------*/    
+     96              NVIC_SetPriority((IRQn_Type)NVIC_InitStruct->NVIC_IRQChannel, NVIC_InitStruct->NVIC_IRQChannelPreemptionPriority);
+   \   0000000E   0x7846             LDRB     R6,[R0, #+1]
+   \   00000010   0xB249             SXTB     R1,R1
+   \   00000012   0x00CD             LSLS     R5,R1,#+3
+   \   00000014   0x2218             MOVS     R2,#+24
+   \   00000016   0x402A             ANDS     R2,R2,R5
+   \   00000018   0x27FF             MOVS     R7,#+255
+   \   0000001A   0x4097             LSLS     R7,R7,R2
+   \   0000001C   0x43FD             MVNS     R5,R7
+   \   0000001E   0x07B6             LSLS     R6,R6,#+30
+   \   00000020   0x0E36             LSRS     R6,R6,#+24
+   \   00000022   0x4096             LSLS     R6,R6,R2
+   \   00000024   0x000A             MOVS     R2,R1
+   \   00000026   0xD504             BPL      ??NVIC_Init_1
+   \   00000028   0x....             LDR      R2,??DataTable2  ;; 0xe000ed1c
+   \   0000002A   0x0709             LSLS     R1,R1,#+28
+   \   0000002C   0x0F09             LSRS     R1,R1,#+28
+   \   0000002E   0x3908             SUBS     R1,R1,#+8
+   \   00000030   0xE000             B        ??NVIC_Init_2
+   \                     ??NVIC_Init_1: (+1)
+   \   00000032   0x....             LDR      R2,??DataTable2_1  ;; 0xe000e400
+   \                     ??NVIC_Init_2: (+1)
+   \   00000034   0x0889             LSRS     R1,R1,#+2
+   \   00000036   0x0089             LSLS     R1,R1,#+2
+   \   00000038   0x1851             ADDS     R1,R2,R1
+   \   0000003A   0x680A             LDR      R2,[R1, #+0]
+   \   0000003C   0x4015             ANDS     R5,R5,R2
+   \   0000003E   0x432E             ORRS     R6,R6,R5
+   \   00000040   0x600E             STR      R6,[R1, #+0]
+     97              
+     98              /* Enable the Selected IRQ Channels --------------------------------------*/
+     99              NVIC->ISER[NVIC_InitStruct->NVIC_IRQChannel >> 0x05] =
+    100                (uint32_t)0x01 << (NVIC_InitStruct->NVIC_IRQChannel & (uint8_t)0x1F);
+   \   00000042   0x7800             LDRB     R0,[R0, #+0]
+   \   00000044   0x4003             ANDS     R3,R3,R0
+   \   00000046   0x409C             LSLS     R4,R4,R3
+   \   00000048   0x....             LDR      R1,??DataTable2_2  ;; 0xe000e100
+   \   0000004A   0x0940             LSRS     R0,R0,#+5
+   \   0000004C   0x0080             LSLS     R0,R0,#+2
+   \   0000004E   0x500C             STR      R4,[R1, R0]
+   \   00000050   0xBDF0             POP      {R4-R7,PC}
+    101            }
+    102            else
+    103            {
+    104              /* Disable the Selected IRQ Channels -------------------------------------*/
+    105              NVIC->ICER[NVIC_InitStruct->NVIC_IRQChannel >> 0x05] =
+    106                (uint32_t)0x01 << (NVIC_InitStruct->NVIC_IRQChannel & (uint8_t)0x1F);
+   \                     ??NVIC_Init_0: (+1)
+   \   00000052   0x400B             ANDS     R3,R3,R1
+   \   00000054   0x409C             LSLS     R4,R4,R3
+   \   00000056   0x....             LDR      R0,??DataTable2_3  ;; 0xe000e180
+   \   00000058   0x0949             LSRS     R1,R1,#+5
+   \   0000005A   0x0089             LSLS     R1,R1,#+2
+   \   0000005C   0x5044             STR      R4,[R0, R1]
+    107            }
+    108          }
+   \   0000005E   0xBDF0             POP      {R4-R7,PC}       ;; return
+    109          
+    110          /**
+    111            * @brief  Enables or disables sleep/stop mode on system level.
+    112            * @param  NewState: functional state @ref FunctionalState
+    113            *         This parameter can be: ENABLE or DISABLE.
+    114            * @retval None
+    115            */
+
+   \                                 In section .text, align 2, keep-with-next
+    116          void SystemSleepCmd(FunctionalState NewState)
+    117          {
+    118            /* Check the parameters */
+    119            assert_param(IS_FUNCTIONAL_STATE(NewState));
+    120            
+    121            if (NewState != DISABLE) {
+   \                     SystemSleepCmd: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable2_4  ;; 0xe000ed10
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0x6808             LDR      R0,[R1, #+0]
+   \   00000006   0xD003             BEQ      ??SystemSleepCmd_0
+    122              /** Enable Sleep/Stop mode entry on system level */
+    123              SCB->SCR |= 1<<SCB_SCR_SLEEPDEEP_Pos;
+   \   00000008   0x2204             MOVS     R2,#+4
+   \   0000000A   0x4302             ORRS     R2,R2,R0
+   \   0000000C   0x600A             STR      R2,[R1, #+0]
+   \   0000000E   0x4770             BX       LR
+    124            }
+    125            else {
+    126              /** Disable Sleep/Stop mode entry on system level */
+    127              SCB->SCR &= ~(1<<SCB_SCR_SLEEPDEEP_Pos);
+   \                     ??SystemSleepCmd_0: (+1)
+   \   00000010   0x2204             MOVS     R2,#+4
+   \   00000012   0x4390             BICS     R0,R0,R2
+   \   00000014   0x6008             STR      R0,[R1, #+0]
+    128            }
+    129          }
+   \   00000016   0x4770             BX       LR               ;; return
+    130          
+
+   \                                 In section .text, align 2, keep-with-next
+    131          void SysTick_State(FunctionalState NewState)
+    132          {
+    133            /* Check the parameters */
+    134            assert_param(IS_FUNCTIONAL_STATE(NewState));
+    135            
+    136            if (NewState != DISABLE) {
+   \                     SysTick_State: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable2_5  ;; 0xe000e010
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0x6808             LDR      R0,[R1, #+0]
+   \   00000006   0xD003             BEQ      ??SysTick_State_0
+    137              SysTick->CTRL  |= SysTick_CTRL_ENABLE_Msk;
+   \   00000008   0x2201             MOVS     R2,#+1
+   \   0000000A   0x4302             ORRS     R2,R2,R0
+   \   0000000C   0x600A             STR      R2,[R1, #+0]
+   \   0000000E   0x4770             BX       LR
+    138            }
+    139            else {
+    140              SysTick->CTRL  &= ~SysTick_CTRL_ENABLE_Msk;
+   \                     ??SysTick_State_0: (+1)
+   \   00000010   0x2201             MOVS     R2,#+1
+   \   00000012   0x4390             BICS     R0,R0,R2
+   \   00000014   0x6008             STR      R0,[R1, #+0]
+    141            }
+    142          }
+   \   00000016   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2:
+   \   00000000   0xE000ED1C         DC32     0xe000ed1c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \   00000000   0xE000E400         DC32     0xe000e400
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \   00000000   0xE000E100         DC32     0xe000e100
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_3:
+   \   00000000   0xE000E180         DC32     0xe000e180
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_4:
+   \   00000000   0xE000ED10         DC32     0xe000ed10
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_5:
+   \   00000000   0xE000E010         DC32     0xe000e010
+    143            
+    144            
+    145          /**
+    146            * @}
+    147            */
+    148          
+    149          /**
+    150            * @}
+    151            */
+    152          
+    153          /**
+    154            * @}
+    155            */
+    156          
+    157          /******************* (C) COPYRIGHT 2016 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      20   NVIC_Init
+       0   SysTick_State
+       0   SystemSleepCmd
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+       4  ??DataTable2_5
+      96  NVIC_Init
+      24  SysTick_State
+      24  SystemSleepCmd
+
+ 
+ 168 bytes in section .text
+ 
+ 168 bytes of CODE memory
+
+Errors: none
+Warnings: none
