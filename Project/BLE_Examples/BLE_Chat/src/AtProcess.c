@@ -15,9 +15,7 @@
 #include "gatt_db.h"
 #include "app_state.h"
 
-extern Current_status_t DiscoveryDevice;
-
-typedef int (*pfnCmdLine)(int argc, char *argv[]);
+typedef int (*pfnCmdLine)(int argc, char *argv);
 
 typedef struct
 {
@@ -26,7 +24,9 @@ typedef struct
     const char *pcHelp;   //! A pointer to a string of brief help text for the command.
 } tCmdLineEntry;
 
+
 extern tCmdLineEntry g_sCmdTable[];
+
 
 /************************************************************
 *功能描述     : 获取HELP信息
@@ -34,72 +34,112 @@ extern tCmdLineEntry g_sCmdTable[];
 *返回参数     : 0
 *作    者     : Tgh
 *************************************************************/
-int At_help(int argc, uint8_t *argv)
+int At_help(int argc, char *argv)
 {
-    printf("this is help\r\n");
-    printf("AT+Help is OK \n");
-    return 0;
+    tCmdLineEntry *pEntry;
+    printf("\nAvailable commands\n");
+    printf("------------------\n");
+    pEntry = &g_sCmdTable[0];  // Point at the beginning of the command table.
+    while(pEntry->pcCmd)
+    {
+        printf("%s%s\n", pEntry->pcCmd, pEntry->pcHelp);
+        pEntry++;
+    }
+    return 0u;
 }
-
-int At_reset(int argc, uint8_t *argv)
+/************************************************************
+*功能描述     : RESET
+*输入参数     : argc：数据长度，argv：数据首地址
+*返回参数     : 0
+*作    者     : Tgh
+*************************************************************/
+int At_reset(int argc, char *argv)
 {
     NVIC_SystemReset();
     printf("AT+RESET\n is OK\r\n");
     return 0;
 }
-
-int At_Version(int argc, uint8_t *argv)
+/************************************************************
+*功能描述     : Version： eg：AT+VERSION=？
+*输入参数     : argc：数据长度，argv：数据首地址
+*返回参数     : 0
+*作    者     : Tgh
+*************************************************************/
+int At_Version(int argc, char *argv)
 {
     printf("AT+VERSION=%s\r\n", BLE_CHAT_VERSION_STRING);
     return 0;
 }
-
-int At_Mac(int argc, uint8_t *argv)
+/************************************************************
+*功能描述     :SET/check mac
+* E g         ：AT+MAC=123456\n/AT+MAC=?\n
+*输入参数     : argc：数据长度，argv：数据首地址
+*返回参数     : 0
+*作    者     : Tgh
+*************************************************************/
+int At_Mac(int argc, char *argv)
 {
-    printf("At_Mac: ");
-    for(uint8_t i = 6; i > 0; i--)
+    if(argv[0] == '?')
     {
-        printf("%x:", gConfigINFO.MacAddr[i - 1]);
+        printf("At_Mac: ");
+        for(uint8_t i = 6; i > 0; i--)
+        {
+            printf("%x:", gConfigINFO.MacAddr[i - 1]);
+        }
+        printf("\r\n");
     }
-    printf("\r\n");
-    return 0;
-}
-
-
-//no finish
-int AT_Disconnect(int argc, uint8_t *argv)
-{
-    uint8_t ret;
-    ret = hci_disconnect(chatServHandle, 0x05);
-    if(ret == BLE_STATUS_SUCCESS)
-        printf("AT+AT_Disconnect=OK\r\n");
-    return 0;
-}
-//NO finish
-int AT_transmit_power_level(int argc, uint8_t *argv)
-{
-    uint8_t ret;
-    uint8_t power_level_Value;
-    //- 0x00: Read Current Transmit Power Level.
-    //- 0x01: Read Maximum Transmit Power Level.
-    ret = hci_read_transmit_power_level(chatServHandle, 0x01, &power_level_Value);
-    if(ret == BLE_STATUS_SUCCESS)
-        printf("transmit_power_level:%d", power_level_Value);
-    return 0;
-}
-
-int AT_Name(int argc, uint8_t *argv)
-{
-	  uint8_t i;
-	  printf("ble_name: ");
-    for(i = 0; i < strlen((char const *)gConfigINFO.DviceName.ucModName); i++)
+    else
     {
-      printf("%c",gConfigINFO.DviceName.ucModName[i]);
+        if(argc == 8)
+        {
+            for(uint8_t i = 0; i < 6; i++)
+                //printf("%x",argv[i]);
+                gConfigINFO.MacAddr[i] = argv[i];
+            SaveConfig();
+            printf("OK\r\n");
+            NVIC_SystemReset();
+        }
+        else
+            printf("Please enter the 6-bit MAC");
+    }
+    return 0;
+}
 
+/************************************************************
+*功能描述     :SET/check NAME
+* E g         ：AT+NAME=BLE\n/AT+NAME=?\n
+*输入参数     : argc：数据长度，argv：数据首地址
+*返回参数     : 0
+*作    者     : Tgh
+*************************************************************/
+int AT_Name(int argc, char *argv)
+{
+    uint8_t i;
+    if(argv[0] == '?')
+    {
+        printf("ble_name: ");
+        for(i = 0; i < strlen((char const *)gConfigINFO.DviceName.ucModName); i++)
+            printf("%c", gConfigINFO.DviceName.ucModName[i]);
+    }
+    else
+    {
+        Osal_MemSet(gConfigINFO.DviceName.ucModName, 0, 20);
+        for(i = 0; i < argc - 2; i++)
+            //printf("%c",argv[i]);
+            //printf("END");
+            gConfigINFO.DviceName.ucModName[i] = argv[i];
+        SaveConfig();
+        NVIC_SystemReset();
     }
 }
 
-int AT_Delet_ADV(int argc, uint8_t *argv)
+/************************************************************
+*功能描述     :删除某些广播信息
+*输入参数     : argc：数据长度，argv：数据首地址
+*返回参数     : 0
+*作    者     : Tgh
+*************************************************************/
+int AT_Delet_ADV(int argc, char *argv)
 {
     uint8_t ret;
     ret = aci_gap_delete_ad_type(AD_TYPE_TX_POWER_LEVEL);
@@ -107,11 +147,15 @@ int AT_Delet_ADV(int argc, uint8_t *argv)
         printf("AT_Delet_ADV OK");
     return 0;
 }
-
-//开启广播//
-int AT_StartAdv(int argc, uint8_t *argv)
+/************************************************************
+*功能描述     :开启广播
+*输入参数     : argc：数据长度，argv：数据首地址
+*返回参数     : 0
+*作    者     : Tgh
+*************************************************************/
+int AT_StartAdv(int argc, char *argv)
 {
-	  if( APP_FLAG(CONNECTED) )
+    if( APP_FLAG(CONNECTED) )
     {
         printf("error：CONNET_Repeat");
         //return(CONNET_Repeat);
@@ -124,27 +168,246 @@ int AT_StartAdv(int argc, uint8_t *argv)
     return 0;
 }
 
+/************************************************************
+*功能描述     :设置查询BLE是否具有IO能力
+*输入参数     : argc：数据长度，argv：数据首地址
+*返回参数     : 0
+*作    者     : Tgh
+*************************************************************/
+int AT_Set_io_capability(int argc, char *argv)
+{
+    uint8_t ret;
+    if(argv[0] == '?')
+    {
+        switch(gConfigINFO.Ble_io_cap)
+        {
+        case 0x00:
+            printf("- 0x00: IO_CAP_DISPLAY_ONLY\r\n");
+            break;
+        case 0x01:
+            printf("- 0x01: IO_CAP_DISPLAY_YES_NO\r\n");
+            break;
+        case 0x02:
+            printf("- 0x02: IO_CAP_KEYBOARD_ONLY\r\n");
+            break;
+        case 0x03:
+            printf("- 0x03: IO_CAP_NO_INPUT_NO_OUTPUT\r\n");
+            break;
+        case 0x04:
+            printf("- 0x04: IO_CAP_KEYBOARD_DISPLAY\r\n");
+            break;
+        default:
+            printf("error:%d\n", gConfigINFO.Ble_io_cap);
+        }
+    }
+    else
+    {
+        //printf("%x",argv[0]);
+        //printf("\r\n");
+        gConfigINFO.Ble_io_cap = argv[0];
+        SaveConfig();
+        NVIC_SystemReset();
+        ret = aci_gap_set_io_capability(gConfigINFO.Ble_io_cap);
+        if(ret == BLE_STATUS_SUCCESS)
+            printf("aci_gap_set_io_capability OK\r\n");
+    }
+}
+/************************************************************
+*功能描述     :设置查询BLE主从模式
+*输入参数     : argc：数据长度，argv：数据首地址
+*返回参数     : 0
+*作    者     : Tgh
+*************************************************************/
+int AT_Mode(int argc, char *argv)
+{
+    if(argv[0] == '?')
+    {
+        switch(gConfigINFO.BleWorkMode)
+        {
+        case 0x01:
+            printf("0x01: Peripheral\r\n");
+            break;
+        case 0x02:
+            printf("0x02: Broadcaster\r\n");
+            break;
+        case 0x04:
+            printf("0x04: Central\r\n");
+            break;
+        case 0x08:
+            printf("0x08: Observer\r\n");
+            break;
+        default:
+            printf("error\n");
+        }
+    }
+    else
+    {
+        //需要后期修改，传进来的数据是char型
+        gConfigINFO.BleWorkMode = argv[0] - 48;
+        SaveConfig();
+        printf("AT_BLE_Mode:%x", gConfigINFO.BleWorkMode);
+        NVIC_SystemReset();
+    }
+}
+
+
+int AT_ConInterval(int argc, char *argv)
+{
+    uint16_t ConInterval_Max, ConInterval_Min;
+    if(argv[0] == '?')
+    {
+        printf("Con_Interval_Max:%d \r", gConfigINFO.Con_Interval_Max);
+        printf("Con_Interval_Min:%d \r\n", gConfigINFO.Con_Interval_Min);
+    }
+    else
+    {
+        ConInterval_Max = argv[0] - 48; //高位在前
+        ConInterval_Max = ConInterval_Max << 8 | (argv[1] - 48);
+
+        ConInterval_Min = argv[2] - 48; //高位在前
+        ConInterval_Min = ConInterval_Min << 8 | (argv[3] - 48);
+
+        if( (ConInterval_Min >= 0x0006) && (ConInterval_Min <= 0x0C80))//设置连接间隔
+            gConfigINFO.Adv_Interval_Min = ConInterval_Min;
+        else
+            printf("ConInterval_Min:Fail");
+
+        if( (ConInterval_Max >= 0x0006) && (ConInterval_Max <= 0x0C80) && (ConInterval_Max > ConInterval_Min)) //设置连接间隔
+            gConfigINFO.Con_Interval_Max = ConInterval_Max;
+        else
+            printf("ConInterval_Max:Fail");
+
+        SaveConfig();
+        printf("AT_ConInterval-Max,Min: %d , %d\r\n", ConInterval_Max, ConInterval_Min);
+        NVIC_SystemReset();
+
+    }
+}
+
+int AT_AdvInterval(int argc, char *argv)
+{
+    uint16_t AdvInterval_Max, AdvInterval_Min;
+    if(argv[0] == '?')
+    {
+        printf("Adv_Interval_Max:%d \r", gConfigINFO.Adv_Interval_Max);
+        printf("Adv_Interval_Min:%d \r\n", gConfigINFO.Adv_Interval_Min);
+    }
+    else
+    {
+        AdvInterval_Max = argv[0] - 48; //高位在前
+        AdvInterval_Max = AdvInterval_Max << 8 | (argv[1] - 48);
+
+        AdvInterval_Min = argv[2] - 48; //高位在前
+        AdvInterval_Min = AdvInterval_Min << 8 | (argv[3] - 48);
+
+        if( (AdvInterval_Min >= 0x0006) && (AdvInterval_Min <= 0x0C80) )//设置广播间隔
+            gConfigINFO.Adv_Interval_Min = AdvInterval_Min;
+        else
+            printf("AdvInterval_Min:Fail");
+
+        if( (AdvInterval_Max >= 0x0006) && (AdvInterval_Max <= 0x0C80) && (AdvInterval_Max > AdvInterval_Min) ) //设置广播间隔
+            gConfigINFO.Adv_Interval_Max = AdvInterval_Max;
+        else
+            printf("AdvInterval_Max:Fail");
+
+        SaveConfig();
+        printf("AT_AdvInterval-MAX , MIN :%d , %d\r\n", AdvInterval_Max, AdvInterval_Min);
+        NVIC_SystemReset();
+
+    }
+}
+
+int AT_Scanning(int argc, char *argv)
+{
+    if(argv[0] == '?')
+		{
+ 			if(BleStartScan()==BLE_STATUS_SUCCESS)
+			{ 
+			 printf("MAC:  ");
+				for(uint8_t i=0;i<6;i++)
+				  printf("%x:",DiscoveryDevice.device_found_address);	
+			}
+			printf("\r\n");
+		}else
+        BleStopScan();
+}
+
+
+
+int AT_Mac_Direct(int argc, char *argv)
+{
+    uint8_t ret;
+    tBDAddr bdaddr;
+    if(argc>8)
+		 {	
+        for(uint8_t i=0;i<6;i++)
+          bdaddr[i]=argv[i];
+          ret = aci_gap_create_connection(0x4000, 0x4000, PUBLIC_ADDR, bdaddr, PUBLIC_ADDR, 40, 40, 0, 60, 2000 , 2000);
+          if (ret != BLE_STATUS_SUCCESS)
+           {
+             printf("Error while starting connection: 0x%04x\r\n", ret);
+           }
+				   else
+					    printf("connected\r\n");
+			 }
+}
+
+
+//no finish
+int AT_Disconnect(int argc, char *argv)
+{
+    uint8_t ret;
+    ret = hci_disconnect(chatServHandle, 0x05);
+    if(ret == BLE_STATUS_SUCCESS)
+        printf("AT+AT_Disconnect=OK\r\n");
+    return 0;
+}
+//NO finish
+int AT_transmit_power_level(int argc, char *argv)
+{
+    uint8_t ret;
+    uint8_t power_level_Value;
+    //- 0x00: Read Current Transmit Power Level.
+    //- 0x01: Read Maximum Transmit Power Level.
+    if(argv[0] == '?')
+    {
+        ret = hci_read_transmit_power_level(chatServHandle, 0x01, &power_level_Value);
+        if(ret == BLE_STATUS_SUCCESS)
+            printf("transmit_power_level:%d", power_level_Value);
+    }
+    else
+    {
+        gConfigINFO.uSendPoewr = argv[0];
+        SaveConfig();
+        printf("transmit_power_level:%d", gConfigINFO.uSendPoewr);
+        NVIC_SystemReset();
+
+    }
+    return 0;
+}
+
+
 
 
 tCmdLineEntry g_sCmdTable[] =
 {
-    { "AT+Help\n",     At_help,      "    : alias for help" },
-    { "AT+RESET\n",    At_reset,     "    : alias for Reset" },
-    { "AT+VERSION\n",  At_Version,      "   : Display list of files" },
-    { "AT+MAC\n",      At_Mac ,         ": Change directory" },
-    { "AT+DISCONN\n",  AT_Disconnect,      "   : alias for chdir" },
-    { "AT+POWER\n",    AT_transmit_power_level,      "  : Show current working directory" },
-    { "AT+NAME\n",     AT_Name,      "  : Show contents of a text file" },
-    { "AT+DeAdv\n",    AT_Delet_ADV,      "  : Show contents of a text file" },
-    { "AT+StarAdv\n",  AT_StartAdv,      "  : Show contents of a text file" },
-    //{ "rm",     CMD_Delete,   "  : Delete a file or a folder"    },
+    { "Help",     At_help,      					"  : help information" },
+    { "RESET",    At_reset,        			  "  : Reset BLE" },
+    { "VERSION",  At_Version,             "  : Query the version number of BLE" },
+    { "MAC",      At_Mac ,                "  : Set BLE's MAC address" },
+    { "DISCONN",  AT_Disconnect,          "  : Disconnect BLE" },
+    { "POWER",    AT_transmit_power_level, "  : Set BLE transmission strength" },
+    { "NAME",     AT_Name,                "  : Set the name of the BLE" },
+    { "DeAdv",    AT_Delet_ADV,           "  : Delete some broadcast information" },
+    { "StarAdv",  AT_StartAdv,            "  : Turn on BLE radio" },
+    { "BLEio",    AT_Set_io_capability,   "  : Set the output capacity of BLEIO"    },
+    { "BLEConInt",AT_ConInterval,         "  : Set the connection interval"    },
+    { "BLEAdvInt",AT_AdvInterval,         "  : Set the broadcast interval"    },
+    { "Mode",     AT_Mode,                "  : Set the working mode of BLE"    },
+		{ "Scan",     AT_Scanning,            "  : Set the working mode of BLE"    },
+		{ "MacDir",     AT_Mac_Direct,            "  : Set the working mode of BLE"    },
     { 0, 0, 0 }
 };
-
-
-
-
-
 int AtLineProcess(char *pcCmdLine)
 {
     static char *argv[CMDLINE_MAX_ARGS + 1];
@@ -154,20 +417,6 @@ int AtLineProcess(char *pcCmdLine)
     tCmdLineEntry *pCmdEntry;
     argc = 0;
     pcChar = pcCmdLine;
-	
-#if 0
-	
-	        pCmdEntry = &g_sCmdTable[0];
-        while(pCmdEntry->pcCmd)
-        {
-            if(!strcmp(pcCmdLine, pCmdEntry->pcCmd))
-            {
-                return(pCmdEntry->pfnCmd(argc, argv));
-            }
-            pCmdEntry++;
-        }
-	
-#else
     while(*pcChar)
     {
         if(*pcChar == ' ')
@@ -201,11 +450,10 @@ int AtLineProcess(char *pcCmdLine)
         {
             if(!strcmp(argv[0], pCmdEntry->pcCmd))
             {
-                return(pCmdEntry->pfnCmd(argc, argv));
+                return(pCmdEntry->pfnCmd(gCmdGotFromUart_st.aCmdLenth, gCmdGotFromUart_st.aCmdBuff));
             }
             pCmdEntry++;
         }
     }
     return(CMDLINE_BAD_CMD);
-#endif
 }

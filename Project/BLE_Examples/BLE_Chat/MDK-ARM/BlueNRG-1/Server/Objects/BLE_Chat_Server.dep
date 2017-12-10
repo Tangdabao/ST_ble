@@ -178,7 +178,7 @@ I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_I2C.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_Led.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_SPI.h)(0x5949B686)
 I (D:\Software\keil\ARM\ARMCC\include\stdio.h)(0x57F606B8)
-I (..\..\inc\Configinf.h)(0x5A2A5785)
+I (..\..\inc\Configinf.h)(0x5A2D23A4)
 F (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\src\SDK_EVAL_Config.c)(0x5949B688)(--c99 -c --cpu Cortex-M0+ -g -O2 --apcs=interwork --split_sections -I ..\..\inc -I ..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc -I ..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include -I ..\..\..\..\..\Library\CMSIS\Include -I ..\..\..\..\..\Library\hal\inc -I ..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc -I ..\..\..\..\..\Library\Bluetooth_LE\inc -I ..\..\..\..\..\Library\Bluetooth_LE\OTA\inc-I.\RTE\_Server-ID:\Software\keil\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DHS_SPEED_XTAL="HS_SPEED_XTAL_32MHZ" -DLS_SOURCE="LS_SOURCE_EXTERNAL_32KHZ" -DSMPS_INDUCTOR="SMPS_INDUCTOR_10uH" -DSERVER="1"-o .\server\objects\sdk_eval_config.o --omf_browse .\server\objects\sdk_eval_config.crf --depend .\server\objects\sdk_eval_config.d)
 I (..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include\BlueNRG_x_device.h)(0x5951C5A0)
 I (..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include\BlueNRG1.h)(0x5951C5A0)
@@ -290,9 +290,9 @@ I (..\..\..\..\..\Library\Bluetooth_LE\inc\link_layer.h)(0x5951C59E)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_gatt_server.h)(0x5951C59E)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\sm.h)(0x5951C59E)
 I (..\..\inc\AtProcess.h)(0x5A2A2DA5)
-I (..\..\inc\Configinf.h)(0x5A2A5785)
+I (..\..\inc\Configinf.h)(0x5A2D23A4)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_stack.h)(0x5951C59E)
-I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_api.h)(0x5951C59E)
+I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_api.h)(0x5A2CBAFF)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_events.h)(0x5951C59E)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_Com.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_Config.h)(0x5949B686)
@@ -317,9 +317,9 @@ I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_gatt_server.h)(0x5951C59E)
 I (..\..\..\..\..\Library\hal\inc\compiler.h)(0x5949B694)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\sm.h)(0x5951C59E)
 I (..\..\inc\AtProcess.h)(0x5A2A2DA5)
-I (..\..\inc\Configinf.h)(0x5A2A5785)
+I (..\..\inc\Configinf.h)(0x5A2D23A4)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_stack.h)(0x5951C59E)
-I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_api.h)(0x5951C59E)
+I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_api.h)(0x5A2CBAFF)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_events.h)(0x5951C59E)
 I (..\..\..\..\..\Library\hal\inc\osal.h)(0x5949B694)
 I (..\..\inc\app_state.h)(0x5A2A2E8E)
@@ -343,8 +343,8 @@ I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_Com.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_I2C.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_Led.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_SPI.h)(0x5949B686)
-I (..\..\inc\chat.h)(0x5A2A2E41)
-F (..\..\src\chat.c)(0x5A2A5785)(--c99 -c --cpu Cortex-M0+ -g -O2 --apcs=interwork --split_sections -I ..\..\inc -I ..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc -I ..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include -I ..\..\..\..\..\Library\CMSIS\Include -I ..\..\..\..\..\Library\hal\inc -I ..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc -I ..\..\..\..\..\Library\Bluetooth_LE\inc -I ..\..\..\..\..\Library\Bluetooth_LE\OTA\inc-I.\RTE\_Server-ID:\Software\keil\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DHS_SPEED_XTAL="HS_SPEED_XTAL_32MHZ" -DLS_SOURCE="LS_SOURCE_EXTERNAL_32KHZ" -DSMPS_INDUCTOR="SMPS_INDUCTOR_10uH" -DSERVER="1"-o .\server\objects\chat.o --omf_browse .\server\objects\chat.crf --depend .\server\objects\chat.d)
+I (..\..\inc\chat.h)(0x5A2D23ED)
+F (..\..\src\chat.c)(0x5A2D2624)(--c99 -c --cpu Cortex-M0+ -g -O2 --apcs=interwork --split_sections -I ..\..\inc -I ..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc -I ..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include -I ..\..\..\..\..\Library\CMSIS\Include -I ..\..\..\..\..\Library\hal\inc -I ..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc -I ..\..\..\..\..\Library\Bluetooth_LE\inc -I ..\..\..\..\..\Library\Bluetooth_LE\OTA\inc-I.\RTE\_Server-ID:\Software\keil\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DHS_SPEED_XTAL="HS_SPEED_XTAL_32MHZ" -DLS_SOURCE="LS_SOURCE_EXTERNAL_32KHZ" -DSMPS_INDUCTOR="SMPS_INDUCTOR_10uH" -DSERVER="1"-o .\server\objects\chat.o --omf_browse .\server\objects\chat.crf --depend .\server\objects\chat.d)
 I (D:\Software\keil\ARM\ARMCC\include\stdio.h)(0x57F606B8)
 I (D:\Software\keil\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (..\..\..\..\..\Library\hal\inc\gp_timer.h)(0x5949B694)
@@ -367,14 +367,14 @@ I (..\..\..\..\..\Library\Bluetooth_LE\inc\link_layer.h)(0x5951C59E)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_gatt_server.h)(0x5951C59E)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\sm.h)(0x5951C59E)
 I (..\..\inc\AtProcess.h)(0x5A2A2DA5)
-I (..\..\inc\Configinf.h)(0x5A2A5785)
+I (..\..\inc\Configinf.h)(0x5A2D23A4)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_stack.h)(0x5951C59E)
-I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_api.h)(0x5951C59E)
+I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_api.h)(0x5A2CBAFF)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_events.h)(0x5951C59E)
 I (..\..\inc\app_state.h)(0x5A2A2E8E)
 I (..\..\..\..\..\Library\hal\inc\osal.h)(0x5949B694)
 I (..\..\inc\gatt_db.h)(0x5949B69A)
-I (..\..\inc\chat.h)(0x5A2A2E41)
+I (..\..\inc\chat.h)(0x5A2D23ED)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_Config.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\USER_Platform_Configuration_auto.h)(0x5949B686)
 I (..\..\inc\BlueNRG1_conf.h)(0x5949B69A)
@@ -390,7 +390,7 @@ I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_I2C.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_Led.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_SPI.h)(0x5949B686)
 I (..\..\..\..\..\Library\Bluetooth_LE\OTA\inc\OTA_btl.h)(0x5951C59E)
-F (..\..\src\BLE_Chat_main.c)(0x5A2A4537)(--c99 -c --cpu Cortex-M0+ -g -O2 --apcs=interwork --split_sections -I ..\..\inc -I ..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc -I ..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include -I ..\..\..\..\..\Library\CMSIS\Include -I ..\..\..\..\..\Library\hal\inc -I ..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc -I ..\..\..\..\..\Library\Bluetooth_LE\inc -I ..\..\..\..\..\Library\Bluetooth_LE\OTA\inc-I.\RTE\_Server-ID:\Software\keil\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DHS_SPEED_XTAL="HS_SPEED_XTAL_32MHZ" -DLS_SOURCE="LS_SOURCE_EXTERNAL_32KHZ" -DSMPS_INDUCTOR="SMPS_INDUCTOR_10uH" -DSERVER="1"-o .\server\objects\ble_chat_main.o --omf_browse .\server\objects\ble_chat_main.crf --depend .\server\objects\ble_chat_main.d)
+F (..\..\src\BLE_Chat_main.c)(0x5A2CE0D7)(--c99 -c --cpu Cortex-M0+ -g -O2 --apcs=interwork --split_sections -I ..\..\inc -I ..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc -I ..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include -I ..\..\..\..\..\Library\CMSIS\Include -I ..\..\..\..\..\Library\hal\inc -I ..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc -I ..\..\..\..\..\Library\Bluetooth_LE\inc -I ..\..\..\..\..\Library\Bluetooth_LE\OTA\inc-I.\RTE\_Server-ID:\Software\keil\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DHS_SPEED_XTAL="HS_SPEED_XTAL_32MHZ" -DLS_SOURCE="LS_SOURCE_EXTERNAL_32KHZ" -DSMPS_INDUCTOR="SMPS_INDUCTOR_10uH" -DSERVER="1"-o .\server\objects\ble_chat_main.o --omf_browse .\server\objects\ble_chat_main.crf --depend .\server\objects\ble_chat_main.d)
 I (D:\Software\keil\ARM\ARMCC\include\stdio.h)(0x57F606B8)
 I (D:\Software\keil\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (..\..\inc\BlueNRG1_it.h)(0x5949B69A)
@@ -419,14 +419,14 @@ I (..\..\..\..\..\Library\Bluetooth_LE\inc\link_layer.h)(0x5951C59E)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_gatt_server.h)(0x5951C59E)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\sm.h)(0x5951C59E)
 I (..\..\inc\AtProcess.h)(0x5A2A2DA5)
-I (..\..\inc\Configinf.h)(0x5A2A5785)
+I (..\..\inc\Configinf.h)(0x5A2D23A4)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_stack.h)(0x5951C59E)
-I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_api.h)(0x5951C59E)
+I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_api.h)(0x5A2CBAFF)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_events.h)(0x5951C59E)
 I (..\..\..\..\..\Library\hal\inc\gp_timer.h)(0x5949B694)
 I (..\..\..\..\..\Library\hal\inc\clock.h)(0x5949B694)
 I (..\..\inc\app_state.h)(0x5A2A2E8E)
-I (..\..\inc\chat.h)(0x5A2A2E41)
+I (..\..\inc\chat.h)(0x5A2D23ED)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_Config.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\USER_Platform_Configuration_auto.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_Button.h)(0x5949B686)
@@ -435,7 +435,7 @@ I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_I2C.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_Led.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_SPI.h)(0x5949B686)
 I (..\..\..\..\..\Library\Bluetooth_LE\OTA\inc\OTA_btl.h)(0x5951C59E)
-F (..\..\src\AtProcess.c)(0x5A2A55AE)(--c99 -c --cpu Cortex-M0+ -g -O2 --apcs=interwork --split_sections -I ..\..\inc -I ..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc -I ..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include -I ..\..\..\..\..\Library\CMSIS\Include -I ..\..\..\..\..\Library\hal\inc -I ..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc -I ..\..\..\..\..\Library\Bluetooth_LE\inc -I ..\..\..\..\..\Library\Bluetooth_LE\OTA\inc-I.\RTE\_Server-ID:\Software\keil\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DHS_SPEED_XTAL="HS_SPEED_XTAL_32MHZ" -DLS_SOURCE="LS_SOURCE_EXTERNAL_32KHZ" -DSMPS_INDUCTOR="SMPS_INDUCTOR_10uH" -DSERVER="1"-o .\server\objects\atprocess.o --omf_browse .\server\objects\atprocess.crf --depend .\server\objects\atprocess.d)
+F (..\..\src\AtProcess.c)(0x5A2D2624)(--c99 -c --cpu Cortex-M0+ -g -O2 --apcs=interwork --split_sections -I ..\..\inc -I ..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc -I ..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include -I ..\..\..\..\..\Library\CMSIS\Include -I ..\..\..\..\..\Library\hal\inc -I ..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc -I ..\..\..\..\..\Library\Bluetooth_LE\inc -I ..\..\..\..\..\Library\Bluetooth_LE\OTA\inc-I.\RTE\_Server-ID:\Software\keil\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DHS_SPEED_XTAL="HS_SPEED_XTAL_32MHZ" -DLS_SOURCE="LS_SOURCE_EXTERNAL_32KHZ" -DSMPS_INDUCTOR="SMPS_INDUCTOR_10uH" -DSERVER="1"-o .\server\objects\atprocess.o --omf_browse .\server\objects\atprocess.crf --depend .\server\objects\atprocess.d)
 I (..\..\inc\AtProcess.h)(0x5A2A2DA5)
 I (D:\Software\keil\ARM\ARMCC\include\stdint.h)(0x57F606B8)
 I (D:\Software\keil\ARM\ARMCC\include\stdio.h)(0x57F606B8)
@@ -450,9 +450,9 @@ I (..\..\..\..\..\Library\Bluetooth_LE\inc\link_layer.h)(0x5951C59E)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_gatt_server.h)(0x5951C59E)
 I (..\..\..\..\..\Library\hal\inc\compiler.h)(0x5949B694)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\sm.h)(0x5951C59E)
-I (..\..\inc\Configinf.h)(0x5A2A5785)
+I (..\..\inc\Configinf.h)(0x5A2D23A4)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_stack.h)(0x5951C59E)
-I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_api.h)(0x5951C59E)
+I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_api.h)(0x5A2CBAFF)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_events.h)(0x5951C59E)
 I (..\..\..\..\..\Library\hal\inc\osal.h)(0x5949B694)
 I (D:\Software\keil\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
@@ -476,12 +476,12 @@ I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_Com.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_I2C.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_Led.h)(0x5949B686)
 I (..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_SPI.h)(0x5949B686)
-I (..\..\inc\chat.h)(0x5A2A2E41)
+I (..\..\inc\chat.h)(0x5A2D23ED)
 I (D:\Software\keil\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
 I (..\..\inc\gatt_db.h)(0x5949B69A)
 I (..\..\inc\app_state.h)(0x5A2A2E8E)
-F (..\..\src\Configinf.c)(0x5A2A54C0)(--c99 -c --cpu Cortex-M0+ -g -O2 --apcs=interwork --split_sections -I ..\..\inc -I ..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc -I ..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include -I ..\..\..\..\..\Library\CMSIS\Include -I ..\..\..\..\..\Library\hal\inc -I ..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc -I ..\..\..\..\..\Library\Bluetooth_LE\inc -I ..\..\..\..\..\Library\Bluetooth_LE\OTA\inc-I.\RTE\_Server-ID:\Software\keil\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DHS_SPEED_XTAL="HS_SPEED_XTAL_32MHZ" -DLS_SOURCE="LS_SOURCE_EXTERNAL_32KHZ" -DSMPS_INDUCTOR="SMPS_INDUCTOR_10uH" -DSERVER="1"-o .\server\objects\configinf.o --omf_browse .\server\objects\configinf.crf --depend .\server\objects\configinf.d)
-I (..\..\inc\Configinf.h)(0x5A2A5785)
+F (..\..\src\Configinf.c)(0x5A2D2624)(--c99 -c --cpu Cortex-M0+ -g -O2 --apcs=interwork --split_sections -I ..\..\inc -I ..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc -I ..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include -I ..\..\..\..\..\Library\CMSIS\Include -I ..\..\..\..\..\Library\hal\inc -I ..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc -I ..\..\..\..\..\Library\Bluetooth_LE\inc -I ..\..\..\..\..\Library\Bluetooth_LE\OTA\inc-I.\RTE\_Server-ID:\Software\keil\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DHS_SPEED_XTAL="HS_SPEED_XTAL_32MHZ" -DLS_SOURCE="LS_SOURCE_EXTERNAL_32KHZ" -DSMPS_INDUCTOR="SMPS_INDUCTOR_10uH" -DSERVER="1"-o .\server\objects\configinf.o --omf_browse .\server\objects\configinf.crf --depend .\server\objects\configinf.d)
+I (..\..\inc\Configinf.h)(0x5A2D23A4)
 I (D:\Software\keil\ARM\ARMCC\include\stdint.h)(0x57F606B8)
 I (..\..\inc\BlueNRG1_it.h)(0x5949B69A)
 I (..\..\..\..\..\Library\CMSIS\Device\ST\BlueNRG1\Include\BlueNRG_x_device.h)(0x5951C5A0)
@@ -499,11 +499,11 @@ I (..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc\BlueNRG1_dma.h)(0x5949B678)
 I (..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc\BlueNRG1_uart.h)(0x5949B678)
 I (..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc\BlueNRG1_sysCtrl.h)(0x594B3708)
 I (..\..\..\..\..\Library\BlueNRG1_Periph_Driver\inc\misc.h)(0x5949B678)
-I (..\..\..\..\..\Library\Bluetooth_LE\inc\BlueNRG1_api.h)(0x5951C59E)
+I (..\..\..\..\..\Library\Bluetooth_LE\inc\BlueNRG1_api.h)(0x5A2CBAFF)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\ble_status.h)(0x5951C59E)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_stack.h)(0x5951C59E)
 I (..\..\..\..\..\Library\Bluetooth_LE\inc\bluenrg1_events.h)(0x5951C59E)
-I (..\..\inc\Chat.h)(0x5A2A2E41)
+I (..\..\inc\Chat.h)(0x5A2D23ED)
 I (..\..\..\..\..\Library\hal\inc\osal.h)(0x5949B694)
 I (D:\Software\keil\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (D:\Software\keil\ARM\ARMCC\include\stdio.h)(0x57F606B8)

@@ -19,7 +19,10 @@
  *      添加几个简单的AT命令
  * 12/8：添加默认状态；
  *       添加几个FLASH操作
-
+ * 12/9:修改机制，设置指令格式为AT+[CMD]=指令内容\n
+ *
+ * 12/10:添加新的机制：当指令内容为?时，表示查询。其他为输入的指令
+ *
  *
  *修复了几个我也看不懂的BUG
  *BUG：偶尔会出现不相应的情况
@@ -53,9 +56,8 @@ int main(void)
 {
     uint8_t ret;
     SystemInit();
-	
-	  //Load configuration information
-	    if(((uint32_t)(*(uint32_t *)CONFIG_FLAGADDR) == CONFIG_VALID)) 
+    //Load configuration information
+    if(((uint32_t)(*(uint32_t *)CONFIG_FLAGADDR) == CONFIG_VALID))
     {
         LoadConfig();
     }
@@ -65,15 +67,17 @@ int main(void)
         gConfigINFO = gDefaultConfigINFO;
         SaveConfig();
     }
-	
+
     SdkEvalIdentification();
-		
+
     Clock_Init();
-		
+
     SdkEvalComIOConfig(Process_InputData);
-		
+
     BleInit(gConfigINFO.BleWorkMode);
     printf("BLE Stack Initialized \n");
+    Make_Connection();
+
     while(1)
     {
         NVIC_DisableIRQ(UART_IRQn);

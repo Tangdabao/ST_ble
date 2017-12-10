@@ -363,7 +363,24 @@
           <Name>UL2CM3(-S0 -C0 -P0 )  -FN1 -FC1000 -FD200002CC -FF0STBlueNRG -FL028000 -FS010040000 -FP0($$Device:BlueNRG-1$Flash\STBlueNRG.FLM)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint/>
+      <Breakpoint>
+        <Bp>
+          <Number>0</Number>
+          <Type>0</Type>
+          <LineNumber>222</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>268733652</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\..\src\chat.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\\../../src/chat.c\222</Expression>
+        </Bp>
+      </Breakpoint>
       <WatchWindow1>
         <Ww>
           <count>0</count>
@@ -398,10 +415,40 @@
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>argv[0],0x10</ItemText>
+          <ItemText>gCmdGotFromUart_st</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>test</ItemText>
+        </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>a</ItemText>
+        </Ww>
+        <Ww>
+          <count>9</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Nb_bytes</ItemText>
+        </Ww>
+        <Ww>
+          <count>10</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>argv</ItemText>
+        </Ww>
+        <Ww>
+          <count>11</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>argc</ItemText>
+        </Ww>
+        <Ww>
+          <count>12</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>gConfigINFO</ItemText>
+        </Ww>
+        <Ww>
+          <count>13</count>
           <WinNumber>1</WinNumber>
           <ItemText>argc</ItemText>
         </Ww>

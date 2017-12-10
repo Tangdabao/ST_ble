@@ -6,7 +6,7 @@
 #define SAVE_STARTADDR 0x10066000
 #define SAVE_ENDTADDR  0x10066800
 #define CONFIG_FLAGADDR  0x100667FC
-#define CONFIG_VALID   0xA5A5A5A5
+#define CONFIG_VALID   0xA5A5A5A4
 #define CONFIG_INVALID 0xFFFFFFFF
 
 /* BLE模块参数，存储在指定flash */
@@ -39,12 +39,24 @@ typedef struct
     uint16_t Con_Interval_Max;//连接间隔最大值
     
     uint16_t BleWorkMode;
- 
+    
     uint8_t Service_UUID[2]; 
     uint8_t CharUuidTX[2];
-    uint8_t CharUuidRX[2];    
+    uint8_t CharUuidRX[2];  
+    uint8_t Ble_io_cap;  		
     
 }tConfigParameters;
+
+ typedef struct 
+{
+  uint8_t check_disc_proc_timer;
+  uint8_t check_disc_mode_timer;
+  uint8_t is_device_found; 
+  uint8_t do_connect;
+  uint8_t device_found_address_type;
+  uint8_t device_found_address[6];
+  uint16_t device_state;
+}discoveryContext_t;
 
 typedef struct
 {
@@ -63,7 +75,7 @@ typedef struct
   gCurMode Mode;
   gCurMode Pinstate;	
 }gSystemMode;
-
+extern discoveryContext_t DiscoveryDevice;
 extern tConfigParameters        gConfigINFO;            //配置结构体
 extern tConfigParameters        gDefaultConfigINFO;    //默认配置结构体
 extern gCmdGotFromUart          gCmdGotFromUart_st;

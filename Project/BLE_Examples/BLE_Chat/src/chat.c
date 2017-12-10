@@ -57,8 +57,6 @@ UUID_t UUID_Rx;
 static char cmd[CMD_BUFF_SIZE];
 
 /* Private function prototypes -----------------------------------------------*/
-//modify12/7
-Current_status_t DiscoveryDevice;
 /* Private functions ---------------------------------------------------------*/
 
 /*******************************************************************************
@@ -127,6 +125,13 @@ uint8_t CHAT_DeviceInit(uint8_t workmode)
         printf ("aci_gatt_update_char_value() --> SUCCESS\r\n");
     }
 
+	  ret = aci_gap_set_io_capability(IO_CAP_DISPLAY_ONLY);
+    if(ret != BLE_STATUS_SUCCESS)
+    {
+        printf("aci_gap_set_io_capability fail\r\n");
+        return BLE_STATUS_FAILED;
+    }
+		
 #if  SERVER
     ret = Add_Chat_Service();
     if (ret != BLE_STATUS_SUCCESS)
@@ -163,31 +168,36 @@ void Process_InputData(uint8_t *data_buffer, uint16_t Nb_bytes)
 {
     static uint16_t end = 0;
     uint8_t i;
-	
+	  uint8_t n=3;
+
     for (i = 0; i < Nb_bytes; i++)
     {
         if(end >= CMD_BUFF_SIZE - 1)
         {
             end = 0;
         }
-			 //
 			 cmd[end]=data_buffer[i];
-			 end++;
-		  //判断结束符//
+			 end++;	
+		    //判断结束符//
         if(cmd[end - 1] == '\n')
         {
             if(end != 1)
             {
                 int j = 0;
-							//判断标志
-							memcpy(gCmdGotFromUart_st.aCmdBuff,cmd,end-1);
+							//AT模式
 							if((cmd[0]=='A')&(cmd[1]=='T')&(cmd[2]=='+'))
-								{
-									//把指令复制到命令集//
-			           Osal_MemCpy(gCmdGotFromUart_st.aCmdBuff,&cmd[2],10);
-									
-									
-									//noNONONONONONONONNONONO
+								  {
+								   //判断为何指令//	
+		               while(!(cmd[n]=='='))
+								  {
+								    cmd[n-3]=cmd[n];
+									  n++;
+								   }
+									  //添加指令
+									  memcpy(gCmdGotFromUart_st.aCmdBuff,&cmd[n+1],end-1);
+									  gCmdGotFromUart_st.aCmdLenth=end-n;
+		                //清除除去命令的其他部分
+								    Osal_MemSet(&cmd[n-3],0,10); 
                  while(j < end)
                 {
                     uint32_t len = MIN(20, end - j);
@@ -195,17 +205,60 @@ void Process_InputData(uint8_t *data_buffer, uint16_t Nb_bytes)
                     AtLineProcess(cmd + j);
                     j += len;
                 }
-								
-								
-								
-            
-							  }
+							 }
 								else
-								__NOP();
-						
+								{
+									//透传模式
+									//开启广播
+									 if(APP_FLAG(CONNECTED)|APP_FLAG(START_ADV))
+									{
+                     while(j < end)
+                      {
+                       uint32_t len = MIN(20, end - j);
+                       while(aci_gatt_update_char_value(chatServHandle,TXCharHandle,0,len,(uint8_t *)cmd+j)==BLE_STATUS_INSUFFICIENT_RESOURCES);
+                       // AtLineProcess(cmd + j);
+                       j += len;
+                      }
+							      }else
+                    {
+                           Make_Connection();
+                           APP_FLAG_SET(START_ADV);
+                    }
+								 
+								}	
 						}
             end = 0;
         }
+    }
+}
+
+
+
+
+uint8_t BleStartScan(void)
+{
+    tBleStatus ret;
+    ret = aci_gap_start_general_discovery_proc(0x10, 0x2000, PUBLIC_ADDR, 0x00);
+    if (ret != BLE_STATUS_SUCCESS)
+    {
+        printf("Error in aci_gap_start_general_discovery_proc(): 0x%02x\r\n", ret);
+        return BLE_STATUS_ERROR;
+    }
+    else
+        return BLE_STATUS_SUCCESS;
+}
+
+uint8_t BleStopScan(void)
+{
+    uint8_t ret = aci_gap_terminate_gap_proc(0x02);
+    if (ret != BLE_STATUS_SUCCESS)
+    {
+        printf("BleStopScan() failed: 0x%02x\n", ret);
+        return BLE_STATUS_ERROR;
+    }
+    else
+    {
+        return BLE_STATUS_SUCCESS;
     }
 }
 
@@ -484,4 +537,13 @@ void aci_hal_end_of_radio_activity_event(uint8_t Last_State,
         OTA_Radio_Activity(Next_State_SysTime);
     }
 #endif
+}
+//modify 12/10 
+void hci_le_advertising_report_event(uint8_t Num_Reports,
+                                     Advertising_Report_t Advertising_Report[])
+{
+  Osal_MemSet(DiscoveryDevice.device_found_address,0,6);
+  Osal_MemCpy(DiscoveryDevice.device_found_address, Advertising_Report[0].Address,6);
+   
+
 }

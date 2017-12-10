@@ -1434,7 +1434,6 @@ tBleStatus aci_hal_set_event_mask(uint32_t Event_Mask);
  */
 /**
   * @brief Put the device in non-discoverable mode. This command disables the LL advertising.
-	* 
   * @retval Value indicating success or error code.
 */
 tBleStatus aci_gap_set_non_discoverable(void);

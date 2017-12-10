@@ -16,7 +16,7 @@
 tConfigParameters       gConfigINFO;            //配置结构体
 gCmdGotFromUart         gCmdGotFromUart_st;     //命令接收缓冲结构体
 gSystemMode             gSystemMode_st;
-
+discoveryContext_t      DiscoveryDevice;
 
 /*配置信息表*/
 tConfigParameters gDefaultConfigINFO =
@@ -33,7 +33,9 @@ tConfigParameters gDefaultConfigINFO =
     {0x01},//BLE工作模式
     {0xD0, 0xCD}, //服务UUID
     {0xD1, 0xCD}, //接收UUID
-    {0xD2, 0xCD} //发送UUID
+    {0xD2, 0xCD}, //发送UUID
+		{0x00}        //BLE_IO_CAP
+		
 };
 
 /*****************************************************
@@ -79,6 +81,9 @@ void LoadConfig(void)
    gConfigINFO.CharUuidRX[1] = pRinfo->CharUuidRX[1];//加载接收UUID
    gConfigINFO.CharUuidTX[0] = pRinfo->CharUuidTX[0];//加载发送UUID
    gConfigINFO.CharUuidTX[1] = pRinfo->CharUuidTX[1];//加载发送UUID
+	 
+	 gConfigINFO.Ble_io_cap    = pRinfo->Ble_io_cap;
+	 
 }
 
 /*****************************************************
@@ -114,8 +119,6 @@ void SaveConfig(void)
     FLASH_ProgramWord(CONFIG_FLAGADDR, CONFIG_VALID);
 		
 }
-
-
 
 /*****************************************************
 *功能描述     : BLE初始化函数，初始化协议栈以及创建透传服务
