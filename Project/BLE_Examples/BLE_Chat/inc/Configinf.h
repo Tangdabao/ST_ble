@@ -47,16 +47,20 @@ typedef struct
     
 }tConfigParameters;
 
- typedef struct 
-{
+
+typedef struct discoveryContext_s {
   uint8_t check_disc_proc_timer;
   uint8_t check_disc_mode_timer;
   uint8_t is_device_found; 
   uint8_t do_connect;
   uint8_t device_found_address_type;
   uint8_t device_found_address[6];
+	uint8_t device_found_Length_Data;
+	uint8_t *device_found_Data;
+	uint8_t device_found_RSSI;
   uint16_t device_state;
-}discoveryContext_t;
+} discoveryContext_t;
+
 
 typedef struct
 {
@@ -75,6 +79,8 @@ typedef struct
   gCurMode Mode;
   gCurMode Pinstate;	
 }gSystemMode;
+
+     
 extern discoveryContext_t DiscoveryDevice;
 extern tConfigParameters        gConfigINFO;            //配置结构体
 extern tConfigParameters        gDefaultConfigINFO;    //默认配置结构体

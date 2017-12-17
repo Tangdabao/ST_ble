@@ -35,7 +35,7 @@
 #define ERR_PIN_OR_KEY_MISSING                      (0x06)
 #define ERR_MEM_CAPACITY_EXCEEDED                   (0x07)
 #define ERR_CONNECTION_TIMEOUT                      (0x08)
-#define ERR_COMMAND_DISALLOWED			    (0x0C)
+#define ERR_COMMAND_DISALLOWED			               (0x0C)
 #define ERR_UNSUPPORTED_FEATURE			    (0x11)
 #define ERR_INVALID_HCI_CMD_PARAMS                  (0x12)
 #define ERR_RMT_USR_TERM_CONN                       (0x13)

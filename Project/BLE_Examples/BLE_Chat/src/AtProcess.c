@@ -131,6 +131,7 @@ int AT_Name(int argc, char *argv)
         SaveConfig();
         NVIC_SystemReset();
     }
+    return 0;
 }
 
 /************************************************************
@@ -162,7 +163,7 @@ int AT_StartAdv(int argc, char *argv)
     }
     else
     {
-        Make_Connection();
+        Start_Adv();
         APP_FLAG_SET(START_ADV);
     }
     return 0;
@@ -211,6 +212,8 @@ int AT_Set_io_capability(int argc, char *argv)
         if(ret == BLE_STATUS_SUCCESS)
             printf("aci_gap_set_io_capability OK\r\n");
     }
+
+    return 0;
 }
 /************************************************************
 *功能描述     :设置查询BLE主从模式
@@ -248,6 +251,7 @@ int AT_Mode(int argc, char *argv)
         printf("AT_BLE_Mode:%x", gConfigINFO.BleWorkMode);
         NVIC_SystemReset();
     }
+    return 0;
 }
 
 
@@ -282,6 +286,8 @@ int AT_ConInterval(int argc, char *argv)
         NVIC_SystemReset();
 
     }
+
+    return 0;
 }
 
 int AT_AdvInterval(int argc, char *argv)
@@ -315,41 +321,51 @@ int AT_AdvInterval(int argc, char *argv)
         NVIC_SystemReset();
 
     }
+
+    return 0;
 }
 
 int AT_Scanning(int argc, char *argv)
 {
     if(argv[0] == '?')
-		{
- 			if(BleStartScan()==BLE_STATUS_SUCCESS)
-			{ 
-			 printf("MAC:  ");
-				for(uint8_t i=0;i<6;i++)
-				  printf("%x:",DiscoveryDevice.device_found_address);	
-			}
-			printf("\r\n");
-		}else
+    { 
+			printf("MAC:");
+        for(uint8_t i = 0; i < 5; i++)
+            printf("%02X-", DiscoveryDevice.device_found_address[i]);
+       printf("%02X\r\n", DiscoveryDevice.device_found_address[5]);       
+    }
+    else if(argv[0] == ' ')
+    {
+			BleStartScan();
+      //DiscoveryDevice.device_state = INIT;
+
+    }
+    else
         BleStopScan();
+
+    return 0;
 }
-
-
 
 int AT_Mac_Direct(int argc, char *argv)
 {
     uint8_t ret;
     tBDAddr bdaddr;
-    if(argc>8)
-		 {	
-        for(uint8_t i=0;i<6;i++)
-          bdaddr[i]=argv[i];
-          ret = aci_gap_create_connection(0x4000, 0x4000, PUBLIC_ADDR, bdaddr, PUBLIC_ADDR, 40, 40, 0, 60, 2000 , 2000);
-          if (ret != BLE_STATUS_SUCCESS)
-           {
-             printf("Error while starting connection: 0x%04x\r\n", ret);
-           }
-				   else
-					    printf("connected\r\n");
-			 }
+    uint8_t chat[10]={9,9,9,9};
+        for(uint8_t i = 0; i < 6; i++)
+            bdaddr[5-i] = argv[i]-0x30;
+   ///需要添加一个条件：扫描之后进行连接
+	 //此处未添加
+        ret = aci_gap_create_connection(0x4000, 0x4000, PUBLIC_ADDR, bdaddr, PUBLIC_ADDR, 40, 40, 0, 60, 2000 , 2000);
+        if (ret != BLE_STATUS_SUCCESS)
+        {
+            printf("Error while starting connection: 0x%04x\r\n", ret);
+        }
+        else
+            printf("connected\r\n");
+			 //
+				aci_gatt_write_without_resp(0x000c, 0x0011,10,&chat[0]);
+
+    return 0;
 }
 
 
@@ -391,23 +407,24 @@ int AT_transmit_power_level(int argc, char *argv)
 
 tCmdLineEntry g_sCmdTable[] =
 {
-    { "Help",     At_help,      					"  : help information" },
-    { "RESET",    At_reset,        			  "  : Reset BLE" },
-    { "VERSION",  At_Version,             "  : Query the version number of BLE" },
-    { "MAC",      At_Mac ,                "  : Set BLE's MAC address" },
-    { "DISCONN",  AT_Disconnect,          "  : Disconnect BLE" },
-    { "POWER",    AT_transmit_power_level, "  : Set BLE transmission strength" },
-    { "NAME",     AT_Name,                "  : Set the name of the BLE" },
-    { "DeAdv",    AT_Delet_ADV,           "  : Delete some broadcast information" },
-    { "StarAdv",  AT_StartAdv,            "  : Turn on BLE radio" },
-    { "BLEio",    AT_Set_io_capability,   "  : Set the output capacity of BLEIO"    },
-    { "BLEConInt",AT_ConInterval,         "  : Set the connection interval"    },
-    { "BLEAdvInt",AT_AdvInterval,         "  : Set the broadcast interval"    },
-    { "Mode",     AT_Mode,                "  : Set the working mode of BLE"    },
-		{ "Scan",     AT_Scanning,            "  : Set the working mode of BLE"    },
-		{ "MacDir",     AT_Mac_Direct,            "  : Set the working mode of BLE"    },
+    { "Help",      At_help,      					"  : help information" },
+    { "RESET",     At_reset,        			  "  : Reset BLE" },
+    { "VERSION",   At_Version,             "  : Query the version number of BLE" },
+    { "MAC",       At_Mac ,                "  : Set BLE's MAC address" },
+    { "DISCONN",   AT_Disconnect,          "  : Disconnect BLE" },
+    { "POWER",     AT_transmit_power_level, "  : Set BLE transmission strength" },
+    { "NAME",      AT_Name,                "  : Set the name of the BLE" },
+    { "DeAdv",     AT_Delet_ADV,           "  : Delete some broadcast information" },
+    { "StarAdv",   AT_StartAdv,            "  : Turn on BLE radio" },
+    { "BLEio",     AT_Set_io_capability,   "  : Set the output capacity of BLEIO"    },
+    { "BLEConInt", AT_ConInterval,         "  : Set the connection interval"    },
+    { "BLEAdvInt", AT_AdvInterval,         "  : Set the broadcast interval"    },
+    { "Mode",      AT_Mode,                "  : Set the working mode of BLE"    },
+    { "Scan",      AT_Scanning,            "  : Set the working mode of BLE"    },
+    { "MacDir",    AT_Mac_Direct,            "  : Set the working mode of BLE"    },
     { 0, 0, 0 }
 };
+
 int AtLineProcess(char *pcCmdLine)
 {
     static char *argv[CMDLINE_MAX_ARGS + 1];

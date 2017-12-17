@@ -19,8 +19,19 @@
 #ifdef __cplusplus
  extern "C" {
 #endif
-
-
+	 
+	 
+	 
+#define INIT                      0x00
+#define START_DISCOVERY_PROC      0x01
+#define WAIT_EVENT                0x02
+#define WAIT_TIMER_EXPIRED        0x04
+#define DO_DIRECT_CONNECTION_PROC 0x08
+#define ENTER_DISCOVERY_MODE      0x10
+#define DO_TERMINATE_GAP_PROC     0x20
+#define DO_NON_DISCOVERABLE_MODE  0x40
+#define DISCOVERY_ERROR           0x80
+	 
 /* Exported variables ------------------------------------------------------- */  
      
 /** 

@@ -237,7 +237,7 @@ void SdkEvalComIOConfig(IO_RECEIVE_DATA_USER_CALLBACK_TYPE io_receive_function)
 {
   IO_Receive_Data.IO_user_application = io_receive_function;
   /* Init Serial Uart */
-  SdkEvalComUartInit(gConfigINFO.ulBaudRate);
+  SdkEvalComUartInit(115200);//(gConfigINFO.ulBaudRate);
   SdkEvalComUartIrqConfig(ENABLE);
 }
 

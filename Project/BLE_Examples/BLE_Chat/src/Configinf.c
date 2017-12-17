@@ -34,8 +34,8 @@ tConfigParameters gDefaultConfigINFO =
     {0xD0, 0xCD}, //服务UUID
     {0xD1, 0xCD}, //接收UUID
     {0xD2, 0xCD}, //发送UUID
-		{0x00}        //BLE_IO_CAP
-		
+    {0x00}        //BLE_IO_CAP
+
 };
 
 /*****************************************************
@@ -46,44 +46,44 @@ tConfigParameters gDefaultConfigINFO =
 ******************************************************/
 void LoadConfig(void)
 {
-   tConfigParameters *pRinfo;
-   uint8_t i;
+    tConfigParameters *pRinfo;
+    uint8_t i;
 
-   pRinfo=(tConfigParameters *)SAVE_STARTADDR;//BLE 模块参数保存地址 page76
-  
-   gConfigINFO.ulBaudRate=pRinfo->ulBaudRate;//加载波特率
-  
-   for(i=0;i<strlen((char const *)pRinfo->DviceName.ucModName);i++)
-   {
-      gConfigINFO.DviceName.ucModName[i] = pRinfo->DviceName.ucModName[i];//加载设备名
-   }
-  
-   gConfigINFO.HwFirmwareV.pucFirmwareV = pRinfo->HwFirmwareV.pucFirmwareV;//加载固件版本
+    pRinfo = (tConfigParameters *)SAVE_STARTADDR; //BLE 模块参数保存地址 page76
 
-   for(i=0;i<strlen((char const *)pRinfo->MacAddr);i++)
-   {
-      gConfigINFO.MacAddr[i] = pRinfo->MacAddr[i];//加载MAC地址
-   }
-  
-   gConfigINFO.uSendPoewr = pRinfo->uSendPoewr;//加载发射功率
-  
-   gConfigINFO.Adv_Interval_Min = pRinfo->Adv_Interval_Min;//加载广播间隔最小值
-   gConfigINFO.Adv_Interval_Max = pRinfo->Adv_Interval_Max;//加载广播间隔最大值
-  
-   gConfigINFO.Con_Interval_Min = pRinfo->Con_Interval_Min;//加载连接间隔最小值
-   gConfigINFO.Con_Interval_Max = pRinfo->Con_Interval_Max;//加载连接间隔最大值
-   
-   gConfigINFO.BleWorkMode = pRinfo->BleWorkMode;//加载BLE工作模式
-   
-   gConfigINFO.Service_UUID[0] = pRinfo->Service_UUID[0];//加载服务UUID
-   gConfigINFO.Service_UUID[1] = pRinfo->Service_UUID[1];//加载服务UUID   
-   gConfigINFO.CharUuidRX[0] = pRinfo->CharUuidRX[0];//加载接收UUID
-   gConfigINFO.CharUuidRX[1] = pRinfo->CharUuidRX[1];//加载接收UUID
-   gConfigINFO.CharUuidTX[0] = pRinfo->CharUuidTX[0];//加载发送UUID
-   gConfigINFO.CharUuidTX[1] = pRinfo->CharUuidTX[1];//加载发送UUID
-	 
-	 gConfigINFO.Ble_io_cap    = pRinfo->Ble_io_cap;
-	 
+    gConfigINFO.ulBaudRate = pRinfo->ulBaudRate; //加载波特率
+
+    for(i = 0; i < strlen((char const *)pRinfo->DviceName.ucModName); i++)
+    {
+        gConfigINFO.DviceName.ucModName[i] = pRinfo->DviceName.ucModName[i];//加载设备名
+    }
+
+    gConfigINFO.HwFirmwareV.pucFirmwareV = pRinfo->HwFirmwareV.pucFirmwareV;//加载固件版本
+
+    for(i = 0; i < strlen((char const *)pRinfo->MacAddr); i++)
+    {
+        gConfigINFO.MacAddr[i] = pRinfo->MacAddr[i];//加载MAC地址
+    }
+
+    gConfigINFO.uSendPoewr = pRinfo->uSendPoewr;//加载发射功率
+
+    gConfigINFO.Adv_Interval_Min = pRinfo->Adv_Interval_Min;//加载广播间隔最小值
+    gConfigINFO.Adv_Interval_Max = pRinfo->Adv_Interval_Max;//加载广播间隔最大值
+
+    gConfigINFO.Con_Interval_Min = pRinfo->Con_Interval_Min;//加载连接间隔最小值
+    gConfigINFO.Con_Interval_Max = pRinfo->Con_Interval_Max;//加载连接间隔最大值
+
+    gConfigINFO.BleWorkMode = pRinfo->BleWorkMode;//加载BLE工作模式
+
+    gConfigINFO.Service_UUID[0] = pRinfo->Service_UUID[0];//加载服务UUID
+    gConfigINFO.Service_UUID[1] = pRinfo->Service_UUID[1];//加载服务UUID
+    gConfigINFO.CharUuidRX[0] = pRinfo->CharUuidRX[0];//加载接收UUID
+    gConfigINFO.CharUuidRX[1] = pRinfo->CharUuidRX[1];//加载接收UUID
+    gConfigINFO.CharUuidTX[0] = pRinfo->CharUuidTX[0];//加载发送UUID
+    gConfigINFO.CharUuidTX[1] = pRinfo->CharUuidTX[1];//加载发送UUID
+
+    gConfigINFO.Ble_io_cap    = pRinfo->Ble_io_cap;
+
 }
 
 /*****************************************************
@@ -117,7 +117,7 @@ void SaveConfig(void)
         pInfo++;
     }
     FLASH_ProgramWord(CONFIG_FLAGADDR, CONFIG_VALID);
-		
+
 }
 
 /*****************************************************
@@ -128,19 +128,19 @@ void SaveConfig(void)
 ******************************************************/
 void BleInit(uint8_t workmode)
 {
-   uint8_t ret;
-   ret = BlueNRG_Stack_Initialization(&BlueNRG_Stack_Init_params);
-   if (ret != BLE_STATUS_SUCCESS)
-   {
-      printf("Error in BlueNRG_Stack_Initialization() 0x%02x\r\n", ret);
-      while(1);
-   }
-   ret = CHAT_DeviceInit(workmode);
-   if (ret != BLE_STATUS_SUCCESS)
-   {
-      printf("CHAT_DeviceInit()--> Failed 0x%02x\r\n", ret);
-      while(1);
-   }
+    uint8_t ret;
+    ret = BlueNRG_Stack_Initialization(&BlueNRG_Stack_Init_params);
+    if (ret != BLE_STATUS_SUCCESS)
+    {
+        printf("Error in BlueNRG_Stack_Initialization() 0x%02x\r\n", ret);
+        while(1);
+    }
+    ret = CHAT_DeviceInit(workmode);
+    if (ret != BLE_STATUS_SUCCESS)
+    {
+        printf("CHAT_DeviceInit()--> Failed 0x%02x\r\n", ret);
+        while(1);
+    }
 }
 
 

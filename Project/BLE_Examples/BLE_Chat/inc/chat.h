@@ -3,6 +3,7 @@
 
 uint8_t CHAT_DeviceInit(uint8_t workmode);
 void Make_Connection(void);
+void Start_Adv(void);
 uint8_t BleStartScan(void);
 uint8_t BleStopScan(void);
 void APP_Tick(void);

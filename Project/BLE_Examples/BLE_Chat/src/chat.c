@@ -34,6 +34,11 @@
 
 #define CMD_BUFF_SIZE 512
 
+#define DISCOVERY_PROC_SCAN_INT 0x4000
+#define DISCOVERY_PROC_SCAN_WIN 0x4000
+#define ADV_INT_MIN 0x90
+#define ADV_INT_MAX 0x90
+
 /* Private macros ------------------------------------------------------------*/
 
 /* Private variables ---------------------------------------------------------*/
@@ -41,6 +46,8 @@
 uint8_t connInfo[20];
 volatile int app_flags = SET_CONNECTABLE;
 volatile uint16_t connection_handle = 0;
+static  uint8_t Mac_Count = 0;
+uint8_t Mac_Temp[5][6] = {{0}, {0}, {0}, {0}, {0}};
 
 /**
   * @brief  Handle of TX,RX  Characteristics.
@@ -54,11 +61,13 @@ uint16_t rx_handle;
 UUID_t UUID_Tx;
 UUID_t UUID_Rx;
 
+uint8_t local_name[] = {AD_TYPE_COMPLETE_LOCAL_NAME};
+
 static char cmd[CMD_BUFF_SIZE];
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
-
+void Reset_DiscoveryContext(void);
 /*******************************************************************************
 * Function Name  : CHAT_DeviceInit.
 * Description    : Init the Chat device.
@@ -125,13 +134,15 @@ uint8_t CHAT_DeviceInit(uint8_t workmode)
         printf ("aci_gatt_update_char_value() --> SUCCESS\r\n");
     }
 
-	  ret = aci_gap_set_io_capability(IO_CAP_DISPLAY_ONLY);
-    if(ret != BLE_STATUS_SUCCESS)
-    {
-        printf("aci_gap_set_io_capability fail\r\n");
-        return BLE_STATUS_FAILED;
-    }
-		
+    //加密//
+    //ret = aci_gap_set_io_capability(IO_CAP_DISPLAY_ONLY);
+    //if(ret != BLE_STATUS_SUCCESS)
+    //{
+    //   printf("aci_gap_set_io_capability fail\r\n");
+    //   return BLE_STATUS_FAILED;
+    //}
+
+
 #if  SERVER
     ret = Add_Chat_Service();
     if (ret != BLE_STATUS_SUCCESS)
@@ -154,6 +165,8 @@ uint8_t CHAT_DeviceInit(uint8_t workmode)
 
 #endif
 
+    Reset_DiscoveryContext();
+
     return BLE_STATUS_SUCCESS;
 }
 
@@ -168,7 +181,7 @@ void Process_InputData(uint8_t *data_buffer, uint16_t Nb_bytes)
 {
     static uint16_t end = 0;
     uint8_t i;
-	  uint8_t n=3;
+    uint8_t n = 3;
 
     for (i = 0; i < Nb_bytes; i++)
     {
@@ -176,64 +189,73 @@ void Process_InputData(uint8_t *data_buffer, uint16_t Nb_bytes)
         {
             end = 0;
         }
-			 cmd[end]=data_buffer[i];
-			 end++;	
-		    //判断结束符//
+        cmd[end] = data_buffer[i];
+        end++;
+        //判断结束符//
         if(cmd[end - 1] == '\n')
         {
             if(end != 1)
             {
                 int j = 0;
-							//AT模式
-							if((cmd[0]=='A')&(cmd[1]=='T')&(cmd[2]=='+'))
-								  {
-								   //判断为何指令//	
-		               while(!(cmd[n]=='='))
-								  {
-								    cmd[n-3]=cmd[n];
-									  n++;
-								   }
-									  //添加指令
-									  memcpy(gCmdGotFromUart_st.aCmdBuff,&cmd[n+1],end-1);
-									  gCmdGotFromUart_st.aCmdLenth=end-n;
-		                //清除除去命令的其他部分
-								    Osal_MemSet(&cmd[n-3],0,10); 
-                 while(j < end)
+                //AT模式
+                if((cmd[0] == 'A') & (cmd[1] == 'T') & (cmd[2] == '+'))
                 {
-                    uint32_t len = MIN(20, end - j);
-                    //while(aci_gatt_update_char_value(chatServHandle,TXCharHandle,0,len,(uint8_t *)cmd+j)==BLE_STATUS_INSUFFICIENT_RESOURCES);
-                    AtLineProcess(cmd + j);
-                    j += len;
-                }
-							 }
-								else
-								{
-									//透传模式
-									//开启广播
-									 if(APP_FLAG(CONNECTED)|APP_FLAG(START_ADV))
-									{
-                     while(j < end)
-                      {
-                       uint32_t len = MIN(20, end - j);
-                       while(aci_gatt_update_char_value(chatServHandle,TXCharHandle,0,len,(uint8_t *)cmd+j)==BLE_STATUS_INSUFFICIENT_RESOURCES);
-                       // AtLineProcess(cmd + j);
-                       j += len;
-                      }
-							      }else
+                    //判断为何指令//
+                    while(!(cmd[n] == '='))
                     {
-                           Make_Connection();
-                           APP_FLAG_SET(START_ADV);
+                        cmd[n - 3] = cmd[n];
+                        n++;
                     }
-								 
-								}	
-						}
+                    //添加指令
+                    memcpy(gCmdGotFromUart_st.aCmdBuff, &cmd[n + 1], end - 1);
+                    gCmdGotFromUart_st.aCmdLenth = end - n;
+                    //清除除去命令的其他部分
+                    Osal_MemSet(&cmd[n - 3], 0, 10);
+                    while(j < end)
+                    {
+                        uint32_t len = MIN(20, end - j);
+                        //while(aci_gatt_update_char_value(chatServHandle,TXCharHandle,0,len,(uint8_t *)cmd+j)==BLE_STATUS_INSUFFICIENT_RESOURCES);
+                        AtLineProcess(cmd + j);
+                        j += len;
+                    }
+                }
+                else
+                {
+                    //透传模式
+                    //开启广播
+                    if(APP_FLAG(CONNECTED) | APP_FLAG(START_ADV))
+                    {
+                        while(j < end)
+                        {
+                            uint32_t len = MIN(20, end - j);
+                            while(aci_gatt_update_char_value(chatServHandle, TXCharHandle, 0, len, (uint8_t *)cmd + j) == BLE_STATUS_INSUFFICIENT_RESOURCES);
+                            // AtLineProcess(cmd + j);
+                            j += len;
+                        }
+                    }
+                    else
+                    {
+                        Start_Adv();
+                        APP_FLAG_SET(START_ADV);
+                    }
+
+                }
+            }
             end = 0;
         }
     }
 }
 
-
-
+void Reset_DiscoveryContext(void)
+{
+    DiscoveryDevice.check_disc_proc_timer = FALSE;
+    DiscoveryDevice.check_disc_mode_timer = FALSE;
+    DiscoveryDevice.is_device_found = FALSE;
+    DiscoveryDevice.do_connect = FALSE;
+    // DiscoveryDevice.device_state = INIT;
+    Osal_MemSet(&DiscoveryDevice.device_found_address[0], 0, 6);
+    DiscoveryDevice.device_state = 0xFF;
+}
 
 uint8_t BleStartScan(void)
 {
@@ -245,11 +267,15 @@ uint8_t BleStartScan(void)
         return BLE_STATUS_ERROR;
     }
     else
-        return BLE_STATUS_SUCCESS;
+	  {
+         printf("aci_gap_start_general_discovery_proc(): OK\r\n"); 
+  			return BLE_STATUS_SUCCESS;
+		}
 }
 
 uint8_t BleStopScan(void)
 {
+    //停止扫描
     uint8_t ret = aci_gap_terminate_gap_proc(0x02);
     if (ret != BLE_STATUS_SUCCESS)
     {
@@ -273,10 +299,6 @@ uint8_t BleStopScan(void)
 void Make_Connection(void)
 {
     tBleStatus ret;
-    uint8_t i;
-
-
-#if CLIENT
 
     tBDAddr bdaddr = {0xaa, 0x00, 0x00, 0xE1, 0x80, 0x02};
 
@@ -286,24 +308,21 @@ void Make_Connection(void)
         printf("Error while starting connection: 0x%04x\r\n", ret);
         Clock_Wait(100);
     }
+}
 
-#else
 
-    uint8_t local_name[] = {AD_TYPE_COMPLETE_LOCAL_NAME};
+void Start_Adv(void)
+{
+    tBleStatus ret;
+    uint8_t i;
+
 
     for(i = 1; i < strlen((char const *)gConfigINFO.DviceName.ucModName) + 1; i++)
     {
         local_name[i] = gConfigINFO.DviceName.ucModName[i - 1];
     }
     local_name[i] = '\0';
-
-
-#if ST_OTA_FIRMWARE_UPGRADE_SUPPORT
-    hci_le_set_scan_response_data(18, BTLServiceUUID4Scan);
-#else
     hci_le_set_scan_response_data(0, NULL);
-#endif /* ST_OTA_FIRMWARE_UPGRADE_SUPPORT */
-
     ret = aci_gap_set_discoverable(ADV_IND, gConfigINFO.Adv_Interval_Min, gConfigINFO.Adv_Interval_Max, PUBLIC_ADDR, NO_WHITE_LIST_USE,
                                    //sizeof(local_name),
                                    strlen((char const *)local_name), local_name, 0, NULL, gConfigINFO.Con_Interval_Min, gConfigINFO.Con_Interval_Max);
@@ -312,9 +331,167 @@ void Make_Connection(void)
     else
         printf ("aci_gap_set_discoverable() --> SUCCESS\r\n");
 
-
-#endif
 }
+
+/*******************************************************************************
+* Function Name  : Connection_StateMachine.
+* Description    : Connection state machine.
+* Input          : None.
+* Return         : None.
+*******************************************************************************/
+void Connection_StateMachine(void)
+{
+    uint8_t ret, j;
+
+    switch (DiscoveryDevice.device_state)
+    {
+    case (INIT):
+    {
+        Reset_DiscoveryContext();
+        DiscoveryDevice.device_state = START_DISCOVERY_PROC;
+    }
+        break; /* end case (INIT) */
+    case (START_DISCOVERY_PROC):
+    {
+        ret = aci_gap_start_general_discovery_proc(0x10, 0x2000, PUBLIC_ADDR, 0x00);
+        //aci_gap_start_general_discovery_proc(DISCOVERY_PROC_SCAN_INT, DISCOVERY_PROC_SCAN_WIN, PUBLIC_ADDR, 0x00);
+        if (ret != BLE_STATUS_SUCCESS)
+        {
+            printf("aci_gap_start_general_discovery_proc() failed: %02X\n", ret);
+            DiscoveryDevice.device_state = DISCOVERY_ERROR;
+        }
+        else
+        {
+            printf("aci_gap_start_general_discovery_proc OK\n");
+            DiscoveryDevice.check_disc_proc_timer = TRUE;
+            DiscoveryDevice.check_disc_mode_timer = FALSE;
+            DiscoveryDevice.device_state = WAIT_TIMER_EXPIRED; //WAIT_TIMER_EXPIRED;
+        }
+    }
+        break;/* end case (START_DISCOVERY_PROC) */
+    case (WAIT_TIMER_EXPIRED):
+    {
+
+        Mac_Count++;
+        Osal_MemCpy(&Mac_Temp[Mac_Count][0], DiscoveryDevice.device_found_address, 6);
+        printf("Device Found with address: ");
+        for (uint8_t i = 5; i > 0; i--)
+            printf("%02X-", Mac_Temp[Mac_Count][i]);
+        printf("%02X\n", Mac_Temp[Mac_Count][5]);
+        if(Mac_Count == 5)
+        {
+            Mac_Count = 0;
+            while(1);
+            DiscoveryDevice.device_state = DO_DIRECT_CONNECTION_PROC;
+        }
+
+
+
+        }/* if ((discovery.check_disc_proc_timer == TRUE) */
+        break; /* end case (WAIT_TIMER_EXPIRED) */
+    case (DO_NON_DISCOVERABLE_MODE):
+    {
+        ret = aci_gap_set_non_discoverable();
+        if (ret != BLE_STATUS_SUCCESS)
+        {
+            printf("aci_gap_set_non_discoverable() failed: 0x%02x\n", ret);
+            DiscoveryDevice.device_state = DISCOVERY_ERROR;
+        }
+        else
+        {
+            printf("aci_gap_set_non_discoverable() OK\n");
+            /* Restart Central discovery procedure */
+            DiscoveryDevice.device_state = INIT;
+        }
+    }
+        break; /* end case (DO_NON_DISCOVERABLE_MODE) */
+    case (DO_TERMINATE_GAP_PROC):
+    {
+        /* terminate gap procedure */
+        ret = aci_gap_terminate_gap_proc(0x02); // GENERAL_DISCOVERY_PROCEDURE
+        if (ret != BLE_STATUS_SUCCESS)
+        {
+            printf("aci_gap_terminate_gap_procedure() failed: 0x%02x\n", ret);
+            DiscoveryDevice.device_state = DISCOVERY_ERROR;
+            break;
+        }
+        else
+        {
+            printf("aci_gap_terminate_gap_procedure() OK\n");
+            DiscoveryDevice.device_state = WAIT_EVENT; /* wait for GAP procedure complete */
+        }
+    }
+        break; /* end case (DO_TERMINATE_GAP_PROC) */
+
+
+    case (DO_DIRECT_CONNECTION_PROC):
+    {
+
+        /* Do connection with first discovered device */
+        ret = aci_gap_create_connection(DISCOVERY_PROC_SCAN_INT, DISCOVERY_PROC_SCAN_WIN,
+                                        DiscoveryDevice.device_found_address_type, DiscoveryDevice.device_found_address,
+                                        PUBLIC_ADDR, 40, 40, 0, 60, 2000 , 2000);
+        if (ret != BLE_STATUS_SUCCESS)
+        {
+            printf("aci_gap_create_connection() failed: 0x%02x\n", ret);
+            DiscoveryDevice.device_state = DISCOVERY_ERROR;
+        }
+        else
+        {
+            printf("aci_gap_create_connection() OK\n");
+            DiscoveryDevice.device_state = WAIT_EVENT;
+        }
+    }
+        break; /* end case (DO_DIRECT_CONNECTION_PROC) */
+    case (WAIT_EVENT):
+    {
+        DiscoveryDevice.device_state = WAIT_EVENT;
+
+
+    }
+        break; /* end case (WAIT_EVENT) */
+
+    case (ENTER_DISCOVERY_MODE):
+    {
+        /* Put Peripheral device in discoverable mode */
+        //modify12/17
+        for(j = 1; j < strlen((char const *)gConfigINFO.DviceName.ucModName) + 1; j++)
+        {
+            local_name[j] = gConfigINFO.DviceName.ucModName[j - 1];
+        }
+        local_name[j] = '\0';
+        /* disable scan response */
+        hci_le_set_scan_response_data(0, NULL);
+
+        ret = aci_gap_set_discoverable(ADV_IND, ADV_INT_MIN, ADV_INT_MAX, PUBLIC_ADDR, NO_WHITE_LIST_USE,
+                                       sizeof(local_name), local_name, 0, NULL, 0x6, 0x8);
+        if (ret != BLE_STATUS_SUCCESS)
+        {
+            printf("aci_gap_set_discoverable() failed: 0x%02x\n", ret);
+            DiscoveryDevice.device_state = DISCOVERY_ERROR;
+        }
+        else
+        {
+            printf("aci_gap_set_discoverable() OK\n");
+            DiscoveryDevice.check_disc_mode_timer = TRUE;
+            DiscoveryDevice.check_disc_proc_timer = FALSE;
+            DiscoveryDevice.device_state = WAIT_TIMER_EXPIRED;
+        }
+    }
+        break; /* end case (ENTER_DISCOVERY_MODE) */
+    case (DISCOVERY_ERROR):
+    {
+        DiscoveryDevice.device_state = INIT;
+        //Reset_DiscoveryContext();
+    }
+        break; /* end case (DISCOVERY_ERROR) */
+    default:
+        break;
+    }/* end switch */
+
+}/* end Connection_StateMachine() */
+
+
 
 /*******************************************************************************
 * Function Name  : APP_Tick.
@@ -324,6 +501,12 @@ void Make_Connection(void)
 *******************************************************************************/
 void APP_Tick(void)
 {
+
+    if(APP_FLAG(SET_CONNECTABLE))
+    {
+        Connection_StateMachine();
+    }
+
 #if 0
     if(gSystemMode_st.Mode == SerialMod )
     {
@@ -538,12 +721,33 @@ void aci_hal_end_of_radio_activity_event(uint8_t Last_State,
     }
 #endif
 }
-//modify 12/10 
+
+
+//modify 12/10
 void hci_le_advertising_report_event(uint8_t Num_Reports,
                                      Advertising_Report_t Advertising_Report[])
 {
-  Osal_MemSet(DiscoveryDevice.device_found_address,0,6);
-  Osal_MemCpy(DiscoveryDevice.device_found_address, Advertising_Report[0].Address,6);
-   
-
+	 uint8_t i=0;
+ 	 uint8_t Length_Data;
+   	Mac_Count++;
+	  printf("SCAN_Start\r\n");
+    Length_Data=Advertising_Report[0].Length_Data;
+    DiscoveryDevice.device_found_address_type = Advertising_Report[0].Address_Type;
+    DiscoveryDevice.device_found_RSSI = Advertising_Report[0].RSSI;
+    Osal_MemCpy(DiscoveryDevice.device_found_address, Advertising_Report[0].Address, 6);
+    Osal_MemCpy(DiscoveryDevice.device_found_Data, Advertising_Report[0].Data,Length_Data);
+	  printf("Name:");
+	  for(i=0;i<Length_Data;i++)
+   {
+	  printf("%c",DiscoveryDevice.device_found_Data[i]);      	 
+	 }
+	  printf("\r\n");
+	  if(Mac_Count==5)
+   {
+	   BleStopScan();
+	   printf("SCAN_Fin\r\n");
+	 } 
 }
+
+
+

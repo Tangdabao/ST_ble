@@ -75,15 +75,19 @@ int main(void)
     SdkEvalComIOConfig(Process_InputData);
 
     BleInit(gConfigINFO.BleWorkMode);
+		
     printf("BLE Stack Initialized \n");
-    Make_Connection();
-
+		
+		if(gConfigINFO.BleWorkMode==0x01)
+      Start_Adv();
+		
+		//aci_gap_start_general_discovery_proc(0x10, 0x2000, PUBLIC_ADDR, 0x00); 
     while(1)
     {
         NVIC_DisableIRQ(UART_IRQn);
         BTLE_StackTick();
         NVIC_EnableIRQ(UART_IRQn);
-        //APP_Tick();
+       // APP_Tick();
 
     }
 
