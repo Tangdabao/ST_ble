@@ -26,7 +26,7 @@ typedef struct
 
 
 extern tCmdLineEntry g_sCmdTable[];
-
+extern  uint16_t connection_handle;
 
 /************************************************************
 *功能描述     : 获取HELP信息
@@ -284,9 +284,7 @@ int AT_ConInterval(int argc, char *argv)
         SaveConfig();
         printf("AT_ConInterval-Max,Min: %d , %d\r\n", ConInterval_Max, ConInterval_Min);
         NVIC_SystemReset();
-
     }
-
     return 0;
 }
 
@@ -328,21 +326,18 @@ int AT_AdvInterval(int argc, char *argv)
 int AT_Scanning(int argc, char *argv)
 {
     if(argv[0] == '?')
-    { 
-			printf("MAC:");
-        for(uint8_t i = 0; i < 5; i++)
+    {
+        printf("MAC:");
+        for(uint8_t i = 5; i > 0; i--)
             printf("%02X-", DiscoveryDevice.device_found_address[i]);
-       printf("%02X\r\n", DiscoveryDevice.device_found_address[5]);       
+        printf("%02X\r\n", DiscoveryDevice.device_found_address[0]);
     }
     else if(argv[0] == ' ')
     {
-			BleStartScan();
-      //DiscoveryDevice.device_state = INIT;
-
+        BleStartScan();
     }
     else
         BleStopScan();
-
     return 0;
 }
 
@@ -350,34 +345,70 @@ int AT_Mac_Direct(int argc, char *argv)
 {
     uint8_t ret;
     tBDAddr bdaddr;
-    uint8_t chat[10]={9,9,9,9};
-        for(uint8_t i = 0; i < 6; i++)
-            bdaddr[5-i] = argv[i]-0x30;
-   ///需要添加一个条件：扫描之后进行连接
-	 //此处未添加
-        ret = aci_gap_create_connection(0x4000, 0x4000, PUBLIC_ADDR, bdaddr, PUBLIC_ADDR, 40, 40, 0, 60, 2000 , 2000);
-        if (ret != BLE_STATUS_SUCCESS)
-        {
-            printf("Error while starting connection: 0x%04x\r\n", ret);
-        }
-        else
-            printf("connected\r\n");
-			 //
-				aci_gatt_write_without_resp(0x000c, 0x0011,10,&chat[0]);
+    for(uint8_t i = 0; i < 6; i++)
+        bdaddr[5 - i] = argv[i] - 0x30;
+    ret = aci_gap_create_connection(0x4000, 0x4000, PUBLIC_ADDR, bdaddr, PUBLIC_ADDR, 40, 40, 0, 60, 2000 , 2000);
+    if (ret != BLE_STATUS_SUCCESS)
+    {
+        printf("Error while starting connection: 0x%04x\r\n", ret);
+    }
+    else
+        printf("connected\r\n");
+    return 0;
+}
 
+int AT_Name_Direct(int argc, char *argv)
+{
+    uint8_t i;
+    BleStopScan();
+    Osal_MemSet(gConfigINFO.DviceName.ucModName, 0, 20);
+    for(i = 0; i < argc - 2; i++)
+        gConfigINFO.DviceName.ucModName[i] = argv[i];
+    SaveConfig();
+    DiscoveryDevice.is_device_found = TRUE;
+    BleStartScan();
     return 0;
 }
 
 
-//no finish
+
+int AT_Notify(int argc, char *argv)
+{
+	 uint8_t ret;
+	  uint8_t client_data[2];
+   if(argv[0]=='N')
+	 {	 
+		 
+	  client_data[0] = 0x01;
+		 client_data[1] = 0x00;
+		 
+	 }else if(argv[0]=='O')
+   {
+	  client_data[0] = 0x00;
+		  client_data[1] = 0x00;
+	 }            
+    ret=aci_gatt_write_char_desc(connection_handle, NOTIFY_DES_HANDLE, 2 ,client_data);
+    if(ret==SUCCESS)
+      printf("Success\r\n");
+		else
+			printf("Fail:0x%04x",ret);
+   return 0;	 
+}
+
+
 int AT_Disconnect(int argc, char *argv)
 {
     uint8_t ret;
-    ret = hci_disconnect(chatServHandle, 0x05);
+    //printf("connection_handle:%04x\r\n",connection_handle);
+    //ret = hci_disconnect(connection_handle, 0x13);
+	  ret = aci_gap_terminate(connection_handle,0x13);
     if(ret == BLE_STATUS_SUCCESS)
         printf("AT+AT_Disconnect=OK\r\n");
+    else
+        printf("AT+AT_Disconnect=NO:0x%04x\r\n", ret);
     return 0;
 }
+
 //NO finish
 int AT_transmit_power_level(int argc, char *argv)
 {
@@ -397,7 +428,6 @@ int AT_transmit_power_level(int argc, char *argv)
         SaveConfig();
         printf("transmit_power_level:%d", gConfigINFO.uSendPoewr);
         NVIC_SystemReset();
-
     }
     return 0;
 }
@@ -405,23 +435,28 @@ int AT_transmit_power_level(int argc, char *argv)
 
 
 
+
+
 tCmdLineEntry g_sCmdTable[] =
 {
-    { "Help",      At_help,      					"  : help information" },
-    { "RESET",     At_reset,        			  "  : Reset BLE" },
-    { "VERSION",   At_Version,             "  : Query the version number of BLE" },
-    { "MAC",       At_Mac ,                "  : Set BLE's MAC address" },
-    { "DISCONN",   AT_Disconnect,          "  : Disconnect BLE" },
+    { "Help",      At_help,      					 "  : help information" },
+    { "RESET",     At_reset,        			 "  : Reset BLE:AT+RESET=?" },
+    { "VERSION",   At_Version,             "  : Query the version number of BLE:AT+VERSION=?" },
+    { "MAC",       At_Mac ,                "  : Set BLE's MAC address:AT+MAC=?" },
+    { "DISCONN",   AT_Disconnect,          "  : Disconnect BLE:AT+DISCONN=?" },
     { "POWER",     AT_transmit_power_level, "  : Set BLE transmission strength" },
-    { "NAME",      AT_Name,                "  : Set the name of the BLE" },
+    { "NAME",      AT_Name,                "  : Set the name of the BLE:AT+NAME=?" },
     { "DeAdv",     AT_Delet_ADV,           "  : Delete some broadcast information" },
-    { "StarAdv",   AT_StartAdv,            "  : Turn on BLE radio" },
+    { "StarAdv",   AT_StartAdv,            "  : Turn on BLE radio:AT+StarAdv=?" },
     { "BLEio",     AT_Set_io_capability,   "  : Set the output capacity of BLEIO"    },
-    { "BLEConInt", AT_ConInterval,         "  : Set the connection interval"    },
-    { "BLEAdvInt", AT_AdvInterval,         "  : Set the broadcast interval"    },
-    { "Mode",      AT_Mode,                "  : Set the working mode of BLE"    },
-    { "Scan",      AT_Scanning,            "  : Set the working mode of BLE"    },
-    { "MacDir",    AT_Mac_Direct,            "  : Set the working mode of BLE"    },
+    { "BLEConInt", AT_ConInterval,         "  : Set the connection interval:AT+BLEConInt=?"    },
+    { "BLEAdvInt", AT_AdvInterval,         "  : Set the broadcast interval:AT+BLEAdvInt=?"    },
+    { "Mode",      AT_Mode,                "  : Set the working mode of BLE:AT+Mode=?"    },
+    { "Scan",      AT_Scanning,            "  : Turn on scanning:AT+Scan=?"},
+    { "MacDir",    AT_Mac_Direct,          "  : direct connection:AT+MacDir=123456"},
+    { "NameDir",   AT_Name_Direct,         "  : direct connection:AT+NameDir=lsd1234"},
+		{ "Notify",    AT_Notify,              "  : direct connection:AT+NameDir=lsd1234"},
+		
     { 0, 0, 0 }
 };
 

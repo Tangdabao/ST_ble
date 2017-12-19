@@ -387,7 +387,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>ST-LINKIII-KEIL_SWO</Key>
-          <Name>-U066EFF524951775087245828 -O9455 -S0 -C0 -A0 -N00("ARM CoreSight SW-DP") -D00(0BB11477) -L00(0) -TO18 -TC16000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO15 -FD20000000 -FC6000 -FN1 -FF0STBlueNRG1.FLM -FS010040000 -FL028000 -FP0($$Device:BlueNRG-1$Flash\STBlueNRG1.FLM)</Name>
+          <Name>-U0670FF554852707267105143 -O9455 -S0 -C0 -A0 -N00("ARM CoreSight SW-DP") -D00(0BB11477) -L00(0) -TO18 -TC16000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO15 -FD20000000 -FC6000 -FN1 -FF0STBlueNRG1.FLM -FS010040000 -FL028000 -FP0($$Device:BlueNRG-1$Flash\STBlueNRG1.FLM)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -395,7 +395,40 @@
           <Name>UL2CM3(-S0 -C0 -P0 )  -FN1 -FC1000 -FD200002CC -FF0STBlueNRG -FL028000 -FS010040000 -FP0($$Device:BlueNRG-1$Flash\STBlueNRG.FLM)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint/>
+      <Breakpoint>
+        <Bp>
+          <Number>0</Number>
+          <Type>0</Type>
+          <LineNumber>699</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>268759448</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\..\src\chat.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\BLE_Chat_Server\../../src/chat.c\699</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>699</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>268759456</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\..\src\chat.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\BLE_Chat_Server\../../src/chat.c\699</Expression>
+        </Bp>
+      </Breakpoint>
       <WatchWindow1>
         <Ww>
           <count>0</count>
@@ -446,6 +479,21 @@
           <count>9</count>
           <WinNumber>1</WinNumber>
           <ItemText>DiscoveryDevice</ItemText>
+        </Ww>
+        <Ww>
+          <count>10</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Mac_Temp[5]</ItemText>
+        </Ww>
+        <Ww>
+          <count>11</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>DiscoveryDevice</ItemText>
+        </Ww>
+        <Ww>
+          <count>12</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Attribute_Value</ItemText>
         </Ww>
       </WatchWindow1>
       <MemoryWindow1>

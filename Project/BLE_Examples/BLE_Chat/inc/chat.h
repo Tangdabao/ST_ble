@@ -1,6 +1,12 @@
 #ifndef _CHAT_H_
 #define _CHAT_H_
 
+#define SERVICE_HANDLE                0x000C
+#define NOTIFY_HANDLE                 0x000D
+#define NOTIFY_DES_HANDLE             0x000F
+#define Write_HANDLE                  0x0011 
+
+uint8_t Find_DeviceName(uint8_t data_length, uint8_t *data_value);
 uint8_t CHAT_DeviceInit(uint8_t workmode);
 void Make_Connection(void);
 void Start_Adv(void);
