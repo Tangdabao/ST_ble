@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Server\Objects\BLE_Chat_Server.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Server\Objects\BLE_Chat_Server.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Tue Dec 19 16:42:09 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Thu Jan 04 10:06:24 2018
 <BR><P>
 <H3>Maximum Stack Usage =        288 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -342,7 +342,6 @@ Functions with no stack information
  <LI><a href="#[43]">aci_gap_pairing_complete_event_cb</a>
  <LI><a href="#[290]">aci_gap_pass_key_req_event</a>
  <LI><a href="#[44]">aci_gap_pass_key_req_event_cb</a>
- <LI><a href="#[291]">aci_gap_proc_complete_event</a>
  <LI><a href="#[49]">aci_gap_proc_complete_event_cb</a>
  <LI><a href="#[265]">aci_gap_set_discoverable</a>
  <LI><a href="#[293]">aci_gap_slave_security_initiated_event</a>
@@ -944,9 +943,11 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BleInit
 <LI><a href="#[2c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_connection_complete_event
+<LI><a href="#[2ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_disconnection_complete_event
 <LI><a href="#[29a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gatt_proc_complete_event
 <LI><a href="#[298]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gatt_notification_event
 <LI><a href="#[295]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gatt_disc_read_char_by_uuid_resp_event
+<LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_proc_complete_event
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Start_Adv
 <LI><a href="#[250]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Scan_DeviceName
 <LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_InputData
@@ -1118,8 +1119,6 @@ Global Symbols
 <LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_scan_addr
 <LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_adv_addr
 <LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Start_Encryption
-<LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LE_TO_NRG_32
-<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
 <LI><a href="#[1cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Set_OwnAddress
 <LI><a href="#[1ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Set_DirectAddress
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES128ECB_Wrapper
@@ -1127,6 +1126,8 @@ Global Symbols
 <LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Flash_Store_Data
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_keyschedule_enc
 <LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_CMAC_Encrypt_Append
+<LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LE_TO_NRG_32
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
 </UL>
 
 <P><STRONG><a name="[32b]"></a>__rt_uread4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, uread4.o(.text), UNUSED)
@@ -1136,10 +1137,10 @@ Global Symbols
 <P><STRONG><a name="[196]"></a>__aeabi_uidivmod</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, aeabi_sdivfast.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[25e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Init
-<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
-<LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gatt_Server_L2C_Handler
 <LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gatt_Server_Db_Check
+<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
+<LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
 </UL>
 
 <P><STRONG><a name="[32d]"></a>__aeabi_idiv</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, aeabi_sdivfast.o(.text), UNUSED)
@@ -1323,7 +1324,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> atprocess.o(.data)
 </UL>
-<P><STRONG><a name="[9]"></a>AT_Disconnect</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, atprocess.o(i.AT_Disconnect))
+<P><STRONG><a name="[9]"></a>AT_Disconnect</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, atprocess.o(i.AT_Disconnect))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
 <LI>Call Chain = AT_Disconnect &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -2003,8 +2004,8 @@ Global Symbols
 <LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Max_SecDb_Size
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_RecordValidity
 </UL>
-<BR>[Called By]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
-<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Read_Peer_Bonded_Data
+<BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Read_Peer_Bonded_Data
+<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
 </UL>
 
 <P><STRONG><a name="[13c]"></a>Find_DeviceName</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, chat.o(i.Find_DeviceName))
@@ -2056,12 +2057,12 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemCpy
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Get_Remote_Device_Info
-<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Resolve_Private_Address
-<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
-<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
 <LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_SDBRecord
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_RecordValidity
 <LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_SecRec_Len_In_Words
+<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Resolve_Private_Address
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
+<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
 </UL>
 <BR>[Called By]<UL><LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gatt_Store_Server_Database_And_Reset_CCCD
 </UL>
@@ -2696,11 +2697,11 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_SecRecord_Size
 </UL>
 <BR>[Called By]<UL><LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Record
-<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
-<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
 <LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Matching_LTK
 <LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Get_Number_Of_Records
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write_Client_Data
+<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
+<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
 </UL>
 
 <P><STRONG><a name="[1ad]"></a>Get_SecRecord_Size</STRONG> (Thumb, 4 bytes, Stack size unknown bytes, sdb.o(i.Get_SecRecord_Size))
@@ -2731,9 +2732,9 @@ Global Symbols
 <P><STRONG><a name="[1af]"></a>HAL_Generate_Random_Bytes_To</STRONG> (Thumb, 32 bytes, Stack size unknown bytes, hal.o(i.HAL_Generate_Random_Bytes_To))
 <BR><BR>[Calls]<UL><LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Hal_Get_Random_Number
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
+<BR>[Called By]<UL><LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IDD_Initialize_Device_IDs
+<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
 <LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
-<LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IDD_Initialize_Device_IDs
 </UL>
 
 <P><STRONG><a name="[fe]"></a>HAL_Init</STRONG> (Thumb, 20 bytes, Stack size unknown bytes, hal.o(i.HAL_Init))
@@ -3004,8 +3005,8 @@ Global Symbols
 <P><STRONG><a name="[1c6]"></a>LE_TO_NRG_32</STRONG> (Thumb, 20 bytes, Stack size unknown bytes, utils.o(i.LE_TO_NRG_32))
 <BR><BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uread4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_SDBRecord
-<LI><a href="#[24f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Validate_Signed_Packet
+<BR>[Called By]<UL><LI><a href="#[24f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Validate_Signed_Packet
+<LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_SDBRecord
 </UL>
 
 <P><STRONG><a name="[164]"></a>LL_Allow_Address_Setting</STRONG> (Thumb, 66 bytes, Stack size unknown bytes, rom_ll_ll_routines.o(i.LL_Allow_Address_Setting))
@@ -3110,8 +3111,6 @@ Global Symbols
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES128ECB_Wrapper
 </UL>
 <BR>[Called By]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PRIV_u8OfflineProcessing
-<LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_SR_Compute_c1_Confirm_Value
-<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_LP_MI_Compute_c1_Confirm_Value
 <LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_GenEDIV_RecovDIV
 <LI><a href="#[22c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_Diversify
 <LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PRIV_vGeneratePrivateAddress
@@ -3120,14 +3119,16 @@ Global Symbols
 <LI><a href="#[24c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_Calculate_Hash
 <LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_CMAC_Generate_Tag
 <LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_LP_s1_Generate_STK
+<LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_SR_Compute_c1_Confirm_Value
+<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_LP_MI_Compute_c1_Confirm_Value
 </UL>
 
 <P><STRONG><a name="[1c7]"></a>LL_Get_Address</STRONG> (Thumb, 42 bytes, Stack size unknown bytes, rom_ll_ll_routines.o(i.LL_Get_Address))
-<BR><BR>[Called By]<UL><LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_SR_Compute_c1_Confirm_Value
-<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_LP_MI_Compute_c1_Confirm_Value
-<LI><a href="#[1d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Set_Advertising_Buffers
+<BR><BR>[Called By]<UL><LI><a href="#[1d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Set_Advertising_Buffers
 <LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Allow_Address_Setting
 <LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_L2CAP_Handler_ISR
+<LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_SR_Compute_c1_Confirm_Value
+<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_LP_MI_Compute_c1_Confirm_Value
 </UL>
 
 <P><STRONG><a name="[165]"></a>LL_Get_AdvAddress</STRONG> (Thumb, 58 bytes, Stack size unknown bytes, rom_ll_ll_routines.o(i.LL_Get_AdvAddress))
@@ -3279,9 +3280,9 @@ Global Symbols
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uread4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMP_MI_PairingRequest_Send
-<LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
 <LI><a href="#[24d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Complete
 <LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_DHKeyCheck_Receive
+<LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
 </UL>
 
 <P><STRONG><a name="[1e8]"></a>LL_Update_Advertising_Buffers</STRONG> (Thumb, 64 bytes, Stack size unknown bytes, rom_ll_ll_routines.o(i.LL_Update_Advertising_Buffers))
@@ -3405,13 +3406,6 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PRIV_u8OfflineProcessing
 <LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Record
-<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
-<LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
-<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_RepeatedAttacks_Protection
-<LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_Get_Long_Term_Key
-<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Resolve_Private_Address
-<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
-<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
 <LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Matching_LTK
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Find_Client_Data
 <LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Generate_Non_Resolvable_Private_Address
@@ -3430,6 +3424,13 @@ Global Symbols
 <LI><a href="#[2ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_PairingPublicKey_Receive
 <LI><a href="#[23c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_OOB_Check_Is_Remote_Data_Present
 <LI><a href="#[23a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_Search_BlackList
+<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
+<LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
+<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_RepeatedAttacks_Protection
+<LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_Get_Long_Term_Key
+<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Resolve_Private_Address
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
+<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
 </UL>
 
 <P><STRONG><a name="[bf]"></a>Osal_MemCpy</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, osal.o(i.Osal_MemCpy))
@@ -3454,13 +3455,6 @@ Global Symbols
 <LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_Init
 <LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_Delete_ADType
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BlueNRG_Stack_Initialization
-<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
-<LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
-<LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_SR_Compute_c1_Confirm_Value
-<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_LP_MI_Compute_c1_Confirm_Value
-<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_RepeatedAttacks_Protection
-<LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_Get_Long_Term_Key
-<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
 <LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_GenEDIV_RecovDIV
 <LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Get_Data_From_Record
 <LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Generate_Resolvable_Private_Address
@@ -3527,6 +3521,13 @@ Global Symbols
 <LI><a href="#[2e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Get_Local_Identity_Address
 <LI><a href="#[2da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Add_To_Database
 <LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_LP_s1_Generate_STK
+<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
+<LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
+<LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_SR_Compute_c1_Confirm_Value
+<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_LP_MI_Compute_c1_Confirm_Value
+<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_RepeatedAttacks_Protection
+<LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_Get_Long_Term_Key
+<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
 </UL>
 
 <P><STRONG><a name="[b6]"></a>Osal_MemSet</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, osal.o(i.Osal_MemSet))
@@ -3548,13 +3549,6 @@ Global Symbols
 <LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMP_MI_PairingRequest_Send
 <LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AT_Name_Direct
 <LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AT_Name
-<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
-<LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
-<LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_SR_Compute_c1_Confirm_Value
-<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_LP_MI_Compute_c1_Confirm_Value
-<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
-<LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_Get_Long_Term_Key
-<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
 <LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_GenEDIV_RecovDIV
 <LI><a href="#[1fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PRIVWHIT_u8RemoveAddrInList
 <LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMP_Timer_cb
@@ -3568,6 +3562,13 @@ Global Symbols
 <LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_DHKeyCheck_Receive
 <LI><a href="#[2e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Pairing_OOB_Confirm_Receive_and_Verify
 <LI><a href="#[2da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Add_To_Database
+<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
+<LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
+<LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_SR_Compute_c1_Confirm_Value
+<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_LP_MI_Compute_c1_Confirm_Value
+<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
+<LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_Get_Long_Term_Key
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
 </UL>
 
 <P><STRONG><a name="[1ee]"></a>PKA_Generate_ECDH_Public_Key</STRONG> (Thumb, 122 bytes, Stack size unknown bytes, pka.o(i.PKA_Generate_ECDH_Public_Key))
@@ -3658,10 +3659,6 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Acl_Copy_Data
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_rx_acl_data
-<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
-<LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingConfirm_Receive
-<LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
-<LI><a href="#[2dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Receive
 <LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Resp
 <LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Cmd
 <LI><a href="#[205]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_By_Type_Resp
@@ -3680,6 +3677,10 @@ Global Symbols
 <LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_DHKeyCheck_Receive
 <LI><a href="#[2ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_PairingPublicKey_Receive
 <LI><a href="#[2f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Receive_Keys
+<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
+<LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingConfirm_Receive
+<LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
+<LI><a href="#[2dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Receive
 </UL>
 
 <P><STRONG><a name="[1fc]"></a>PM_Eng_Config</STRONG> (Thumb, 20 bytes, Stack size unknown bytes, pm.o(i.PM_Eng_Config))
@@ -3726,12 +3727,6 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gatt_Write_Without_Resp
 <LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gatt_Update_Charac_Value_Ext
 <LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMP_MI_PairingRequest_Send
-<LI><a href="#[2ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRequest_Receive
-<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
-<LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingConfirm_Receive
-<LI><a href="#[2e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Send
-<LI><a href="#[2dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Receive
-<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
 <LI><a href="#[1b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2C_Build_Command_Reject_Pdu
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Extend_Pckt_Pdu_Size
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_Peer_Client_Data
@@ -3741,6 +3736,12 @@ Global Symbols
 <LI><a href="#[2fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_DHKeyCheck_Send
 <LI><a href="#[2df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_PairingPublicKey_Send
 <LI><a href="#[2fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_2Octets_Packet_Send
+<LI><a href="#[2ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRequest_Receive
+<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
+<LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingConfirm_Receive
+<LI><a href="#[2e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Send
+<LI><a href="#[2dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Receive
+<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
 </UL>
 
 <P><STRONG><a name="[f9]"></a>PM_Init</STRONG> (Thumb, 102 bytes, Stack size unknown bytes, pm.o(i.PM_Init))
@@ -3790,13 +3791,7 @@ Global Symbols
 <P><STRONG><a name="[da]"></a>PM_Set_Att_Pdu_Length</STRONG> (Thumb, 80 bytes, Stack size unknown bytes, pm.o(i.PM_Set_Att_Pdu_Length))
 <BR><BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Release_Pckt
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
-<LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingConfirm_Receive
-<LI><a href="#[2e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Send
-<LI><a href="#[2dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Receive
-<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
-<LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Build_Pairing_ReqResp_Packet
-<LI><a href="#[1b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2C_Build_Command_Reject_Pdu
+<BR>[Called By]<UL><LI><a href="#[1b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2C_Build_Command_Reject_Pdu
 <LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Resp
 <LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Send_Error_Resp
 <LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Resp
@@ -3818,6 +3813,12 @@ Global Symbols
 <LI><a href="#[2fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_DHKeyCheck_Send
 <LI><a href="#[2df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_PairingPublicKey_Send
 <LI><a href="#[2fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_2Octets_Packet_Send
+<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
+<LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingConfirm_Receive
+<LI><a href="#[2e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Send
+<LI><a href="#[2dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Receive
+<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
+<LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Build_Pairing_ReqResp_Packet
 </UL>
 
 <P><STRONG><a name="[df]"></a>PM_Set_ConnHandle</STRONG> (Thumb, 12 bytes, Stack size unknown bytes, pm.o(i.PM_Set_ConnHandle))
@@ -3847,12 +3848,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Acl_Copy_Data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
-<LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingConfirm_Receive
-<LI><a href="#[2e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Send
-<LI><a href="#[2dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Receive
-<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
-<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Resp
+<BR>[Called By]<UL><LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Resp
 <LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Multi_Resp
 <LI><a href="#[205]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_By_Type_Resp
 <LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_By_Grp_Type_Resp
@@ -3865,6 +3861,11 @@ Global Symbols
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Att_Send_Read_By_Typ_Req_Pdu
 <LI><a href="#[2fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_DHKeyCheck_Send
 <LI><a href="#[2df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_PairingPublicKey_Send
+<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
+<LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingConfirm_Receive
+<LI><a href="#[2e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Send
+<LI><a href="#[2dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Receive
+<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
 </UL>
 
 <P><STRONG><a name="[1fd]"></a>PRIVWHIT_u8AddAddrInList</STRONG> (Thumb, 458 bytes, Stack size unknown bytes, ll_privacy.o(i.PRIVWHIT_u8AddAddrInList))
@@ -4197,13 +4198,13 @@ Global Symbols
 
 <P><STRONG><a name="[13a]"></a>Read_RecordValidity</STRONG> (Thumb, 12 bytes, Stack size unknown bytes, rom_sdb.o(i.Read_RecordValidity))
 <BR><BR>[Called By]<UL><LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Record
-<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
-<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
-<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
 <LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Matching_LTK
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Find_Client_Data
 <LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Get_Number_Of_Records
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write_Client_Data
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
+<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
+<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
 </UL>
 
 <P><STRONG><a name="[206]"></a>Read_Resp</STRONG> (Thumb, 326 bytes, Stack size unknown bytes, att.o(i.Read_Resp))
@@ -4232,10 +4233,10 @@ Global Symbols
 <LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_SecRecord_Size
 </UL>
 <BR>[Called By]<UL><LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Record
-<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
-<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
 <LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Matching_LTK
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write_Client_Data
+<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
+<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
 </UL>
 
 <P><STRONG><a name="[225]"></a>Reclassify_All_Channels</STRONG> (Thumb, 184 bytes, Stack size unknown bytes, ll_routines_master.o(i.Reclassify_All_Channels))
@@ -4258,31 +4259,31 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemCpy
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemCmp
-<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
-<LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_SDBRecord
 <LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_SDBRecord
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_RecordValidity
 <LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InvaliDate_Record
 <LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_SecRec_Len_In_Words
+<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
+<LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_SDBRecord
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Add_To_Database
 </UL>
 
 <P><STRONG><a name="[144]"></a>SDB_Delete</STRONG> (Thumb, 362 bytes, Stack size unknown bytes, sdb.o(i.SDB_Delete))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
-<LI>Call Chain = SDB_Delete &rArr; Write_Client_Data &rArr; Osal_MemSet &rArr; memset
+<LI>Call Chain = SDB_Delete &rArr; Find_Client_Data &rArr; Osal_MemCmp &rArr; memcmp
 </UL>
-<BR>[Calls]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
-<LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_SDBRecord
-<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Erase_Sector
-<LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Get_SecurityDb_Start_Addr
+<BR>[Calls]<UL><LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Get_SecurityDb_Start_Addr
 <LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_SDBRecord
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_RecordValidity
 <LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_SecRec_Len_In_Words
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Find_Client_Data
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
+<LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_SDBRecord
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Erase_Sector
 </UL>
-<BR>[Called By]<UL><LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write_Client_Data
+<BR>[Called By]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write_Client_Data
+<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
 </UL>
 
 <P><STRONG><a name="[229]"></a>SDB_Find_Matching_LTK</STRONG> (Thumb, 162 bytes, Stack size unknown bytes, rom_sdb.o(i.SDB_Find_Matching_LTK))
@@ -4307,14 +4308,14 @@ Global Symbols
 <LI>Call Chain = SDB_Find_Record &rArr; SM_Resolve_Private_Address &rArr; sm_Calculate_Hash &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemCmp
-<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Resolve_Private_Address
 <LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_SDBRecord
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_RecordValidity
 <LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_SecRec_Len_In_Words
+<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Resolve_Private_Address
 </UL>
-<BR>[Called By]<UL><LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
+<BR>[Called By]<UL><LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMP_Check_Is_Device_Bonded
+<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
 <LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Record_By_ConnHandle
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMP_Check_Is_Device_Bonded
 </UL>
 
 <P><STRONG><a name="[22e]"></a>SDB_Find_Record_By_ConnHandle</STRONG> (Thumb, 38 bytes, Stack size unknown bytes, sdb.o(i.SDB_Find_Record_By_ConnHandle))
@@ -4333,8 +4334,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemCpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
-<LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Matching_LTK
+<BR>[Called By]<UL><LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Matching_LTK
+<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
 </UL>
 
 <P><STRONG><a name="[26f]"></a>SDB_Get_GattDb_End_Addr</STRONG> (Thumb, 24 bytes, Stack size unknown bytes, sdb.o(i.SDB_Get_GattDb_End_Addr))
@@ -4342,8 +4343,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[138]"></a>SDB_Get_GattDb_Start_Addr</STRONG> (Thumb, 18 bytes, Stack size unknown bytes, sdb.o(i.SDB_Get_GattDb_Start_Addr))
-<BR><BR>[Called By]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
-<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Find_Client_Data
+<BR><BR>[Called By]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Find_Client_Data
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
 </UL>
 
 <P><STRONG><a name="[162]"></a>SDB_Get_Number_Of_Records</STRONG> (Thumb, 68 bytes, Stack size unknown bytes, rom_sdb.o(i.SDB_Get_Number_Of_Records))
@@ -4351,22 +4352,22 @@ Global Symbols
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_RecordValidity
 <LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_SecRec_Len_In_Words
 </UL>
-<BR>[Called By]<UL><LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
-<LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_Notify_Add_Charac
+<BR>[Called By]<UL><LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_Notify_Add_Charac
+<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
 </UL>
 
 <P><STRONG><a name="[228]"></a>SDB_Get_SecurityDb_Start_Addr</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, sdb.o(i.SDB_Get_SecurityDb_Start_Addr))
-<BR><BR>[Called By]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
-<LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Matching_LTK
+<BR><BR>[Called By]<UL><LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Matching_LTK
 <LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Get_Number_Of_Records
+<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
 </UL>
 
 <P><STRONG><a name="[118]"></a>SDB_Read_Peer_Bonded_Data</STRONG> (Thumb, 34 bytes, Stack size unknown bytes, sdb.o(i.SDB_Read_Peer_Bonded_Data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
 <LI>Call Chain = SDB_Read_Peer_Bonded_Data &rArr; SDB_Find_Record_By_ConnHandle &rArr; SDB_Find_Record &rArr; SM_Resolve_Private_Address &rArr; sm_Calculate_Hash &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Record_By_ConnHandle
-<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Find_Client_Data
+<BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Find_Client_Data
+<LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Record_By_ConnHandle
 </UL>
 <BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Check_For_Service_Change
 </UL>
@@ -4374,12 +4375,12 @@ Global Symbols
 <P><STRONG><a name="[22c]"></a>SMA_Diversify</STRONG> (Thumb, 46 bytes, Stack size unknown bytes, ssm_algo.o(i.SMA_Diversify))
 <BR><BR>[Calls]<UL><LI><a href="#[1dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Encrypt_Plain_Data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
-<LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_Get_Long_Term_Key
-<LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_GenEDIV_RecovDIV
+<BR>[Called By]<UL><LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_GenEDIV_RecovDIV
 <LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Matching_LTK
 <LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_Generate_IRK
 <LI><a href="#[22f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_Generate_CSRK
+<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
+<LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_Get_Long_Term_Key
 </UL>
 
 <P><STRONG><a name="[22a]"></a>SMA_GenEDIV_RecovDIV</STRONG> (Thumb, 114 bytes, Stack size unknown bytes, ssm_algo.o(i.SMA_GenEDIV_RecovDIV))
@@ -4391,9 +4392,9 @@ Global Symbols
 <LI><a href="#[1dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Encrypt_Plain_Data
 <LI><a href="#[22c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_Diversify
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
+<BR>[Called By]<UL><LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Matching_LTK
+<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
 <LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_Get_Long_Term_Key
-<LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Matching_LTK
 </UL>
 
 <P><STRONG><a name="[22f]"></a>SMA_Generate_CSRK</STRONG> (Thumb, 32 bytes, Stack size unknown bytes, ssm_algo.o(i.SMA_Generate_CSRK))
@@ -4405,8 +4406,8 @@ Global Symbols
 <P><STRONG><a name="[230]"></a>SMA_Generate_IRK</STRONG> (Thumb, 32 bytes, Stack size unknown bytes, ssm_algo.o(i.SMA_Generate_IRK))
 <BR><BR>[Calls]<UL><LI><a href="#[22c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_Diversify
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
-<LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Generate_Resolvable_Private_Address
+<BR>[Called By]<UL><LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Generate_Resolvable_Private_Address
+<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
 </UL>
 
 <P><STRONG><a name="[231]"></a>SMA_LP_s1_Generate_STK</STRONG> (Thumb, 40 bytes, Stack size unknown bytes, ssm_algo.o(i.SMA_LP_s1_Generate_STK))
@@ -4424,11 +4425,11 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_CMAC_Encrypt
 <LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;copy_swap_buffer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
+<BR>[Called By]<UL><LI><a href="#[2e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Pairing_OOB_Confirm_Receive_and_Verify
+<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
 <LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingConfirm_Receive
 <LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
 <LI><a href="#[2e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Send
-<LI><a href="#[2e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Pairing_OOB_Confirm_Receive_and_Verify
 </UL>
 
 <P><STRONG><a name="[234]"></a>SMA_SC_Gen_f5_Keys</STRONG> (Thumb, 164 bytes, Stack size unknown bytes, ssm_algo.o(i.SMA_SC_Gen_f5_Keys))
@@ -4499,11 +4500,11 @@ Global Symbols
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Get_Pckt
 <LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Start_Encryption
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Get_Remote_Device_Info
-<LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Build_Pairing_ReqResp_Packet
-<LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Build_AuthReq_Field
 <LI><a href="#[23c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_OOB_Check_Is_Remote_Data_Present
 <LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Send_Data
 <LI><a href="#[23a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_Search_BlackList
+<LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Build_Pairing_ReqResp_Packet
+<LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Build_AuthReq_Field
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_SecurityRequest_Receive
 </UL>
@@ -4516,13 +4517,13 @@ Global Symbols
 <LI><a href="#[1e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Get_LTK
 <LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_read_local_p256_public_key
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Get_Remote_Device_Info
+<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;acl_list_remove_head
+<LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;acl_list_insert_head
 <LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_Process_Abort
 <LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
 <LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_Exception_Cases
 <LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
 <LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_Get_Long_Term_Key
-<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;acl_list_remove_head
-<LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;acl_list_insert_head
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BTLE_StackTick
 </UL>
@@ -4573,7 +4574,6 @@ Global Symbols
 <P><STRONG><a name="[113]"></a>SM_Get_Remote_Device_Info</STRONG> (Thumb, 68 bytes, Stack size unknown bytes, sm_common.o(i.SM_Get_Remote_Device_Info))
 <BR><BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMP_Process_Q
 <LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMP_MI_PairingRequest_Send
-<LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Record_By_ConnHandle
 <LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_L2CAP_Handler_ISR
 <LI><a href="#[1c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_L2CAP_Handler
 <LI><a href="#[1c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_L2CAP_Encryption_changed_Handler_ISR
@@ -4585,6 +4585,7 @@ Global Symbols
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ValidLinkPermRequest
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CheckSecForSignedWrite
 <LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Check_Encryption_KeySize
+<LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Record_By_ConnHandle
 </UL>
 
 <P><STRONG><a name="[1c3]"></a>SM_L2CAP_Encryption_changed_Handler_ISR</STRONG> (Thumb, 192 bytes, Stack size unknown bytes, sm_common.o(i.SM_L2CAP_Encryption_changed_Handler_ISR))
@@ -4650,9 +4651,9 @@ Global Symbols
 <LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Copy_Pckt_Data
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Get_Remote_Device_Info
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemCmp
-<LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LE_TO_NRG_32
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2CAP_Get_PDU_Len
 <LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_CMAC_Generate_Tag
+<LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LE_TO_NRG_32
 </UL>
 <BR>[Called By]<UL><LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Cmd
 </UL>
@@ -4666,14 +4667,14 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[13b]"></a>STORE_LE_32</STRONG> (Thumb, 16 bytes, Stack size unknown bytes, utils.o(i.STORE_LE_32))
-<BR><BR>[Called By]<UL><LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
+<BR><BR>[Called By]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_SDBRecord
+<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Find_Client_Data
+<LI><a href="#[2fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_Generate_DHKeyCheck
+<LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
 <LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
 <LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_SR_Compute_c1_Confirm_Value
 <LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_LP_MI_Compute_c1_Confirm_Value
 <LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Client_Data
-<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_SDBRecord
-<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Find_Client_Data
-<LI><a href="#[2fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_Generate_DHKeyCheck
 </UL>
 
 <P><STRONG><a name="[19]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, bluenrg1_it.o(i.SVC_Handler))
@@ -4835,7 +4836,7 @@ Global Symbols
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gatt_Server_L2C_Handler
 </UL>
 
-<P><STRONG><a name="[bc]"></a>Start_Adv</STRONG> (Thumb, 106 bytes, Stack size 48 bytes, chat.o(i.Start_Adv))
+<P><STRONG><a name="[bc]"></a>Start_Adv</STRONG> (Thumb, 102 bytes, Stack size 48 bytes, chat.o(i.Start_Adv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
 <LI>Call Chain = Start_Adv &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -4924,11 +4925,11 @@ Global Symbols
 <LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_sysTime32_convMachineTime
 </UL>
 <BR>[Called By]<UL><LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_Start_General_Discovery_Procedure
-<LI><a href="#[2ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Reset_Timer
-<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_RepeatedAttacks_Protection
 <LI><a href="#[1c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2C_Signal_Channel_Handler
 <LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Start_Gatt_Timer
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_Privacy1v2
+<LI><a href="#[2ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Reset_Timer
+<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_RepeatedAttacks_Protection
 </UL>
 
 <P><STRONG><a name="[26d]"></a>Timer_StartOneShot_sysTime32</STRONG> (Thumb, 106 bytes, Stack size unknown bytes, host_timer.o(i.Timer_StartOneShot_sysTime32))
@@ -4948,9 +4949,6 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_Process_Q
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_Terminate_Gap_Procedure
-<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_Process_Abort
-<LI><a href="#[2ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Reset_Timer
-<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_RepeatedAttacks_Protection
 <LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_L2CAP_Handler_ISR
 <LI><a href="#[1c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2C_Signal_Channel_Handler
 <LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2CAP_Reset_To_Closed_State
@@ -4959,6 +4957,9 @@ Global Symbols
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_Privacy1v2
 <LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_gap_set_discoverable_connectable
 <LI><a href="#[2e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Pairing_Completed
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_Process_Abort
+<LI><a href="#[2ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Reset_Timer
+<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_RepeatedAttacks_Protection
 </UL>
 
 <P><STRONG><a name="[1b1]"></a>Timer_sysTime32_convMachineTime</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, host_timer.o(i.Timer_sysTime32_convMachineTime))
@@ -5046,16 +5047,16 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemSet
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemCmp
-<LI><a href="#[26f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Get_GattDb_End_Addr
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STORE_LE_32
 <LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Get_GattDb_Start_Addr
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_RecordValidity
 <LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InvaliDate_Record
 <LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write_Flagged
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uread4
+<LI><a href="#[26f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Get_GattDb_End_Addr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write_Client_Data
+<BR>[Called By]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write_Client_Data
+<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
 </UL>
 
 <P><STRONG><a name="[20b]"></a>Write_Cmd</STRONG> (Thumb, 306 bytes, Stack size unknown bytes, att.o(i.Write_Cmd))
@@ -5118,12 +5119,12 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gatt_Add_Charac_Desc
 <LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AT_Set_io_capability
-<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
 <LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerCallback
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_Peer_Client_Data
 <LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_gap_set_discoverable_connectable
 <LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2C_Rcv_Event_Handler_ISR
 <LI><a href="#[2f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Receive_Keys
+<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
 </UL>
 
 <P><STRONG><a name="[221]"></a>__low_level_init</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, system_bluenrg1.o(i.__low_level_init))
@@ -5263,12 +5264,6 @@ Global Symbols
 <LI><a href="#[1f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_read_local_p256_public_key_complete_event_push
 <LI><a href="#[1f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_generate_dhkey_complete_event_push
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gatt_Process_Q
-<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_Process_Abort
-<LI><a href="#[2f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Set_Key_Association_Method
-<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
-<LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_Exception_Cases
-<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
-<LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_numeric_comparison_value_event_push
 <LI><a href="#[2c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_enhanced_connection_complete_event_push
 <LI><a href="#[2c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_direct_advertising_report_event_push
 <LI><a href="#[2c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_connection_update_complete_event_push
@@ -5302,6 +5297,12 @@ Global Symbols
 <LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gatt_attribute_modified_event_push
 <LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_pairing_complete_event_push
 <LI><a href="#[287]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_authorization_req_event_push
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_Process_Abort
+<LI><a href="#[2f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Set_Key_Association_Method
+<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
+<LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_Exception_Cases
+<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
+<LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_numeric_comparison_value_event_push
 </UL>
 
 <P><STRONG><a name="[cd]"></a>aci_event_fifo_push_header</STRONG> (Thumb, 196 bytes, Stack size unknown bytes, aci_events.o(i.aci_event_fifo_push_header))
@@ -5313,12 +5314,6 @@ Global Symbols
 <LI><a href="#[1f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_read_local_p256_public_key_complete_event_push
 <LI><a href="#[1f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_generate_dhkey_complete_event_push
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gatt_Process_Q
-<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_Process_Abort
-<LI><a href="#[2f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Set_Key_Association_Method
-<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
-<LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_Exception_Cases
-<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
-<LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_numeric_comparison_value_event_push
 <LI><a href="#[2c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_enhanced_connection_complete_event_push
 <LI><a href="#[2c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_direct_advertising_report_event_push
 <LI><a href="#[2c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_connection_update_complete_event_push
@@ -5352,6 +5347,12 @@ Global Symbols
 <LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gatt_attribute_modified_event_push
 <LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_pairing_complete_event_push
 <LI><a href="#[287]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_authorization_req_event_push
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_Process_Abort
+<LI><a href="#[2f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Set_Key_Association_Method
+<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
+<LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_Exception_Cases
+<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
+<LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_numeric_comparison_value_event_push
 </UL>
 
 <P><STRONG><a name="[285]"></a>aci_gap_addr_not_resolved_event</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, aci_events.o(i.aci_gap_addr_not_resolved_event))
@@ -5466,12 +5467,20 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> aci_events.o(.constdata)
 </UL>
-<P><STRONG><a name="[291]"></a>aci_gap_proc_complete_event</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, aci_events.o(i.aci_gap_proc_complete_event))
-<BR><BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_proc_complete_event_cb
+<P><STRONG><a name="[291]"></a>aci_gap_proc_complete_event</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, chat.o(i.aci_gap_proc_complete_event))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
+<LI>Call Chain = aci_gap_proc_complete_event &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_proc_complete_event_cb
 </UL>
 
 <P><STRONG><a name="[49]"></a>aci_gap_proc_complete_event_cb</STRONG> (Thumb, 32 bytes, Stack size unknown bytes, aci_events.o(i.aci_gap_proc_complete_event_cb))
-<BR><BR>[Calls]<UL><LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_proc_complete_event
+<BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
+<LI>Call Chain = aci_gap_proc_complete_event_cb &rArr; aci_gap_proc_complete_event &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_proc_complete_event
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> aci_events.o(.constdata)
 </UL>
@@ -6142,21 +6151,29 @@ Global Symbols
 <P><STRONG><a name="[3b]"></a>hci_data_buffer_overflow_event_cb</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, aci_events.o(i.hci_data_buffer_overflow_event_cb))
 <BR>[Address Reference Count : 1]<UL><LI> aci_events.o(.constdata)
 </UL>
-<P><STRONG><a name="[2ba]"></a>hci_disconnection_complete_event</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, chat.o(i.hci_disconnection_complete_event))
-<BR><BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_disconnection_complete_event_cb
+<P><STRONG><a name="[2ba]"></a>hci_disconnection_complete_event</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, chat.o(i.hci_disconnection_complete_event))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
+<LI>Call Chain = hci_disconnection_complete_event &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_disconnection_complete_event_cb
 </UL>
 
 <P><STRONG><a name="[31]"></a>hci_disconnection_complete_event_cb</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, aci_events.o(i.hci_disconnection_complete_event_cb))
-<BR><BR>[Calls]<UL><LI><a href="#[2ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_disconnection_complete_event
+<BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
+<LI>Call Chain = hci_disconnection_complete_event_cb &rArr; hci_disconnection_complete_event &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[2ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_disconnection_complete_event
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> aci_events.o(.constdata)
 </UL>
 <P><STRONG><a name="[6b]"></a>hci_disconnection_complete_event_int_cb</STRONG> (Thumb, 38 bytes, Stack size unknown bytes, aci_events.o(i.hci_disconnection_complete_event_int_cb))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
-<LI>Call Chain = hci_disconnection_complete_event_int_cb &rArr; GAP_LL_Event_Handler_ISR &rArr; GAP_Connection_Complete_Handler &rArr; aci_gap_proc_complete_event_push &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
+<LI>Call Chain = hci_disconnection_complete_event_int_cb &rArr; L2C_Rcv_Event_Handler_ISR &rArr; SM_L2CAP_Handler_ISR &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_LL_Event_Handler_ISR
-<LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2C_Rcv_Event_Handler_ISR
+<BR>[Calls]<UL><LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2C_Rcv_Event_Handler_ISR
+<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_LL_Event_Handler_ISR
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> aci_events.o(.constdata)
 </UL>
@@ -6227,7 +6244,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> aci_events.o(.constdata)
 </UL>
-<P><STRONG><a name="[2c1]"></a>hci_le_connection_complete_event</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, chat.o(i.hci_le_connection_complete_event))
+<P><STRONG><a name="[2c1]"></a>hci_le_connection_complete_event</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, chat.o(i.hci_le_connection_complete_event))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
 <LI>Call Chain = hci_le_connection_complete_event &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -6246,10 +6263,10 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[6e]"></a>hci_le_connection_complete_event_int_cb</STRONG> (Thumb, 38 bytes, Stack size unknown bytes, aci_events.o(i.hci_le_connection_complete_event_int_cb))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
-<LI>Call Chain = hci_le_connection_complete_event_int_cb &rArr; GAP_LL_Event_Handler_ISR &rArr; GAP_Connection_Complete_Handler &rArr; aci_gap_proc_complete_event_push &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
+<LI>Call Chain = hci_le_connection_complete_event_int_cb &rArr; L2C_Rcv_Event_Handler_ISR &rArr; SM_L2CAP_Handler_ISR &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_LL_Event_Handler_ISR
-<LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2C_Rcv_Event_Handler_ISR
+<BR>[Calls]<UL><LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2C_Rcv_Event_Handler_ISR
+<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_LL_Event_Handler_ISR
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> aci_events.o(.constdata)
 </UL>
@@ -6290,10 +6307,10 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[73]"></a>hci_le_enhanced_connection_complete_event_int_cb</STRONG> (Thumb, 38 bytes, Stack size unknown bytes, aci_events.o(i.hci_le_enhanced_connection_complete_event_int_cb))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
-<LI>Call Chain = hci_le_enhanced_connection_complete_event_int_cb &rArr; GAP_LL_Event_Handler_ISR &rArr; GAP_Connection_Complete_Handler &rArr; aci_gap_proc_complete_event_push &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
+<LI>Call Chain = hci_le_enhanced_connection_complete_event_int_cb &rArr; L2C_Rcv_Event_Handler_ISR &rArr; SM_L2CAP_Handler_ISR &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_LL_Event_Handler_ISR
-<LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2C_Rcv_Event_Handler_ISR
+<BR>[Calls]<UL><LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2C_Rcv_Event_Handler_ISR
+<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAP_LL_Event_Handler_ISR
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> aci_events.o(.constdata)
 </UL>
@@ -6449,10 +6466,10 @@ Global Symbols
 
 <P><STRONG><a name="[1b5]"></a>is_Buffer_All_Set_To</STRONG> (Thumb, 30 bytes, Stack size unknown bytes, utils.o(i.is_Buffer_All_Set_To))
 <BR><BR>[Called By]<UL><LI><a href="#[2c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_generate_dhkey
-<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
-<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
 <LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IDD_Initialize_Device_IDs
 <LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Verify_Peer_PK_and_Generate_DHKey
+<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
+<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
 </UL>
 
 <P><STRONG><a name="[1d4]"></a>is_slave</STRONG> (Thumb, 46 bytes, Stack size unknown bytes, multi_master_time.o(i.is_slave))
@@ -6649,11 +6666,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemSet
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemCpy
-<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRequest_Receive
-<LI><a href="#[2e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Pairing_Completed
+<BR>[Called By]<UL><LI><a href="#[2e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Pairing_Completed
+<LI><a href="#[2ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRequest_Receive
 </UL>
 
 <P><STRONG><a name="[2db]"></a>smp_Determine_Key_Association_Method</STRONG> (Thumb, 172 bytes, Stack size unknown bytes, securitymgr.o(i.smp_Determine_Key_Association_Method))
@@ -6663,11 +6680,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[24e]"></a>smp_Find_Remote_Device_Index</STRONG> (Thumb, 58 bytes, Stack size unknown bytes, sm_common.o(i.smp_Find_Remote_Device_Index))
-<BR><BR>[Called By]<UL><LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_Process_Abort
-<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
-<LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_L2CAP_Handler_ISR
+<BR><BR>[Called By]<UL><LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_L2CAP_Handler_ISR
 <LI><a href="#[2e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Pairing_Completed
 <LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Send_Data
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_Process_Abort
+<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
 </UL>
 
 <P><STRONG><a name="[2e8]"></a>smp_Get_Local_Identity_Address</STRONG> (Thumb, 58 bytes, Stack size unknown bytes, sm_common.o(i.smp_Get_Local_Identity_Address))
@@ -6681,8 +6698,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2e5]"></a>smp_Keys_Distribution_Start</STRONG> (Thumb, 54 bytes, Stack size unknown bytes, sm_common.o(i.smp_Keys_Distribution_Start))
-<BR><BR>[Called By]<UL><LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
-<LI><a href="#[2f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Receive_Keys
+<BR><BR>[Called By]<UL><LI><a href="#[2f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Receive_Keys
+<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
 </UL>
 
 <P><STRONG><a name="[23c]"></a>smp_OOB_Check_Is_Remote_Data_Present</STRONG> (Thumb, 54 bytes, Stack size unknown bytes, sm_common.o(i.smp_OOB_Check_Is_Remote_Data_Present))
@@ -6692,10 +6709,10 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemCmp
 </UL>
 <BR>[Called By]<UL><LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMP_MI_PairingRequest_Send
-<LI><a href="#[2ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRequest_Receive
 <LI><a href="#[2fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_Generate_DHKeyCheck
 <LI><a href="#[2eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_OOB_Get_Remote_Data_Reference
 <LI><a href="#[2e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Pairing_OOB_Confirm_Receive_and_Verify
+<LI><a href="#[2ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRequest_Receive
 </UL>
 
 <P><STRONG><a name="[2ea]"></a>smp_OOB_Clear_Remote_Data_Entry_by_Index</STRONG> (Thumb, 26 bytes, Stack size unknown bytes, sm_common.o(i.smp_OOB_Clear_Remote_Data_Entry_by_Index))
@@ -6729,9 +6746,9 @@ Global Symbols
 <LI><a href="#[24e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Find_Remote_Device_Index
 <LI><a href="#[2da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Add_To_Database
 </UL>
-<BR>[Called By]<UL><LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
-<LI><a href="#[24d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Complete
+<BR>[Called By]<UL><LI><a href="#[24d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Complete
 <LI><a href="#[2f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Receive_Keys
+<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
 </UL>
 
 <P><STRONG><a name="[2f1]"></a>smp_Receive_Keys</STRONG> (Thumb, 210 bytes, Stack size unknown bytes, sm_common.o(i.smp_Receive_Keys))
@@ -6752,38 +6769,38 @@ Global Symbols
 <LI>Call Chain = smp_Send_Data &rArr; smp_Reset_Timer &rArr; Timer_StartOneShot &rArr; Timer_StartOneShot_sysTime32 &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Set_ConnHandle
-<LI><a href="#[2ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Reset_Timer
 <LI><a href="#[190]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2C_Send_Data
 <LI><a href="#[24e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Find_Remote_Device_Index
+<LI><a href="#[2ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Reset_Timer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMP_MI_PairingRequest_Send
+<LI><a href="#[2fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_DHKeyCheck_Send
+<LI><a href="#[2df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_PairingPublicKey_Send
 <LI><a href="#[2ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRequest_Receive
 <LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
 <LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingConfirm_Receive
 <LI><a href="#[2e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Send
 <LI><a href="#[2dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Receive
 <LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
-<LI><a href="#[2fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_DHKeyCheck_Send
-<LI><a href="#[2df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_PairingPublicKey_Send
 </UL>
 
 <P><STRONG><a name="[2e4]"></a>smp____PairingFailed_Send</STRONG> (Thumb, 48 bytes, Stack size unknown bytes, securitymgr.o(i.smp____PairingFailed_Send))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
 <LI>Call Chain = smp____PairingFailed_Send &rArr; smp____Pairing_Process_Abort &rArr; sm_RepeatedAttacks_Protection &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_Process_Abort
-<LI><a href="#[2fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_2Octets_Packet_Send
+<BR>[Calls]<UL><LI><a href="#[2fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_2Octets_Packet_Send
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_Process_Abort
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRequest_Receive
+<BR>[Called By]<UL><LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_DHKeyCheck_Receive
+<LI><a href="#[2e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Pairing_OOB_Confirm_Receive_and_Verify
+<LI><a href="#[2ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_PairingPublicKey_Receive
+<LI><a href="#[2ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRequest_Receive
 <LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
 <LI><a href="#[2ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_SecurityRequest_Receive
 <LI><a href="#[2f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingResponse_Receive
 <LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
 <LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
 <LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
-<LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_DHKeyCheck_Receive
-<LI><a href="#[2e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Pairing_OOB_Confirm_Receive_and_Verify
-<LI><a href="#[2ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_PairingPublicKey_Receive
 </UL>
 
 <P><STRONG><a name="[2fa]"></a>smp____Pairing_2Octets_Packet_Send</STRONG> (Thumb, 72 bytes, Stack size unknown bytes, sm_common.o(i.smp____Pairing_2Octets_Packet_Send))
@@ -6933,9 +6950,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2de]"></a>smp____SC_submit_ECC_PK_generation_request</STRONG> (Thumb, 22 bytes, Stack size unknown bytes, smp_scv42_isap.o(i.smp____SC_submit_ECC_PK_generation_request))
-<BR><BR>[Called By]<UL><LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_Process_Abort
+<BR><BR>[Called By]<UL><LI><a href="#[2e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Pairing_Completed
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____Pairing_Process_Abort
 <LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
-<LI><a href="#[2e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Pairing_Completed
 </UL>
 
 <P><STRONG><a name="[1db]"></a>start_timebase</STRONG> (Thumb, 146 bytes, Stack size unknown bytes, multi_master_time.o(i.start_timebase))
@@ -6963,8 +6980,8 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RAL_Isr
 <LI><a href="#[1d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;advance_wakeup_timer
-<LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_SDBRecord
 <LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_sysTime32_convMachineTime
+<LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_SDBRecord
 </UL>
 
 <P><STRONG><a name="[26b]"></a>system_time_trans_ext</STRONG> (Thumb, 38 bytes, Stack size unknown bytes, rom_ll_timehandling.o(i.system_time_trans_ext))
@@ -7349,9 +7366,9 @@ Local Symbols
 <LI>Call Chain = Write_SDBRecord &rArr; Flash_Write_Flagged &rArr; FLASH_ProgramWord
 </UL>
 <BR>[Calls]<UL><LI><a href="#[21b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_time_trans
-<LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LE_TO_NRG_32
 <LI><a href="#[271]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_With_NOP_Cycles
 <LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write_Flagged
+<LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LE_TO_NRG_32
 </UL>
 <BR>[Called By]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Delete
 <LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Add_Record
@@ -7417,10 +7434,6 @@ Local Symbols
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_event_fifo_push_header
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_event_fifo_push
 <LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Find_Record
-<LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingConfirm_Receive
-<LI><a href="#[2e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Send
-<LI><a href="#[2dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Receive
-<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
 <LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Get_Data_From_Record
 <LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDB_Get_Number_Of_Records
 <LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Generate_Random_Bytes_To
@@ -7432,6 +7445,10 @@ Local Symbols
 <LI><a href="#[2e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Pairing_Completed
 <LI><a href="#[2e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Start
 <LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____PairingFailed_Send
+<LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingConfirm_Receive
+<LI><a href="#[2e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Send
+<LI><a href="#[2dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Receive
+<LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Keys_Distribution_Send
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMP_Process_Q
 </UL>
@@ -7483,11 +7500,16 @@ Local Symbols
 
 <P><STRONG><a name="[242]"></a>smp_Process_Rx_Packet_wrt_Current_State</STRONG> (Thumb, 372 bytes, Stack size unknown bytes, securitymgr.o(i.smp_Process_Rx_Packet_wrt_Current_State))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
-<LI>Call Chain = smp_Process_Rx_Packet_wrt_Current_State &rArr; smp____SR_PairingRequest_Receive &rArr; smp_Add_To_Database &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
+<LI>Call Chain = smp_Process_Rx_Packet_wrt_Current_State &rArr; smp____SC_Phase_2AS2_DHKeyCheck_Receive &rArr; PM_Copy_Pckt_Data &rArr; Acl_Copy_Data &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_Buffer_All_Set_To
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_event_fifo_push_header
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_event_fifo_push
+<LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_DHKeyCheck_Receive
+<LI><a href="#[2ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_PairingPublicKey_Receive
+<LI><a href="#[2f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Receive_Keys
+<LI><a href="#[24e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Find_Remote_Device_Index
+<LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____PairingFailed_Send
 <LI><a href="#[2ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRequest_Receive
 <LI><a href="#[2f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingRandom_Receive
 <LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SR_PairingConfirm_Receive
@@ -7496,11 +7518,6 @@ Local Symbols
 <LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingRandom_Receive
 <LI><a href="#[2dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____MI_PairingConfirm_Receive
 <LI><a href="#[2ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Reset_Timer
-<LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Phase_2AS2_DHKeyCheck_Receive
-<LI><a href="#[2ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_PairingPublicKey_Receive
-<LI><a href="#[2f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Receive_Keys
-<LI><a href="#[24e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Find_Remote_Device_Index
-<LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____PairingFailed_Send
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMP_Process_Q
 </UL>
@@ -7512,8 +7529,8 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_StopOneShot
 <LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_StartOneShot
 </UL>
-<BR>[Called By]<UL><LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
-<LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Send_Data
+<BR>[Called By]<UL><LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Send_Data
+<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
 </UL>
 
 <P><STRONG><a name="[2f5]"></a>smp_SR_Compute_c1_Confirm_Value</STRONG> (Thumb, 362 bytes, Stack size unknown bytes, securitymgr.o(i.smp_SR_Compute_c1_Confirm_Value))
@@ -7559,10 +7576,10 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Write_Pckt_Data
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Get_Pckt
-<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_LP_MI_Compute_c1_Confirm_Value
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Set_Att_Pdu_Length
 <LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_SC_Gen_f4_Confirm
 <LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Send_Data
+<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_LP_MI_Compute_c1_Confirm_Value
 </UL>
 <BR>[Called By]<UL><LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
 </UL>
@@ -7576,14 +7593,14 @@ Local Symbols
 <LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Copy_Pckt_Data
 <LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Start_Encryption
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemCmp
-<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_LP_MI_Compute_c1_Confirm_Value
-<LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_numeric_comparison_value_event_push
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STORE_LE_32
 <LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
 <LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_SC_Gen_g2_NumComp_Val
 <LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_SC_Gen_f4_Confirm
 <LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_LP_s1_Generate_STK
 <LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____PairingFailed_Send
+<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_LP_MI_Compute_c1_Confirm_Value
+<LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_numeric_comparison_value_event_push
 </UL>
 <BR>[Called By]<UL><LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
 </UL>
@@ -7592,11 +7609,11 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
 <LI>Call Chain = smp____MI_PairingResponse_Receive &rArr; smp____PairingFailed_Send &rArr; smp____Pairing_Process_Abort &rArr; sm_RepeatedAttacks_Protection &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Set_Key_Association_Method
+<BR>[Calls]<UL><LI><a href="#[2f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Continue_If_Exclusive_SC_Pairing
+<LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____PairingFailed_Send
+<LI><a href="#[2f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Set_Key_Association_Method
 <LI><a href="#[2f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Get_Pairing_Parameters_From_Peer_Packet
 <LI><a href="#[2f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Check_Incoming_Pairing_Parameters
-<LI><a href="#[2f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Continue_If_Exclusive_SC_Pairing
-<LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____PairingFailed_Send
 </UL>
 <BR>[Called By]<UL><LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
 </UL>
@@ -7617,10 +7634,10 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_event_fifo_push_header
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_event_fifo_push
-<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_RepeatedAttacks_Protection
 <LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_StopOneShot
 <LI><a href="#[2de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_submit_ECC_PK_generation_request
 <LI><a href="#[24e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Find_Remote_Device_Index
+<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_RepeatedAttacks_Protection
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMP_Process_Q
 <LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____PairingFailed_Send
@@ -7633,10 +7650,10 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Write_Pckt_Data
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Get_Pckt
 <LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Copy_Pckt_Data
-<LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_SR_Compute_c1_Confirm_Value
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Set_Att_Pdu_Length
 <LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_SC_Gen_f4_Confirm
 <LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Send_Data
+<LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_SR_Compute_c1_Confirm_Value
 </UL>
 <BR>[Called By]<UL><LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
 <LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Execute_Actions_wrt_Current_State
@@ -7652,8 +7669,6 @@ Local Symbols
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Get_Pckt
 <LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Copy_Pckt_Data
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemCmp
-<LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_SR_Compute_c1_Confirm_Value
-<LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_numeric_comparison_value_event_push
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STORE_LE_32
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Set_Att_Pdu_Length
 <LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
@@ -7662,6 +7677,8 @@ Local Symbols
 <LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMA_LP_s1_Generate_STK
 <LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____PairingFailed_Send
 <LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Send_Data
+<LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_SR_Compute_c1_Confirm_Value
+<LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aci_gap_numeric_comparison_value_event_push
 </UL>
 <BR>[Called By]<UL><LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
 </UL>
@@ -7671,16 +7688,16 @@ Local Symbols
 <LI>Call Chain = smp____SR_PairingRequest_Receive &rArr; smp_Add_To_Database &rArr; Osal_MemCpy &rArr; memcpy &rArr; __aeabi_memcpy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PM_Get_Pckt
-<LI><a href="#[2f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Set_Key_Association_Method
-<LI><a href="#[2f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Get_Pairing_Parameters_From_Peer_Packet
-<LI><a href="#[2f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Check_Incoming_Pairing_Parameters
-<LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Build_Pairing_ReqResp_Packet
-<LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Build_AuthReq_Field
 <LI><a href="#[2f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____SC_Continue_If_Exclusive_SC_Pairing
 <LI><a href="#[23c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_OOB_Check_Is_Remote_Data_Present
 <LI><a href="#[2da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Add_To_Database
 <LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp____PairingFailed_Send
 <LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Send_Data
+<LI><a href="#[2f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Set_Key_Association_Method
+<LI><a href="#[2f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Get_Pairing_Parameters_From_Peer_Packet
+<LI><a href="#[2f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Check_Incoming_Pairing_Parameters
+<LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Build_Pairing_ReqResp_Packet
+<LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Build_AuthReq_Field
 </UL>
 <BR>[Called By]<UL><LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smp_Process_Rx_Packet_wrt_Current_State
 </UL>
@@ -7816,8 +7833,8 @@ Local Symbols
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Osal_MemCpy
 <LI><a href="#[1dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Encrypt_Plain_Data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Resolve_Private_Address
-<LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Generate_Resolvable_Private_Address
+<BR>[Called By]<UL><LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Generate_Resolvable_Private_Address
+<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SM_Resolve_Private_Address
 </UL>
 
 <P><STRONG><a name="[24a]"></a>sm_Generate_SubKeys</STRONG> (Thumb, 128 bytes, Stack size unknown bytes, ssm_algo.o(i.sm_Generate_SubKeys))

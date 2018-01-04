@@ -45,3 +45,4 @@
 .\server\objects\ble_chat_main.o: ..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_Led.h
 .\server\objects\ble_chat_main.o: ..\..\..\..\..\Library\SDK_Eval_BlueNRG1\inc\SDK_EVAL_SPI.h
 .\server\objects\ble_chat_main.o: ..\..\..\..\..\Library\Bluetooth_LE\OTA\inc\OTA_btl.h
+.\server\objects\ble_chat_main.o: ..\..\..\..\..\Library\hal\inc\sleep.h

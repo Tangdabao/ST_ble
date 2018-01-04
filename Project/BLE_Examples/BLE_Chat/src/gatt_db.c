@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <string.h>
 #include "ble_const.h" 

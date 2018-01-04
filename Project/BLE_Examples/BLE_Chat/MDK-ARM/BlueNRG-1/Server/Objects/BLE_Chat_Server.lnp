@@ -28,6 +28,7 @@
 ".\server\objects\context_switch.o"
 ".\server\objects\clock.o"
 ".\server\objects\gp_timer.o"
+".\server\objects\sleep.o"
 "..\..\..\..\..\Library\Bluetooth_LE\library\libbluenrg1_stack.a"
 --diag_suppress 6314 --strict --scatter ".\BlueNRG1.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols

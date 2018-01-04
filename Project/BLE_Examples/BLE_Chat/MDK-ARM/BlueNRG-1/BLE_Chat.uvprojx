@@ -544,6 +544,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\Library\hal\src\gp_timer.c</FilePath>
             </File>
+            <File>
+              <FileName>sleep.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\Library\hal\src\sleep.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1155,6 +1160,11 @@
               <FileName>gp_timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\Library\hal\src\gp_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>sleep.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\Library\hal\src\sleep.c</FilePath>
             </File>
           </Files>
         </Group>

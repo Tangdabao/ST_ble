@@ -65,8 +65,10 @@ uint8_t local_name[] = {AD_TYPE_COMPLETE_LOCAL_NAME};
 static char cmd[CMD_BUFF_SIZE];
 
 /* Private function prototypes -----------------------------------------------*/
-/* Private functions ---------------------------------------------------------*/
+
 void Reset_DiscoveryContext(void);
+
+/* Private functions ---------------------------------------------------------*/
 /*******************************************************************************
 * Function Name  : CHAT_DeviceInit.
 * Description    : Init the Chat device.
@@ -92,8 +94,10 @@ uint8_t CHAT_DeviceInit(uint8_t workmode)
     }
 
     /* Set the TX power to -2 dBm */
-    aci_hal_set_tx_power_level(1, gConfigINFO.uSendPoewr);
-
+    //aci_hal_set_tx_power_level(1, gConfigINFO.uSendPoewr);
+    aci_hal_set_tx_power_level(1, 4);
+		
+		
     /* GATT Init */
     ret = aci_gatt_init();
     if (ret != BLE_STATUS_SUCCESS)
@@ -142,27 +146,28 @@ uint8_t CHAT_DeviceInit(uint8_t workmode)
     //}
 
 
-#if  SERVER
-    ret = Add_Chat_Service();
-    if (ret != BLE_STATUS_SUCCESS)
+    if(workmode == 0x01)
     {
-        printf("Error in Add_Chat_Service 0x%02x\r\n", ret);
-        return ret;
-    }
-    else
-    {
-        printf("Add_Chat_Service() --> SUCCESS\r\n");
-    }
+        ret = Add_Chat_Service();
+        if (ret != BLE_STATUS_SUCCESS)
+        {
+            printf("Error in Add_Chat_Service 0x%02x\r\n", ret);
+            return ret;
+        }
+        else
+        {
+            printf("Add_Chat_Service() --> SUCCESS\r\n");
+        }
 
 #if ST_OTA_FIRMWARE_UPGRADE_SUPPORT
-    ret = OTA_Add_Btl_Service();
-    if(ret == BLE_STATUS_SUCCESS)
-        printf("OTA service added successfully.\n");
-    else
-        printf("Error while adding OTA service.\n");
+        ret = OTA_Add_Btl_Service();
+        if(ret == BLE_STATUS_SUCCESS)
+            printf("OTA service added successfully.\n");
+        else
+            printf("Error while adding OTA service.\n");
 #endif /* ST_OTA_FIRMWARE_UPGRADE_SUPPORT */
 
-#endif
+    }
 
     Reset_DiscoveryContext();
 
@@ -191,25 +196,20 @@ void Process_InputData(uint8_t *data_buffer, uint16_t Nb_bytes)
         }
         cmd[end] = data_buffer[i];
         end++;
-        //判断结束符//
         if(cmd[end - 1] == '\n')
         {
             if(end != 1)
             {
                 int j = 0;
-                //AT模式
                 if((cmd[0] == 'A') & (cmd[1] == 'T') & (cmd[2] == '+'))
                 {
-                    //判断为何指令//
                     while(!(cmd[n] == '='))
                     {
                         cmd[n - 3] = cmd[n];
                         n++;
                     }
-                    //添加指令
                     memcpy(gCmdGotFromUart_st.aCmdBuff, &cmd[n + 1], end - 1);
                     gCmdGotFromUart_st.aCmdLenth = end - n;
-                    //清除除去命令的其他部分
                     Osal_MemSet(&cmd[n - 3], 0, 10);
                     while(j < end)
                     {
@@ -250,33 +250,31 @@ void Process_InputData(uint8_t *data_buffer, uint16_t Nb_bytes)
                     {
                         if(APP_FLAG(CONNECTED))
                         {
-												 while(j < end)
+                            while(j < end)
                             {
                                 uint32_t len = MIN(20, end - j);
-															do
-															{
-                                 BleState  =  aci_gatt_write_without_resp(connection_handle,Write_HANDLE, len,(uint8_t *)cmd + j);
-															}
-															while(BleState == BLE_STATUS_INSUFFICIENT_RESOURCES);
-															j += len;
+                                do
+                                {
+                                    BleState  =  aci_gatt_write_without_resp(connection_handle, Write_HANDLE, len, (uint8_t *)cmd + j);
+                                }
+                                while(BleState == BLE_STATUS_INSUFFICIENT_RESOURCES);
+                                j += len;
                             }
-                            
+
                         }
                         else
                         {
-
                             printf("NO CONNECTED\r\n");
-
                         }
-
                     }
-
                 }
             }
             end = 0;
         }
     }
 }
+
+
 
 void Reset_DiscoveryContext(void)
 {
@@ -292,7 +290,8 @@ void Reset_DiscoveryContext(void)
 uint8_t BleStartScan(void)
 {
     tBleStatus ret;
-    ret = aci_gap_start_general_discovery_proc(0x10, 0x2000, PUBLIC_ADDR, 0x00);
+	
+    ret = aci_gap_start_general_discovery_proc(0x100, 0x2000, PUBLIC_ADDR, 0x00);
     if (ret != BLE_STATUS_SUCCESS)
     {
         printf("Error in aci_gap_start_general_discovery_proc(): 0x%02x\r\n", ret);
@@ -327,7 +326,7 @@ uint8_t Scan_DeviceName(uint8_t data_length, uint8_t *data_value)
     uint8_t i = 0;
     static uint8_t Name_Len_Last = 0;
     //bug
-    while ((index < data_length) & (Name_Len_Last != data_length))
+    while ((index < data_length)&(Name_Len_Last != data_length))
     {
         if (data_value[index + 1] == AD_TYPE_COMPLETE_LOCAL_NAME)
         {
@@ -391,7 +390,6 @@ void Make_Connection(void)
     {
         printf("OK\r\n");
     }
-
 }
 
 void Start_Adv(void)
@@ -404,10 +402,12 @@ void Start_Adv(void)
     }
     local_name[i] = '\0';
     hci_le_set_scan_response_data(0, NULL);
+		
+		
     ret = aci_gap_set_discoverable(ADV_IND, gConfigINFO.Adv_Interval_Min, gConfigINFO.Adv_Interval_Max, PUBLIC_ADDR, NO_WHITE_LIST_USE,
                                    strlen((char const *)local_name), local_name, 0, NULL, gConfigINFO.Con_Interval_Min, gConfigINFO.Con_Interval_Max);
     if (ret != BLE_STATUS_SUCCESS)
-        printf ("Error in aci_gap_set_discoverable(): 0x%02x\r\n", ret);
+        printf ("Already open，Do not open repeatedly\r\n");
     else
         printf ("aci_gap_set_discoverable() --> SUCCESS\r\n");
 
@@ -624,6 +624,7 @@ void hci_le_connection_complete_event(uint8_t Status,
 
 {
     connection_handle = Connection_Handle;
+   	printf("Connected\r\n");
     printf("connection_handle:%04x\r\n", connection_handle);
     APP_FLAG_SET(CONNECTED);
 
@@ -655,6 +656,8 @@ void hci_disconnection_complete_event(uint8_t Status,
     APP_FLAG_CLEAR(START_READ_RX_CHAR_HANDLE);
     APP_FLAG_CLEAR(END_READ_RX_CHAR_HANDLE);
 
+	  printf("Disconnected\r\n");
+	
 #if ST_OTA_FIRMWARE_UPGRADE_SUPPORT
     OTA_terminate_connection();
 #endif
@@ -700,8 +703,8 @@ void aci_gatt_notification_event(uint16_t Connection_Handle,
     uint16_t attr_handle;
 
     attr_handle = Attribute_Handle;
-   // if(attr_handle == tx_handle + 1)
-	if(attr_handle == NOTIFY_HANDLE + 1)
+    // if(attr_handle == tx_handle + 1)
+    if(attr_handle == NOTIFY_HANDLE + 1)
     {
         for(int i = 0; i < Attribute_Value_Length; i++)
             printf("%c", Attribute_Value[i]);
@@ -744,9 +747,9 @@ void aci_gatt_disc_read_char_by_uuid_resp_event(uint16_t Connection_Handle,
 void aci_gatt_proc_complete_event(uint16_t Connection_Handle,
                                   uint8_t Error_Code)
 {
-	
-	
-	
+
+
+
     if (APP_FLAG(START_READ_TX_CHAR_HANDLE) && !APP_FLAG(END_READ_TX_CHAR_HANDLE))
     {
         printf("aci_GATT_PROCEDURE_COMPLETE_Event for START_READ_TX_CHAR_HANDLE \r\n");
@@ -757,10 +760,10 @@ void aci_gatt_proc_complete_event(uint16_t Connection_Handle,
         printf("aci_GATT_PROCEDURE_COMPLETE_Event for START_READ_TX_CHAR_HANDLE \r\n");
         APP_FLAG_SET(END_READ_RX_CHAR_HANDLE);
     }
-		
-		
-		
-		
+
+
+
+
 }
 /* CLIENT */
 
@@ -844,7 +847,27 @@ void hci_le_advertising_report_event(uint8_t Num_Reports,
 }
 
 
+//完成事件;
+void aci_gap_proc_complete_event(uint8_t Procedure_Code,
+                                 uint8_t Status,
+                                 uint8_t Data_Length,
+                                 uint8_t Data[])
+{
+	/*
+	- 0x01: LIMITED_DISCOVERY_PROC
+  - 0x02: GENERAL_DISCOVERY_PROC
+  - 0x04: NAME_DISCOVERY_PROC
+  - 0x08: AUTO_CONNECTION_ESTABLISHMENT_PROC
+  - 0x10: GENERAL_CONNECTION_ESTABLISHMENT_PROC
+  - 0x20: SELECTIVE_CONNECTION_ESTABLISHMENT_PROC
+  - 0x40: DIRECT_CONNECTION_ESTABLISHMENT_PROC
+  - 0x80: OBSERVATION_PROC
+	  */
+	//扫描完成事件
+   if(Procedure_Code==0x02)
+	      printf("Scan complete\r\n");
 
+ }
 
 
 

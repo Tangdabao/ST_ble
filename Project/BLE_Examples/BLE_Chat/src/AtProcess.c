@@ -370,29 +370,28 @@ int AT_Name_Direct(int argc, char *argv)
     return 0;
 }
 
-
-
 int AT_Notify(int argc, char *argv)
 {
-	 uint8_t ret;
-	  uint8_t client_data[2];
-   if(argv[0]=='N')
-	 {	 
-		 
-	  client_data[0] = 0x01;
-		 client_data[1] = 0x00;
-		 
-	 }else if(argv[0]=='O')
-   {
-	  client_data[0] = 0x00;
-		  client_data[1] = 0x00;
-	 }            
-    ret=aci_gatt_write_char_desc(connection_handle, NOTIFY_DES_HANDLE, 2 ,client_data);
-    if(ret==SUCCESS)
-      printf("Success\r\n");
-		else
-			printf("Fail:0x%04x",ret);
-   return 0;	 
+    uint8_t ret;
+    uint8_t client_data[2];
+    if(argv[0] == 'N')
+    {
+
+        client_data[0] = 0x01;
+        client_data[1] = 0x00;
+
+    }
+    else if(argv[0] == 'O')
+    {
+        client_data[0] = 0x00;
+        client_data[1] = 0x00;
+    }
+    ret = aci_gatt_write_char_desc(connection_handle, NOTIFY_DES_HANDLE, 2 , client_data);
+    if(ret == SUCCESS)
+        printf("Success\r\n");
+    else
+        printf("Fail:0x%04x", ret);
+    return 0;
 }
 
 
@@ -401,9 +400,13 @@ int AT_Disconnect(int argc, char *argv)
     uint8_t ret;
     //printf("connection_handle:%04x\r\n",connection_handle);
     //ret = hci_disconnect(connection_handle, 0x13);
-	  ret = aci_gap_terminate(connection_handle,0x13);
+    ret = aci_gap_terminate(connection_handle, 0x13);
+	
     if(ret == BLE_STATUS_SUCCESS)
-        printf("AT+AT_Disconnect=OK\r\n");
+		  {
+				APP_FLAG_CLEAR(CONNECTED);
+				printf("AT+AT_Disconnect=OK\r\n");
+			}
     else
         printf("AT+AT_Disconnect=NO:0x%04x\r\n", ret);
     return 0;
@@ -433,10 +436,6 @@ int AT_transmit_power_level(int argc, char *argv)
 }
 
 
-
-
-
-
 tCmdLineEntry g_sCmdTable[] =
 {
     { "Help",      At_help,      					 "  : help information" },
@@ -455,8 +454,7 @@ tCmdLineEntry g_sCmdTable[] =
     { "Scan",      AT_Scanning,            "  : Turn on scanning:AT+Scan=?"},
     { "MacDir",    AT_Mac_Direct,          "  : direct connection:AT+MacDir=123456"},
     { "NameDir",   AT_Name_Direct,         "  : direct connection:AT+NameDir=lsd1234"},
-		{ "Notify",    AT_Notify,              "  : direct connection:AT+NameDir=lsd1234"},
-		
+    { "Notify",    AT_Notify,              "  : Open the notification:AT+Notify=N"},
     { 0, 0, 0 }
 };
 
