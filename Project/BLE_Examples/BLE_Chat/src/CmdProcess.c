@@ -19,10 +19,10 @@ tCmdLineEntry *pCmdEntry;
 
 
 /************************************************************
-*¹¦ÄÜÃèÊö     : ·µ»ØÓ¦´ğ»òÕß·ÇÓ¦´ğĞÅºÅ
-*ÊäÈë²ÎÊı     : argc£ºÊı¾İ³¤¶È£¬argv£ºÊı¾İÊ×µØÖ·
-*·µ»Ø²ÎÊı     : 0
-*×÷    Õß     : wdn
+*åŠŸèƒ½æè¿°     : è¿”å›åº”ç­”æˆ–è€…éåº”ç­”ä¿¡å·
+*è¾“å…¥å‚æ•°     : argcï¼šæ•°æ®é•¿åº¦ï¼Œargvï¼šæ•°æ®é¦–åœ°å€
+*è¿”å›å‚æ•°     : 0
+*ä½œ    è€…     : tgh
 *************************************************************/
 void SendAck(uint8_t ack)
 {
@@ -31,10 +31,10 @@ void SendAck(uint8_t ack)
 
 
 /************************************************************
-*¹¦ÄÜÃèÊö     : »ñÈ¡HELPĞÅÏ¢   
-*ÊäÈë²ÎÊı     : argc£ºÊı¾İ³¤¶È£¬argv£ºÊı¾İÊ×µØÖ·
-*·µ»Ø²ÎÊı     : 0
-*×÷    Õß     : Tgh
+*åŠŸèƒ½æè¿°     : è·å–HELPä¿¡æ¯   
+*è¾“å…¥å‚æ•°     : argcï¼šæ•°æ®é•¿åº¦ï¼Œargvï¼šæ•°æ®é¦–åœ°å€
+*è¿”å›å‚æ•°     : 0
+*ä½œ    è€…     : Tgh
 *************************************************************/
 int GetHelp(int argc, uint8_t *argv)
 {
@@ -46,53 +46,53 @@ int GetHelp(int argc, uint8_t *argv)
 
 
 /************************************************************
-*¹¦ÄÜÃèÊö     : µ±Ç°°æ±¾ºÅ
-*ÊäÈë²ÎÊı     : argc£ºÊı¾İ³¤¶È£¬argv£ºÊı¾İÊ×µØÖ·
-*·µ»Ø²ÎÊı     : 0
-*×÷    Õß     : Tgh
+*åŠŸèƒ½æè¿°     : å½“å‰ç‰ˆæœ¬å·
+*è¾“å…¥å‚æ•°     : argcï¼šæ•°æ®é•¿åº¦ï¼Œargvï¼šæ•°æ®é¦–åœ°å€
+*è¿”å›å‚æ•°     : 0
+*ä½œ    è€…     : Tgh
 *************************************************************/
 int GetFirmwareVer(int argc, uint8_t *argv)
 {
 	  //printf();
     if(argv[0] == 0x01 || argv[0] == 0x04)
     {
-        SendAck(ACK);//·µ»Ø³É¹¦
+        SendAck(ACK);//è¿”å›æˆåŠŸ
        // gConfigINFO.BleWorkMode = argv[0];
         //SaveConfig();
         NVIC_SystemReset();
     }
     else
     {
-        SendAck(NACK);;//·µ»ØÊ§°Ü
+        SendAck(NACK);;//è¿”å›å¤±è´¥
     }
     return  0;
 }
 
-/*ÃüÁî±í*/
+/*å‘½ä»¤è¡¨*/
 tCmdLineEntry g_sCmdTable[] =
 {
-    	{ 0x01, GetHelp,            "    : »ñÈ¡HELPĞÅÏ¢   "},
-	    { 0x02, GetFirmwareVer,     "    : ÉèÖÃ¹¤×÷Ä£Ê½  "},
-    //{ 0x01, SetWorkMode,        "    : ÉèÖÃ¹¤×÷Ä£Ê½  "},
-    //{ 0x02, SendDtuData,        "    : ·¢ËÍÍ¸´«Êı¾İ  "},
-    //{ 0x03, SetAdvInterval,     "    : ÉèÖÃ¹ã²¥¼ä¸ô  "},
-    //{ 0x04, SetConInterval,     "    : ÉèÖÃÁ¬½Ó¼ä¸ô  "},
-    //{ 0x05, SetPower,           "    : Á¬½ÓBLEÉè±¸   "},
-    //{ 0x06, SetBleMode,         "    : ÉèÖÃÎªÍ¸´«Ä£Ê½"},
-    //{ 0x07, StartScan,          "    : ¿ªÊ¼É¨ÃèBLE   "},
-    //{ 0x08, ConnectDevice,      "    : Á¬½ÓBLEÉè±¸   "},
-    //{ 0x09, DisConnectDevice,   "    : ¶Ï¿ªBLEÉè±¸   "},
-    //{ 0x0A, StarAdv,            "    : ¿ªÊ¼¹ã²¥      "},
-    //{ 0x0B, SetUUID,            "    : ÉèÖÃUUID      "},
-    //{ 0x0C, SetName,            "    : ÉèÖÃÃû³Æ      "},
-    //{ 0x0D, CheckMac,           "    : ²éÑ¯MACµØÖ·   "},
-    //{ 0x0E, CheckAdvInterval,   "    : ²éÑ¯¹ã²¥¼ä¸ô  "},
-    //{ 0x0F, CheckConInterval,   "    : ²éÑ¯Á¬½Ó¼ä¸ô  "},
-    //{ 0x10, CheckWorkMode,      "    : ²éÑ¯¹¤×÷Ä£Ê½  "},
-    //{ 0x11, DisConnectSlave,    "    : ¶Ï¿ªBLE´Ó»ú   "},
-    //{ 0x12, KeepAlive,          "    : ĞÄÌø°ü        "},
-    //{ 0x13, GetDeviceName,      "    : »ñÈ¡Éè±¸Ãû³Æ  "},
-    //{ 0x14, GetFirmwareVer,     "    : »ñÈ¡°æ±¾ºÅ    "},
+    	{ 0x01, GetHelp,            "    : è·å–HELPä¿¡æ¯   "},
+	    { 0x02, GetFirmwareVer,     "    : è®¾ç½®å·¥ä½œæ¨¡å¼  "},
+    //{ 0x01, SetWorkMode,        "    : è®¾ç½®å·¥ä½œæ¨¡å¼  "},
+    //{ 0x02, SendDtuData,        "    : å‘é€é€ä¼ æ•°æ®  "},
+    //{ 0x03, SetAdvInterval,     "    : è®¾ç½®å¹¿æ’­é—´éš”  "},
+    //{ 0x04, SetConInterval,     "    : è®¾ç½®è¿æ¥é—´éš”  "},
+    //{ 0x05, SetPower,           "    : è¿æ¥BLEè®¾å¤‡   "},
+    //{ 0x06, SetBleMode,         "    : è®¾ç½®ä¸ºé€ä¼ æ¨¡å¼"},
+    //{ 0x07, StartScan,          "    : å¼€å§‹æ‰«æBLE   "},
+    //{ 0x08, ConnectDevice,      "    : è¿æ¥BLEè®¾å¤‡   "},
+    //{ 0x09, DisConnectDevice,   "    : æ–­å¼€BLEè®¾å¤‡   "},
+    //{ 0x0A, StarAdv,            "    : å¼€å§‹å¹¿æ’­      "},
+    //{ 0x0B, SetUUID,            "    : è®¾ç½®UUID      "},
+    //{ 0x0C, SetName,            "    : è®¾ç½®åç§°      "},
+    //{ 0x0D, CheckMac,           "    : æŸ¥è¯¢MACåœ°å€   "},
+    //{ 0x0E, CheckAdvInterval,   "    : æŸ¥è¯¢å¹¿æ’­é—´éš”  "},
+    //{ 0x0F, CheckConInterval,   "    : æŸ¥è¯¢è¿æ¥é—´éš”  "},
+    //{ 0x10, CheckWorkMode,      "    : æŸ¥è¯¢å·¥ä½œæ¨¡å¼  "},
+    //{ 0x11, DisConnectSlave,    "    : æ–­å¼€BLEä»æœº   "},
+    //{ 0x12, KeepAlive,          "    : å¿ƒè·³åŒ…        "},
+    //{ 0x13, GetDeviceName,      "    : è·å–è®¾å¤‡åç§°  "},
+    //{ 0x14, GetFirmwareVer,     "    : è·å–ç‰ˆæœ¬å·    "},
       { 0, 0, 0 }
 };
 
