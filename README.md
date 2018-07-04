@@ -1,4 +1,4 @@
-﻿﻿﻿﻿#利尔达ST_AT说明文档
+#利尔达ST_AT说明文档
 
 利尔达ST_AT说明文档，由利尔达员工编写，但是未发布版本，仅供参考，与利尔达无任何关系，第一次使用此编辑器书写，如有不妥请包含。
 ##ST_AT简介
@@ -8,6 +8,7 @@ ST_AT说明文档由三部分组成
 - AT指令文档
 
 说明**仅作为测试使用**
+
 ##硬件设计：
 - ST Bluenrg-1+lierda开发底板（uart）
 	-  Bluetooth low energy single mode system-on-chip compliant with its specifications:
